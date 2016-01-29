@@ -1,0 +1,153 @@
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "integral_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "index_integral_users_on_email" ON "integral_users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_integral_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_integral_users_on_email' AND type='index'
+
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "index_integral_users_on_reset_password_token" ON "integral_users" ("reset_password_token")[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129021044')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'oren@abshirefadel.net' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "oren@abshirefadel.net"], ["encrypted_password", "$2a$04$FNqJze8VjXM17NzGK46SB.SyYTsQljcL4k2zVzx2o.2m7juy7N2WK"], ["created_at", "2016-01-29 04:44:20.966533"], ["updated_at", "2016-01-29 04:44:20.966533"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (16.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'eve@murazik.co' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "eve@murazik.co"], ["encrypted_password", "$2a$04$thB4pL9TBfgtQxrLVzklJeeQT.1MnS/bGj1CgVH6e.fiPiGcMdU0."], ["created_at", "2016-01-29 05:54:38.343659"], ["updated_at", "2016-01-29 05:54:38.343659"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'dovie_stanton@beergoldner.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "dovie_stanton@beergoldner.com"], ["encrypted_password", "$2a$04$Gnm40OS3sES1zTuRvDI5IOtMXmpKJ111Gt/wmN/7byTp7rwrSiI46"], ["created_at", "2016-01-29 06:00:16.015315"], ["updated_at", "2016-01-29 06:00:16.015315"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'gay@conroy.biz' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "gay@conroy.biz"], ["encrypted_password", "$2a$04$w7xHOAFcxd0R77/pXNfwO.xQA2SXE9HtZqpJs16MRa7/GXZ7iPjz."], ["created_at", "2016-01-29 06:08:06.151064"], ["updated_at", "2016-01-29 06:08:06.151064"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by Integral::StaticPagesController#dashboard as HTML
+  Rendered /Users/vnmarketing/dev/integral/app/views/integral/static_pages/dashboard.html.erb within layouts/integral/application (0.2ms)
+Completed 200 OK in 71ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'jazmin.ledner@pfeffer.net' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "jazmin.ledner@pfeffer.net"], ["encrypted_password", "$2a$04$15sTd75sCgbuHEdWS6ReSegsMA7eq3xf3W8ITWn0SUd0Gehf.7jW2"], ["created_at", "2016-01-29 06:16:46.858304"], ["updated_at", "2016-01-29 06:16:46.858304"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Integral::StaticPagesController#dashboard as HTML
+  Rendered /Users/vnmarketing/dev/integral/app/views/integral/static_pages/dashboard.html.erb within layouts/integral/application (0.2ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by Integral::StaticPagesController#dashboard as HTML
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'bernard@beerpouros.org' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "bernard@beerpouros.org"], ["encrypted_password", "$2a$04$ZcEBXsGO8hlpSS/RjD/eAODEMLfIOChQ/MVuNJviDTq5Pz96IVqja"], ["created_at", "2016-01-29 06:19:46.279643"], ["updated_at", "2016-01-29 06:19:46.279643"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Integral::StaticPagesController#dashboard as HTML
+  [1m[36mIntegral::User Load (0.1ms)[0m  [1mSELECT  "integral_users".* FROM "integral_users" WHERE "integral_users"."id" = ?  ORDER BY "integral_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by Integral::StaticPagesController#dashboard as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'mohamed_johns@casperframi.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mohamed_johns@casperframi.org"], ["encrypted_password", "$2a$04$C7aZHXJAGZfQV7qY/wPj0.iQF5cWaPrw74BpGP.e.tWp66rq1zssG"], ["created_at", "2016-01-29 06:25:31.666675"], ["updated_at", "2016-01-29 06:25:31.666675"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Integral::StaticPagesController#dashboard as HTML
+  [1m[36mIntegral::User Load (0.1ms)[0m  [1mSELECT  "integral_users".* FROM "integral_users" WHERE "integral_users"."id" = ?  ORDER BY "integral_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/vnmarketing/dev/integral/app/views/integral/static_pages/dashboard.html.erb within layouts/integral/application (0.3ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mIntegral::User Exists (0.1ms)[0m  SELECT  1 AS one FROM "integral_users" WHERE "integral_users"."email" = 'david.rogahn@cartwright.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "integral_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "david.rogahn@cartwright.com"], ["encrypted_password", "$2a$04$5ObODw/tyOyNPgzcV5Ag2.xlLGA9xzjyvc4Y0QTGtbtneS1Br6Uey"], ["created_at", "2016-01-29 06:36:38.702297"], ["updated_at", "2016-01-29 06:36:38.702297"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Integral::StaticPagesController#dashboard as HTML
+  [1m[36mIntegral::User Load (0.1ms)[0m  [1mSELECT  "integral_users".* FROM "integral_users" WHERE "integral_users"."id" = ?  ORDER BY "integral_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/vnmarketing/dev/integral/app/views/integral/static_pages/dashboard.html.erb within layouts/integral/application (0.2ms)
+Completed 200 OK in 28ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
