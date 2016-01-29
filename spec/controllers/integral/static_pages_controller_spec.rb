@@ -12,9 +12,7 @@ module Integral
           get :dashboard
         end
 
-        # Unmark this as pending when issue is resolved
-        # https://github.com/plataformatec/devise/issues/3613
-        xit { expect(response).to redirect_to new_user_session_path  }
+        it { expect(response).to redirect_to new_user_session_path  }
       end
 
       context 'when logged in' do
