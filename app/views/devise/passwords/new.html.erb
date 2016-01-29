@@ -1,0 +1,17 @@
+<h2>Forgot your password?</h2>
+
+<div class="devise-form">
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, validate: true) do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :email, autofocus: true, as: :icon_text_field, input_html: { icon: "account_circle" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :button, "Reset Password", class: 'btn waves-effect waves-light right' %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
+

@@ -19,6 +19,9 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2.4"
   s.add_dependency "devise", "3.5.1"
   s.add_dependency "haml-rails", "~> 0.9"
+  s.add_dependency "sass-rails"
+  s.add_dependency "materialize-sass"
+  s.add_dependency "simple_form"
 
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "sqlite3"
