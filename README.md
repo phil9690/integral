@@ -1,6 +1,6 @@
 # Integral
 
-This gem packages together a variety of useful backend features and utilities such as;
+This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application. Features include;
 * TODO
 
 ## Installation

@@ -8,15 +8,19 @@ Gem::Specification.new do |s|
   s.name        = "integral"
   s.version     = Integral::VERSION
   s.authors     = ["Patrick Lindsay"]
-  s.email       = ["vindicated.fool@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Integral."
-  s.description = "TODO: Description of Integral."
+  s.email       = ["ptricklindsay@gmail.com"]
+  s.homepage    = "https://github.com/patricklindsay/integral"
+  s.summary     = "This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application."
+  s.description = "Integral packages together all the basics to start a website or application so you don't have to.."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.2.4"
+  s.add_dependency "devise", "3.5.1"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'factory_girl_rails'
+  # s.add_development_dependency 'capybara'
 end
