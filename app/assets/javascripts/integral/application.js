@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require turbolinks
+//= require wice_grid
 //= require_tree .
 
 Turbolinks.enableProgressBar();

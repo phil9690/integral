@@ -2,6 +2,8 @@ module Integral
   class Engine < ::Rails::Engine
     require 'haml'
     require 'simple_form'
+    require 'wice_grid'
+    require 'breadcrumbs_on_rails'
 
     isolate_namespace Integral
 

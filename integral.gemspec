@@ -22,6 +22,8 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails"
   s.add_dependency "materialize-sass"
   s.add_dependency "simple_form"
+  s.add_dependency "wice_grid"
+  s.add_dependency "breadcrumbs_on_rails"
 
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "sqlite3"
