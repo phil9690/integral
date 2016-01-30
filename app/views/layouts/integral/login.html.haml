@@ -1,13 +1,5 @@
 %html
-  %head
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
-    %title= content_for?(:title) ? yield(:title) : "Integral"
-    %meta{ name: "ROBOTS", content: "NOINDEX, NOFOLLOW" }
-    %link{ href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet" }
-    %link{ href: "https://fonts.googleapis.com/css?family=Lato", rel: "stylesheet", type: 'text/css' }
-    = stylesheet_link_tag 'integral/application'
-    = javascript_include_tag 'integral/application'
-    = csrf_meta_tags
+  = render 'layouts/integral/head'
   %body
     = render_flashes
     .valign-wrapper.devise-wrapper.teal.lighten-1

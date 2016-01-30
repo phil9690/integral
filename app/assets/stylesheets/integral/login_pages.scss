@@ -1,0 +1,43 @@
+.devise-wrapper {
+  height: 100vh;
+  @extend .teal, .row;
+}
+
+.devise-form-wrapper {
+  @extend .white, .z-depth-2, .col, .s12, .m7, .l4;
+  margin: 0 auto !important;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    @extend .z-depth-3;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0;
+    color: #757575;
+    border-bottom: 2px solid #eeeeee;
+  }
+  .btn {
+    float: right;
+  }
+}
+
+.devise-form {
+  padding: 2em;
+  .filled-in {
+    margin-left: -0.8em;
+  }
+}
+
+.devise-form-link {
+  font-size: 0.9em;
+  @extend .grey-text;
+  &:hover {
+    @extend .teal-text;
+  }
+}
+

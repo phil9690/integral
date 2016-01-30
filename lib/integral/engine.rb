@@ -4,6 +4,7 @@ module Integral
     require 'simple_form'
     require 'wice_grid'
     require 'breadcrumbs_on_rails'
+    require 'materialize_builder'
 
     isolate_namespace Integral
 
