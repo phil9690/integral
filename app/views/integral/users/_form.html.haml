@@ -1,0 +1,10 @@
+= simple_form_for @user, validate: true do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :avatar, :wrapper_html => { :class => "file-field" }, label: false
+  <br />
+  <br />
+  = f.button :button, class: 'btn waves-effect waves-light'
+

@@ -7,7 +7,7 @@ FactoryGirl.define do
   sequence(:description) { |n| Faker::Lorem.paragraph(8)[0..150] }
 
   factory :user, class: Integral::User do
-    # name
+    name
     email
     password               "password"
     password_confirmation  "password"

@@ -17,7 +17,7 @@ module Integral
       if devise_controller?
         "integral/login"
       else
-        "application"
+        "integral/application"
       end
     end
   end

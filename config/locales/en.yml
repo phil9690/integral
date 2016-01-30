@@ -1,0 +1,95 @@
+en:
+  time:
+    formats:
+      default: "%A %d %B"
+      twelve_hour: "%I:%M %p"
+
+  date:
+    today: 'Today'
+    yesterday: 'Yesterday'
+    formats:
+      default: "%A, %d %B %Y"
+
+  breadcrumbs:
+    dashboard: 'Dashboard'
+    settings: 'Settings'
+    posts: 'Posts'
+    pages: 'Pages'
+    users: 'Users'
+    images: 'Images'
+    galleries: 'Galleries'
+    messages: 'Messages'
+    new: 'New'
+    edit: 'Edit'
+
+  actions:
+    confirm: 'Are you sure?'
+    create: 'Create'
+    save: 'Save'
+    delete: 'Delete'
+    edit: 'Edit'
+    update: 'Update'
+    send: 'Send'
+    view: 'View'
+    read_more: 'Read more..'
+    reply: 'Reply'
+
+  errors:
+    generic: 'Unfortunately there was a problem. Please try again later.'
+    unauthorized: 'You are not authorized to perform this action.'
+
+  mailers:
+    contact_message:
+      new_message:
+        subject: "New message from %{name}"
+
+  integral:
+    static_pages:
+      dashboard:
+        title: 'Dashboard'
+      pages:
+        title: 'Pages'
+    settings:
+      index:
+        title: 'Settings'
+        placeholder:
+          website_title: 'Super awesome website'
+          blog_title: 'Super awesome blog'
+          business_name: 'Integral Web Solutions'
+          business_slogan: 'Taking it to you..'
+          twitter_handler: 'barackobama'
+          facebook_handler: 'mark_zuckerberg'
+          google_plus_handler: 'eric_schmit'
+          linkedin_handler: 'williamhgates'
+          contact_email: 'contact@your_business_email.com'
+          page_description: 'Description of your page here. This is used for SEO.'
+          google_tracking_code: 'UA-11111111-1'
+    posts:
+      index:
+        title: 'Posts'
+        new_post: 'New post'
+      edit:
+        title: 'Edit Post'
+      new:
+        title: 'New Post'
+    users:
+      index:
+        title: 'Users'
+        add_user: 'Add user'
+        columns:
+          name: 'Name'
+          email: 'Email'
+          last_signed_in: 'Last signed in'
+      new:
+        title: 'New user'
+      edit:
+        title: 'Edit profile'
+
+    messages:
+      reply_subject: 'In reply to your message'
+      index:
+        no_messages: 'You currently have no messages :('
+  posts:
+    index:
+      post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
+      post_info: "Posted by %{name} on %{date}"
