@@ -9,6 +9,7 @@
     = javascript_include_tag 'integral/application'
     = csrf_meta_tags
   %body
+    = render_flashes
     .valign-wrapper.devise-wrapper.teal.lighten-1
       .valign.devise-form-wrapper
         = yield
