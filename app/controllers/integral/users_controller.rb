@@ -5,8 +5,8 @@ module Integral
   class UsersController < ApplicationController
     before_filter :set_user, only: [:edit, :update, :destroy, :show]
 
-    # before_filter :authorize_with_instance, only: [ :show, :edit, :update ]
-    # before_filter :authorize_with_klass, only: [ :index, :new, :create, :destroy ]
+    before_filter :authorize_with_instance, only: [ :show, :edit, :update ]
+    before_filter :authorize_with_klass, only: [ :index, :new, :create, :destroy ]
 
     add_breadcrumb I18n.t('breadcrumbs.dashboard'), :root_path
     add_breadcrumb I18n.t('breadcrumbs.users'), :users_path
@@ -54,7 +54,7 @@ module Integral
     # Updating a user
     def update
       authorized_user_params = user_params
-      #authorized_user_params.delete(:role_ids) unless policy(@user).manager?
+      authorized_user_params.delete(:role_ids) unless policy(@user).manager?
 
       if @user.update(authorized_user_params)
         redirect_to user_path(@user)

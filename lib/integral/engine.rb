@@ -5,6 +5,7 @@ module Integral
     require 'wice_grid'
     require 'breadcrumbs_on_rails'
     require 'materialize_builder'
+    require 'pundit'
 
     isolate_namespace Integral
 

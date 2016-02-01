@@ -1,5 +1,12 @@
 module Integral
   class ApplicationController < ActionController::Base
+    # User authentication
+    before_action :authenticate_user!
+
+    # User authorization
+    include Pundit
+    rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
     layout :layout_by_resource
 
     private
@@ -9,9 +16,14 @@ module Integral
       integral.root_path
     end
 
+    def user_not_authorized
+      flash[:alert] = I18n.t('errors.unauthorized')
+      redirect_to(root_path)
+    end
+
     # Handle custom devise layouts
     # https://github.com/plataformatec/devise/wiki/How-To:-Create-custom-layouts
-    # Can't do it pretty way as have no access to Application.rb within Engine
+    # Can't do it pretty way as have no access to Application.rb within Engine (?)
     # TODO: Add a spec for this
     def layout_by_resource
       if devise_controller?
