@@ -1,9 +1,13 @@
-= simple_form_for @user, validate: true do |f|
+= simple_form_for @user, validate: true, html: { id: 'user_form' } do |f|
   = f.input :name
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
-  = f.input :avatar, :wrapper_html => { :class => "file-field" }, label: false
+  -# = f.input :avatar, :wrapper_html => { :class => "file-field" }, label: false
+
+  - if policy(current_user).manager?
+    = f.association :roles, :as => :check_boxes, label: false, label_method: :label
+
   <br />
   <br />
   = f.button :button, class: 'btn waves-effect waves-light'

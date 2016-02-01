@@ -5,6 +5,11 @@ module Integral
     has_many :users, :through => :role_assignments
 
     validates :name, presence: true
+
+    # @return [String] label representing the Role
+    def label
+      name.underscore.humanize
+    end
   end
 end
 

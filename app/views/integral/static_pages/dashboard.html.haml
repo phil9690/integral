@@ -1,3 +1,4 @@
 %ul
-  %li
-    = link_to 'Manage users', users_path
+  - if policy(current_user).manager?
+    %li
+      = link_to 'Manage users', users_path
