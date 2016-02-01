@@ -7,8 +7,22 @@ module Integral
     # :confirmable, :timeoutable, :omniauthable, registerable and lockable
     devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
+    # Relations
+    has_many :role_assignments
+    has_many :roles, :through => :role_assignments
+
+    # Validations
     validates :name, :email, presence: true
     validates :name, length: { minimum: 3, maximum: 25 }
+
+    # Checks if the User has a given role
+    #
+    # @param role_sym [Symbol] role to check
+    #
+    # @return [Boolean]
+    def has_role?(role_sym)
+      roles.any? { |r| r.name.underscore.to_sym == role_sym }
+    end
   end
 end
 

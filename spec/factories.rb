@@ -12,33 +12,33 @@ FactoryGirl.define do
     password               "password"
     password_confirmation  "password"
 
-    # factory :settings_manager do
-    #   role_ids { [ Role.find_by_name('SettingsManager').id ] }
-    # end
-    #
-    # factory :pages_manager do
-    #   role_ids { [ Role.find_by_name('PagesManager').id ] }
-    # end
-    #
-    # factory :user_manager do
-    #   role_ids { [ Role.find_by_name('UserManager').id ] }
-    # end
-    #
-    # factory :image_manager do
-    #   role_ids { [ Role.find_by_name('ImageManager').id ] }
-    # end
-    #
-    # factory :gallery_manager do
-    #   role_ids { [ Role.find_by_name('GalleryManager').id ] }
-    # end
-    #
-    # factory :messenger do
-    #   role_ids { [ Role.find_by_name('Messenger').id ] }
-    # end
+    factory :settings_manager do
+      role_ids { [ Integral::Role.find_by_name('SettingsManager').id ] }
+    end
+
+    factory :pages_manager do
+      role_ids { [ Integral::Role.find_by_name('PagesManager').id ] }
+    end
+
+    factory :user_manager do
+      role_ids { [ Integral::Role.find_by_name('UserManager').id ] }
+    end
+
+    factory :image_manager do
+      role_ids { [ Integral::Role.find_by_name('ImageManager').id ] }
+    end
+
+    factory :gallery_manager do
+      role_ids { [ Integral::Role.find_by_name('GalleryManager').id ] }
+    end
+
+    factory :messenger do
+      role_ids { [ Integral::Role.find_by_name('Messenger').id ] }
+    end
   end
 
-  # factory :role do
-  #   name 'some_role'
-  # end
+  factory :role, class: Integral::Role do
+    name 'some_role'
+  end
 end
 
