@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130051535) do
+ActiveRecord::Schema.define(version: 20160201003936) do
+
+  create_table "integral_role_assignments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "integral_role_assignments", ["role_id"], name: "index_integral_role_assignments_on_role_id"
+  add_index "integral_role_assignments", ["user_id"], name: "index_integral_role_assignments_on_user_id"
+
+  create_table "integral_roles", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "integral_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
