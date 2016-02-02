@@ -10,7 +10,7 @@ module Integral
     let(:name) { builder.name }
     let(:email) { builder.email }
     let(:password) { builder.password }
-    let(:role_ids) { [1, 2, 3]  }
+    let(:role_ids) { Role.ids }
     let(:user_params) { { name: name, email: email, password: password, password_confirmation: password, role_ids: role_ids } }
 
     describe 'GET index' do
