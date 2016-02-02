@@ -16,6 +16,11 @@ module Integral
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
+    # Allows engine factories to be reused by application
+    initializer "model_core.factories", :after => "factory_girl.set_factory_paths" do
+      FactoryGirl.definition_file_paths << File.expand_path('../../../spec/factories', __FILE__) if defined?(FactoryGirl)
+    end
+
     initializer "integral.assets.precompile" do |app|
         app.config.assets.precompile += %w(integral/application.scss)
     end
