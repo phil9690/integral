@@ -16,5 +16,13 @@ module Integral
     describe 'validates' do
       it { is_expected.to validate_presence_of :name }
     end
+
+    describe '#label' do
+      it 'returns expected label' do
+        subject.name = 'fooBar'
+
+        expect(subject.label).to eq 'Foo bar'
+      end
+    end
   end
 end

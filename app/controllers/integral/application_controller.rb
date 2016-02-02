@@ -1,4 +1,5 @@
 module Integral
+  # Base controller inherited by all Integral controllers
   class ApplicationController < ActionController::Base
     # User authentication
     before_action :authenticate_user!
@@ -24,7 +25,6 @@ module Integral
     # Handle custom devise layouts
     # https://github.com/plataformatec/devise/wiki/How-To:-Create-custom-layouts
     # Can't do it pretty way as have no access to Application.rb within Engine (?)
-    # TODO: Add a spec for this
     def layout_by_resource
       if devise_controller?
         "integral/login"

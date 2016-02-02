@@ -1,0 +1,12 @@
+task_group :analysis do
+  yard 'stats --list-undoc', :coverage => 100
+  task :cane, :max_width => 250
+  task :flay, :exclude => '^\.\/(db|factories|spec)\/', :max => 145
+  task :flog, :methods => true, :exclude => '^\.\/(db|factories|spec)\/', :average => 7.6, :max => 272.6
+  task :brakeman, '--table-width 1500'
+end
+
+build :default do
+  task_group :analysis
+  rspec '--profile --order rand', :coverage => 100
+end

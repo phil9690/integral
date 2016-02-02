@@ -1,5 +1,5 @@
-# Handles User authorization definitions
 module Integral
+  # Handles User authorization definitions
   class UserPolicy
     attr_reader :user, :instance
 

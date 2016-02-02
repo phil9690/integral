@@ -1,6 +1,6 @@
 # IconTextFieldInput prefixes a supplied icon before the text field
 class IconTextFieldInput < SimpleForm::Inputs::Base
-  
+
   # Generates the HTML output for the input
   #
   # @param wrapper_options [Hash] options for the wrapper

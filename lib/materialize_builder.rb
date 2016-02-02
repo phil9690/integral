@@ -1,4 +1,5 @@
 # Materialize builder for breadcrumbs
+# :nocov:
 class MaterializeBuilder < BreadcrumbsOnRails::Breadcrumbs::Builder
 
   # @return [String] representing the breadcrumb

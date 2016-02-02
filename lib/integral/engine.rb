@@ -1,4 +1,5 @@
 module Integral
+  # Integral Engine
   class Engine < ::Rails::Engine
     require 'haml'
     require 'simple_form'

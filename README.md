@@ -1,7 +1,11 @@
 # Integral
+[![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)](https://codeclimate.com/github/patricklindsay/integral)
 
 This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application. Features include;
-* TODO
+* Styled with [Material Design][material-design] in mind using [Materialize-sass][materialize]
+* User authentication
+* User authorization
+* Pretty flash messages
 
 ## Installation
 
@@ -28,9 +32,8 @@ And then execute:
 Bug reports and pull requests are welcome on GitHub at https://github.com/patricklindsay/integral. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ### Further works
-* User authentication
-* User authorization
 * Settings management
+* Custom user confirmation modal
 * Image management
 * Gallery management
 * Blog
@@ -39,3 +42,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+[material-design]: https://www.google.com/design/spec/material-design/introduction.html
+[materialize]: https://github.com/mkhairi/materialize-sass

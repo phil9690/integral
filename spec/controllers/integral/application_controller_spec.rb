@@ -21,5 +21,23 @@ module Integral
         expect(controller.after_sign_in_path_for(user)).to eq Engine.routes.url_helpers.root_path
       end
     end
+
+    describe "layout_by_resource" do
+      context 'when devise controller' do
+        before do
+          allow(subject).to receive(:devise_controller?).and_return true
+        end
+
+        it 'renders custom devise layout' do
+          expect(controller.send(:_layout)).to eq 'integral/login'
+        end
+      end
+
+      context 'whe not devise controller' do
+        it 'renders standard layout' do
+          expect(controller.send(:_layout)).to eq 'integral/application'
+        end
+      end
+    end
   end
 end

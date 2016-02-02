@@ -1,4 +1,5 @@
 module Integral
+  # Base helper inherited from all Integral helpers
   module ApplicationHelper
 
     # @return [String] markup listing flashes

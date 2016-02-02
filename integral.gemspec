@@ -1,9 +1,7 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "integral/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "integral"
   s.version     = Integral::VERSION
@@ -14,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "Integral packages together all the basics to start a website or application so you don't have to.."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 4.2.4"
   s.add_dependency "devise", "3.5.1"
@@ -36,4 +34,13 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_girl_rails'
   s.add_development_dependency 'faker'
   # s.add_development_dependency 'capybara'
+
+  # CI, code coverage, analysis and documentation tools
+  s.add_development_dependency 'fudge'
+  s.add_development_dependency 'brakeman'
+  s.add_development_dependency 'cane'
+  s.add_development_dependency 'flog'
+  s.add_development_dependency 'flay'
+  s.add_development_dependency 'yard'
+  s.add_development_dependency 'simplecov'
 end
