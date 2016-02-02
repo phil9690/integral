@@ -1,0 +1,27 @@
+#toast-container {
+  position: absolute;
+  width: auto;
+  max-width: 20%;
+  right: 2rem !important;
+  left: auto;
+
+  .toast {
+    word-break: keep-all;
+  }
+  .notice {
+    @extend .blue;
+  }
+  .error {
+    @extend .red;
+  }
+  .alert {
+    @extend .amber;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #toast-container {
+    max-width: 100%;
+  }
+}
+

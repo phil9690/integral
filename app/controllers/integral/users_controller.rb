@@ -37,8 +37,10 @@ module Integral
       @user = User.new(user_params)
 
       if @user.save
+        flash[:notice] = I18n.t('integral.users.notification.creation_success')
         redirect_to user_path(@user)
       else
+        flash.now[:error] = I18n.t('integral.users.notification.creation_failure')
         render 'new'
       end
     end
@@ -57,8 +59,10 @@ module Integral
       authorized_user_params.delete(:role_ids) unless policy(@user).manager?
 
       if @user.update(authorized_user_params)
+        flash[:notice] = I18n.t('integral.users.notification.edit_success')
         redirect_to user_path(@user)
       else
+        flash.now[:error] = I18n.t('integral.users.notification.edit_failure')
         render 'edit'
       end
     end
@@ -67,6 +71,7 @@ module Integral
     def destroy
       @user.destroy
 
+      flash[:notice] = I18n.t('integral.users.notification.delete_success')
       redirect_to users_path
     end
 

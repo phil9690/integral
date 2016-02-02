@@ -81,6 +81,7 @@ module Integral
           it 'redirects to the saved user' do
             post :create, user: user_params
 
+            expect(flash[:notice]).to eql(I18n.t('integral.users.notification.creation_success'))
             expect(response).to redirect_to user_path(User.last)
           end
 
@@ -111,6 +112,7 @@ module Integral
           it 'renders new template' do
             post :create, user: user_params.merge!(name: '')
 
+            expect(flash[:error]).to eql(I18n.t('integral.users.notification.creation_failure'))
             expect(response).to render_template("new")
           end
         end
@@ -272,6 +274,7 @@ module Integral
         context 'when user has required privileges' do
           context 'when valid parameters supplied' do
             it { expect(response).to redirect_to(user_path(actionable_user)) }
+            it { expect(flash[:notice]).to eql(I18n.t('integral.users.notification.edit_success')) }
             it { expect(assigns[:user].name).to eql name }
             it { expect(assigns[:user].email).to eql email }
             it { expect(assigns[:user].password).to eql password }
@@ -284,6 +287,7 @@ module Integral
             it { expect(assigns[:user].name).not_to eql name }
             it { expect(assigns[:user].email).not_to eql email }
 
+            it { expect(flash[:error]).to eql(I18n.t('integral.users.notification.edit_failure')) }
             it { expect(response).to render_template 'edit' }
           end
         end
@@ -310,6 +314,7 @@ module Integral
         end
 
         it { expect {user.reload }.to raise_error(ActiveRecord::RecordNotFound) }
+        it { expect(flash[:notice]).to eql(I18n.t('integral.users.notification.delete_success')) }
         it { expect(response).to redirect_to users_path }
       end
     end

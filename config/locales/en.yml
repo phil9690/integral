@@ -73,6 +73,12 @@ en:
       new:
         title: 'New Post'
     users:
+      notification:
+        creation_success: 'User successfully created.'
+        creation_failure: 'An error occurred attempting to create the user.'
+        edit_success: 'User successfully updated.'
+        edit_failure: 'An error occurred attempting to update the user.'
+        delete_success: 'User successfully deleted.'
       index:
         title: 'Users'
         add_user: 'Add user'
