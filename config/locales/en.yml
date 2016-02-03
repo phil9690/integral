@@ -75,9 +75,9 @@ en:
     users:
       notification:
         creation_success: 'User successfully created.'
-        creation_failure: 'An error occurred attempting to create the user.'
+        creation_failure: 'User creation failed.'
         edit_success: 'User successfully updated.'
-        edit_failure: 'An error occurred attempting to update the user.'
+        edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
       index:
         title: 'Users'
