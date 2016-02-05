@@ -24,6 +24,7 @@ Turbolinks.enableProgressBar();
 $(document).on('ready page:load', function () {
   Waves.displayEffect();
   Materialize.updateTextFields();
+  $('select').material_select();
   $(".button-collapse").sideNav();
   $(".parallax").parallax();
   $(".dropdown-button").dropdown();
