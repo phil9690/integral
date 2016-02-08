@@ -1,6 +1,6 @@
 # Integral
 
-[![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)](https://travis-ci.org/patricklindsay/integral) [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)](https://codeclimate.com/github/patricklindsay/integral)
+[![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)](https://travis-ci.org/patricklindsay/integral) [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)](https://codeclimate.com/github/patricklindsay/integral) [![Inline docs](http://inch-ci.org/github/patricklindsay/integral.svg?branch=master)](http://inch-ci.org/github/patricklindsay/integral)
 
 This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application. Features include;
 * Styled with [Material Design][material-design] in mind using [Materialize-sass][materialize]
