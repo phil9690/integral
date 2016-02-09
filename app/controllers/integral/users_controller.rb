@@ -37,11 +37,9 @@ module Integral
       @user = User.new(user_params)
 
       if @user.save
-        flash[:notice] = I18n.t('integral.users.notification.creation_success')
-        redirect_to user_path(@user)
+        respond_successfully I18n.t('integral.users.notification.creation_success'), user_path(@user)
       else
-        flash.now[:error] = I18n.t('integral.users.notification.creation_failure')
-        render 'new'
+        respond_failure I18n.t('integral.users.notification.creation_failure'), 'new'
       end
     end
 
@@ -59,11 +57,9 @@ module Integral
       authorized_user_params.delete(:role_ids) unless policy(@user).manager?
 
       if @user.update(authorized_user_params)
-        flash[:notice] = I18n.t('integral.users.notification.edit_success')
-        redirect_to user_path(@user)
+        respond_successfully I18n.t('integral.users.notification.edit_success'), user_path(@user)
       else
-        flash.now[:error] = I18n.t('integral.users.notification.edit_failure')
-        render 'edit'
+        respond_failure I18n.t('integral.users.notification.edit_failure'), 'edit'
       end
     end
 
@@ -71,11 +67,20 @@ module Integral
     def destroy
       @user.destroy
 
-      flash[:notice] = I18n.t('integral.users.notification.delete_success')
-      redirect_to users_path
+      respond_successfully I18n.t('integral.users.notification.delete_success'), users_path
     end
 
     private
+
+    def respond_successfully(flash_message, redirect_path)
+      flash[:notice] = flash_message
+      redirect_to redirect_path
+    end
+
+    def respond_failure(flash_message, template)
+      flash.now[:error] = flash_message
+      render template
+    end
 
     def set_user
       @user = User.find(params[:id])

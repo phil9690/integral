@@ -6,8 +6,6 @@ class SwitchInput < SimpleForm::Inputs::Base
   # @param wrapper_options [Hash] options for the wrapper
   # @return [String] HTML markup of the input
   def input(wrapper_options)
-    merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
-    icon = input_html_options.delete(:icon)
     out = ""
     out << "<div class='row switch'>".html_safe
     out << "<label>".html_safe
