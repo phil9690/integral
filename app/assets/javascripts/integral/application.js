@@ -36,5 +36,6 @@ $(document).on('ready page:load', function () {
 
 $(document).on('page:load', function () {
   $('input, textarea').characterCounter();
+  $('ul.tabs').tabs();
 });
 
