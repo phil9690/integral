@@ -5,5 +5,14 @@
 @import "integral/users";
 @import "integral/validations";
 @import "integral/flash_notifications";
+@import "integral/collapsible_extensions";
 
+.remove-button {
+  i {
+    @extend .red-text, .text-lighten-1;
 
+    &:hover {
+      @extend .text-lighten-2;
+    }
+  }
+}
