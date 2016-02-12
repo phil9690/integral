@@ -3,6 +3,7 @@ module Integral
   class Engine < ::Rails::Engine
     require 'haml'
     require 'simple_form'
+    require 'cocoon'
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
     require 'wice_grid'

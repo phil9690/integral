@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails"
   s.add_dependency "materialize-sass"
   s.add_dependency "simple_form"
+  s.add_dependency "cocoon"
   s.add_dependency "client_side_validations"
   s.add_dependency "client_side_validations-simple_form"
   s.add_dependency "wice_grid"
