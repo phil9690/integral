@@ -5,6 +5,7 @@ This gem packages together a variety of useful backend features and utilities in
 * User authentication
 * User authorization
 * Pretty flash messages
+* Custom user confirmation modal
 
 ## Installation
 
@@ -32,7 +33,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 
 ### Further works
 * Settings management
-* Custom user confirmation modal
 * Image management
 * Gallery management
 * Blog
