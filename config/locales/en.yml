@@ -79,13 +79,14 @@ en:
         edit_success: 'User successfully updated.'
         edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
-      index:
-        title: 'Users'
-        add_user: 'Add user'
+      grid:
         columns:
           name: 'Name'
           email: 'Email'
           last_signed_in: 'Last signed in'
+      index:
+        title: 'Users'
+        add_user: 'Add user'
       new:
         title: 'New user'
       edit:
