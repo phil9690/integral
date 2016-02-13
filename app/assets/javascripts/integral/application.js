@@ -18,6 +18,7 @@
 //= require rails.validations.simple_form
 //= require wice_grid
 //= require cocoon
+//= require integral/extensions
 //= require_tree .
 
 Turbolinks.enableProgressBar();
