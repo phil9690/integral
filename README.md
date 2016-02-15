@@ -1,4 +1,4 @@
-# Integral [![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)](https://travis-ci.org/patricklindsay/integral) [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)](https://codeclimate.com/github/patricklindsay/integral) [![Dependency Status](https://gemnasium.com/patricklindsay/integral.svg)](https://gemnasium.com/patricklindsay/integral) [![Inline docs](http://inch-ci.org/github/patricklindsay/integral.svg?branch=master)](http://inch-ci.org/github/patricklindsay/integral)
+# Integral [![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)][travis-ci] [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)][code-climate] [![Dependency Status](https://gemnasium.com/patricklindsay/integral.svg)][gemnasium] [![Inline docs](http://inch-ci.org/github/patricklindsay/integral.svg?branch=master)][inch-ci] [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)][roll-bar]
 
 This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application. Features include;
 * Styled with [Material Design][material-design] in mind using [Materialize-sass][materialize]
@@ -43,3 +43,8 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 [material-design]: https://www.google.com/design/spec/material-design/introduction.html
 [materialize]: https://github.com/mkhairi/materialize-sass
+[roll-bar]: https://rollbar.com
+[travis-ci]: https://travis-ci.org/patricklindsay/integral
+[code-climate]: https://codeclimate.com/github/patricklindsay/integral
+[inch-ci]: http://inch-ci.org/github/patricklindsay/integral
+[gemnasium]: https://gemnasium.com/patricklindsay/integral
