@@ -1,7 +1,9 @@
 <%= grid(@users_grid) do |g|
   g.column name: t('.columns.name'), attribute: 'name'
   g.column name: t('.columns.email'), attribute: 'email'
-  g.column name: t('.columns.last_signed_in'), attribute: 'last_sign_in_at'
+  g.column name: t('.columns.last_signed_in'), attribute: 'last_sign_in_at' do |user|
+    l(user.updated_at)
+  end
 
   g.column   do |user|
     link_to("<span class='material-icons green-text text-lighten-1'>remove_red_eye</span>".html_safe, user_path(user)) +

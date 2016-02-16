@@ -118,10 +118,13 @@
     float: right;
   }
 
-  tbody tr:hover {
-    background-color: #EAEAEA;
-  }
+  tbody tr {
+    border-bottom: 1px solid rgba(0,0,0,.12);
 
+    &:hover {
+      background-color: #EAEAEA;
+    }
+  }
 }
 
 .wice-grid-query-panel{
