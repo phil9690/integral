@@ -26,6 +26,19 @@ module Integral
       end
     end
 
+    # Renders icon link
+    #
+    # @param [String] icon to use
+    # @param [String] url to link to
+    # @param [Hash] html_options to pass through to link_to helper
+    #
+    # @return [String] twitter url
+    def icon_link_to(icon, url, html_options={})
+      html_options[:icon_align] = 'left' unless html_options[:icon_align].present?
+
+      link_to "<i class='material-icons #{html_options[:icon_align]}'>#{icon}</i>#{html_options[:text]}".html_safe, url, html_options
+    end
+
     private
 
     def render_flash(type, message)

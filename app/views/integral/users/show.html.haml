@@ -1,7 +1,9 @@
 = content_for :title, @user.name
-%h3= @user.name
 
-%p Some sort of user profile goes here.
+= icon_link_to 'edit', edit_user_path, class: 'waves-effect waves-light btn', text: t('actions.edit')
+.card-panel
+  %h3= @user.name
 
-=link_to t('actions.edit'), edit_user_path, class: 'waves-effect waves-light btn'
+  %p Some sort of user profile goes here.
+
 

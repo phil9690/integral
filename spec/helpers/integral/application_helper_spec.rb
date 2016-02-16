@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 module Integral
-  describe ApplicationHelper, type: :helper do
+  RSpec.describe ApplicationHelper, type: :helper do
 
     describe '#anchor_to' do
       let(:body) { 'testbody' }
@@ -30,6 +30,18 @@ module Integral
 
       it 'renders out the correct markup' do
         expect(helper.render_flashes).to eq(expected_markup)
+      end
+    end
+
+    describe '#icon_link_to' do
+      let(:url) { 'some/url' }
+      let(:icon_path) { 'some_icon_path' }
+      let(:html_options) { {foo: :bar} }
+
+      it 'renders an icon link' do
+        expect(helper).to receive(:link_to).with("<i class='material-icons left'>#{icon_path}</i>", url, html_options)
+
+        helper.icon_link_to(icon_path, url, html_options)
       end
     end
   end
