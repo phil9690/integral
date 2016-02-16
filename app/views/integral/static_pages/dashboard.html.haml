@@ -1,4 +1,22 @@
-%ul
+.row
   - if policy(current_user).manager?
-    %li
-      = link_to 'Manage users', users_path
+    .col.s12.m6.l4
+      .card.hoverable
+        .card-image.blue.lighten-2
+          = image_tag image_url('users.png')
+          %span.card-title Users
+        .card-content
+          %p Add, edit and remove users.
+        .card-action
+          = link_to 'View', users_path
+
+  .col.s12.m6.l4
+    .card.hoverable
+      .card-image.teal.lighten-2
+        = image_tag image_url('user.png')
+        %span.card-title Account & Profile
+      .card-content
+        %p View + edit your profile.
+      .card-action
+        = link_to 'View', user_path(current_user)
+
