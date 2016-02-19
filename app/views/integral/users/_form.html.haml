@@ -11,5 +11,5 @@
         - if policy(current_user).manager?
           = f.association :roles, :as => :check_boxes, label: false, label_method: :label
 
-    = f.button :button, class: 'btn waves-effect waves-light'
+    = f.button :button
 
