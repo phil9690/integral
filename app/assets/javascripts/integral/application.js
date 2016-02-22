@@ -28,7 +28,6 @@ $(document).on('ready page:load', function () {
   Materialize.updateTextFields();
   $('select').material_select();
   $(".button-collapse").sideNav();
-  $(".parallax").parallax();
   $(".dropdown-button").dropdown();
   $('body').addClass('loaded');
   $('.collapsible').collapsible({
