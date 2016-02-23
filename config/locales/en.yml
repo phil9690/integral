@@ -10,18 +10,6 @@ en:
     formats:
       default: "%A, %d %B %Y"
 
-  breadcrumbs:
-    dashboard: 'Dashboard'
-    settings: 'Settings'
-    posts: 'Posts'
-    pages: 'Pages'
-    users: 'Users'
-    images: 'Images'
-    galleries: 'Galleries'
-    messages: 'Messages'
-    new: 'New'
-    edit: 'Edit'
-
   actions:
     confirm: 'Are you sure?'
     create: 'Create'
@@ -44,6 +32,18 @@ en:
         subject: "New message from %{name}"
 
   integral:
+    breadcrumbs:
+      dashboard: 'Dashboard'
+      settings: 'Settings'
+      posts: 'Posts'
+      pages: 'Pages'
+      users: 'Users'
+      images: 'Images'
+      galleries: 'Galleries'
+      messages: 'Messages'
+      new: 'New'
+      edit: 'Edit'
+
     static_pages:
       dashboard:
         title: 'Dashboard'

@@ -8,8 +8,8 @@ module Integral
     before_filter :authorize_with_instance, only: [ :show, :edit, :update ]
     before_filter :authorize_with_klass, only: [ :index, :new, :create, :destroy ]
 
-    add_breadcrumb I18n.t('breadcrumbs.dashboard'), :root_path
-    add_breadcrumb I18n.t('breadcrumbs.users'), :users_path
+    add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+    add_breadcrumb I18n.t('integral.breadcrumbs.users'), :users_path
 
     # GET /
     # Lists all users
@@ -20,7 +20,7 @@ module Integral
     # GET /new
     # User creation form
     def new
-      add_breadcrumb I18n.t('breadcrumbs.new'), :new_user_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.new'), :new_user_path
       @user = User.new
     end
 
@@ -47,7 +47,7 @@ module Integral
     # User edit form
     def edit
       add_breadcrumb @user.name, :user_path
-      add_breadcrumb I18n.t('breadcrumbs.edit'), :edit_user_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.edit'), :edit_user_path
     end
 
     # PUT /:id
