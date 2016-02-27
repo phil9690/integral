@@ -8,7 +8,7 @@
         .nav-wrapper
           <a href="#" data-activates="admin-menu" class="button-collapse" id="admin-menu-toggle"><span class="material-icons">menu</span><span class="toggle-text">Menu</span><span class="vertical-divider"></span></a>
           %span.admin-menu-logo
-            Integral
+            = content_for?(:title) ? yield(:title) : "Integral"
           <!-- may not need this anymore --!>
           %ul.right#admin-menu-top
           %ul.side-nav#admin-menu

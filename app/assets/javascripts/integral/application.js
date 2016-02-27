@@ -37,6 +37,7 @@ $(document).on('ready page:load', function () {
 
 $(document).on('page:load', function () {
   $('input, textarea').characterCounter();
+  $('.tooltipped').tooltip({delay: 50});
   $('ul.tabs').tabs();
 });
 

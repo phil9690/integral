@@ -85,12 +85,14 @@ en:
           email: 'Email'
           last_signed_in: 'Last signed in'
       index:
-        title: 'Users'
+        title: 'User listing'
         add_user: 'Add user'
       new:
         title: 'New user'
       edit:
-        title: 'Edit profile'
+        title: 'Editing profile - %{name}'
+      show:
+        title: "Viewing profile - %{name}"
 
     messages:
       reply_subject: 'In reply to your message'

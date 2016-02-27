@@ -35,11 +35,27 @@ module Integral
 
     describe '#icon_link_to' do
       let(:url) { 'some/url' }
+      let(:icon_classes) { 'foo bar' }
       let(:icon_path) { 'some_icon_path' }
+      let(:icon_text) { 'some text..' }
       let(:html_options) { {foo: :bar} }
 
       it 'renders an icon link' do
         expect(helper).to receive(:link_to).with("<i class='material-icons left'>#{icon_path}</i>", url, html_options)
+
+        helper.icon_link_to(icon_path, url, html_options)
+      end
+
+      it 'adds icon_classes to icon markup' do
+        expect(helper).to receive(:link_to).with("<i class='material-icons #{icon_classes}'>#{icon_path}</i>", url, html_options)
+        html_options[:icon_classes] = icon_classes
+
+        helper.icon_link_to(icon_path, url, html_options)
+      end
+
+      it 'adds text to icon markup' do
+        expect(helper).to receive(:link_to).with("<i class='material-icons left'>#{icon_path}</i>#{icon_text}", url, html_options)
+        html_options[:text] = icon_text
 
         helper.icon_link_to(icon_path, url, html_options)
       end

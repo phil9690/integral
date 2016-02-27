@@ -34,9 +34,11 @@ module Integral
     #
     # @return [String] twitter url
     def icon_link_to(icon, url, html_options={})
-      html_options[:icon_align] = 'left' unless html_options[:icon_align].present?
+      icon_classes = html_options.delete(:icon_classes)
+      icon_text = html_options.delete(:text)
 
-      link_to "<i class='material-icons #{html_options[:icon_align]}'>#{icon}</i>#{html_options[:text]}".html_safe, url, html_options
+      icon_classes = 'left' if icon_classes.blank?
+      link_to "<i class='material-icons #{icon_classes}'>#{icon}</i>#{icon_text}".html_safe, url, html_options
     end
 
     private

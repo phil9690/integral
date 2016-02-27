@@ -1,5 +1,4 @@
-= content_for :title, t('.title')
+= content_for :title, t('.title', name: @user.name)
 
-%h3= t('.title')
 = render 'form'
 
