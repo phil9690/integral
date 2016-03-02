@@ -4,7 +4,7 @@
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), validate: true) do |f| %>
     <div class="form-inputs">
-      <%= f.input :email, autofocus: true, as: :icon_text_field, input_html: { icon: "account_circle" } %>
+      <%= f.input :email, autofocus: true, as: :icon_email_field, input_html: { icon: "account_circle" } %>
       <%= f.input :password, as: :icon_password_field, input_html: { icon: "vpn_key" } %>
       <%= f.input :remember_me, as: :boolean, input_html: { class: 'filled-in' }, wrapper: :material_checkbox %>
     </div>
