@@ -40,5 +40,13 @@ FactoryGirl.define do
   factory :role, class: Integral::Role do
     name 'some_role'
   end
+
+  factory :image, class: 'Integral::Image' do
+    title
+    description
+    width 1
+    height 2
+    file { Rack::Test::UploadedFile.new(File.join(Rails.root, 'public', 'images', 'person.jpg')) }
+  end
 end
 

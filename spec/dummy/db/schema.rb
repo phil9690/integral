@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201003936) do
+ActiveRecord::Schema.define(version: 20160302071241) do
+
+  create_table "integral_images", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "file"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "integral_role_assignments", force: :cascade do |t|
     t.integer  "user_id"
