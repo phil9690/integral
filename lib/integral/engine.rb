@@ -10,6 +10,7 @@ module Integral
     require 'breadcrumbs_on_rails'
     require 'materialize_builder'
     require 'pundit'
+    require 'carrierwave'
 
     isolate_namespace Integral
 

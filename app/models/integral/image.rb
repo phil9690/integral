@@ -6,7 +6,7 @@ module Integral
     validates :title, presence: true, length: { minimum: 5, maximum: 70 }
     validates :description, length: { maximum: 200 }
 
-    # mount_uploader :file, ImageUploader
+    mount_uploader :file, ImageUploader
 
     # @return [String] represents the original size of the image
     def size

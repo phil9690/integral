@@ -2,6 +2,8 @@
 log/*.log
 spec/dummy/log/*.log
 spec/dummy/db/*.sqlite3
+spec/dummy/public/uploads/*
+spec/examples.txt
 pkg/
 coverage/
 .yardoc/
