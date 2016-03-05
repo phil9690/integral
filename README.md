@@ -1,9 +1,11 @@
 # Integral [![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)][travis-ci] [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)][code-climate] [![Dependency Status](https://gemnasium.com/patricklindsay/integral.svg)][gemnasium] [![Inline docs](http://inch-ci.org/github/patricklindsay/integral.svg?branch=master)][inch-ci] [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)][roll-bar]
 
+## ## Unreleased - currently in development ##
 This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application. Features include;
 * Styled with [Material Design][material-design] in mind using [Materialize-sass][materialize]
 * User authentication
 * User authorization
+* Image management
 * Pretty flash messages
 * Custom user confirmation modal
 
@@ -33,7 +35,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 
 ### Further works
 * Settings management
-* Image management
 * Gallery management
 * Blog
 
