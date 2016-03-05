@@ -1,14 +1,25 @@
 module Integral
   # Handles uploading images
   class ImageUploader < CarrierWave::Uploader::Base
+    # Storage type whitelist
+    VALID_STORAGE_TYPES = [ :file, :fog ]
+
+    # Outputs which storage to use based on configuration settings
+    #
+    # @return [Symbol] type of storage to use for the uploader
+    def self.storage_type
+      storage_type = Integral.configuration.file_storage_type
+      storage_type = :file unless VALID_STORAGE_TYPES.include? storage_type
+
+      storage_type
+    end
+
+    # Set storage to use for this uploader:
+    storage storage_type
 
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick
     # include CarrierWave::MiniMagick
-
-    # Choose what kind of storage to use for this uploader:
-    storage :file
-    # storage :fog
 
     # Override the directory where uploaded files will be stored.
     # This is a sensible default for uploaders that are meant to be mounted:

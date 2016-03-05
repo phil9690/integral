@@ -38,8 +38,8 @@ module Integral
           let(:images_sorted) { Image.all.order('created_at DESC') }
 
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :integral_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.images'), :images_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.images'), :img_index_path, {})
 
             get :index
           end
@@ -136,9 +136,9 @@ module Integral
         context 'when user has required privileges' do
           before do
             allow(Integral::Image).to receive(:new).and_return :foo
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :integral_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.images'), :images_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.new'), :new_image_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.images'), :img_index_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.new'), :new_img_path)
 
             get :new
           end
@@ -177,9 +177,9 @@ module Integral
 
         context 'when user has required privileges' do
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :integral_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.images'), :images_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.edit'), :edit_image_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.images'), :img_index_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.edit'), :edit_img_path)
             get :edit, id: image.id
           end
 
@@ -221,7 +221,7 @@ module Integral
           end
 
           context 'when valid parameters supplied' do
-            it { expect(response).to redirect_to(images_path) }
+            it { expect(response).to redirect_to(img_index_path) }
             it { expect(flash[:notice]).to eq("Image successfully updated.") }
             it { expect(image.title).to eql title }
             it { expect(image.description).to eql description }
@@ -263,7 +263,7 @@ module Integral
         context 'when user has required privileges' do
           it { expect { image.reload }.to raise_error(ActiveRecord::RecordNotFound) }
           it { expect(flash[:notice]).to eq("Image successfully deleted.") }
-          it { expect(response).to redirect_to images_path }
+          it { expect(response).to redirect_to img_index_path }
         end
       end
     end
