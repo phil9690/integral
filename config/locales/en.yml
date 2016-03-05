@@ -77,6 +77,13 @@ en:
         title: 'Image listing'
         no_images_available: 'No images available. Try uploading some!'
         new_image: 'New image'
+      notification:
+        creation_success: 'Image successfully created.'
+        creation_failure: 'Image creation failed.'
+        edit_success: 'Image successfully updated.'
+        edit_failure: 'Failed to update Image.'
+        delete_success: 'Image successfully deleted.'
+        delete_failure: 'Failed to delete image.'
       edit:
         title: 'Editing image - %{name}'
     users:
@@ -86,6 +93,7 @@ en:
         edit_success: 'User successfully updated.'
         edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
+        delete_failure: 'Failed to delete user.'
       grid:
         columns:
           name: 'Name'
