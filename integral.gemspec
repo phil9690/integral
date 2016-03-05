@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-rails" # Debugger
   s.add_development_dependency "sqlite3" # Database
   s.add_development_dependency 'rspec-rails' # Testing framework
+  s.add_development_dependency 'database_cleaner' # Manages database for consistent data setup
   s.add_development_dependency 'shoulda-matchers' # Extra matchers for testing
   s.add_development_dependency 'factory_girl_rails' # Create reusable object templates
   s.add_development_dependency 'faker' # Random data generator
