@@ -1,0 +1,6 @@
+= simple_form_for @image, validate: true, remote: true, multipart: true, authenticity_token: true, url: img_index_path do |f|
+  = f.input :title
+  = f.input :description, as: :text, input_html: { class: 'materialize-textarea' }
+  = f.input :file, :wrapper_html => { :class => "file-field" }, label: false
+
+  = f.button :button, class: 'btn waves-effect waves-light', id: 'new_image_submit_btn'

@@ -1,0 +1,12 @@
+= card_class ||= ''
+
+.col.s12.m6.l4
+  .card.hoverable.dash-card
+    = link_to edit_img_path(image) do
+      .card-image
+        = image_tag image.file
+        %span.card-title= image.title
+    .card-action
+      = link_to 'Edit', edit_img_path(image)
+      = link_to 'Delete', img_path(image), method: :delete, data: { confirm: t('actions.confirm') }
+

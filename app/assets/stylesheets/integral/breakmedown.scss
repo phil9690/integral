@@ -260,55 +260,6 @@ nav {
   }
 }
 
-.image-containers {
-  @extend .row;
-  overflow: hidden;
-  padding: 0.3rem;
-  .image-container {
-    @extend .col, .s6, .m4, .l3;
-    padding: 0 0.5rem;
-    margin-bottom: 1rem;
-    transition: 2s;
-  }
-  .image {
-    @extend .col, .l12, .m12, .s12, .white, .z-depth-1;
-    border-radius: 4px;
-    padding: 0;
-    transition: 2s;
-    &:hover {
-      @extend .z-depth-2;
-    }
-    .title {
-      font-weight: 500;
-      font-size: 1.1rem;
-      padding: 0.5rem 1rem;
-    }
-  }
-  .thumbnail {
-    position: relative;
-    overflow: hidden;
-    height: 200px;
-    @extend .s12;
-  }
-  .actions {
-    padding: 1rem;
-    border-top: 1px solid rgba(160, 160, 160, 0.2);
-  }
-  a {
-    padding: 0.3rem 0.3rem 0.3rem 0;
-  }
-  img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    width: auto;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-  }
-}
-
 .images-selector {
   @extend .row;
 }

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 module Integral
-  RSpec.describe StaticPagesController, type: :controller do
+  describe StaticPagesController, type: :controller do
     routes { Integral::Engine.routes }
 
     let(:user) { create :user }

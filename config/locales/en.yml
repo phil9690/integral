@@ -72,6 +72,13 @@ en:
         title: 'Edit Post'
       new:
         title: 'New Post'
+    images:
+      index:
+        title: 'Image listing'
+        no_images_available: 'No images available. Try uploading some!'
+        new_image: 'New image'
+      edit:
+        title: 'Editing image - %{name}'
     users:
       notification:
         creation_success: 'User successfully created.'
