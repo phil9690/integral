@@ -41,7 +41,7 @@ FactoryGirl.define do
     name 'some_role'
   end
 
-  factory :image, class: 'Integral::Image' do
+  factory :image, class: Integral::Image do
     title
     description
     width 1

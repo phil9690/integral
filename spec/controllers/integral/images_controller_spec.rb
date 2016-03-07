@@ -278,7 +278,7 @@ module Integral
             delete :destroy, id: image.id
           end
 
-          it { expect { image.reload }.not_to raise_error(ActiveRecord::RecordNotFound) }
+          it { expect { image.reload }.not_to raise_error }
           it { expect(flash[:error]).to eq I18n.t('integral.images.notification.delete_failure') }
           it { expect(response).to redirect_to img_index_path }
         end
