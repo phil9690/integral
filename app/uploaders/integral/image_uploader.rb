@@ -11,6 +11,7 @@ module Integral
     def store_dir
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     end
+    # :nocov:
 
     # Provide a default URL as a default if there hasn't been a file uploaded:
     # def default_url
@@ -40,8 +41,8 @@ module Integral
 
     # Override the filename of the uploaded files:
     # Avoid using model.id or version_name here, see uploader/store.rb for details.
-    # def filename
-    #   "something.jpg" if original_filename
-    # end
+    def filename
+      model.title.parameterize if original_filename
+    end
   end
 end
