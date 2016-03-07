@@ -3,4 +3,4 @@
 .card-panel
   .center-align
     = image_tag @image.file, class: 'responsive-img image-preview'
-  = render 'form'
+  = render 'form', form_path: img_path(@image)

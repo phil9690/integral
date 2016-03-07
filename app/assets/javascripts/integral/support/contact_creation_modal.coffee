@@ -7,12 +7,12 @@ class this.ContactCreationModal
   constructor: ->
     @modal = $('#new_image_modal')
     @submitBtn = $('#new_image_submit_btn')
-    @imageHolder = $('.image-containers')
-    @imgContainerWidth = $($('.image-container')[0]).outerWidth() + 1
+    @imageHolder = $('#image-container')
+    @imgContainerWidth = @_findFirstImage().outerWidth() + 1
     @form = $('#new_image')
     @formOpts =
       beforeSubmit:   @_handleFormSubmission
-      success:        @_handleFormResponse
+      success:        @_handleFormSuccess
       error:          @_handleFormError
       clearForm:      true
       resetForm:      true
@@ -40,9 +40,9 @@ class this.ContactCreationModal
     @submitBtn.addClass('disabled')
     @submitBtn.text('Uploading..')
 
-  _handleFormResponse: (responseText, statusText, xhr, $form) =>
+  _handleFormSuccess: (responseText, statusText, xhr, $form) =>
     @imageHolder.prepend(responseText)
-    @newImage = $($('.image-container')[0])
+    @newImage = @_findFirstImage()
     @newImage.css("margin-left", -@imgContainerWidth)
     @newImage.removeClass("hide")
     @modal.closeModal( { complete: @handleModalClosure })
@@ -54,9 +54,9 @@ class this.ContactCreationModal
     Materialize.toast('An error occured when uploading the image', 4000, 'error')
 
   handleModalClosure: =>
-    if @newImage
-      @newImage.css("margin-left", "0")
-      @newImage = nil
+    @newImage.css("margin-left", "0") if @newImage
 
     @resetForm()
 
+  _findFirstImage: =>
+    $($('.integral-image')[0])

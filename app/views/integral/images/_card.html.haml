@@ -1,7 +1,7 @@
-= card_class ||= ''
+- card_class ||= ''
 
-.col.s12.m6.l4
-  .card.hoverable.dash-card
+.col.s12.m6.l4.integral-image{ class: card_class }
+  .integral-card
     = link_to edit_img_path(image) do
       .card-image
         = image_tag image.file

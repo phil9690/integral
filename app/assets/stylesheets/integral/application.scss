@@ -19,3 +19,15 @@
     }
   }
 }
+
+/*
+ * Standard Materialize Card with:
+ * - Hoverable effect
+ * - Readable white text against low colour backgrounds
+ */
+.integral-card {
+  @extend .card, .hoverable;
+  .card-title {
+    text-shadow: 0 0 2px #444;
+  }
+}

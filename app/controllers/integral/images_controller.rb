@@ -27,10 +27,10 @@ module Integral
       @image = Image.new(image_params)
 
       if @image.save
-        flash[:notice] = I18n.t('integral.images.notification.creation_success')
+        flash.now[:notice] = I18n.t('integral.images.notification.creation_success')
         render status: :created, partial: 'card', locals: { image: @image, card_class: 'hide' }
       else
-        flash[:error] = I18n.t('integral.images.notification.creation_failure')
+        flash.now[:error] = I18n.t('integral.images.notification.creation_failure')
         render status: :unprocessable_entity, nothing: true
       end
     end
@@ -45,10 +45,10 @@ module Integral
     # Updating an image
     def update
       if @image.update(image_params)
-        flash[:notice] = I18n.t('integral.images.notification.update_success')
+        flash[:notice] = I18n.t('integral.images.notification.edit_success')
         redirect_to img_index_path
       else
-        flash[:error] = I18n.t('integral.images.notification.update_failure')
+        flash[:error] = I18n.t('integral.images.notification.edit_failure')
         render 'edit'
       end
     end
