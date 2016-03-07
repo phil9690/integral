@@ -248,21 +248,38 @@ module Integral
       end
 
       context 'when logged in' do
-        before do
-          sign_in user
-          delete :destroy, id: image.id
-        end
-
         context 'when user does not have required privileges' do
           let(:user) { create :user }
+
+          before do
+            sign_in user
+            delete :destroy, id: image.id
+          end
 
           it { expect(response.status).to eq 302 }
           it { expect(flash[:alert]).to eq I18n.t('errors.unauthorized') }
         end
 
         context 'when user has required privileges' do
+          before do
+            sign_in user
+            delete :destroy, id: image.id
+          end
+
           it { expect { image.reload }.to raise_error(ActiveRecord::RecordNotFound) }
           it { expect(flash[:notice]).to eq("Image successfully deleted.") }
+          it { expect(response).to redirect_to img_index_path }
+        end
+
+        context 'when no problem occurs destroying' do
+          before do
+            allow_any_instance_of(Integral::Image).to receive(:destroy).and_return(false)
+            sign_in user
+            delete :destroy, id: image.id
+          end
+
+          it { expect { image.reload }.not_to raise_error(ActiveRecord::RecordNotFound) }
+          it { expect(flash[:error]).to eq I18n.t('integral.images.notification.delete_failure') }
           it { expect(response).to redirect_to img_index_path }
         end
       end
