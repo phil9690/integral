@@ -25,7 +25,21 @@ class CollectionSelectInput < SimpleForm::Inputs::CollectionSelectInput
 
     # Add materialize prompt option
     material_prompt = "<option value='' disabled selected>#{prompt}</option>"
-    material_select.children.first.add_previous_sibling(material_prompt)
+    if material_select.children.empty?
+      # TODO: Tidy up this HACK. Need to work out how to simply add in an option to an empty select
+      input_options[:include_blank] = true
+
+      select = @builder.collection_select(
+        attribute_name, collection, value_method, label_method,
+        input_options, merged_input_options
+      )
+
+      material_select = Nokogiri::HTML(select).css('select')
+      material_select.children.first.add_next_sibling(material_prompt)
+      material_select.children.first.remove
+    else
+      material_select.children.first.add_next_sibling(material_prompt)
+    end
 
     material_select
   end
