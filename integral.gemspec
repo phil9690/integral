@@ -27,6 +27,8 @@ Gem::Specification.new do |s|
   s.add_dependency "wice_grid" # Grids
   s.add_dependency "breadcrumbs_on_rails" # Breadcrumbs
   s.add_dependency "carrierwave" # File uploader
+  s.add_dependency "ckeditor" # WYSIWYG Editor
+  s.add_dependency "mini_magick" # File manipulation
 
   s.add_development_dependency "pry-rails" # Debugger
   s.add_development_dependency "sqlite3" # Database

@@ -18,6 +18,7 @@
 //= require rails.validations.simple_form
 //= require wice_grid
 //= require cocoon
+//= require ckeditor/init
 //= require integral/extensions
 //= require_tree .
 

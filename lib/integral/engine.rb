@@ -11,6 +11,7 @@ module Integral
     require 'materialize_builder'
     require 'pundit'
     require 'carrierwave'
+    require 'ckeditor'
 
     isolate_namespace Integral
 
@@ -25,7 +26,7 @@ module Integral
     end
 
     initializer "integral.assets.precompile" do |app|
-      app.config.assets.precompile += %w(integral/application.scss users.png user.png images.png)
+      app.config.assets.precompile += %w(integral/application.scss users.png user.png images.png ckeditor/*)
     end
   end
 end
