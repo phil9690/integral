@@ -8,8 +8,6 @@ module Integral
     let(:unacceptable_paths) { [ 'foo', '/foo bar', '/foo?y=123', '/foo$' ] }
 
     it 'has a valid factory' do
-      require 'pry'; binding.pry unless page.valid?
-
       expect(page.valid?).to be true
     end
 

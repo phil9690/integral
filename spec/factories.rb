@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:name) { |n| Faker::Name.name }
+  sequence(:name) { |n| Faker::Name.name[0..20] }
   sequence(:email) { |n| Faker::Internet.email }
   sequence(:title) { |n| Faker::Book.title }
   sequence(:body) { |n| Faker::Lorem.paragraph(2) }
@@ -16,8 +16,8 @@ FactoryGirl.define do
       role_ids { [ Integral::Role.find_by_name('SettingsManager').id ] }
     end
 
-    factory :pages_manager do
-      role_ids { [ Integral::Role.find_by_name('PagesManager').id ] }
+    factory :page_manager do
+      role_ids { [ Integral::Role.find_by_name('PageManager').id ] }
     end
 
     factory :user_manager do
@@ -51,7 +51,7 @@ FactoryGirl.define do
 
   factory :integral_page, class: 'Integral::Page' do
     title
-    path { "/#{Faker::Lorem.words(Faker::Number.digit.to_i).join('/')}" }
+    path { "/#{Faker::Lorem.words(2).join('/')}" }
     description
     body
   end

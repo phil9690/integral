@@ -12,4 +12,7 @@ Integral::Engine.routes.draw do
 
   # Image Management
   resources :images, as: :img
+
+  # Page Management
+  resources :pages
 end

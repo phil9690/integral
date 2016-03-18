@@ -1,6 +1,18 @@
 = content_for :title, t('.title')
 
 .row
+  - if policy(Integral::Page).manager?
+    .col.s12.m6.l4
+      .integral-card
+        = link_to pages_path do
+          .card-image.orange.lighten-4
+            = image_tag image_url('pages.png')
+            %span.card-title Pages
+        .card-content
+          %p Add, edit and remove pages.
+        .card-action
+          = link_to t('actions.view'), pages_path
+
   - if policy(current_user).manager?
     .col.s12.m6.l4
       .integral-card
@@ -11,7 +23,7 @@
         .card-content
           %p Add, edit and remove users.
         .card-action
-          = link_to 'View', users_path
+          = link_to t('actions.view'), users_path
 
   - if policy(Integral::Image).manager?
     .col.s12.m6.l4
@@ -23,7 +35,7 @@
         .card-content
           %p Add, edit and remove images.
         .card-action
-          = link_to 'View', img_index_path
+          = link_to t('actions.view'), img_index_path
 
   .col.s12.m6.l4
     .integral-card
@@ -34,5 +46,5 @@
       .card-content
         %p View + edit your profile.
       .card-action
-        = link_to 'View', user_path(current_user)
+        = link_to t('actions.view'), user_path(current_user)
 

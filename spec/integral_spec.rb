@@ -18,7 +18,7 @@ module Integral
       end
 
       context 'when setting is set' do
-        let(:black_listed_paths) { [ '/foo', '/bar' ] }
+        let(:black_listed_paths) { [ '/test1', '/test2' ] }
 
         before do
           Integral.configure do |config|
@@ -27,8 +27,9 @@ module Integral
         end
 
         it 'attempting to create a page under the black listed paths fails' do
-          expect(build(:integral_page, path: '/bar/').valid?).to be false
-          expect(build(:integral_page, path: '/foo/').valid?).to be false
+          expect(build(:integral_page, path: '/test1/').valid?).to be false
+          expect(build(:integral_page, path: '/test2/').valid?).to be false
+          expect(build(:integral_page, path: '/admin/').valid?).to be true
         end
       end
     end

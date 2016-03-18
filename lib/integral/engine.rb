@@ -26,7 +26,7 @@ module Integral
     end
 
     initializer "integral.assets.precompile" do |app|
-      app.config.assets.precompile += %w(integral/application.scss users.png user.png images.png ckeditor/*)
+      app.config.assets.precompile += %w(integral/application.scss users.png user.png images.png pages.png ckeditor/*)
     end
   end
 end
