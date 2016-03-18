@@ -48,5 +48,12 @@ FactoryGirl.define do
     height 2
     file { Rack::Test::UploadedFile.new(File.join(Rails.root, 'public', 'images', 'person.jpg')) }
   end
+
+  factory :integral_page, class: 'Integral::Page' do
+    title
+    path { "/#{Faker::Lorem.words(Faker::Number.digit.to_i).join('/')}" }
+    description
+    body
+  end
 end
 
