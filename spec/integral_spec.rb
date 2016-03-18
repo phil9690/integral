@@ -10,35 +10,27 @@ module Integral
       end
     end
 
-    # Keeping this spec file here as it will no doubt be used in the future when Integral is configurable
-    it 'exists' do
-      expect(true).to eq true
-    end
+    context 'black_listed_paths' do
+      context 'when setting is not set' do
+        it 'attempting to create a page under /admin fails' do
+          expect(build(:integral_page, path: '/admin/').valid?).to be false
+        end
+      end
 
-  #   context 'file_storage_type' do
-  #     context 'when setting is not set' do
-  #       let(:file_storage_type) { '' }
-  #
-  #       it 'ImageUploader.storage_type defaults to :file' do
-  #         expect(ImageUploader.storage_type).to eq :file
-  #       end
-  #     end
-  #
-  #     context 'when setting is :file' do
-  #       let(:file_storage_type) { :file }
-  #
-  #       it 'ImageUploader.storage_type returns :file' do
-  #         expect(ImageUploader.storage_type).to eq :file
-  #       end
-  #     end
-  #
-  #     context 'when setting is :fog' do
-  #       let(:file_storage_type) { :fog }
-  #
-  #       it 'ImageUploader.storage_type returns :fog' do
-  #         expect(ImageUploader.storage_type).to eq :fog
-  #       end
-  #     end
-  #   end
+      context 'when setting is set' do
+        let(:black_listed_paths) { [ '/foo', '/bar' ] }
+
+        before do
+          Integral.configure do |config|
+            config.black_listed_paths = black_listed_paths
+          end
+        end
+
+        it 'attempting to create a page under the black listed paths fails' do
+          expect(build(:integral_page, path: '/bar/').valid?).to be false
+          expect(build(:integral_page, path: '/foo/').valid?).to be false
+        end
+      end
+    end
   end
 end

@@ -15,5 +15,22 @@ module Integral
     validates :path, uniqueness: { case_sensitive: false }
     validates_format_of :path, :with => PATH_REGEX
     validates :description, length: { maximum: 200 }
+    validate :validate_path_is_not_black_listed
+
+    private
+
+    def validate_path_is_not_black_listed
+      valid = true
+
+      Integral.configuration.black_listed_paths.each do |black_listed_path|
+        if self.path&.starts_with?(black_listed_path)
+          valid = false
+          errors.add(:path, 'Invalid path')
+          break
+        end
+      end
+
+      return valid
+    end
   end
 end
