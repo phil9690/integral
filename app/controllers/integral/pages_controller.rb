@@ -4,8 +4,11 @@ module Integral
     before_filter :set_page, only: [:edit, :update, :destroy]
     before_filter :authorize_with_klass, only: [ :index, :new, :create, :edit, :update, :destroy ]
 
-    add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
-    add_breadcrumb I18n.t('integral.breadcrumbs.pages'), :pages_path
+    # TODO: Change these back to i18n when worked out why when overriding the controller it can't find i18ns
+    add_breadcrumb 'Dashboard', :root_path
+    add_breadcrumb 'Pages', :pages_path
+    # add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+    # add_breadcrumb I18n.t('integral.breadcrumbs.pages'), :pages_path
 
     # GET /
     # Lists all pages
