@@ -14,5 +14,5 @@ Integral::Engine.routes.draw do
   resources :images, as: :img
 
   # Page Management
-  resources :pages
+  resources :pages, except: [ :show ]
 end
