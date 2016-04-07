@@ -23,6 +23,12 @@ module Integral
     def has_role?(role_sym)
       roles.any? { |r| r.name.underscore.to_sym == role_sym }
     end
+
+    private
+
+    def send_devise_notification(notification, *args)
+      devise_mailer.send(notification, self, *args).deliver_later
+    end
   end
 end
 
