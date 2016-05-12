@@ -48,7 +48,7 @@ module Integral
     def update
       if @page.update(page_params)
         flash[:notice] = I18n.t('integral.pages.notification.edit_success')
-        redirect_to pages_path
+        redirect_to edit_page_path(@page)
       else
         flash[:error] = I18n.t('integral.pages.notification.edit_failure')
         render 'edit'
