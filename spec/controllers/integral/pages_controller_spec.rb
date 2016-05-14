@@ -48,7 +48,6 @@ module Integral
 
           it { expect(response.status).to eq 200 }
           it { expect(response).to render_template 'index' }
-          it { expect(assigns[:pages]).to eq pages_sorted }
         end
       end
     end
@@ -216,7 +215,7 @@ module Integral
           end
 
           context 'when valid parameters supplied' do
-            it { expect(response).to redirect_to(pages_path) }
+            it { expect(response).to redirect_to(edit_page_path(assigns[:page])) }
             it { expect(flash[:notice]).to eq I18n.t('integral.pages.notification.edit_success') }
             it { expect(page.title).to eql title }
             it { expect(page.description).to eql description }
