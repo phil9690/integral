@@ -7,6 +7,10 @@
     post.description.truncate(50)
   end
 
+  g.column name: t('.columns.author'), attribute: 'user_id', custom_filter: Integral::User.all.map { |p| [p.name, p.id] } do |post|
+    post.user.name
+  end
+
   g.column name: t('.columns.last_updated'), attribute: 'updated_at' do |post|
     l(post.updated_at)
   end

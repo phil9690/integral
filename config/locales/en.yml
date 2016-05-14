@@ -56,6 +56,7 @@ en:
           title: 'Title'
           description: 'Description'
           last_updated: 'Last updated'
+          author: 'Author'
       index:
         title: 'Posts'
         new_post: 'Create post'
