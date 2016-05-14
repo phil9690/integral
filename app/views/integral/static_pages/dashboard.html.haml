@@ -1,7 +1,7 @@
 = content_for :title, t('.title')
 
 .row
-  - if policy(Integral::Page).manager?
+  - if policy(Integral::Post).manager?
     = render partial: 'card', locals: { link_path: posts_path, image_path: 'posts.png', title: 'Posts', description: 'Add, edit and remove posts', image_classes: 'grey darken-2' }
   
   - if policy(Integral::Page).manager?
