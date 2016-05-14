@@ -23,11 +23,25 @@
                 = link_to root_path do
                   <span class="material-icons red-text text-lighten-1">home</span>Home
 
+              - if policy(Integral::Post).manager?
+                %li
+                  = link_to posts_path do
+                    <span class="material-icons orange-text text-lighten-3">rss_feed</span>Posts
+
+              - if policy(Integral::Page).manager?
+                %li
+                  = link_to pages_path do
+                    <span class="material-icons blue-text text-lighten-3">create</span>Pages
+
+              - if policy(Integral::Image).manager?
+                %li
+                  = link_to img_index_path do
+                    <span class="material-icons indigo-text text-lighten-3">image</span>Images
+
               - if policy(current_user).manager?
                 %li
                   = link_to users_path do
-                    <span class="material-icons red-text text-lighten-1">supervisor_account</span>Users
-
+                    <span class="material-icons orange-text text-lighten-1">supervisor_account</span>Users
 
             #admin-menu-footer
               %li
