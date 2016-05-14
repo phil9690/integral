@@ -1,0 +1,7 @@
+= content_for :title, t('.title')
+
+= icon_link_to 'add', new_post_path, class: 'waves-effect waves-light btn', text: t('.new_post')
+
+.card-panel
+  = render 'grid'
+

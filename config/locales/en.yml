@@ -37,6 +37,7 @@ en:
       settings: 'Settings'
       posts: 'Posts'
       pages: 'Pages'
+      posts: 'Posts'
       users: 'Users'
       images: 'Images'
       galleries: 'Galleries'
@@ -49,29 +50,26 @@ en:
         title: 'Dashboard'
       pages:
         title: 'Pages'
-    settings:
-      index:
-        title: 'Settings'
-        placeholder:
-          website_title: 'Super awesome website'
-          blog_title: 'Super awesome blog'
-          business_name: 'Integral Web Solutions'
-          business_slogan: 'Taking it to you..'
-          twitter_handler: 'barackobama'
-          facebook_handler: 'mark_zuckerberg'
-          google_plus_handler: 'eric_schmit'
-          linkedin_handler: 'williamhgates'
-          contact_email: 'contact@your_business_email.com'
-          page_description: 'Description of your page here. This is used for SEO.'
-          google_tracking_code: 'UA-11111111-1'
     posts:
+      grid:
+        columns:
+          title: 'Title'
+          description: 'Description'
+          last_updated: 'Last updated'
       index:
         title: 'Posts'
-        new_post: 'New post'
+        new_post: 'Create post'
       edit:
         title: 'Edit Post'
       new:
         title: 'New Post'
+      notification:
+        creation_success: 'Post successfully created.'
+        creation_failure: 'Post creation failed.'
+        edit_success: 'Post successfully updated.'
+        edit_failure: 'Failed to update post.'
+        delete_success: 'Post successfully deleted.'
+        delete_failure: 'Failed to delete post.'
     pages:
       index:
         title: 'Page listing'

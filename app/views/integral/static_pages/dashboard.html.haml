@@ -2,49 +2,16 @@
 
 .row
   - if policy(Integral::Page).manager?
-    .col.s12.m6.l4
-      .integral-card
-        = link_to pages_path do
-          .card-image.orange.lighten-4
-            = image_tag image_url('pages.png')
-            %span.card-title Pages
-        .card-content
-          %p Add, edit and remove pages.
-        .card-action
-          = link_to t('actions.view'), pages_path
+    = render partial: 'card', locals: { link_path: posts_path, image_path: 'posts.png', title: 'Posts', description: 'Add, edit and remove posts', image_classes: 'grey darken-2' }
+  
+  - if policy(Integral::Page).manager?
+    = render partial: 'card', locals: { link_path: pages_path, image_path: 'pages.png', title: 'Pages', description: 'Add, edit and remove pages', image_classes: 'orange lighten-4' }
 
   - if policy(current_user).manager?
-    .col.s12.m6.l4
-      .integral-card
-        = link_to users_path do
-          .card-image.blue.lighten-2
-            = image_tag image_url('users.png')
-            %span.card-title Users
-        .card-content
-          %p Add, edit and remove users.
-        .card-action
-          = link_to t('actions.view'), users_path
+    = render partial: 'card', locals: { link_path: users_path, image_path: 'users.png', title: 'Users', description: 'Add, edit and remove users', image_classes: 'blue lighten-2'}
 
   - if policy(Integral::Image).manager?
-    .col.s12.m6.l4
-      .integral-card
-        = link_to img_index_path do
-          .card-image.blue.lighten-2
-            = image_tag image_url('images.png')
-            %span.card-title Images
-        .card-content
-          %p Add, edit and remove images.
-        .card-action
-          = link_to t('actions.view'), img_index_path
+    = render partial: 'card', locals: { link_path: img_index_path, image_path: 'images.png', title: 'Images', description: 'Add, edit and remove images', image_classes: 'blue lighten-2' }
 
-  .col.s12.m6.l4
-    .integral-card
-      = link_to user_path(current_user) do
-        .card-image.teal.lighten-2
-          = image_tag image_url('user.png')
-          %span.card-title Account & Profile
-      .card-content
-        %p View + edit your profile.
-      .card-action
-        = link_to t('actions.view'), user_path(current_user)
+  = render partial: 'card', locals: { link_path: user_path(current_user), image_path: 'user.png', title: 'My Profile', description: 'View & edit your profile', image_classes: 'teal lighten-2' }
 

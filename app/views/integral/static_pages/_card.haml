@@ -1,0 +1,11 @@
+.col.s12.m6.l4
+  .integral-card
+    = link_to link_path do
+      .card-image{ class: image_classes }
+        = image_tag image_url(image_path)
+        %span.card-title= title
+    -# .card-content
+    -#   %p= description
+    -# .card-action
+    -#   = link_to t('actions.view'), pages_path
+

@@ -1,0 +1,10 @@
+.row
+  = simple_form_for @post, validate: true, html: { id: 'post_form' } do |f|
+    .col.s12
+      .card-panel
+        = f.input :title
+        = f.input :description, as: :text
+        = f.input :body, as: :ckeditor, label: false, input_html: { id: 'post_body_editor' }
+
+    = f.button :button
+
