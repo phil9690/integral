@@ -4,7 +4,7 @@ FactoryGirl.define do
   sequence(:title) { |n| Faker::Book.title }
   sequence(:body) { |n| Faker::Lorem.paragraph(2) }
   sequence(:phone_number) { |n| Faker::PhoneNumber.phone_number[0..19] }
-  sequence(:description) { |n| Faker::Lorem.paragraph(8)[0..150] }
+  sequence(:description) { |n| Faker::Lorem.paragraph(8)[50..150] }
 
   factory :user, class: Integral::User do
     name
@@ -54,6 +54,13 @@ FactoryGirl.define do
     path { "/#{Faker::Lorem.words(2).join('/')}" }
     description
     body
+  end
+
+  factory :integral_post, class: 'Integral::Post' do
+    title
+    description
+    body
+    user
   end
 end
 
