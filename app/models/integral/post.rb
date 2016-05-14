@@ -5,8 +5,8 @@ module Integral
     # friendly_id :title, use: :history
 
     # acts_as_commentable
-    #
-    # self.per_page = 5
+
+    self.per_page = 8
 
     # Associations
     belongs_to :user
