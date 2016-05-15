@@ -6,7 +6,7 @@
         = f.input :email
         = f.input :password
         = f.input :password_confirmation
-        -# = f.input :avatar, :wrapper_html => { :class => "file-field" }, label: false
+        = f.input :avatar, :wrapper_html => { :class => "file-field" }, label: false, input_html: { button_label: 'Profile Picture' }
 
         - if policy(current_user).manager?
           = f.association :roles, :as => :check_boxes, label: false, label_method: :label

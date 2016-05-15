@@ -8,8 +8,11 @@ class FileInput < SimpleForm::Inputs::Base
   def input(wrapper_options)
     merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
 
+    provided_button_label = merged_input_options[:button_label]
+    button_label = provided_button_label.present? ? provided_button_label : 'File'
+
     out = "<div class='btn'>"
-    out << "<span>File</span>"
+    out << "<span>#{button_label}</span>"
     out << @builder.file_field(attribute_name, merged_input_options)
     out << "</div>"
     out << "<div class='file-path-wrapper'>"
