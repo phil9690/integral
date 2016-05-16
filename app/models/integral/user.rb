@@ -1,7 +1,7 @@
 module Integral
   # User model used to represent a authenticated user
   class User < ActiveRecord::Base
-    # mount_uploader :avatar, AvatarUploader
+    mount_uploader :avatar, AvatarUploader
 
     # Included devise modules. Others available are:
     # :confirmable, :timeoutable, :omniauthable, registerable and lockable

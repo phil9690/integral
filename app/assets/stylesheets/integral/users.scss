@@ -5,3 +5,23 @@
     }
   }
 }
+
+.user-avatar {
+  width: 100%;
+  border: solid 2px #444 
+}
+
+.avatar-editor span {
+   position: relative;
+   left: 49px;
+   bottom: 28px;
+}
+
+.user-title {
+  margin-bottom: 0;
+}
+
+.user-info {
+  display: block;
+  margin-bottom: 5px;
+}

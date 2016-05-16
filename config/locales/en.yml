@@ -129,7 +129,7 @@ en:
         title: 'Editing profile - %{name}'
       show:
         title: "Viewing profile - %{name}"
-
+        member_since: "Member since: %{start_date}"
     messages:
       reply_subject: 'In reply to your message'
       index:
