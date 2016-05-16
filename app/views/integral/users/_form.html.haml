@@ -6,7 +6,7 @@
           .avatar-editor.col.s2.offset-s5.center
             = f.input :avatar, wrapper_html: { class: 'hide' }
             = f.label :avatar do
-              = image_tag @user.avatar, class: 'clickable hoverable'
+              = image_tag @user.avatar, class: 'clickable hoverable user-avatar'
               %span.material-icons.grey-text.text-darken-3 edit
 
         = f.input :name
