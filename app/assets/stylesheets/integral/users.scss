@@ -5,3 +5,16 @@
     }
   }
 }
+
+.avatar-editor {
+ img {
+   width: 100%;
+   border: solid 2px;
+ }
+
+ span {
+   position: relative;
+   left: 49px;
+   bottom: 28px;
+ }
+}

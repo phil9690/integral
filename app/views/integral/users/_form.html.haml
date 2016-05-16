@@ -2,11 +2,17 @@
   = simple_form_for @user, validate: true, html: { id: 'user_form' } do |f|
     .col.s12
       .card-panel
+        .row
+          .avatar-editor.col.s2.offset-s5.center
+            = f.input :avatar, wrapper_html: { class: 'hide' }
+            = f.label :avatar do
+              = image_tag @user.avatar, class: 'clickable hoverable'
+              %span.material-icons.grey-text.text-darken-3 edit
+
         = f.input :name
         = f.input :email
         = f.input :password
         = f.input :password_confirmation
-        = f.input :avatar, :wrapper_html => { :class => "file-field" }, label: false, input_html: { button_label: 'Profile Picture' }
 
         - if policy(current_user).manager?
           = f.association :roles, :as => :check_boxes, label: false, label_method: :label
