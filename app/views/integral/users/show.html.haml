@@ -2,8 +2,15 @@
 
 = icon_link_to 'edit', edit_user_path, class: 'waves-effect waves-light btn', text: t('actions.edit')
 .card-panel
-  %h3= @user.name
-
-  %p Some sort of user profile goes here.
+  .row
+    .col.s2
+      = image_tag @user.avatar, class: 'user-avatar'
+    %h3.user-title= @user.name
+    %span.user-info= @user.email
+    %span.user-info= t('.member_since', start_date: l(@user.created_at))
+    - @user.roles.each do | role |
+      .chip= role.label 
+  .row
+    <hr />
 
 
