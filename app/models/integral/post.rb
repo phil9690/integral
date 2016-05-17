@@ -4,6 +4,8 @@ module Integral
     extend FriendlyId
     friendly_id :title, use: :history
 
+    acts_as_taggable
+
     # acts_as_commentable
 
     self.per_page = 8
