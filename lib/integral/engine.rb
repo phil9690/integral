@@ -12,6 +12,7 @@ module Integral
     require 'pundit'
     require 'carrierwave'
     require 'ckeditor'
+    require 'acts-as-taggable-on'
 
     isolate_namespace Integral
 

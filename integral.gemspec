@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ckeditor" # WYSIWYG Editor
   s.add_dependency "mini_magick" # File manipulation
   s.add_dependency "friendly_id" # Slugging
+  s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
 
   s.add_development_dependency "pry-rails" # Debugger
   s.add_development_dependency "sqlite3" # Database
