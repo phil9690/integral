@@ -10,7 +10,8 @@ module Integral
 
     # acts_as_commentable
 
-    self.per_page = 8
+    # Conditional is hack to check if method exists otherwise causes undefined method error in test env
+    self.per_page = 8 if self.respond_to? :per_page
 
     # Associations
     belongs_to :user
