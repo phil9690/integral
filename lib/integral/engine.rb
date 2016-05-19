@@ -28,7 +28,24 @@ module Integral
     end
 
     initializer "integral.assets.precompile" do |app|
-      app.config.assets.precompile += %w(integral/application.scss posts.png users.png user.png images.png pages.png default_avatar.jpg ckeditor/my_config.js ckeditor/my_styles.js ckeditor/my_contents.css)
+      assets_for_precompile = [
+        "integral/application.scss",
+        # Dashboard tiles
+        "integral/tiles/posts.png",
+        "integral/tiles/users.png",
+        "integral/tiles/user.png",
+        "integral/tiles/images.png",
+        "integral/tiles/pages.png",
+        # Defaults
+        "integral/defaults/post_image.jpg",
+        "integral/defaults/user_avatar.jpg",
+        # CKEditor Overrides
+        "ckeditor/my_contents.css",
+        "ckeditor/my_styles.js",
+        "ckeditor/my_config.js",
+      ]
+
+      app.config.assets.precompile.concat assets_for_precompile
     end
   end
 end

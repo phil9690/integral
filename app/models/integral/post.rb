@@ -6,6 +6,8 @@ module Integral
 
     acts_as_taggable
 
+    mount_uploader :image, PostImageUploader
+
     # acts_as_commentable
 
     self.per_page = 8
