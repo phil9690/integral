@@ -5,6 +5,7 @@ FactoryGirl.define do
   sequence(:body) { |n| Faker::Lorem.paragraph(2) }
   sequence(:phone_number) { |n| Faker::PhoneNumber.phone_number[0..19] }
   sequence(:description) { |n| Faker::Lorem.paragraph(8)[50..150] }
+  sequence(:tag_list) { |n| Faker::Hipster.words(Faker::Number.between(1, 5), true, true) }
 
   factory :user, class: Integral::User do
     name
@@ -46,7 +47,7 @@ FactoryGirl.define do
     description
     width 1
     height 2
-    file { Rack::Test::UploadedFile.new(File.join(Rails.root, 'public', 'images', 'person.jpg')) }
+    file { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
   end
 
   factory :integral_page, class: 'Integral::Page' do
@@ -59,8 +60,10 @@ FactoryGirl.define do
   factory :integral_post, class: 'Integral::Post' do
     title
     description
-    body
+    tag_list
     user
+    image { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
+    body
   end
 end
 
