@@ -5,7 +5,7 @@
         = f.input :title
         = f.input :description, as: :text
         = f.input :tag_list, input_html: { value: @post.tag_list.join(','), data: { role: "materialtags" } }
-        = f.input :image
+        = f.input :image, :wrapper_html => { :class => "file-field" }, label: false, input_html: { button_label: 'Image' }
         = f.input :body, as: :ckeditor, label: false, input_html: { id: 'post_body_editor' }
 
     = f.button :button

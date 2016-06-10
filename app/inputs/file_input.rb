@@ -1,4 +1,4 @@
-# FileInput creates a switch to toggle a true or false input
+# FileInput creates materialize file input
 class FileInput < SimpleForm::Inputs::Base
 
   # Generates the HTML output for the input
