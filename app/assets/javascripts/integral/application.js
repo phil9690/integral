@@ -34,6 +34,8 @@ $(document).on('ready page:load', function () {
   $('.collapsible').collapsible({
     accordion : false
   });
+
+  $("input[data-role=materialtags]").materialtags();
 });
 
 $(document).on('page:load', function () {

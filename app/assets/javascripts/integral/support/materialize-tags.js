@@ -746,13 +746,4 @@
 
         return found;
     }
-
-    /**
-     * Initialize materialtags behaviour on inputs which have
-     * data-role=materialtags
-     */
-    $(function ()
-    {
-        $("input[data-role=materialtags]").materialtags();
-    });
 })(window.jQuery);
