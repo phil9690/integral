@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519053329) do
+ActiveRecord::Schema.define(version: 20160610021858) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -66,10 +66,11 @@ ActiveRecord::Schema.define(version: 20160519053329) do
     t.string   "description"
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "slug"
     t.string   "image"
+    t.integer  "view_count",  default: 0
   end
 
   add_index "integral_posts", ["slug"], name: "index_integral_posts_on_slug", unique: true

@@ -11,6 +11,10 @@
     post.user.name
   end
 
+  g.column name: t('.columns.views'), attribute: 'view_count', filter_type: :range do |post|
+    post.view_count
+  end
+
   g.column name: t('.columns.last_updated'), attribute: 'updated_at' do |post|
     l(post.updated_at)
   end

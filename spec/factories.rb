@@ -6,6 +6,7 @@ FactoryGirl.define do
   sequence(:phone_number) { |n| Faker::PhoneNumber.phone_number[0..19] }
   sequence(:description) { |n| Faker::Lorem.paragraph(8)[50..150] }
   sequence(:tag_list) { |n| Faker::Hipster.words(Faker::Number.between(1, 5), true, true) }
+  sequence(:view_count) { rand(1000) }
 
   factory :user, class: Integral::User do
     name
@@ -64,6 +65,7 @@ FactoryGirl.define do
     user
     image { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
     body
+    view_count
   end
 end
 
