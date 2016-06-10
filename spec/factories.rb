@@ -66,6 +66,7 @@ FactoryGirl.define do
     image { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
     body
     view_count
+    created_at { Faker::Date.backward(30) }
   end
 end
 
