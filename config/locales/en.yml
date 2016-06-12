@@ -58,6 +58,7 @@ en:
           last_updated: 'Last updated'
           author: 'Author'
           views: 'Views'
+          status: 'Status'
       index:
         title: 'Posts'
         new_post: 'Create post'

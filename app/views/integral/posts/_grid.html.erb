@@ -3,16 +3,17 @@
     post.title.truncate(30)
   end
 
-  g.column name: t('.columns.description'), attribute: 'description' do |post|
-    post.description.truncate(50)
-  end
-
   g.column name: t('.columns.author'), attribute: 'user_id', custom_filter: Integral::User.all.map { |p| [p.name, p.id] } do |post|
-    post.user.name
+    "<div class='chip'><img src='#{post.user.avatar.url}' alt='#{post.user.name}'>#{post.user.name}</div>".html_safe
   end
 
   g.column name: t('.columns.views'), attribute: 'view_count', filter_type: :range do |post|
     post.view_count
+  end
+
+  g.column name: t('.columns.status'), attribute: 'status', custom_filter: Integral::Post.available_statuses do |post|
+    status_colour = post.draft? ? 'orange' : 'green'
+    "<span class='status white-text #{status_colour} lighten-1'>#{post.status}</span>".html_safe
   end
 
   g.column name: t('.columns.last_updated'), attribute: 'updated_at' do |post|
@@ -27,6 +28,6 @@
 
   g.blank_slate  do
     "<div><br />No posts have been created. Try creating one!</div>"
-  end 
+  end
 end -%>
 
