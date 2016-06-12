@@ -67,6 +67,7 @@ FactoryGirl.define do
     body
     view_count
     created_at { Faker::Date.backward(30) }
+    status { rand(0..1) }
   end
 end
 
