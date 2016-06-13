@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610061724) do
+ActiveRecord::Schema.define(version: 20160613035508) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20160610061724) do
     t.string   "slug"
     t.string   "image"
     t.integer  "view_count",   default: 0
-    t.date     "published_at"
+    t.datetime "published_at"
     t.integer  "status",       default: 0
   end
 
