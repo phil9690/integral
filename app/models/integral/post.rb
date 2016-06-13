@@ -21,6 +21,9 @@ module Integral
     validates :description, presence: true, length: { minimum: 50, maximum: 200 }
     validates :body, :user, presence: true
 
+    # Callbacks
+    before_save :set_published_at
+
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses
       [
@@ -33,6 +36,10 @@ module Integral
 
     def should_generate_new_friendly_id?
       title_changed?
+    end
+
+    def set_published_at
+      self.published_at = Time.now if self.published? && self.published_at.nil?
     end
   end
 end

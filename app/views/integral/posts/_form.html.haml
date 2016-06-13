@@ -7,6 +7,8 @@
         = f.input :tag_list, input_html: { value: @post.tag_list.join(','), data: { role: "materialtags" } }
         = f.input :image, :wrapper_html => { :class => "file-field" }, label: false, input_html: { button_label: 'Image' }
         = f.input :body, as: :ckeditor, label: false, input_html: { id: 'post_body_editor' }
+        .radios
+          = f.collection_radio_buttons :status, [['draft', 'DRAFT'], ['published', 'PUBLISHED']], :first, :last
 
     = f.button :button
 
