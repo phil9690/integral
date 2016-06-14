@@ -19,7 +19,7 @@ module Integral
     # Validations
     validates :title, presence: true, length: { minimum: 4, maximum: 70 }
     validates :description, presence: true, length: { minimum: 50, maximum: 200 }
-    validates :body, :user, presence: true
+    validates :body, :user, :slug, presence: true
 
     # Callbacks
     before_save :set_published_at
@@ -34,8 +34,8 @@ module Integral
 
     private
 
-    def should_generate_new_friendly_id?
-      title_changed?
+    def set_slug
+      self.slug = resolve_friendly_id_conflict([self.slug]) if Post.exists_by_friendly_id?(self.slug)
     end
 
     def set_published_at

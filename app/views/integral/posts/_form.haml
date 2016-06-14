@@ -3,6 +3,7 @@
     .col.s12
       .card-panel
         = f.input :title
+        = f.input :slug
         = f.input :description, as: :text
         = f.input :tag_list, input_html: { value: @post.tag_list.join(','), data: { role: "materialtags" } }
         = f.input :image, :wrapper_html => { :class => "file-field" }, label: false, input_html: { button_label: 'Image' }

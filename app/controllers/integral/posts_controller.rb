@@ -70,7 +70,7 @@ module Integral
     end
 
     def post_params
-      params.require(:post).permit(:title, :body, :description, :tag_list, :image, :status)
+      params.require(:post).permit(:title, :slug, :body, :description, :tag_list, :image, :status)
     end
   end
 end
