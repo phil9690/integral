@@ -66,3 +66,31 @@
     .materialize-tags .tt-dropdown-menu .tt-cursor {
       background: deepskyblue;
       color: #ffffff; }
+
+  .tt-menu {
+    min-width:200px;
+    max-width:100%;
+    padding:10px 0;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    background:#fff;
+    -webkit-box-shadow:0 2px 5px rgba(0,0,0,.35);
+    -moz-box-shadow:0 2px 5px rgba(0,0,0,.35);
+    box-shadow:0 2px 5px rgba(0,0,0,.35);
+  }
+  .materialize-tags .tt-menu .tt-suggestion {
+    line-height:1.1rem !important;
+    padding:1em 10px !important;
+
+    &:hover {
+      background:#03a9f4;
+      color:#fff;
+      cursor: pointer;
+    }
+  }
+
+  .materialize-tags .tt-menu .tt-cursor {
+    background:#03a9f4;color:#fff;
+  }
+

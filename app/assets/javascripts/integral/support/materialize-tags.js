@@ -174,7 +174,7 @@
                 // Invoke onTagExists
                 if (self.options.onTagExists)
                 {
-                    var $existingTag = $(".tag", self.$container).filter(function () { return $(this).data("item") === existing; });
+                    var $existingTag = $(".chip", self.$container).filter(function () { return $(this).data("item") === existing; });
                     self.options.onTagExists(item, $existingTag);
                 }
                 return;
@@ -503,6 +503,7 @@
                 {
                     self.add(maxLengthReached ? text.substr(0, self.options.maxChars) : text);
                     $input.val('');
+                    (self.$input.typeahead) && self.$input.typeahead("val","");
                     event.preventDefault();
                 }
 
