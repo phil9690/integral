@@ -2,9 +2,7 @@ module Integral
   # Post management
   class PostsController < ApplicationController
     before_filter :set_post, only: [:edit, :update, :destroy, :show]
-
-    add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
-    add_breadcrumb I18n.t('integral.breadcrumbs.posts'), :posts_path
+    before_filter :set_breadcrumbs
 
     # GET /
     # Lists all posts
@@ -71,6 +69,11 @@ module Integral
 
     def post_params
       params.require(:post).permit(:title, :slug, :body, :description, :tag_list, :image, :status)
+    end
+
+    def set_breadcrumbs
+      add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.posts'), :posts_path
     end
   end
 end
