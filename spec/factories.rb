@@ -63,6 +63,7 @@ FactoryGirl.define do
     description
     tag_list
     user
+    slug { Faker::Internet.slug(nil, '-') }
     image { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
     body
     view_count
