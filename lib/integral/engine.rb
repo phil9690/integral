@@ -22,6 +22,13 @@ module Integral
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
+    # Engine customization
+    config.to_prepare do
+      Dir.glob(Rails.root + "app/extensions/**/*_decorator*.rb").each do |c|
+        require_dependency(c)
+      end
+    end
+
     # Allows engine factories to be reused by application
     initializer "model_core.factories", :after => "factory_girl.set_factory_paths" do
       FactoryGirl.definition_file_paths << File.expand_path('../../../spec/factories', __FILE__) if defined?(FactoryGirl)
