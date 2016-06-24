@@ -35,7 +35,7 @@ module Integral
     private
 
     def set_slug
-      self.slug = resolve_friendly_id_conflict([self.slug]) if Post.exists_by_friendly_id?(self.slug)
+      self.slug = resolve_friendly_id_conflict([self.slug]) if slug_changed? && Post.exists_by_friendly_id?(self.slug)
     end
 
     def set_published_at
