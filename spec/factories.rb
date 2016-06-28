@@ -71,5 +71,10 @@ FactoryGirl.define do
     published_at { Faker::Time.backward(30) }
     status { rand(0..1) }
   end
+
+  factory :integral_post_viewing, class: 'Integral::PostViewing' do
+    post { create(:integral_post) }
+    ip_address { Faker::Internet.ip_v4_address }
+  end
 end
 

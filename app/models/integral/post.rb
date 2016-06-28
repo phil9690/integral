@@ -32,6 +32,13 @@ module Integral
       ]
     end
 
+    # Increments the view count of the post if a PostViewing is successfully added
+    #
+    # @param ip_address [String] Viewers IP address
+    def increment_count(ip_address)
+      increment!(:view_count) if PostViewing.add(self, ip_address)
+    end
+
     private
 
     def set_slug
