@@ -42,8 +42,8 @@ module Integral
 
         context 'when user has the require roles' do
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path)
 
             get :index
           end
@@ -145,8 +145,8 @@ module Integral
 
         context 'when user has required roles' do
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path)
             expect(controller).to receive(:add_breadcrumb).with(presented_user.name, :user_path)
 
             get :show, id: presented_user.id
@@ -183,8 +183,8 @@ module Integral
 
         context 'when user has required roles' do
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path)
             expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.new'), :new_user_path)
 
             get :new
@@ -221,8 +221,8 @@ module Integral
 
         context 'when the user has the required roles' do
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.users'), :users_path)
             expect(controller).to receive(:add_breadcrumb).with(user.name, :user_path)
             expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.edit'), :edit_user_path)
 
