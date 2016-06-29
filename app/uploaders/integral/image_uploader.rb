@@ -41,7 +41,7 @@ module Integral
 
     # Override the filename of the uploaded files
     def filename
-      model.title.parameterize if original_filename
+      "#{model.title.parameterize}.#{file.extension}" if original_filename
     end
   end
 end
