@@ -3,7 +3,11 @@ module Integral
   class ImageUploader < CarrierWave::Uploader::Base
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick
-    # include CarrierWave::MiniMagick
+    include CarrierWave::MiniMagick
+
+    # Compress images without any loss of quality (removes meta data)
+    include CarrierWave::ImageOptimizer
+    process :optimize
 
     # Override the directory where uploaded files will be stored.
     def store_dir

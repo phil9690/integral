@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency "wice_grid", "~> 3.5.0" # Grids
   s.add_dependency "breadcrumbs_on_rails" # Breadcrumbs
   s.add_dependency "carrierwave" # File uploader
+  s.add_dependency "carrierwave-imageoptimizer" # Image compression
   s.add_dependency "ckeditor" # WYSIWYG Editor
   s.add_dependency "mini_magick" # File manipulation
 

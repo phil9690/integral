@@ -7,6 +7,10 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
 
+  # Compress images without any loss of quality (removes meta data)
+  include CarrierWave::ImageOptimizer
+  process :optimize
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

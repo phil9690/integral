@@ -11,6 +11,7 @@ module Integral
     require 'materialize_builder'
     require 'pundit'
     require 'carrierwave'
+    require 'carrierwave-imageoptimizer'
     require 'ckeditor'
 
     isolate_namespace Integral
