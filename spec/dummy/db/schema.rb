@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318004136) do
+ActiveRecord::Schema.define(version: 20160628050006) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20160318004136) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "integral_images", force: :cascade do |t|
     t.string   "title"
@@ -47,6 +60,32 @@ ActiveRecord::Schema.define(version: 20160318004136) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "integral_post_viewings", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "ip_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "integral_post_viewings", ["post_id"], name: "index_integral_post_viewings_on_post_id"
+
+  create_table "integral_posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "slug"
+    t.string   "image"
+    t.integer  "view_count",   default: 0
+    t.datetime "published_at"
+    t.integer  "status",       default: 0
+  end
+
+  add_index "integral_posts", ["slug"], name: "index_integral_posts_on_slug", unique: true
+  add_index "integral_posts", ["user_id"], name: "index_integral_posts_on_user_id"
 
   create_table "integral_role_assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -81,5 +120,25 @@ ActiveRecord::Schema.define(version: 20160318004136) do
 
   add_index "integral_users", ["email"], name: "index_integral_users_on_email", unique: true
   add_index "integral_users", ["reset_password_token"], name: "index_integral_users_on_reset_password_token", unique: true
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
 end

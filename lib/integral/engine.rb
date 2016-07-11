@@ -13,6 +13,8 @@ module Integral
     require 'carrierwave'
     require 'carrierwave-imageoptimizer'
     require 'ckeditor'
+    require 'friendly_id'
+    require 'acts-as-taggable-on'
 
     isolate_namespace Integral
 
@@ -21,13 +23,33 @@ module Integral
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
+    # Engine customization
+    config.to_prepare do
+      Dir.glob(Rails.root + "app/extensions/**/*_decorator*.rb").each do |c|
+        require_dependency(c)
+      end
+    end
+
     # Allows engine factories to be reused by application
     initializer "model_core.factories", :after => "factory_girl.set_factory_paths" do
       FactoryGirl.definition_file_paths << File.expand_path('../../../spec/factories', __FILE__) if defined?(FactoryGirl)
     end
 
     initializer "integral.assets.precompile" do |app|
-      app.config.assets.precompile += %w(integral/application.scss users.png user.png images.png pages.png default_avatar.jpg ckeditor/my_config.js ckeditor/my_styles.js ckeditor/my_contents.css ckeditor/filebrowser/*)
+      assets_for_precompile = [
+        "integral/application.scss",
+        # Dashboard tiles
+        "integral/tiles/*",
+        # Defaults
+        "integral/defaults/*",
+        # CKEditor Overrides
+        "ckeditor/my_contents.css",
+        "ckeditor/my_styles.js",
+        "ckeditor/my_config.js",
+        "ckeditor/filebrowser/*"
+      ]
+
+      app.config.assets.precompile.concat assets_for_precompile
     end
   end
 end

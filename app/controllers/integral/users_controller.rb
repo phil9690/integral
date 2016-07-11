@@ -8,8 +8,7 @@ module Integral
     before_filter :authorize_with_instance, only: [ :show, :edit, :update ]
     before_filter :authorize_with_klass, only: [ :index, :new, :create, :destroy ]
 
-    add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
-    add_breadcrumb I18n.t('integral.breadcrumbs.users'), :users_path
+    before_filter :set_breadcrumbs
 
     # GET /
     # Lists all users
@@ -98,6 +97,11 @@ module Integral
 
     def authorize_with_instance
       authorize @user
+    end
+
+    def set_breadcrumbs
+      add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.users'), :users_path
     end
   end
 end

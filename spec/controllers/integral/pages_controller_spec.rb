@@ -40,8 +40,8 @@ module Integral
           let(:pages_sorted) { Page.all.order('created_at DESC') }
 
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.pages'), :pages_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.pages'), :pages_path)
 
             get :index
           end
@@ -130,8 +130,8 @@ module Integral
         context 'when user has required privileges' do
           before do
             allow(Integral::Page).to receive(:new).and_return :foo
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.pages'), :pages_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.pages'), :pages_path)
             expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.new'), :new_page_path)
 
             get :new
@@ -171,8 +171,8 @@ module Integral
 
         context 'when user has required privileges' do
           before do
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path, {})
-            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.pages'), :pages_path, {})
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.dashboard'), :root_path)
+            expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.pages'), :pages_path)
             expect(controller).to receive(:add_breadcrumb).with(I18n.t('integral.breadcrumbs.edit'), :edit_page_path)
             get :edit, id: page.id
           end

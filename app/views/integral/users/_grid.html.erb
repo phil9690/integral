@@ -1,8 +1,11 @@
 <%= grid(@users_grid) do |g|
-  g.column name: t('.columns.name'), attribute: 'name'
+  g.column name: t('.columns.name'), attribute: 'name' do |user|
+    "<div class='chip'><img src='#{user.avatar.url}' alt='#{user.name}'>#{user.name}</div>".html_safe
+  end
+
   g.column name: t('.columns.email'), attribute: 'email'
   g.column name: t('.columns.last_signed_in'), attribute: 'last_sign_in_at' do |user|
-    l(user.updated_at)
+    l(user.last_sign_in_at) if user.last_sign_in_at.present?
   end
 
   g.column   do |user|

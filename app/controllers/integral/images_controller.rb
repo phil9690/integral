@@ -3,9 +3,7 @@ module Integral
   class ImagesController < ApplicationController
     before_filter :set_image, only: [:edit, :update, :destroy, :show]
     before_filter :authorize_with_klass, only: [ :index, :new, :create, :edit, :update, :destroy ]
-
-    add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
-    add_breadcrumb I18n.t('integral.breadcrumbs.images'), :img_index_path
+    before_filter :set_breadcrumbs
 
     # GET /
     # Lists all images
@@ -76,6 +74,11 @@ module Integral
 
     def image_params
       params.require(:image).permit(:title, :description, :file)
+    end
+
+    def set_breadcrumbs
+      add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.images'), :img_index_path
     end
   end
 end

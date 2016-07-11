@@ -34,6 +34,38 @@ $(document).on('ready page:load', function () {
   $('.collapsible').collapsible({
     accordion : false
   });
+
+  var filterSuggestions = function(suggestableInput, suggestions) {
+    existingItems = suggestableInput.val().split(',')
+
+    return suggestions.filter( function( el ) {
+      return existingItems.indexOf( el ) < 0;
+    });
+  };
+
+
+  $("input[data-role=materialtags]").each(function( index ) {
+    suggestableInput = $(this)
+    typeaheadSuggestions = suggestableInput.data('typeahead').split(' ')
+
+    // Initialize suggest engine
+    suggestEngine = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      local: typeaheadSuggestions
+    });
+
+    // Initialize materialtags
+    suggestableInput.materialtags({
+      typeaheadjs: {
+        source: function(query, cb) {
+          suggestEngine.search(query, function(suggestions) {
+            cb(filterSuggestions(suggestableInput, suggestions));
+          });
+        }
+      }
+    });
+  });
 });
 
 $(document).on('page:load', function () {

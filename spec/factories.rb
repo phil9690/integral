@@ -4,7 +4,9 @@ FactoryGirl.define do
   sequence(:title) { |n| Faker::Book.title }
   sequence(:body) { |n| Faker::Lorem.paragraph(2) }
   sequence(:phone_number) { |n| Faker::PhoneNumber.phone_number[0..19] }
-  sequence(:description) { |n| Faker::Lorem.paragraph(8)[0..150] }
+  sequence(:description) { |n| Faker::Lorem.paragraph(8)[50..150] }
+  sequence(:tag_list) { |n| Faker::Hipster.words(Faker::Number.between(1, 5), true, true) }
+  sequence(:view_count) { rand(1000) }
 
   factory :user, class: Integral::User do
     name
@@ -46,7 +48,7 @@ FactoryGirl.define do
     description
     width 1
     height 2
-    file { Rack::Test::UploadedFile.new(File.join(Rails.root, 'public', 'images', 'person.jpg')) }
+    file { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
   end
 
   factory :integral_page, class: 'Integral::Page' do
@@ -54,6 +56,25 @@ FactoryGirl.define do
     path { "/#{Faker::Lorem.words(2).join('/')}" }
     description
     body
+  end
+
+  factory :integral_post, class: 'Integral::Post' do
+    title
+    description
+    tag_list
+    user
+    slug { Faker::Internet.slug(nil, '-') }
+    image { Rack::Test::UploadedFile.new(File.join(Integral::Engine.root, 'spec', 'support', 'image.jpg')) }
+    body
+    view_count
+    created_at { Faker::Time.backward(30) }
+    published_at { Faker::Time.backward(30) }
+    status { rand(0..1) }
+  end
+
+  factory :integral_post_viewing, class: 'Integral::PostViewing' do
+    post { create(:integral_post) }
+    ip_address { Faker::Internet.ip_v4_address }
   end
 end
 
