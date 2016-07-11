@@ -7,23 +7,13 @@ $(document).on "ready page:load", ->
     postTitle.change ->
       if not customSlug
         title = postTitle.val()
-        titleParameterized = title.toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '')
-
-        postSlug.val(titleParameterized)
+        postSlug.val(toSlug(title))
         Materialize.updateTextFields()
 
     postSlug.change ->
       customSlug = true
       slug = postSlug.val()
-      slugParameterized = slug.toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '')
-
-      postSlug.val(slugParameterized)
+      postSlug.val(toSlug(slug))
 
   $(".posts.edit").ready ->
     postTitle = $('#post_title')
@@ -31,10 +21,12 @@ $(document).on "ready page:load", ->
 
     postSlug.change ->
       slug = postSlug.val()
-      slugParameterized = slug.toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '')
+      postSlug.val(toSlug(slug))
 
-      postSlug.val(slugParameterized)
-
+window.toSlug = (text) ->
+  text.toString().toLowerCase()
+  .replace(/\s+/g, '-')                 # Replace spaces with -
+  .replace(/[^\u0100-\uFFFF\w\-]/g,'-') # Remove all non-word chars ( fix for UTF-8 chars )
+  .replace(/\-\-+/g, '-')               # Replace multiple - with single -
+  .replace(/^-+/, '')                   # Trim - from start of text
+  .replace(/-+$/, '')
