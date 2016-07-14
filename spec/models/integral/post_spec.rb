@@ -21,7 +21,7 @@ module Integral
       it { is_expected.to validate_presence_of :user }
       it { is_expected.to validate_presence_of :description }
       it { is_expected.to validate_length_of(:description).is_at_least(50) }
-      it { is_expected.to validate_length_of(:description).is_at_most(200) }
+      it { is_expected.to validate_length_of(:description).is_at_most(160) }
     end
 
     describe '#increment_count' do

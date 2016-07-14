@@ -16,7 +16,7 @@ module Integral
       it { is_expected.to validate_presence_of :title }
       it { is_expected.to validate_length_of(:title).is_at_least(5) }
       it { is_expected.to validate_length_of(:title).is_at_most(70) }
-      it { is_expected.to validate_length_of(:description).is_at_most(200) }
+      it { is_expected.to validate_length_of(:description).is_at_most(160) }
     end
 
     describe '#size' do
