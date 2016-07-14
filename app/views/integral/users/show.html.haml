@@ -4,7 +4,7 @@
 .card-panel
   .row
     .col.s2
-      = image_tag @user.avatar, class: 'user-avatar'
+      = image_tag @user.avatar, class: 'width-100'
     %h3.user-title= @user.name
     %span.user-info= @user.email
     %span.user-info= t('.member_since', start_date: l(@user.created_at))

@@ -9,6 +9,7 @@ en:
     yesterday: 'Yesterday'
     formats:
       default: "%A, %d %B %Y"
+      long: "%H:%M %d/%m/%Y"
 
   actions:
     confirm: 'Are you sure?'
@@ -62,6 +63,8 @@ en:
       index:
         title: 'Posts'
         new_post: 'Create post'
+        published_count: "%{count} published"
+        drafts_count: "%{count} drafted"
       edit:
         title: 'Edit Post'
       new:

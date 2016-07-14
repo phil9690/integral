@@ -14,7 +14,7 @@ module Integral
     validates :path, presence: true, length: { maximum: 100 }
     validates :path, uniqueness: { case_sensitive: false }
     validates_format_of :path, :with => PATH_REGEX
-    validates :description, length: { maximum: 200 }
+    validates :description, length: { maximum: 160 }
     validate :validate_path_is_not_black_listed
 
     private
