@@ -162,6 +162,14 @@
                 }
             }
 
+            // Strip special characters
+            item = item.replace(/([~!@#$£%^&*()_+=`{}\[\]\|\\:;'<>,.\/? ])+/g, '-').replace(/^(-)+|(-)+$/g,'').replace(/['"]+/g, '').toLowerCase();
+            // Ignore strings only contain whitespace
+            if (item.toString().match(/^\s*$/))
+            {
+                return;
+            }
+
             var itemValue = self.options.itemValue(item),
                 itemText  = self.options.itemText(item),
                 tagClass  = self.options.tagClass(item),
