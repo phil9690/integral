@@ -9,7 +9,7 @@ en:
     yesterday: 'Yesterday'
     formats:
       default: "%A, %d %B %Y"
-      long: "%d:%M %d/%m/%Y"
+      long: "%H:%M %d/%m/%Y"
 
   actions:
     confirm: 'Are you sure?'

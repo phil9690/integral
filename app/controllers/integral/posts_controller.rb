@@ -7,7 +7,12 @@ module Integral
     # GET /
     # Lists all posts
     def index
-      @posts_grid = initialize_grid(Post)
+      grid_options = {
+        order: 'integral_posts.updated_at',
+        order_direction: 'desc'
+      }
+
+      @posts_grid = initialize_grid(Post, grid_options)
 
       @published_posts_count = Integral::Post.published.count
       @draft_posts_count = Integral::Post.draft.count
