@@ -1,6 +1,9 @@
 = content_for :title, t('.title')
 
-= icon_link_to 'add', new_post_path, class: 'waves-effect waves-light btn', text: t('.new_post')
+= icon_link_to 'add', new_post_path, class: 'waves-effect waves-light btn mr-1em', text: t('.new_post')
+
+%span.status.white-text.green.lighten-1= t('.published_count', count: @published_posts_count)
+%span.status.white-text.orange.lighten-1= t('.drafts_count', count: @draft_posts_count)
 
 .card-panel
   = render 'grid'

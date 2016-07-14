@@ -8,6 +8,9 @@ module Integral
     # Lists all posts
     def index
       @posts_grid = initialize_grid(Post)
+
+      @published_posts_count = Integral::Post.published.count
+      @draft_posts_count = Integral::Post.draft.count
     end
 
     # GET /new

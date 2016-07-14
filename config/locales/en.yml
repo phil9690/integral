@@ -63,6 +63,8 @@ en:
       index:
         title: 'Posts'
         new_post: 'Create post'
+        published_count: "%{count} published"
+        drafts_count: "%{count} drafted"
       edit:
         title: 'Edit Post'
       new:
