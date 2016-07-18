@@ -86,9 +86,9 @@ module Integral
     end
 
     def user_params
-      return params.require(:user).permit(:name, :email, :avatar, role_ids: [] ) unless params[:user][:password].present?
+      return params.require(:user).permit(:name, :email, :avatar, :locale, role_ids: [] ) unless params[:user][:password].present?
 
-      params.require(:user).permit(:name, :email, :avatar, :password, :password_confirmation, role_ids: [])
+      params.require(:user).permit(:name, :email, :avatar, :locale, :password, :password_confirmation, role_ids: [])
     end
 
     def authorize_with_klass
