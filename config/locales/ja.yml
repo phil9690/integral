@@ -1,0 +1,189 @@
+ja:
+  time:
+    formats:
+      default: "%A %d %B"
+      twelve_hour: "%I:%M %p"
+
+  date:
+    today: 'Today'
+    yesterday: 'Yesterday'
+    formats:
+      default: "%A, %d %B %Y"
+      long: "%H:%M %d/%m/%Y"
+
+  actions:
+    confirm: '[JA] Are you sure?'
+    create: '[JA] Create'
+    save: '[JA] Save'
+    delete: '[JA] Delete'
+    edit: '[JA] Edit'
+    update: '[JA] Update'
+    send: '[JA] Send'
+    view: '[JA] View'
+    read_more: '[JA] Read more..'
+    reply: '[JA] Reply'
+
+  errors:
+    generic: '[JA] Unfortunately there was a problem. Please try again later.'
+    unauthorized: '[JA] You are not authorized to perform this action.'
+
+  mailers:
+    contact_message:
+      new_message:
+        subject: "[JA] New message from %{name}"
+
+  integral:
+    breadcrumbs:
+      dashboard: '[JA] Dashboard'
+      settings: '[JA] Settings'
+      posts: '[JA] Posts'
+      pages: '[JA] Pages'
+      posts: '[JA] Posts'
+      users: '[JA] Users'
+      images: '[JA] Images'
+      galleries: '[JA] Galleries'
+      messages: '[JA] Messages'
+      new: '[JA] New'
+      edit: '[JA] Edit'
+
+    navigation:
+      signed_in_as: '[JA] SIGNED IN AS'
+      home: '[JA] Home'
+      posts: '[JA] Posts'
+      pages: '[JA] Pages'
+      users: '[JA] Users'
+      images: '[JA] Images'
+      log_out: '[JA] Logout'
+      my_account: '[JA] Account & Profile'
+
+    confirmation_modal:
+      title: '[JA] Confirmation'
+      confirm: '[JA] Confirm'
+      cancel: '[JA] Cancel'
+
+    static_pages:
+      dashboard:
+        title: '[JA] Dashboard'
+      pages:
+        title: '[JA] Pages'
+    posts:
+      grid:
+        columns:
+          title: '[JA] Title'
+          description: '[JA] Description'
+          last_updated: '[JA] Last updated'
+          author: '[JA] Author'
+          views: '[JA] Views'
+          status: '[JA] Status'
+      index:
+        title: '[JA] Posts'
+        new_post: '[JA] Create post'
+        published_count: "[JA] %{count} published"
+        drafts_count: "[JA] %{count} drafted"
+        non_available: '[JA] No posts available. Try creating one!'
+      edit:
+        title: '[JA] Edit Post'
+      new:
+        title: '[JA] New Post'
+      notification:
+        creation_success: '[JA] Post successfully created.'
+        creation_failure: '[JA] Post creation failed.'
+        edit_success: '[JA] Post successfully updated.'
+        edit_failure: '[JA] Failed to update post.'
+        delete_success: '[JA] Post successfully deleted.'
+        delete_failure: '[JA] Failed to delete post.'
+    pages:
+      index:
+        title: '[JA] Page listing'
+        non_available: '[JA] No pages available. Try creating one!'
+        add_page: '[JA] Add page'
+      grid:
+        columns:
+          title: '[JA] Title'
+          description: '[JA] Description'
+          path: '[JA] Path'
+          last_updated_at: '[JA] Last updated'
+      notification:
+        creation_success: '[JA] Page successfully created.'
+        creation_failure: '[JA] Page creation failed.'
+        edit_success: '[JA] Page successfully updated.'
+        edit_failure: '[JA] Failed to update page.'
+        delete_success: '[JA] Page successfully deleted.'
+        delete_failure: '[JA] Failed to delete page.'
+      edit:
+        title: '[JA] Editing page - %{title}'
+      new:
+        title: '[JA] New Page'
+    images:
+      new:
+        title: '[JA] New Image'
+      index:
+        title: '[JA] Image listing'
+        no_images_available: '[JA] No images available. Try uploading some!'
+        new_image: '[JA] New image'
+      notification:
+        creation_success: '[JA] Image successfully created.'
+        creation_failure: '[JA] Image creation failed.'
+        edit_success: '[JA] Image successfully updated.'
+        edit_failure: '[JA] Failed to update Image.'
+        delete_success: '[JA] Image successfully deleted.'
+        delete_failure: '[JA] Failed to delete image.'
+      edit:
+        title: '[JA] Editing image - %{name}'
+    users:
+      status:
+        draft: '[JA] Draft'
+        published: '[JA] Published'
+      notification:
+        creation_success: '[JA] User successfully created.'
+        creation_failure: '[JA] User creation failed.'
+        edit_success: '[JA] User successfully updated.'
+        edit_failure: '[JA] Failed to update user.'
+        delete_success: '[JA] User successfully deleted.'
+        delete_failure: '[JA] Failed to delete user.'
+      prompts:
+        select_language: '[JA] Please select a language'
+      grid:
+        columns:
+          name: '[JA] Name'
+          email: '[JA] Email'
+          last_signed_in: '[JA] Last signed in'
+      index:
+        title: '[JA] User listing'
+        add_user: '[JA] Add user'
+      new:
+        title: '[JA] New user'
+      edit:
+        title: '[JA] Editing profile - %{name}'
+      show:
+        title: "[JA] Viewing profile - %{name}"
+        member_since: "[JA] Member since: %{start_date}"
+    messages:
+      reply_subject: '[JA] In reply to your message'
+      index:
+        no_messages: '[JA] You currently have no messages :('
+  posts:
+    index:
+      post_info_with_comments: "[JA] Posted by %{name} on %{date} | %{comments}"
+      post_info: "[JA] Posted by %{name} on %{date}"
+  simple_form:
+    labels:
+      user:
+        name: '[JA] Name'
+        email: '[JA] Email'
+        password: '[JA] Password'
+        password_confirmation: '[JA] Password confirmation'
+        locale: '[JA] Language'
+      page:
+        title: '[JA] Title'
+        description: '[JA] Description'
+        path: '[JA] Path'
+      post:
+        title: '[JA] Title'
+        slug: '[JA] Slug'
+        description: '[JA] Description'
+        tag_list: '[JA] Tag list'
+      image:
+        title: '[JA] Title'
+        description: '[JA] Description'
+

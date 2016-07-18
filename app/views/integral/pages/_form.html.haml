@@ -5,7 +5,7 @@
         = f.input :title
         = f.input :description
         = f.input :path
-        = f.input :body, as: :ckeditor, label: false, input_html: { id: 'content_editor', ckeditor: {:toolbar => 'mini'} }
+        = f.input :body, as: :ckeditor, label: false, input_html: { id: 'content_editor', ckeditor: {toolbar: 'mini', language: current_user.locale} }
 
 
     = f.button :button

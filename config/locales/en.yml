@@ -46,6 +46,20 @@ en:
       new: 'New'
       edit: 'Edit'
 
+    navigation:
+      signed_in_as: '[JA] SIGNED IN AS'
+      home: 'Home'
+      posts: 'Posts'
+      pages: 'Pages'
+      users: 'Users'
+      images: 'Images'
+      log_out: 'Logout'
+      my_account: 'Account & Profile'
+
+    confirmation_modal:
+      title: 'Confirmation'
+      confirm: 'Confirm'
+      cancel: 'Cancel'
     static_pages:
       dashboard:
         title: 'Dashboard'
@@ -65,6 +79,7 @@ en:
         new_post: 'Create post'
         published_count: "%{count} published"
         drafts_count: "%{count} drafted"
+        non_available: 'No posts available. Try creating one!'
       edit:
         title: 'Edit Post'
       new:
@@ -79,7 +94,7 @@ en:
     pages:
       index:
         title: 'Page listing'
-        no_pages_available: 'No pages available. Try uploading some!'
+        non_available: 'No pages available. Try creating one!'
         add_page: 'Add page'
       grid:
         columns:
@@ -113,6 +128,9 @@ en:
       edit:
         title: 'Editing image - %{name}'
     users:
+      status:
+        draft: 'Draft'
+        published: 'Published'
       notification:
         creation_success: 'User successfully created.'
         creation_failure: 'User creation failed.'
@@ -143,3 +161,7 @@ en:
     index:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
       post_info: "Posted by %{name} on %{date}"
+  simple_form:
+    labels:
+      user:
+        locale: 'Language'
