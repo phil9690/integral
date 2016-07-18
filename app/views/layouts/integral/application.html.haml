@@ -1,6 +1,6 @@
 %html
   = render 'layouts/integral/head'
-  %body{ class: "#{controller_name} #{action_name}"}
+  %body{ class: "#{controller_name} #{action_name}", data: {locale: I18n.locale }}
     = render_flashes
 
     %header
