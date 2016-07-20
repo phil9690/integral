@@ -162,6 +162,12 @@ en:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
       post_info: "Posted by %{name} on %{date}"
   simple_form:
+    inputs:
+      file:
+        button_label: '[JA] File'
+      switch:
+        turn_on: 'On'
+        turn_off: 'Off'
     labels:
       user:
         locale: 'Language'

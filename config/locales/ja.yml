@@ -167,6 +167,12 @@ ja:
       post_info_with_comments: "[JA] Posted by %{name} on %{date} | %{comments}"
       post_info: "[JA] Posted by %{name} on %{date}"
   simple_form:
+    inputs:
+      file:
+        button_label: '[JA] File'
+      switch:
+        turn_on: '[JA] On'
+        turn_off: '[JA] Off'
     labels:
       user:
         name: '[JA] Name'
