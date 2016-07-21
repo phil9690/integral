@@ -138,6 +138,8 @@ en:
         edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
         delete_failure: 'Failed to delete user.'
+      prompts:
+        select_language: 'Select language..'
       grid:
         columns:
           name: 'Name'

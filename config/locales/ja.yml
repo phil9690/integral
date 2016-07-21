@@ -142,7 +142,7 @@ ja:
         delete_success: '[JA] User successfully deleted.'
         delete_failure: '[JA] Failed to delete user.'
       prompts:
-        select_language: '[JA] Please select a language'
+        select_language: 'Select language..'
       grid:
         columns:
           name: '[JA] Name'
