@@ -33,12 +33,12 @@ module Integral
     # POST /
     # User creation
     def create
-      @user = User.new(user_params)
-
-      if @user.save
-        respond_successfully I18n.t('integral.users.notification.creation_success'), user_path(@user)
+      if User.exists?(email: user_params[:email])
+        flash[:error] =  I18n.t('integral.users.notification.creation_failure')
+        redirect_to user_path(User.find_by_email(user_params[:email]))
       else
-        respond_failure I18n.t('integral.users.notification.creation_failure'), 'new'
+        @user = User.invite!(user_params)
+        respond_successfully I18n.t('integral.users.notification.creation_success'), user_path(@user)
       end
     end
 

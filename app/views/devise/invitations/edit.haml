@@ -1,0 +1,12 @@
+%h2= t 'devise.invitations.edit.header'
+
+.devise-form
+  = simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }, validate: true do |f|
+    = f.hidden_field :invitation_token
+
+    .form-inputs
+      = f.input :password, required: true, autofocus: true, as: :icon_password_field, input_html: { icon: 'vpn_key'}
+      = f.input :password_confirmation, required: true, as: :icon_password_field, input_html: { icon: 'vpn_key'}
+
+    .form-actions
+      = f.button :button, t("devise.invitations.edit.submit_button")

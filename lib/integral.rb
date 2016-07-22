@@ -1,4 +1,5 @@
 require 'devise'
+require 'devise_invitable'
 require "integral/configuration"
 require "integral/engine"
 

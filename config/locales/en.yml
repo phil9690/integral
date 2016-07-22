@@ -114,8 +114,8 @@ en:
         title: 'Editing image - %{name}'
     users:
       notification:
-        creation_success: 'User successfully created.'
-        creation_failure: 'User creation failed.'
+        creation_success: 'User has been invited.'
+        creation_failure: 'User already exists.'
         edit_success: 'User successfully updated.'
         edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
@@ -143,3 +143,8 @@ en:
     index:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
       post_info: "Posted by %{name} on %{date}"
+
+  helpers:
+    submit:
+      user:
+        create: 'Invite %{model}'
