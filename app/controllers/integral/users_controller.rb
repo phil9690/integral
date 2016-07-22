@@ -1,5 +1,3 @@
-require_dependency "integral/application_controller"
-
 module Integral
   # Users controller
   class UsersController < ApplicationController
@@ -33,11 +31,11 @@ module Integral
     # POST /
     # User creation
     def create
-      if User.exists?(email: user_params[:email])
-        flash[:error] =  I18n.t('integral.users.notification.creation_failure')
-        redirect_to user_path(User.find_by_email(user_params[:email]))
+      @user = User.invite!(user_params)
+
+      if @user.errors.present?
+        respond_failure I18n.t('integral.users.notification.creation_failure'), 'new'
       else
-        @user = User.invite!(user_params)
         respond_successfully I18n.t('integral.users.notification.creation_success'), user_path(@user)
       end
     end
