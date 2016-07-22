@@ -5,10 +5,11 @@ module Integral
     routes { Integral::Engine.routes }
 
     let(:title) { 'foobar title' }
+    let(:slug) { 'foobar-title' }
     let(:body) { 'foobar body.' }
     let(:description) { Faker::Lorem.paragraph(8)[0..150] }
     let(:tag_list) { 'foo,bar,tags' }
-    let(:post_params) { { title: title, body: body, description: description, tag_list: tag_list } }
+    let(:post_params) { { title: title, body: body, description: description, tag_list: tag_list, slug: slug } }
     let(:user) { create(:user) }
     let(:user_post) { create(:integral_post) }
 

@@ -24,11 +24,11 @@ module Integral
       it { is_expected.to validate_length_of(:description).is_at_most(160) }
     end
 
-    describe '#increment_count' do
+    describe '#increment_count!' do
       context 'when view is unique (based on IP)' do
         it 'increments count' do
           expect {
-            post.increment_count(ip_address)
+            post.increment_count!(ip_address)
           }.to change(post, :view_count).by(1)
         end
       end
@@ -40,7 +40,7 @@ module Integral
 
         it 'does not increment count' do
           expect {
-            post.increment_count(ip_address)
+            post.increment_count!(ip_address)
           }.not_to change(post, :view_count)
         end
       end

@@ -42,7 +42,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
   # Adds helpers such as sign_in and sign_out
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
