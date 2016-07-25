@@ -17,6 +17,11 @@ module Integral
       integral.root_path
     end
 
+    # Redirect user to integral.root_path after successful logout
+    def after_sign_out_path_for(resource_or_scope)
+      integral.root_path
+    end
+
     def user_not_authorized
       flash[:alert] = I18n.t('errors.unauthorized')
       redirect_to(root_path)

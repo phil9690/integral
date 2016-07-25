@@ -91,7 +91,7 @@ RSpec.configure do |config|
   # No longer have to prepend 'describe' and other Rspec methods with Rspec
   config.expose_dsl_globally = true
 
-  config.before(:suite) do
+  config.before(:each) do
     # Clean the database
     DatabaseCleaner.clean_with(:truncation)
 

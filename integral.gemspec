@@ -42,7 +42,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda-matchers' # Extra matchers for testing
   s.add_development_dependency 'factory_girl_rails' # Create reusable object templates
   s.add_development_dependency 'faker' # Random data generator
-  # s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara' # Acceptance testing framework
+  s.add_development_dependency 'poltergeist' # Headless driver for Capybara which supports JS
+  s.add_development_dependency 'launchy' # Automatically launch test pages
 
   # CI, code coverage, analysis and documentation tools
   s.add_development_dependency 'fudge' # Build tool
