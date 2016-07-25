@@ -65,7 +65,10 @@ module Integral
       end
 
       context 'when logged in' do
-        before { sign_in user }
+        before do
+          allow_any_instance_of(User).to receive(:deliver_invitation)
+          sign_in user
+        end
 
         context 'when user does not have required roles' do
           let(:user) { create :user }
@@ -105,12 +108,12 @@ module Integral
         context 'when invalid post params supplied' do
           it 'does not save a new user' do
             expect {
-              post :create, user: user_params.merge!(name: '')
+              post :create, user: user_params.merge!(email: '')
             }.not_to change(User, :count)
           end
 
           it 'renders new template' do
-            post :create, user: user_params.merge!(name: '')
+            post :create, user: user_params.merge!(email: '')
 
             expect(flash[:error]).to eql(I18n.t('integral.users.notification.creation_failure'))
             expect(response).to render_template("new")

@@ -2,12 +2,15 @@ module Integral
   # Integral Engine
   class Engine < ::Rails::Engine
     require 'haml'
+    require 'jquery-rails'
+    require 'turbolinks'
     require 'simple_form'
     require 'cocoon'
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
     require 'wice_grid'
     require 'breadcrumbs_on_rails'
+    require 'materialize-sass'
     require 'materialize_builder'
     require 'pundit'
     require 'carrierwave'

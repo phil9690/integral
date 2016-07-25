@@ -15,7 +15,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 4.2.4"
+  s.add_dependency "turbolinks"
   s.add_dependency "devise" # Authentication
+  s.add_dependency "devise_invitable" # Invitable authentication
   s.add_dependency "pundit" # Authorization
   s.add_dependency "haml-rails", "~> 0.9" # HAML
   s.add_dependency "sass-rails" # Sass

@@ -5,7 +5,7 @@ module Integral
 
     # Included devise modules. Others available are:
     # :confirmable, :timeoutable, :omniauthable, registerable and lockable
-    devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+    devise :invitable, :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
     # Relations
     has_many :role_assignments
