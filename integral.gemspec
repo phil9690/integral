@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 4.2.4"
-  s.add_dependency "turbolinks"
+  s.add_dependency "turbolinks", "~> 2"
   s.add_dependency "devise" # Authentication
   s.add_dependency "devise_invitable" # Invitable authentication
   s.add_dependency "pundit" # Authorization
@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ckeditor" # WYSIWYG Editor
   s.add_dependency "mini_magick" # File manipulation
   s.add_dependency "friendly_id" # Slugging
+  s.add_dependency "rails-observers" # Used for route reloading
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
 
   s.add_development_dependency "pry-rails" # Debugger

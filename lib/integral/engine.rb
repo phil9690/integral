@@ -53,6 +53,8 @@ module Integral
       ]
 
       app.config.assets.precompile.concat assets_for_precompile
+
+      config.active_record.observers = 'Integral::PageObserver'
     end
   end
 end
