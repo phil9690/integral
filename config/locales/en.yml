@@ -81,6 +81,8 @@ en:
         title: 'Page listing'
         no_pages_available: 'No pages available. Try uploading some!'
         add_page: 'Add page'
+        published_count: "%{count} published"
+        drafts_count: "%{count} drafted"
       grid:
         columns:
           title: 'Title'
