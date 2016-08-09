@@ -9,6 +9,9 @@ module Integral
     # Lists all pages
     def index
       @pages_grid = initialize_grid(Page)
+
+      @published_pages_count = Integral::Page.published.count
+      @draft_pages_count = Integral::Page.draft.count
     end
 
     # GET /new
@@ -72,7 +75,7 @@ module Integral
     end
 
     def page_params
-      params.require(:page).permit(:title, :description, :path, :body)
+      params.require(:page).permit(:title, :description, :path, :body, :status)
     end
 
     def set_breadcrumbs
