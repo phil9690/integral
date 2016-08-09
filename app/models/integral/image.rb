@@ -3,7 +3,7 @@ module Integral
   class Image < ActiveRecord::Base
     validates :file, presence: true
 
-    validates :title, presence: true, length: { minimum: 5, maximum: 70 }
+    validates :title, presence: true, length: { minimum: 5, maximum: 50 }
     validates :description, length: { maximum: 160 }
 
     mount_uploader :file, ImageUploader
