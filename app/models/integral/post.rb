@@ -24,6 +24,9 @@ module Integral
     # Callbacks
     before_save :set_published_at
 
+    # Aliases
+    alias_method :author, :user
+
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses
       [
