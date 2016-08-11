@@ -18,6 +18,7 @@ module Integral
     require 'ckeditor'
     require 'friendly_id'
     require 'acts-as-taggable-on'
+    require 'slack-notifier'
 
     isolate_namespace Integral
 

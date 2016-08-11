@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency "carrierwave" # File uploader
   s.add_dependency "carrierwave-imageoptimizer" # Image compression
   s.add_dependency "ckeditor" # WYSIWYG Editor
+  s.add_dependency "slack-notifier" # Slack bot
   s.add_dependency "mini_magick" # File manipulation
   s.add_dependency "friendly_id" # Slugging
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
