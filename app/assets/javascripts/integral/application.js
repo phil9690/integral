@@ -35,6 +35,7 @@ $(document).on('ready page:load', function () {
     accordion : false
   });
 
+  SlugGenerator.check_for_slugs();
   var filterSuggestions = function(suggestableInput, suggestions) {
     existingItems = suggestableInput.val().split(',')
 
