@@ -17,6 +17,7 @@ PATH
       haml-rails (~> 0.9)
       materialize-sass (~> 0.97.5.0)
       mini_magick
+      paranoia (~> 2.0)
       pundit
       rails (~> 4.2.4)
       sass-rails
@@ -200,6 +201,9 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     parallel (1.6.1)
+    paranoia (2.1.5)
+      activerecord (~> 4.0)
+    pkg-config (1.1.7)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)

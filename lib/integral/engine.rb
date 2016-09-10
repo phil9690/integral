@@ -20,6 +20,7 @@ module Integral
     require 'friendly_id'
     require 'acts-as-taggable-on'
     require 'slack-notifier'
+    require 'paranoia'
 
     isolate_namespace Integral
 

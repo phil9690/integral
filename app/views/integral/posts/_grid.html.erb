@@ -4,7 +4,11 @@
   end
 
   g.column name: t('.columns.author'), attribute: 'user_id', custom_filter: Integral::User.all.map { |p| [p.name, p.id] } do |post|
-    "<div class='chip'><img src='#{post.user.avatar.url}' alt='#{post.user.name}'>#{post.user.name}</div>".html_safe
+    if post.user.present?
+      "<div class='chip'><img src='#{post.user.avatar.url}' alt='#{post.user.name}'>#{post.user.name}</div>".html_safe
+    else
+      "#{post.user_id} [Deleted]"
+    end
   end
 
   g.column name: t('.columns.views'), attribute: 'view_count', filter_type: :range do |post|

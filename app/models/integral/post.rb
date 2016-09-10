@@ -1,6 +1,10 @@
 module Integral
   # Represents a user post
   class Post < ActiveRecord::Base
+    # Soft-deletion
+    acts_as_paranoid
+
+    # Slugging
     extend FriendlyId
     friendly_id :title, use: :history
 
