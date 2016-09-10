@@ -1,6 +1,9 @@
 module Integral
   # User model used to represent a authenticated user
   class User < ActiveRecord::Base
+    # Soft-deletion
+    acts_as_paranoid
+
     mount_uploader :avatar, AvatarUploader
 
     # Included devise modules. Others available are:

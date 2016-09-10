@@ -58,7 +58,8 @@ module Integral
       if @page.destroy
         flash[:notice] = I18n.t('integral.pages.notification.delete_success')
       else
-        flash[:error] = I18n.t('integral.pages.notification.delete_failure')
+        error_message = @page.errors.full_messages.to_sentence
+        flash[:error] = "#{I18n.t('integral.pages.notification.delete_failure')} - #{error_message}"
       end
 
       redirect_to pages_path

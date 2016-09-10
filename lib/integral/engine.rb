@@ -9,6 +9,7 @@ module Integral
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
     require 'wice_grid'
+    require 'font-awesome-sass'
     require 'breadcrumbs_on_rails'
     require 'materialize-sass'
     require 'materialize_builder'
@@ -19,6 +20,7 @@ module Integral
     require 'friendly_id'
     require 'acts-as-taggable-on'
     require 'slack-notifier'
+    require 'paranoia'
 
     isolate_namespace Integral
 
