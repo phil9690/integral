@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 4.2.4"
-  s.add_dependency "turbolinks"
+  s.add_dependency "turbolinks", "2.5.3"
   s.add_dependency "devise" # Authentication
   s.add_dependency "devise_invitable" # Invitable authentication
   s.add_dependency "pundit" # Authorization
@@ -26,7 +26,8 @@ Gem::Specification.new do |s|
   s.add_dependency "cocoon" # Nested forms
   s.add_dependency "client_side_validations" # Client-side validations
   s.add_dependency "client_side_validations-simple_form" # Simpleform integration for Client-side validations
-  s.add_dependency "wice_grid", "~> 3.5.0" # Grids
+  s.add_dependency "wice_grid" # Grids
+  s.add_dependency "font-awesome-sass", '~> 4.3' # Grid Icons
   s.add_dependency "breadcrumbs_on_rails" # Breadcrumbs
   s.add_dependency "carrierwave" # File uploader
   s.add_dependency "carrierwave-imageoptimizer" # Image compression

@@ -9,6 +9,7 @@ module Integral
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
     require 'wice_grid'
+    require 'font-awesome-sass'
     require 'breadcrumbs_on_rails'
     require 'materialize-sass'
     require 'materialize_builder'
