@@ -1,6 +1,6 @@
 module Wice
   module Columns #:nodoc:
-    class ViewColumnGenericDatepicker < ViewColumn #:nodoc:
+    class ViewColumnBootstrapDatepicker < ViewColumn #:nodoc:
 
       include Wice::BsCalendarHelpers
       include Wice::Columns::CommonDateDatetimeMixin
@@ -30,7 +30,7 @@ module Wice
 
         html2 = date_calendar_bs calendar_data_to
 
-        %(<div class="date-filter">#{html1}#{html2}</div>)
+        %(<div>#{html1}#{html2}</div>)
       end
 
 
@@ -40,7 +40,7 @@ module Wice
 
     end
 
-    class ConditionsGeneratorColumnGenericDatepicker < ConditionsGeneratorColumn  #:nodoc:
+    class ConditionsGeneratorColumnBootstrapDatepicker < ConditionsGeneratorColumn  #:nodoc:
 
       include Wice::Columns::CommonJsDateDatetimeConditionsGeneratorMixin
 
