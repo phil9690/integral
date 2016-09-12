@@ -2,12 +2,16 @@ module Integral
   # Integral Engine
   class Engine < ::Rails::Engine
     require 'haml'
+    require 'jquery-rails'
+    require 'turbolinks'
     require 'simple_form'
     require 'cocoon'
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
     require 'wice_grid'
+    require 'font-awesome-sass'
     require 'breadcrumbs_on_rails'
+    require 'materialize-sass'
     require 'materialize_builder'
     require 'pundit'
     require 'carrierwave'
@@ -15,6 +19,8 @@ module Integral
     require 'ckeditor'
     require 'friendly_id'
     require 'acts-as-taggable-on'
+    require 'slack-notifier'
+    require 'paranoia'
 
     isolate_namespace Integral
 
@@ -25,6 +31,10 @@ module Integral
 
     # Engine customization
     config.to_prepare do
+      # Load WiceGrid overrides for standard datepicker
+      require Integral::Engine.root + 'lib/wice/columns/column_bootstrap_datepicker.rb'
+      require Integral::Engine.root + 'lib/wice/helpers/bs_calendar_helpers.rb'
+
       Dir.glob(Rails.root + "app/extensions/**/*_decorator*.rb").each do |c|
         require_dependency(c)
       end

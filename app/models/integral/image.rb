@@ -1,9 +1,11 @@
 module Integral
   # Represents an image uploaded by a user
   class Image < ActiveRecord::Base
-    validates :file, presence: true
+    # Soft-deletion
+    acts_as_paranoid
 
-    validates :title, presence: true, length: { minimum: 5, maximum: 70 }
+    validates :file, presence: true
+    validates :title, presence: true, length: { minimum: 5, maximum: 50 }
     validates :description, length: { maximum: 160 }
 
     mount_uploader :file, ImageUploader

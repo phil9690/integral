@@ -1,11 +1,14 @@
 module Integral
   # User model used to represent a authenticated user
   class User < ActiveRecord::Base
+    # Soft-deletion
+    acts_as_paranoid
+
     mount_uploader :avatar, AvatarUploader
 
     # Included devise modules. Others available are:
     # :confirmable, :timeoutable, :omniauthable, registerable and lockable
-    devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+    devise :invitable, :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
     # Relations
     has_many :role_assignments

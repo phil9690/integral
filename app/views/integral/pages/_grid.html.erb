@@ -1,6 +1,10 @@
 <%= grid(@pages_grid) do |g|
   g.column name: t('.columns.title'), attribute: 'title'
   g.column name: t('.columns.path'), attribute: 'path'
+  g.column name: 'Status', attribute: 'status', custom_filter: Integral::Page.available_statuses do |page|
+    status_colour = page.draft? ? 'orange' : 'green'
+    "<span class='status white-text #{status_colour} lighten-1'>#{page.status}</span>".html_safe
+  end
   g.column name: t('.columns.last_updated_at'), attribute: 'updated_at' do |page|
     l(page.updated_at)
   end

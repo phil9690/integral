@@ -1,6 +1,8 @@
 require 'devise'
+require 'devise_invitable'
 require "integral/configuration"
 require "integral/engine"
+require "integral/slack_bot"
 
 # Integral
 module Integral

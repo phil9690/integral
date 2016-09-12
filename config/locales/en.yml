@@ -96,6 +96,8 @@ en:
         title: 'Page listing'
         non_available: 'No pages available. Try creating one!'
         add_page: 'Add page'
+        published_count: "%{count} published"
+        drafts_count: "%{count} drafted"
       grid:
         columns:
           title: 'Title'
@@ -132,8 +134,8 @@ en:
         draft: 'Draft'
         published: 'Published'
       notification:
-        creation_success: 'User successfully created.'
-        creation_failure: 'User creation failed.'
+        creation_success: 'User has been invited.'
+        creation_failure: 'User already exists.'
         edit_success: 'User successfully updated.'
         edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
@@ -166,10 +168,15 @@ en:
   simple_form:
     inputs:
       file:
-        button_label: '[JA] File'
+        button_label: 'File'
       switch:
         turn_on: 'On'
         turn_off: 'Off'
     labels:
       user:
         locale: 'Language'
+
+  helpers:
+    submit:
+      user:
+        create: 'Invite %{model}'

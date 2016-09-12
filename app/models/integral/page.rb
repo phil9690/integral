@@ -1,6 +1,9 @@
 module Integral
   # Represents a public viewable page
   class Page < ActiveRecord::Base
+    # Soft-deletion
+    acts_as_paranoid
+
     # Validates format of a path
     # Examples:
     # Good:
@@ -9,15 +12,25 @@ module Integral
     # //, foo, /foo bar, /foo?y=123, /foo$
     PATH_REGEX = /\A\/[\/.a-zA-Z0-9-]+\z/
 
+    enum status: [ :draft, :published ]
+
     # Validations
-    validates :title, presence: true, length: { minimum: 5, maximum: 70 }
+    validates :title, presence: true, length: { minimum: 5, maximum: 50 }
     validates :path, presence: true, length: { maximum: 100 }
     validates :path, uniqueness: { case_sensitive: false }
     validates_format_of :path, :with => PATH_REGEX
-    validates :description, length: { maximum: 160 }
+    validates :description, presence: true, length: { maximum: 160 }
     validate :validate_path_is_not_black_listed
 
     private
+
+    # @return [Array] containing available human readable statuses against there numeric value
+    def self.available_statuses
+      [
+        ['Draft', 0],
+        ['Published', 1]
+      ]
+    end
 
     def validate_path_is_not_black_listed
       valid = true

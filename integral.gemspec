@@ -15,20 +15,25 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 4.2.4"
+  s.add_dependency "turbolinks", "2.5.3"
   s.add_dependency "devise" # Authentication
+  s.add_dependency "devise_invitable" # Invitable authentication
   s.add_dependency "pundit" # Authorization
   s.add_dependency "haml-rails", "~> 0.9" # HAML
   s.add_dependency "sass-rails" # Sass
   s.add_dependency "materialize-sass", '~> 0.97.5.0' # Material Design UI framework
   s.add_dependency "simple_form" # Form builder
   s.add_dependency "cocoon" # Nested forms
+  s.add_dependency "paranoia", "~> 2.0" # Soft-delete records
   s.add_dependency "client_side_validations" # Client-side validations
   s.add_dependency "client_side_validations-simple_form" # Simpleform integration for Client-side validations
-  s.add_dependency "wice_grid", "~> 3.5.0" # Grids
+  s.add_dependency "wice_grid" # Grids
+  s.add_dependency "font-awesome-sass", '~> 4.3' # Grid Icons
   s.add_dependency "breadcrumbs_on_rails" # Breadcrumbs
   s.add_dependency "carrierwave" # File uploader
   s.add_dependency "carrierwave-imageoptimizer" # Image compression
   s.add_dependency "ckeditor" # WYSIWYG Editor
+  s.add_dependency "slack-notifier" # Slack bot
   s.add_dependency "mini_magick" # File manipulation
   s.add_dependency "friendly_id" # Slugging
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging

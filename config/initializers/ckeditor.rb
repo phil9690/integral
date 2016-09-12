@@ -46,4 +46,6 @@ Ckeditor.setup do |config|
   # Used when CKEditor CDN enabled
   # By default: "/assets/ckeditor/config.js"
   # config.js_config_url = "/assets/ckeditor/config.js"
+  #
+  config.parent_controller = 'Integral::ApplicationController'
 end

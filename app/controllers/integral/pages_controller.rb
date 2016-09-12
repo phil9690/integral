@@ -9,6 +9,9 @@ module Integral
     # Lists all pages
     def index
       @pages_grid = initialize_grid(Page)
+
+      @published_pages_count = Integral::Page.published.count
+      @draft_pages_count = Integral::Page.draft.count
     end
 
     # GET /new
@@ -55,7 +58,8 @@ module Integral
       if @page.destroy
         flash[:notice] = I18n.t('integral.pages.notification.delete_success')
       else
-        flash[:error] = I18n.t('integral.pages.notification.delete_failure')
+        error_message = @page.errors.full_messages.to_sentence
+        flash[:error] = "#{I18n.t('integral.pages.notification.delete_failure')} - #{error_message}"
       end
 
       redirect_to pages_path
@@ -72,7 +76,7 @@ module Integral
     end
 
     def page_params
-      params.require(:page).permit(:title, :description, :path, :body)
+      params.require(:page).permit(:title, :description, :path, :body, :status)
     end
 
     def set_breadcrumbs

@@ -1,6 +1,10 @@
 module Integral
   # Represents a user post
   class Post < ActiveRecord::Base
+    # Soft-deletion
+    acts_as_paranoid
+
+    # Slugging
     extend FriendlyId
     friendly_id :title, use: :history
 
@@ -17,12 +21,15 @@ module Integral
     belongs_to :user
 
     # Validations
-    validates :title, presence: true, length: { minimum: 4, maximum: 70 }
+    validates :title, presence: true, length: { minimum: 4, maximum: 50 }
     validates :description, presence: true, length: { minimum: 50, maximum: 160 }
     validates :body, :user, :slug, presence: true
 
     # Callbacks
     before_save :set_published_at
+
+    # Aliases
+    alias_method :author, :user
 
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses(opts={ reverse: false })

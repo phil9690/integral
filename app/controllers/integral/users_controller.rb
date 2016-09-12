@@ -1,5 +1,3 @@
-require_dependency "integral/application_controller"
-
 module Integral
   # Users controller
   class UsersController < ApplicationController
@@ -33,12 +31,12 @@ module Integral
     # POST /
     # User creation
     def create
-      @user = User.new(user_params)
+      @user = User.invite!(user_params)
 
-      if @user.save
-        respond_successfully I18n.t('integral.users.notification.creation_success'), user_path(@user)
-      else
+      if @user.errors.present?
         respond_failure I18n.t('integral.users.notification.creation_failure'), 'new'
+      else
+        respond_successfully I18n.t('integral.users.notification.creation_success'), user_path(@user)
       end
     end
 
