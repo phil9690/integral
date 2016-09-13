@@ -12,184 +12,182 @@ ja:
       long: "%H:%M %d/%m/%Y"
 
   actions:
-    confirm: '[JA] Are you sure?'
-    create: '[JA] Create'
-    save: '[JA] Save'
-    delete: '[JA] Delete'
-    edit: '[JA] Edit'
-    update: '[JA] Update'
-    send: '[JA] Send'
-    view: '[JA] View'
-    read_more: '[JA] Read more..'
-    reply: '[JA] Reply'
+    confirm: 'これでよろしいですか？'
+    create: '作成'
+    save: '保存'
+    delete: '削除'
+    edit: '編集'
+    update: '更新'
+    send: '送信'
+    view: 'ビュー'
+    read_more: 'もっと読む'
+    reply: '返信'
 
   errors:
-    generic: '[JA] Unfortunately there was a problem. Please try again later.'
-    unauthorized: '[JA] You are not authorized to perform this action.'
+    generic: '誤りがあります。もう一度やり直してください。'
+    unauthorized: '実行する権限がありません。'
 
   mailers:
     contact_message:
       new_message:
-        subject: "[JA] New message from %{name}"
+        subject: "新しいメッセージ　%{name}"
 
   integral:
     breadcrumbs:
-      dashboard: '[JA] Dashboard'
-      settings: '[JA] Settings'
-      posts: '[JA] Posts'
-      pages: '[JA] Pages'
-      posts: '[JA] Posts'
-      users: '[JA] Users'
-      images: '[JA] Images'
-      galleries: '[JA] Galleries'
-      messages: '[JA] Messages'
-      new: '[JA] New'
-      edit: '[JA] Edit'
+      dashboard: 'ダッシュボード'
+      settings: '設定'
+      posts: '投稿'
+      pages: 'ページ'
+      users: 'ユーザー'
+      images: 'イメージ'
+      galleries: 'ギャラリー'
+      messages: 'メッセージ'
+      new: '新'
+      edit: '編集'
 
     navigation:
-      signed_in_as: '[JA] SIGNED IN AS'
-      home: '[JA] Home'
-      posts: '[JA] Posts'
-      pages: '[JA] Pages'
-      users: '[JA] Users'
-      images: '[JA] Images'
-      log_out: '[JA] Logout'
-      my_account: '[JA] Account & Profile'
+      signed_in_as: 'ログイン名'
+      home: 'ホーム'
+      posts: '投稿'
+      pages: 'ページ'
+      users: 'ユーザー'
+      images: 'イメージ'
+      log_out: 'ログアウト'
+      my_account: 'アカウント＆プロフィール'
 
     confirmation_modal:
-      title: '[JA] Confirmation'
-      confirm: '[JA] Confirm'
-      cancel: '[JA] Cancel'
+      title: '確認書'
+      confirm: '確認'
+      cancel: 'キャンセル'
 
     static_pages:
       dashboard:
-        title: '[JA] Dashboard'
+        title: 'ダッシュボード'
       pages:
-        title: '[JA] Pages'
+        title: 'ページ'
     posts:
       grid:
         columns:
-          title: '[JA] Title'
-          description: '[JA] Description'
-          last_updated: '[JA] Last updated'
-          author: '[JA] Author'
-          views: '[JA] Views'
-          status: '[JA] Status'
+          title: 'タイトル'
+          description: '説明'
+          last_updated: '最終更新'
+          author: '著者'
+          views: 'ビュー'
+          status: 'ステータス'
       index:
-        title: '[JA] Posts'
-        new_post: '[JA] Create post'
-        published_count: "[JA] %{count} published"
-        drafts_count: "[JA] %{count} drafted"
-        non_available: '[JA] No posts available. Try creating one!'
+        title: '投稿'
+        new_post: '投稿作成'
+        published_count: "%{count} 公開"
+        drafts_count: "%{count} 召集"
+        non_available: '利用できる投稿はありません。作成してください。'
       edit:
-        title: '[JA] Edit Post'
+        title: '投稿の編集'
       new:
-        title: '[JA] New Post'
+        title: '新しい投稿'
       notification:
-        creation_success: '[JA] Post successfully created.'
-        creation_failure: '[JA] Post creation failed.'
-        edit_success: '[JA] Post successfully updated.'
-        edit_failure: '[JA] Failed to update post.'
-        delete_success: '[JA] Post successfully deleted.'
-        delete_failure: '[JA] Failed to delete post.'
+        creation_success: '投稿の作成に成功'
+        creation_failure: '投稿の作成に失敗'
+        edit_success: '投稿の編集に成功'
+        edit_failure: '投稿の編集に失敗'
+        delete_success: '投稿の削除に成功'
+        delete_failure: '投稿の削除に失敗'
+
     pages:
       index:
-        title: '[JA] Page listing'
-        non_available: '[JA] No pages available. Try creating one!'
-        add_page: '[JA] Add page'
+        title: 'ページ一覧'
+        non_available: '利用できるページがありません。作成してください。'
+        add_page: 'ページの追加'
       grid:
         columns:
-          title: '[JA] Title'
-          description: '[JA] Description'
-          path: '[JA] Path'
-          last_updated_at: '[JA] Last updated'
+          title: 'タイトル'
+          description: '説明'
+          path: 'パス'
+          last_updated_at: '最終更新'
       notification:
-        creation_success: '[JA] Page successfully created.'
-        creation_failure: '[JA] Page creation failed.'
-        edit_success: '[JA] Page successfully updated.'
-        edit_failure: '[JA] Failed to update page.'
-        delete_success: '[JA] Page successfully deleted.'
-        delete_failure: '[JA] Failed to delete page.'
+        creation_success: 'ページの作成に成功.'
+        creation_failure: 'ページの作成に失敗'
+        edit_success: 'ページの編集に成功'
+        edit_failure: 'ページの編集に失敗'
+        delete_success: 'ページの削除に成功'
+        delete_failure: 'ページの削除に失敗'
       edit:
-        title: '[JA] Editing page - %{title}'
+        title: 'ページ追加 - %{title}'
       new:
-        title: '[JA] New Page'
+        title: '新しいページ'
     images:
       new:
-        title: '[JA] New Image'
+        title: '新しいイメージ'
       index:
-        title: '[JA] Image listing'
-        no_images_available: '[JA] No images available. Try uploading some!'
-        new_image: '[JA] New image'
+        title: 'イメージ一覧'
+        no_images_available: '利用できるイメージがありません。作成してください。'
+        new_image: '新しいイメージ'
       notification:
-        creation_success: '[JA] Image successfully created.'
-        creation_failure: '[JA] Image creation failed.'
-        edit_success: '[JA] Image successfully updated.'
-        edit_failure: '[JA] Failed to update Image.'
-        delete_success: '[JA] Image successfully deleted.'
-        delete_failure: '[JA] Failed to delete image.'
+        creation_success: 'イメージの作成に成功'
+        creation_failure: 'イメージの作成に失敗'
+        edit_success: 'イメージの更新に成功'
+        edit_failure: 'イメージの更新に失敗'
+        delete_success: 'イメージの削除に成功'
+        delete_failure: 'イメージの削除に失敗'
       edit:
-        title: '[JA] Editing image - %{name}'
+        title: 'イメージ編集 - %{name}'
+
     users:
       status:
-        draft: '[JA] Draft'
-        published: '[JA] Published'
+        draft: '下書き'
+        published: '公開'
       notification:
-        creation_success: '[JA] User successfully created.'
-        creation_failure: '[JA] User creation failed.'
-        edit_success: '[JA] User successfully updated.'
-        edit_failure: '[JA] Failed to update user.'
-        delete_success: '[JA] User successfully deleted.'
-        delete_failure: '[JA] Failed to delete user.'
+        creation_success: 'ユーザーの作成に成功'
+        creation_failure: 'ユーザーの作成に失敗'
+        edit_success: 'ユーザーの編集に成功'
+        edit_failure: 'ユーザーの編集に失敗'
+        delete_success: 'ユーザーの削除に成功'
+        delete_failure: 'ユーザーの削除に失敗'
       prompts:
-        select_language: 'Select language..'
+        select_language: '[JA] Select language..'
       grid:
         columns:
-          name: '[JA] Name'
-          email: '[JA] Email'
-          last_signed_in: '[JA] Last signed in'
+          name: '名前'
+          email: 'メール'
+          last_signed_in: '最終のサインイン'
       index:
-        title: '[JA] User listing'
-        add_user: '[JA] Add user'
+        title: 'ユーザー一覧'
+        add_user: 'ユーザー追加'
       new:
-        title: '[JA] New user'
+        title: '新しいユーザー'
       edit:
-        title: '[JA] Editing profile - %{name}'
+        title: 'プロフィールの編集 - %{名前}'
       show:
-        title: "[JA] Viewing profile - %{name}"
-        member_since: "[JA] Member since: %{start_date}"
+        title: "プロフィール表示 - %{名前}"
+        member_since: "メンバー暦: %{開始_日}"
+
     messages:
-      reply_subject: '[JA] In reply to your message'
+      reply_subject: 'あなたのメッセージへの返信'
       index:
-        no_messages: '[JA] You currently have no messages :('
-  posts:
-    index:
-      post_info_with_comments: "[JA] Posted by %{name} on %{date} | %{comments}"
-      post_info: "[JA] Posted by %{name} on %{date}"
+        no_messages: 'メッセージがありません :('
+
   simple_form:
     inputs:
       file:
-        button_label: '[JA] File'
+        button_label: 'ファイル'
       switch:
-        turn_on: '[JA] On'
-        turn_off: '[JA] Off'
+        turn_on: 'オン'
+        turn_off: 'オフ'
     labels:
       user:
-        name: '[JA] Name'
-        email: '[JA] Email'
-        password: '[JA] Password'
-        password_confirmation: '[JA] Password confirmation'
-        locale: '[JA] Language'
+        name: '名前'
+        email: 'メール'
+        password: 'パスワード'
+        password_confirmation: 'パスワードの確認'
+        locale: '言語'
       page:
-        title: '[JA] Title'
-        description: '[JA] Description'
+        title: 'タイトル'
+        description: '説明'
         path: '[JA] Path'
       post:
-        title: '[JA] Title'
+        title: 'タイトル'
         slug: '[JA] Slug'
-        description: '[JA] Description'
-        tag_list: '[JA] Tag list'
+        description: '説明'
+        tag_list: 'タグリスト'
       image:
-        title: '[JA] Title'
-        description: '[JA] Description'
-
+        title: 'タイトル'
+        description: '説明'
