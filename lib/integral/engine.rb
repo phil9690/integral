@@ -35,6 +35,7 @@ module Integral
       require Integral::Engine.root + 'lib/wice/columns/column_bootstrap_datepicker.rb'
       require Integral::Engine.root + 'lib/wice/helpers/bs_calendar_helpers.rb'
 
+      # Allow Integral to be extended
       Dir.glob(Rails.root + "app/extensions/**/*_decorator*.rb").each do |c|
         require_dependency(c)
       end

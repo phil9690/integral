@@ -36,7 +36,7 @@ module Integral
     end
 
     def set_locale
-      I18n.locale = current_user.locale
+      I18n.locale = current_user.locale if current_user.present?
     end
   end
 end
