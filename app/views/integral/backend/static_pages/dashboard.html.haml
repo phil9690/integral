@@ -1,0 +1,17 @@
+= content_for :title, t('.title')
+
+.row
+  - if policy(Integral::Post).manager?
+    = render partial: 'card', locals: { link_path: backend_posts_path, image_path: 'integral/tiles/posts.png', title: 'Posts', description: 'Add, edit and remove posts', image_classes: 'grey darken-2' }
+
+  - if policy(Integral::Page).manager?
+    = render partial: 'card', locals: { link_path: backend_pages_path, image_path: 'integral/tiles/pages.png', title: 'Pages', description: 'Add, edit and remove pages', image_classes: 'orange lighten-4' }
+
+  - if policy(current_user).manager?
+    = render partial: 'card', locals: { link_path: backend_users_path, image_path: 'integral/tiles/users.png', title: 'Users', description: 'Add, edit and remove users', image_classes: 'blue lighten-2'}
+
+  - if policy(Integral::Image).manager?
+    = render partial: 'card', locals: { link_path: backend_img_index_path, image_path: 'integral/tiles/images.png', title: 'Images', description: 'Add, edit and remove images', image_classes: 'blue lighten-2' }
+
+  = render partial: 'card', locals: { link_path: backend_user_path(current_user), image_path: 'integral/tiles/user.png', title: 'My Profile', description: 'View & edit your profile', image_classes: 'teal lighten-2' }
+

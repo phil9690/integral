@@ -1,0 +1,31 @@
+!!!
+%html{ 'xml:lang' => I18n.locale, 'lang' => I18n.locale }
+  %head
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+
+    %link{ rel: 'apple-touch-icon', href: image_path('mobile-icons/touch-icon.png') }
+    %link{ rel: 'apple-touch-startup-image', href: image_path('mobile-icons/startup.png') }
+
+    = stylesheet_link_tag    'integral/frontend', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'integral/frontend', 'data-turbolinks-track' => true
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    = csrf_meta_tags
+
+    -# TODO: Implement meta_tags (including setting fb:app_id)
+    -# = display_meta_tags
+    -#
+    -# %meta{ content: "123456789", property: "fb:app_id" }
+
+  %body{class: "#{controller_name} #{action_name}" }
+    -# TODO: Add GTM
+    -# = google_tag_manager
+
+    #fb-root
+      #site-wrapper
+        = render 'layouts/integral/frontend/admin_bar' if user_signed_in?
+        = render 'layouts/integral/frontend/navigation'
+      #site-content
+        = yield
+      = render 'layouts/integral/frontend/footer'

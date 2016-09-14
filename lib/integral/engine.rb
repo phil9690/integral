@@ -56,7 +56,11 @@ module Integral
         "ckeditor/my_contents.css",
         "ckeditor/my_styles.js",
         "ckeditor/my_config.js",
-        "ckeditor/filebrowser/*"
+        "ckeditor/filebrowser/*",
+
+        # Front-end
+        "integral/frontend.js",
+        "integral/frontend.css"
       ]
 
       app.config.assets.precompile.concat assets_for_precompile

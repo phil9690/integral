@@ -1,5 +1,5 @@
 .row
-  = simple_form_for @page, validate: true, html: { id: 'page_form' } do |f|
+  = simple_form_for [:backend, @page], validate: true, html: { id: 'page_form' } do |f|
     .col.s12
       .card-panel
         = f.input :title

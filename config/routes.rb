@@ -1,23 +1,35 @@
 Integral::Engine.routes.draw do
   root 'static_pages#dashboard'
 
-  # User Authentication
-  devise_for :users, class_name: "Integral::User", module: :devise
+  # TODO: Frontend Blog routes
+  # TODO: Dynamic route creation
 
-  # WYSIWYG Editor
-  mount Ckeditor::Engine => '/ckeditor'
+  # Backend [User Only]
+  #
+  # TODO: Set path as configurable variable
+  scope 'admin' do
+    # User Authentication
+    devise_for :users, class_name: "Integral::User", module: :devise
 
-  # User Management
-  resources :users
+    # WYSIWYG Editor
+    mount Ckeditor::Engine => '/ckeditor'
+  end
 
-  # Image Management
-  resources :images, as: :img
+  namespace :backend, path: 'admin' do
+    get '/', to: 'static_pages#dashboard', as: 'dashboard'
 
-  # Page Management
-  resources :pages, except: [ :show ]
+    # User Management
+    resources :users
 
-  # Post Management
-  resources :posts, except: [ :show ] do
-    # resources :comments, only: [:create, :destroy]
+    # Image Management
+    resources :images, as: :img
+
+    # Page Management
+    resources :pages, except: [ :show ]
+
+    # Post Management
+    resources :posts, except: [ :show ] do
+      # resources :comments, only: [:create, :destroy]
+    end
   end
 end
