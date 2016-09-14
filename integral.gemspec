@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "haml-rails", "~> 0.9" # HAML
   s.add_dependency "sass-rails" # Sass
   s.add_dependency "materialize-sass", '~> 0.97.5.0' # Material Design UI framework
+  s.add_dependency "foundation-rails" # Foundation UI Framework
   s.add_dependency "simple_form" # Form builder
   s.add_dependency "cocoon" # Nested forms
   s.add_dependency "paranoia", "~> 2.0" # Soft-delete records

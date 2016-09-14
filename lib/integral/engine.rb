@@ -12,6 +12,7 @@ module Integral
     require 'font-awesome-sass'
     require 'breadcrumbs_on_rails'
     require 'materialize-sass'
+    require 'foundation-rails'
     require 'materialize_builder'
     require 'pundit'
     require 'carrierwave'
