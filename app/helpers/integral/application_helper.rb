@@ -26,6 +26,13 @@ module Integral
       end
     end
 
+    def boolean_select_options
+      [
+        [I18n.t('integral.boolean.true'), 'true'],
+        [I18n.t('integral.boolean.false'), 'false']
+      ]
+    end
+
     # Renders icon link
     #
     # @param [String] icon to use

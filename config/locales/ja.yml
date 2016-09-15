@@ -11,18 +11,6 @@ ja:
       default: "%A, %d %B %Y"
       long: "%H:%M %d/%m/%Y"
 
-  actions:
-    confirm: 'これでよろしいですか？'
-    create: '作成'
-    save: '保存'
-    delete: '削除'
-    edit: '編集'
-    update: '更新'
-    send: '送信'
-    view: 'ビュー'
-    read_more: 'もっと読む'
-    reply: '返信'
-
   errors:
     generic: '誤りがあります。もう一度やり直してください。'
     unauthorized: '実行する権限がありません。'
@@ -33,6 +21,18 @@ ja:
         subject: "新しいメッセージ　%{name}"
 
   integral:
+    actions:
+      confirm: 'これでよろしいですか？'
+      create: '作成'
+      save: '保存'
+      delete: '削除'
+      edit: '編集'
+      update: '更新'
+      send: '送信'
+      view: 'ビュー'
+      read_more: 'もっと読む'
+      reply: '返信'
+
     breadcrumbs:
       dashboard: 'ダッシュボード'
       settings: '設定'
@@ -65,6 +65,12 @@ ja:
         title: 'ダッシュボード'
       pages:
         title: 'ページ'
+    roles:
+      labels:
+        user_manager: '[JA] User Manager'
+        image_manager: '[JA] Image Manager'
+        page_manager: '[JA] Page Manager'
+        post_manager: '[JA] Post Manager'
     posts:
       grid:
         columns:
@@ -97,6 +103,21 @@ ja:
         title: 'ページ一覧'
         non_available: '利用できるページがありません。作成してください。'
         add_page: 'ページの追加'
+        published_count: "%{count} 公開"
+        drafts_count: "%{count} 召集"
+      edit:
+        title: '投稿の編集'
+      new:
+        title: '新しい投稿'
+      notification:
+        creation_success: '投稿の作成に成功'
+        creation_failure: '投稿の作成に失敗'
+        edit_success: '投稿の編集に成功'
+        edit_failure: '投稿の編集に失敗'
+        delete_success: '投稿の削除に成功'
+        delete_failure: '投稿の削除に失敗'
+
+    
       grid:
         columns:
           title: 'タイトル'
@@ -164,6 +185,11 @@ ja:
       reply_subject: 'あなたのメッセージへの返信'
       index:
         no_messages: 'メッセージがありません :('
+    boolean:
+      'true': '[JA] True'
+      'false': '[JA] False'
+    date_selector_tooltip_from: '[JA] From'
+    date_selector_tooltip_to: '[JA] To'
 
   simple_form:
     inputs:

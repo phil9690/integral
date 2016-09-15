@@ -4,7 +4,7 @@
  */
 
 CKEDITOR.plugins.add("wordcount", {
-    lang: "ar,ca,da,de,el,en,es,fi,fr,he,hr,it,jp,nl,no,pl,pt,pt-br,ru,sv,tr,zh-cn", // %REMOVE_LINE_CORE%
+    lang: "ar,ca,da,de,el,en,es,fi,fr,he,hr,it,ja,jp,nl,no,pl,pt,pt-br,ru,sv,tr,zh-cn", // %REMOVE_LINE_CORE%
     version: 1.15,
     requires: 'htmlwriter,notification,undo',
     init: function (editor) {

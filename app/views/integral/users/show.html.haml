@@ -1,6 +1,6 @@
 = content_for :title, t('.title', name: @user.name)
 
-= icon_link_to 'edit', edit_user_path, class: 'waves-effect waves-light btn', text: t('actions.edit')
+= icon_link_to 'edit', edit_user_path, class: 'waves-effect waves-light btn', text: t('integral.actions.edit')
 .card-panel
   .row
     .col.s2
@@ -9,7 +9,7 @@
     %span.user-info= @user.email
     %span.user-info= t('.member_since', start_date: l(@user.created_at))
     - @user.roles.each do | role |
-      .chip= role.label 
+      .chip= role.label
   .row
     <hr />
 
