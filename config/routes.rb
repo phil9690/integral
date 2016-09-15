@@ -4,6 +4,9 @@ Integral::Engine.routes.draw do
   # User Authentication
   devise_for :users, class_name: "Integral::User", module: :devise
 
+  # User account Profile route
+  get 'account', to: 'users#account'
+
   # WYSIWYG Editor
   mount Ckeditor::Engine => '/ckeditor'
 

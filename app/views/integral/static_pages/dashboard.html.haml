@@ -13,5 +13,5 @@
   - if policy(Integral::Image).manager?
     = render partial: 'card', locals: { link_path: img_index_path, image_path: 'integral/tiles/images.png', title: t('integral.navigation.images'), description: 'Add, edit and remove images', image_classes: 'blue lighten-2' }
 
-  = render partial: 'card', locals: { link_path: user_path(current_user), image_path: 'integral/tiles/user.png', title: t('integral.navigation.my_account'), description: 'View & edit your profile', image_classes: 'teal lighten-2' }
+  = render partial: 'card', locals: { link_path: account_path, image_path: 'integral/tiles/user.png', title: t('integral.navigation.my_account'), description: 'View & edit your profile', image_classes: 'teal lighten-2' }
 

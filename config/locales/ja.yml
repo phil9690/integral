@@ -176,10 +176,10 @@ ja:
       new:
         title: '新しいユーザー'
       edit:
-        title: 'プロフィールの編集 - %{名前}'
+        title: 'プロフィールの編集 - %{name}'
       show:
-        title: "プロフィール表示 - %{名前}"
-        member_since: "メンバー暦: %{開始_日}"
+        title: "プロフィール表示 - %{name}"
+        member_since: "メンバー暦: %{start_date}"
 
     messages:
       reply_subject: 'あなたのメッセージへの返信'
