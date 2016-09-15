@@ -28,6 +28,16 @@ module Integral
       add_breadcrumb @user.name, :user_path
     end
 
+    # GET /account
+    # Show specific users account page
+    #
+    def account
+      @user = current_user
+      add_breadcrumb @user.name, :account_path
+
+      render :show
+    end
+
     # POST /
     # User creation
     def create
@@ -84,9 +94,9 @@ module Integral
     end
 
     def user_params
-      return params.require(:user).permit(:name, :email, :avatar, role_ids: [] ) unless params[:user][:password].present?
+      return params.require(:user).permit(:name, :email, :avatar, :locale, role_ids: [] ) unless params[:user][:password].present?
 
-      params.require(:user).permit(:name, :email, :avatar, :password, :password_confirmation, role_ids: [])
+      params.require(:user).permit(:name, :email, :avatar, :locale, :password, :password_confirmation, role_ids: [])
     end
 
     def authorize_with_klass

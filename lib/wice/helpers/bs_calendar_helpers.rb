@@ -20,9 +20,9 @@ module Wice #:nodoc:
     def date_calendar_bs(calendar_data)  #:nodoc:
       placeholder =
         if calendar_data.the_other_datepicker_id_to
-          I18n.t("wice_grid.date_selector_tooltip_from")
+          I18n.t("integral.date_selector_tooltip_from")
         else
-          I18n.t("wice_grid.date_selector_tooltip_to")
+          I18n.t("integral.date_selector_tooltip_to")
         end
 
       text_field_tag_options = {

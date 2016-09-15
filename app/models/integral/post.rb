@@ -32,11 +32,13 @@ module Integral
     alias_method :author, :user
 
     # @return [Array] containing available human readable statuses against there numeric value
-    def self.available_statuses
-      [
-        ['Draft', 0],
-        ['Published', 1]
+    def self.available_statuses(opts={ reverse: false })
+      statuses = [
+        [I18n.t('integral.users.status.draft'), 0],
+        [I18n.t('integral.users.status.published'), 1]
       ]
+
+      statuses.each(&:reverse!) if opts[:reverse]
     end
 
     # Increments the view count of the post if a PostViewing is successfully added

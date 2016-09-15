@@ -9,7 +9,7 @@ class FileInput < SimpleForm::Inputs::Base
     merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
 
     provided_button_label = merged_input_options[:button_label]
-    button_label = provided_button_label.present? ? provided_button_label : 'File'
+    button_label = provided_button_label.present? ? provided_button_label : I18n.t('simple_form.inputs.file.button_label')
 
     out = "<div class='btn'>"
     out << "<span>#{button_label}</span>"
