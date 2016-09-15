@@ -168,6 +168,12 @@ en:
       reply_subject: 'In reply to your message'
       index:
         no_messages: 'You currently have no messages :('
+    date_selector_tooltip_from: 'From'
+    date_selector_tooltip_to: 'To'
+    boolean:
+      'true': 'True'
+      'false': 'False'
+
   posts:
     index:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
