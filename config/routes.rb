@@ -7,9 +7,7 @@ Integral::Engine.routes.draw do
   # TODO: Frontend Blog routes
 
   # Backend [User Only]
-  #
-  # TODO: Set path as configurable variable
-  scope 'admin' do
+  scope Integral.configuration.backend_namespace do
     # User Authentication
     devise_for :users, class_name: "Integral::User", module: :devise
 
@@ -17,7 +15,7 @@ Integral::Engine.routes.draw do
     mount Ckeditor::Engine => '/ckeditor'
   end
 
-  namespace :backend, path: 'admin' do
+  namespace :backend, path: Integral.configuration.backend_namespace do
     get '/', to: 'static_pages#dashboard', as: 'dashboard'
 
     # User account Profile route

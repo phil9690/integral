@@ -123,6 +123,8 @@ en:
       new:
         title: 'New Page'
     images:
+      new:
+        title: 'New Image'
       index:
         title: 'Image listing'
         no_images_available: 'No images available. Try uploading some!'
