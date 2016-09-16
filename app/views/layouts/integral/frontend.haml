@@ -13,11 +13,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     = csrf_meta_tags
-
-    -# TODO: Implement meta_tags (including setting fb:app_id)
-    -# = display_meta_tags
-    -#
-    -# %meta{ content: "123456789", property: "fb:app_id" }
+    = display_meta_tags
 
   %body{class: "#{controller_name} #{action_name}" }
     -# TODO: Add GTM

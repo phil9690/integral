@@ -19,6 +19,9 @@ module Integral
     require 'carrierwave'
     require 'carrierwave-imageoptimizer'
     require 'ckeditor'
+    require 'i18n-js'
+    require 'meta-tags'
+    require 'before_render'
     require 'friendly_id'
     require 'acts-as-taggable-on'
     require 'slack-notifier'
@@ -42,6 +45,9 @@ module Integral
         require_dependency(c)
       end
     end
+
+    # Clientside I18n
+    config.assets.initialize_on_precompile = true
 
     # Allows engine factories to be reused by application
     initializer "model_core.factories", :after => "factory_girl.set_factory_paths" do
