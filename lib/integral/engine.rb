@@ -56,7 +56,6 @@ module Integral
 
     initializer "integral.assets.precompile" do |app|
       assets_for_precompile = [
-        "integral/application.scss",
         # Dashboard tiles
         "integral/tiles/*",
         # Defaults
@@ -67,9 +66,13 @@ module Integral
         "ckeditor/my_config.js",
         "ckeditor/filebrowser/*",
 
-        # Front-end
+        # Frontend
         "integral/frontend.js",
-        "integral/frontend.css"
+        "integral/frontend.css",
+
+        # Backend
+        "integral/backend.js",
+        "integral/backend.css"
       ]
 
       app.config.assets.precompile.concat assets_for_precompile

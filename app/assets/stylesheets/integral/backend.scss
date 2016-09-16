@@ -16,6 +16,10 @@
 @import "integral/shared";
 @import "integral/overrides";
 
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: green;
+  }
 .remove-button {
   i {
     @extend .red-text, .text-lighten-1;

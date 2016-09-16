@@ -21,9 +21,9 @@
 //= require ckeditor/loader
 //= require i18n/translations
 //= require integral/extensions
-//= require_tree .
+//= require_directory ./support
 
-$(document).on('ready page:load', function () {
+document.addEventListener("turbolinks:load", function() {
   Waves.displayEffect();
   Materialize.updateTextFields();
   $('select').material_select();
@@ -71,6 +71,7 @@ $(document).on('ready page:load', function () {
   I18n.locale = $('body').data('locale') || 'en'
 });
 
+// TODO Still need this?
 $(document).on('page:load', function () {
   $('input, textarea').characterCounter();
   $('.tooltipped').tooltip({delay: 50});
