@@ -81,7 +81,7 @@ module Integral
       end
 
       def set_breadcrumbs
-        add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+        add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :backend_dashboard_path
         add_breadcrumb I18n.t('integral.breadcrumbs.posts'), :backend_posts_path
       end
     end

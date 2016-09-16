@@ -34,7 +34,7 @@ module Integral
       #
       def account
         @user = current_user
-        add_breadcrumb @user.name, :account_path
+        add_breadcrumb @user.name, :backend_account_path
 
         render :show
       end
@@ -109,7 +109,7 @@ module Integral
       end
 
       def set_breadcrumbs
-        add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :root_path
+        add_breadcrumb I18n.t('integral.breadcrumbs.dashboard'), :backend_dashboard_path
         add_breadcrumb I18n.t('integral.breadcrumbs.users'), :backend_users_path
       end
     end
