@@ -6,6 +6,7 @@ module Integral
     require 'turbolinks'
     require 'simple_form'
     require 'cocoon'
+    require 'draper'
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
     require 'wice_grid'

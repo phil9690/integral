@@ -3,6 +3,7 @@ require 'devise_invitable'
 require "integral/configuration"
 require "integral/engine"
 require "integral/slack_bot"
+require "integral/page_router"
 
 # Integral
 module Integral

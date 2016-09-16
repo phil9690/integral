@@ -1,8 +1,10 @@
 Integral::Engine.routes.draw do
   root 'static_pages#dashboard'
 
+  # Dynamic pages
+  Integral::PageRouter.load
+ 
   # TODO: Frontend Blog routes
-  # TODO: Dynamic route creation
 
   # Backend [User Only]
   #

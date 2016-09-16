@@ -11,4 +11,5 @@ Integral::User.create!({ name: 'Integrico', email: 'info@integralrails.com', pas
 Integral::Page.create!(title: 'Integral Demo Page',
                        description:'This is the Integral gem demo page which should be replaced.',
                        path: '/demo',
-                       body: 'Welcome to Integral. Replace this page by logging in and creating your own!')
+                       body: 'Welcome to Integral. Replace this page by logging in and creating your own!',
+                       status: 1)

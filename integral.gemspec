@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "foundation-rails" # Foundation UI Framework
   s.add_dependency "simple_form" # Form builder
   s.add_dependency "cocoon" # Nested forms
+  s.add_dependency "draper" # Object decoration
   s.add_dependency "paranoia", "~> 2.0" # Soft-delete records
   s.add_dependency "client_side_validations" # Client-side validations
   s.add_dependency "client_side_validations-simple_form" # Simpleform integration for Client-side validations
