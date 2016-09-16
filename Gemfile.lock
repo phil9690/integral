@@ -17,6 +17,7 @@ PATH
       foundation-rails
       friendly_id
       haml-rails (~> 0.9)
+      i18n-js
       materialize-sass (~> 0.97.5.0)
       mini_magick
       paranoia (~> 2.0)
@@ -185,6 +186,8 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
+    i18n-js (2.1.2)
+      i18n
     image_optimizer (1.5.0)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)

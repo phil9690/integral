@@ -8,6 +8,9 @@ module Integral
       # User authentication
       before_action :authenticate_user!
 
+      # User custom locale
+      before_action :set_locale
+
       # User authorization
       include Pundit
       rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -35,6 +38,10 @@ module Integral
         else
           "integral/backend"
         end
+      end
+
+      def set_locale
+        I18n.locale = current_user.locale if current_user.present?
       end
     end
   end

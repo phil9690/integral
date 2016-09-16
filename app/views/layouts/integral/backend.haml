@@ -1,12 +1,13 @@
 %html
   = render 'layouts/integral/backend/head'
-  %body{ class: "#{controller_name} #{action_name}"}
+  %body{ class: "#{controller_name} #{action_name}", data: {locale: I18n.locale }}
     = render_flashes
 
     %header
       %nav
         .nav-wrapper
-          <a href="#" data-activates="admin-menu" class="button-collapse" id="admin-menu-toggle"><span class="material-icons">menu</span><span class="toggle-text">Menu</span><span class="vertical-divider"></span></a>
+          %a#admin-menu-toggle.button-collapse{data: { activates: 'admin-menu' }}
+            %span.material-icons menu
           %span.admin-menu-logo
             = content_for?(:title) ? yield(:title) : "Integral"
           <!-- may not need this anymore --!>
@@ -15,41 +16,49 @@
             %li#user-menu
               #user-menu-contents
                 = image_tag(current_user.avatar)
-                %span SIGNED IN AS
+                %span= t('integral.navigation.signed_in_as')
                 %span#user-menu-name
                   = current_user.name
             %div
               %li
                 = link_to root_path do
-                  <span class="material-icons red-text text-lighten-1">home</span>Home
+                  %span.material-icons.red-text.text-lighten-1 home
+                  = t('integral.navigation.home')
 
               - if policy(Integral::Post).manager?
                 %li
                   = link_to backend_posts_path do
-                    <span class="material-icons orange-text text-lighten-3">rss_feed</span>Posts
+                    %span.material-icons.orange-text.text-lighten-3 rss_feed
+                    = t('integral.navigation.posts')
 
               - if policy(Integral::Page).manager?
                 %li
                   = link_to backend_pages_path do
-                    <span class="material-icons blue-text text-lighten-3">create</span>Pages
+                    %span.material-icons.blue-text.text-lighten-3 create
+                    = t('integral.navigation.pages')
 
               - if policy(Integral::Image).manager?
                 %li
                   = link_to backend_img_index_path do
-                    <span class="material-icons indigo-text text-lighten-3">image</span>Images
+                    %span.material-icons.indigo-text.text-lighten-3 image
+                    = t('integral.navigation.images')
 
               - if policy(current_user).manager?
                 %li
                   = link_to backend_users_path do
-                    <span class="material-icons orange-text text-lighten-1">supervisor_account</span>Users
+                    %span.material-icons.orange-text.text-lighten-1 supervisor_account
+                    = t('integral.navigation.users')
 
             #admin-menu-footer
               %li
-                = link_to backend_user_path(current_user) do 
-                  <span class="material-icons green-text text-lighten-1">perm_identity</span>Account & Profile
+                = link_to backend_account_path do
+                  %span.material-icons.green-text.text-lighten-1 perm_identity
+                  = t('integral.navigation.my_account')
+
               %li
                 = link_to destroy_user_session_path, :method => :delete do
-                  <span class="material-icons grey-text text-lighten-1">exit_to_app</span>Sign Out
+                  %span.material-icons.grey-text.text-lighten-1 exit_to_app
+                  = t('integral.navigation.log_out')
 
     %main
       = render "layouts/integral/backend/floating_button"

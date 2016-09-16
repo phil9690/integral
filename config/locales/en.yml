@@ -11,18 +11,6 @@ en:
       default: "%A, %d %B %Y"
       long: "%H:%M %d/%m/%Y"
 
-  actions:
-    confirm: 'Are you sure?'
-    create: 'Create'
-    save: 'Save'
-    delete: 'Delete'
-    edit: 'Edit'
-    update: 'Update'
-    send: 'Send'
-    view: 'View'
-    read_more: 'Read more..'
-    reply: 'Reply'
-
   errors:
     generic: 'Unfortunately there was a problem. Please try again later.'
     unauthorized: 'You are not authorized to perform this action.'
@@ -33,6 +21,18 @@ en:
         subject: "New message from %{name}"
 
   integral:
+    actions:
+      confirm: 'Are you sure?'
+      create: 'Create'
+      save: 'Save'
+      delete: 'Delete'
+      edit: 'Edit'
+      update: 'Update'
+      send: 'Send'
+      view: 'View'
+      read_more: 'Read more..'
+      reply: 'Reply'
+
     breadcrumbs:
       dashboard: 'Dashboard'
       settings: 'Settings'
@@ -46,11 +46,32 @@ en:
       new: 'New'
       edit: 'Edit'
 
+    navigation:
+      signed_in_as: '[JA] SIGNED IN AS'
+      home: 'Home'
+      posts: 'Posts'
+      pages: 'Pages'
+      users: 'Users'
+      images: 'Images'
+      log_out: 'Logout'
+      my_account: 'Account & Profile'
+
+    confirmation_modal:
+      title: 'Confirmation'
+      confirm: 'Confirm'
+      cancel: 'Cancel'
     static_pages:
       dashboard:
         title: 'Dashboard'
       pages:
         title: 'Pages'
+    roles:
+      labels:
+        user_manager: 'User Manager'
+        image_manager: 'Image Manager'
+        page_manager: 'Page Manager'
+        post_manager: 'Post Manager'
+ 
     posts:
       grid:
         columns:
@@ -65,6 +86,7 @@ en:
         new_post: 'Create post'
         published_count: "%{count} published"
         drafts_count: "%{count} drafted"
+        non_available: 'No posts available. Try creating one!'
       edit:
         title: 'Edit Post'
       new:
@@ -79,7 +101,7 @@ en:
     pages:
       index:
         title: 'Page listing'
-        no_pages_available: 'No pages available. Try uploading some!'
+        non_available: 'No pages available. Try creating one!'
         add_page: 'Add page'
         published_count: "%{count} published"
         drafts_count: "%{count} drafted"
@@ -115,6 +137,9 @@ en:
       edit:
         title: 'Editing image - %{name}'
     users:
+      status:
+        draft: 'Draft'
+        published: 'Published'
       notification:
         creation_success: 'User has been invited.'
         creation_failure: 'User already exists.'
@@ -122,6 +147,8 @@ en:
         edit_failure: 'Failed to update user.'
         delete_success: 'User successfully deleted.'
         delete_failure: 'Failed to delete user.'
+      prompts:
+        select_language: 'Select language..'
       grid:
         columns:
           name: 'Name'
@@ -141,10 +168,26 @@ en:
       reply_subject: 'In reply to your message'
       index:
         no_messages: 'You currently have no messages :('
+    date_selector_tooltip_from: 'From'
+    date_selector_tooltip_to: 'To'
+    boolean:
+      'true': 'True'
+      'false': 'False'
+
   posts:
     index:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
       post_info: "Posted by %{name} on %{date}"
+  simple_form:
+    inputs:
+      file:
+        button_label: 'File'
+      switch:
+        turn_on: 'On'
+        turn_off: 'Off'
+    labels:
+      user:
+        locale: 'Language'
 
   helpers:
     submit:

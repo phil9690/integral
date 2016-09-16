@@ -27,6 +27,14 @@ module Integral
       roles.any? { |r| r.name.underscore.to_sym == role_sym }
     end
 
+    # @return [Array] containing available locales
+    def self.available_locales
+      [
+        ['English', 'en'],
+        ['日本語', 'ja']
+      ]
+    end
+
     private
 
     def send_devise_notification(notification, *args)

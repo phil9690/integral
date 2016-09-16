@@ -19,6 +19,7 @@
 //= require wice_grid
 //= require cocoon
 //= require ckeditor/loader
+//= require i18n/translations
 //= require integral/extensions
 //= require_tree .
 
@@ -65,6 +66,9 @@ $(document).on('ready page:load', function () {
       }
     });
   });
+
+  // Set the local for clientside validations
+  I18n.locale = $('body').data('locale') || 'en'
 });
 
 $(document).on('page:load', function () {

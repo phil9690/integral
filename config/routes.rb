@@ -3,7 +3,7 @@ Integral::Engine.routes.draw do
 
   # Dynamic pages
   Integral::PageRouter.load
- 
+
   # TODO: Frontend Blog routes
 
   # Backend [User Only]
@@ -19,6 +19,9 @@ Integral::Engine.routes.draw do
 
   namespace :backend, path: 'admin' do
     get '/', to: 'static_pages#dashboard', as: 'dashboard'
+
+    # User account Profile route
+    get 'account', to: 'users#account'
 
     # User Management
     resources :users

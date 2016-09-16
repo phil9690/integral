@@ -29,6 +29,16 @@ module Integral
         add_breadcrumb @user.name, :backend_user_path
       end
 
+      # GET /account
+      # Show specific users account page
+      #
+      def account
+        @user = current_user
+        add_breadcrumb @user.name, :account_path
+
+        render :show
+      end
+
       # POST /
       # User creation
       def create
