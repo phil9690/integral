@@ -71,105 +71,107 @@ en:
         image_manager: 'Image Manager'
         page_manager: 'Page Manager'
         post_manager: 'Post Manager'
- 
-    posts:
-      grid:
-        columns:
-          title: 'Title'
-          description: 'Description'
-          last_updated: 'Last updated'
-          author: 'Author'
-          views: 'Views'
-          status: 'Status'
-      index:
-        title: 'Posts'
-        new_post: 'Create post'
-        published_count: "%{count} published"
-        drafts_count: "%{count} drafted"
-        non_available: 'No posts available. Try creating one!'
-      edit:
-        title: 'Edit Post'
-      new:
-        title: 'New Post'
-      notification:
-        creation_success: 'Post successfully created.'
-        creation_failure: 'Post creation failed.'
-        edit_success: 'Post successfully updated.'
-        edit_failure: 'Failed to update post.'
-        delete_success: 'Post successfully deleted.'
-        delete_failure: 'Failed to delete post.'
-    pages:
-      index:
-        title: 'Page listing'
-        non_available: 'No pages available. Try creating one!'
-        add_page: 'Add page'
-        published_count: "%{count} published"
-        drafts_count: "%{count} drafted"
-      grid:
-        columns:
-          title: 'Title'
-          description: 'Description'
-          path: 'Path'
-          last_updated_at: 'Last updated'
-      notification:
-        creation_success: 'Page successfully created.'
-        creation_failure: 'Page creation failed.'
-        edit_success: 'Page successfully updated.'
-        edit_failure: 'Failed to update page.'
-        delete_success: 'Page successfully deleted.'
-        delete_failure: 'Failed to delete page.'
-      edit:
-        title: 'Editing page - %{title}'
-      new:
-        title: 'New Page'
-    images:
-      new:
-        title: 'New Image'
-      index:
-        title: 'Image listing'
-        no_images_available: 'No images available. Try uploading some!'
-        new_image: 'New image'
-      notification:
-        creation_success: 'Image successfully created.'
-        creation_failure: 'Image creation failed.'
-        edit_success: 'Image successfully updated.'
-        edit_failure: 'Failed to update Image.'
-        delete_success: 'Image successfully deleted.'
-        delete_failure: 'Failed to delete image.'
-      edit:
-        title: 'Editing image - %{name}'
     users:
       status:
         draft: 'Draft'
         published: 'Published'
-      notification:
-        creation_success: 'User has been invited.'
-        creation_failure: 'User already exists.'
-        edit_success: 'User successfully updated.'
-        edit_failure: 'Failed to update user.'
-        delete_success: 'User successfully deleted.'
-        delete_failure: 'Failed to delete user.'
-      prompts:
-        select_language: 'Select language..'
-      grid:
-        columns:
-          name: 'Name'
-          email: 'Email'
-          last_signed_in: 'Last signed in'
-      index:
-        title: 'User listing'
-        add_user: 'Add user'
-      new:
-        title: 'New user'
-      edit:
-        title: 'Editing profile - %{name}'
-      show:
-        title: "Viewing profile - %{name}"
-        member_since: "Member since: %{start_date}"
-    messages:
-      reply_subject: 'In reply to your message'
-      index:
-        no_messages: 'You currently have no messages :('
+    backend:
+      posts:
+        grid:
+          columns:
+            title: 'Title'
+            description: 'Description'
+            last_updated: 'Last updated'
+            author: 'Author'
+            views: 'Views'
+            status: 'Status'
+        index:
+          title: 'Posts'
+          new_post: 'Create post'
+          published_count: "%{count} published"
+          drafts_count: "%{count} drafted"
+          non_available: 'No posts available. Try creating one!'
+        edit:
+          title: 'Edit Post'
+        new:
+          title: 'New Post'
+        notification:
+          creation_success: 'Post successfully created.'
+          creation_failure: 'Post creation failed.'
+          edit_success: 'Post successfully updated.'
+          edit_failure: 'Failed to update post.'
+          delete_success: 'Post successfully deleted.'
+          delete_failure: 'Failed to delete post.'
+      pages:
+        index:
+          title: 'Page listing'
+          non_available: 'No pages available. Try creating one!'
+          add_page: 'Add page'
+          published_count: "%{count} published"
+          drafts_count: "%{count} drafted"
+        grid:
+          columns:
+            title: 'Title'
+            description: 'Description'
+            path: 'Path'
+            last_updated_at: 'Last updated'
+        notification:
+          creation_success: 'Page successfully created.'
+          creation_failure: 'Page creation failed.'
+          edit_success: 'Page successfully updated.'
+          edit_failure: 'Failed to update page.'
+          delete_success: 'Page successfully deleted.'
+          delete_failure: 'Failed to delete page.'
+        edit:
+          title: 'Editing page - %{title}'
+        new:
+          title: 'New Page'
+      images:
+        new:
+          title: 'New Image'
+        index:
+          title: 'Image listing'
+          no_images_available: 'No images available. Try uploading some!'
+          new_image: 'New image'
+        notification:
+          creation_success: 'Image successfully created.'
+          creation_failure: 'Image creation failed.'
+          edit_success: 'Image successfully updated.'
+          edit_failure: 'Failed to update Image.'
+          delete_success: 'Image successfully deleted.'
+          delete_failure: 'Failed to delete image.'
+        edit:
+          title: 'Editing image - %{name}'
+      users:
+
+        notification:
+          creation_success: 'User has been invited.'
+          creation_failure: 'User already exists.'
+          edit_success: 'User successfully updated.'
+          edit_failure: 'Failed to update user.'
+          delete_success: 'User successfully deleted.'
+          delete_failure: 'Failed to delete user.'
+        prompts:
+          select_language: 'Select language..'
+        grid:
+          columns:
+            name: 'Name'
+            email: 'Email'
+            last_signed_in: 'Last signed in'
+        index:
+          title: 'User listing'
+          add_user: 'Add user'
+        new:
+          title: 'New user'
+        edit:
+          title: 'Editing profile - %{name}'
+        show:
+          title: "Viewing profile - %{name}"
+          member_since: "Member since: %{start_date}"
+      messages:
+        reply_subject: 'In reply to your message'
+        index:
+          no_messages: 'You currently have no messages :('
     date_selector_tooltip_from: 'From'
     date_selector_tooltip_to: 'To'
     boolean:

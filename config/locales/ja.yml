@@ -71,115 +71,114 @@ ja:
         image_manager: '[JA] Image Manager'
         page_manager: '[JA] Page Manager'
         post_manager: '[JA] Post Manager'
-    posts:
-      grid:
-        columns:
-          title: 'タイトル'
-          description: '説明'
-          last_updated: '最終更新'
-          author: '著者'
-          views: 'ビュー'
-          status: 'ステータス'
-      index:
-        title: '投稿'
-        new_post: '投稿作成'
-        published_count: "%{count} 公開"
-        drafts_count: "%{count} 召集"
-        non_available: '利用できる投稿はありません。作成してください。'
-      edit:
-        title: '投稿の編集'
-      new:
-        title: '新しい投稿'
-      notification:
-        creation_success: '投稿の作成に成功'
-        creation_failure: '投稿の作成に失敗'
-        edit_success: '投稿の編集に成功'
-        edit_failure: '投稿の編集に失敗'
-        delete_success: '投稿の削除に成功'
-        delete_failure: '投稿の削除に失敗'
+    backend:
+      posts:
+        grid:
+          columns:
+            title: 'タイトル'
+            description: '説明'
+            last_updated: '最終更新'
+            author: '著者'
+            views: 'ビュー'
+            status: 'ステータス'
+        index:
+          title: '投稿'
+          new_post: '投稿作成'
+          published_count: "%{count} 公開"
+          drafts_count: "%{count} 召集"
+          non_available: '利用できる投稿はありません。作成してください。'
+        edit:
+          title: '投稿の編集'
+        new:
+          title: '新しい投稿'
+        notification:
+          creation_success: '投稿の作成に成功'
+          creation_failure: '投稿の作成に失敗'
+          edit_success: '投稿の編集に成功'
+          edit_failure: '投稿の編集に失敗'
+          delete_success: '投稿の削除に成功'
+          delete_failure: '投稿の削除に失敗'
 
-    pages:
-      index:
-        title: 'ページ一覧'
-        non_available: '利用できるページがありません。作成してください。'
-        add_page: 'ページの追加'
-        published_count: "%{count} 公開"
-        drafts_count: "%{count} 召集"
-      edit:
-        title: '投稿の編集'
-      new:
-        title: '新しい投稿'
-      notification:
-        creation_success: '投稿の作成に成功'
-        creation_failure: '投稿の作成に失敗'
-        edit_success: '投稿の編集に成功'
-        edit_failure: '投稿の編集に失敗'
-        delete_success: '投稿の削除に成功'
-        delete_failure: '投稿の削除に失敗'
+      pages:
+        index:
+          title: 'ページ一覧'
+          non_available: '利用できるページがありません。作成してください。'
+          add_page: 'ページの追加'
+          published_count: "%{count} 公開"
+          drafts_count: "%{count} 召集"
+        edit:
+          title: '投稿の編集'
+        new:
+          title: '新しい投稿'
+        notification:
+          creation_success: '投稿の作成に成功'
+          creation_failure: '投稿の作成に失敗'
+          edit_success: '投稿の編集に成功'
+          edit_failure: '投稿の編集に失敗'
+          delete_success: '投稿の削除に成功'
+          delete_failure: '投稿の削除に失敗'
+        grid:
+          columns:
+            title: 'タイトル'
+            description: '説明'
+            path: 'パス'
+            last_updated_at: '最終更新'
+        notification:
+          creation_success: 'ページの作成に成功.'
+          creation_failure: 'ページの作成に失敗'
+          edit_success: 'ページの編集に成功'
+          edit_failure: 'ページの編集に失敗'
+          delete_success: 'ページの削除に成功'
+          delete_failure: 'ページの削除に失敗'
+        edit:
+          title: 'ページ追加 - %{title}'
+        new:
+          title: '新しいページ'
+      images:
+        new:
+          title: '新しいイメージ'
+        index:
+          title: 'イメージ一覧'
+          no_images_available: '利用できるイメージがありません。作成してください。'
+          new_image: '新しいイメージ'
+        notification:
+          creation_success: 'イメージの作成に成功'
+          creation_failure: 'イメージの作成に失敗'
+          edit_success: 'イメージの更新に成功'
+          edit_failure: 'イメージの更新に失敗'
+          delete_success: 'イメージの削除に成功'
+          delete_failure: 'イメージの削除に失敗'
+        edit:
+          title: 'イメージ編集 - %{name}'
 
-    
-      grid:
-        columns:
-          title: 'タイトル'
-          description: '説明'
-          path: 'パス'
-          last_updated_at: '最終更新'
-      notification:
-        creation_success: 'ページの作成に成功.'
-        creation_failure: 'ページの作成に失敗'
-        edit_success: 'ページの編集に成功'
-        edit_failure: 'ページの編集に失敗'
-        delete_success: 'ページの削除に成功'
-        delete_failure: 'ページの削除に失敗'
-      edit:
-        title: 'ページ追加 - %{title}'
-      new:
-        title: '新しいページ'
-    images:
-      new:
-        title: '新しいイメージ'
-      index:
-        title: 'イメージ一覧'
-        no_images_available: '利用できるイメージがありません。作成してください。'
-        new_image: '新しいイメージ'
-      notification:
-        creation_success: 'イメージの作成に成功'
-        creation_failure: 'イメージの作成に失敗'
-        edit_success: 'イメージの更新に成功'
-        edit_failure: 'イメージの更新に失敗'
-        delete_success: 'イメージの削除に成功'
-        delete_failure: 'イメージの削除に失敗'
-      edit:
-        title: 'イメージ編集 - %{name}'
-
-    users:
-      status:
-        draft: '下書き'
-        published: '公開'
-      notification:
-        creation_success: 'ユーザーの作成に成功'
-        creation_failure: 'ユーザーの作成に失敗'
-        edit_success: 'ユーザーの編集に成功'
-        edit_failure: 'ユーザーの編集に失敗'
-        delete_success: 'ユーザーの削除に成功'
-        delete_failure: 'ユーザーの削除に失敗'
-      prompts:
-        select_language: '[JA] Select language..'
-      grid:
-        columns:
-          name: '名前'
-          email: 'メール'
-          last_signed_in: '最終のサインイン'
-      index:
-        title: 'ユーザー一覧'
-        add_user: 'ユーザー追加'
-      new:
-        title: '新しいユーザー'
-      edit:
-        title: 'プロフィールの編集 - %{name}'
-      show:
-        title: "プロフィール表示 - %{name}"
-        member_since: "メンバー暦: %{start_date}"
+      users:
+        status:
+          draft: '下書き'
+          published: '公開'
+        notification:
+          creation_success: 'ユーザーの作成に成功'
+          creation_failure: 'ユーザーの作成に失敗'
+          edit_success: 'ユーザーの編集に成功'
+          edit_failure: 'ユーザーの編集に失敗'
+          delete_success: 'ユーザーの削除に成功'
+          delete_failure: 'ユーザーの削除に失敗'
+        prompts:
+          select_language: '[JA] Select language..'
+        grid:
+          columns:
+            name: '名前'
+            email: 'メール'
+            last_signed_in: '最終のサインイン'
+        index:
+          title: 'ユーザー一覧'
+          add_user: 'ユーザー追加'
+        new:
+          title: '新しいユーザー'
+        edit:
+          title: 'プロフィールの編集 - %{name}'
+        show:
+          title: "プロフィール表示 - %{name}"
+          member_since: "メンバー暦: %{start_date}"
 
     messages:
       reply_subject: 'あなたのメッセージへの返信'
