@@ -35,6 +35,8 @@ document.addEventListener("turbolinks:load", function() {
   });
 
   SlugGenerator.check_for_slugs();
+
+  // Used for Autocomplete
   var filterSuggestions = function(suggestableInput, suggestions) {
     existingItems = suggestableInput.val().split(',')
 
@@ -43,7 +45,8 @@ document.addEventListener("turbolinks:load", function() {
     });
   };
 
-
+  // Material Tags
+  // TODO: Newest version of Materialize now implements this. Investigate replacing.
   $("input[data-role=materialtags]").each(function( index ) {
     suggestableInput = $(this)
     typeaheadSuggestions = suggestableInput.data('typeahead').split(' ')
@@ -69,6 +72,18 @@ document.addEventListener("turbolinks:load", function() {
 
   // Set the local for clientside validations
   I18n.locale = $('body').data('locale') || 'en'
+
+  // CKEditor Initialization
+  // TODO: Figure out why this is causing JS warning messages
+    for(name in CKEDITOR.instances) {
+      CKEDITOR.instances[name].destroy(true);
+    }
+
+  $('.ckeditor textarea').each(function() {
+    editor = $(this);
+
+    CKEDITOR.replace(editor.attr('id'), { "language": I18n.locale });
+  });
 });
 
 // TODO Still need this?
