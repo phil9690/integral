@@ -34,8 +34,8 @@ module Integral
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses(opts={ reverse: false })
       statuses = [
-        [I18n.t('integral.users.status.draft'), 0],
-        [I18n.t('integral.users.status.published'), 1]
+        [I18n.t('integral.users.status.draft'), :draft],
+        [I18n.t('integral.users.status.published'), :published]
       ]
 
       statuses.each(&:reverse!) if opts[:reverse]

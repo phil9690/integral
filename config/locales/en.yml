@@ -47,7 +47,7 @@ en:
       edit: 'Edit'
 
     navigation:
-      signed_in_as: '[JA] SIGNED IN AS'
+      signed_in_as: 'SIGNED IN AS'
       home: 'Home'
       posts: 'Posts'
       pages: 'Pages'
