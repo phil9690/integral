@@ -64,5 +64,13 @@ module Integral
 
       meta_data
     end
+
+    def load_recent_posts
+      @recent_posts = Integral::Post.published.order("published_at DESC").limit(4)
+    end
+
+    def load_popular_posts
+      @popular_posts = Integral::Post.published.order("view_count DESC").limit(4)
+    end
   end
 end

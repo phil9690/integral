@@ -4,7 +4,8 @@ Integral::Engine.routes.draw do
   # Dynamic pages
   Integral::PageRouter.load
 
-  # TODO: Frontend Blog routes
+  # Frontend Blog routes
+  resources Integral.configuration.blog_namespace, only: [ :show, :index ], as: :posts, to: 'posts'
 
   # Backend [User Only]
   scope Integral.configuration.backend_namespace do

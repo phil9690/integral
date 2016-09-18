@@ -26,6 +26,9 @@ module Integral
     require 'acts-as-taggable-on'
     require 'slack-notifier'
     require 'paranoia'
+    require 'factory_girl_rails'
+    require 'faker'
+    require 'will_paginate'
 
     isolate_namespace Integral
 

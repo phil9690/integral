@@ -3,8 +3,7 @@
 //= require turbolinks
 //= require foundation
 
-$(document).on('ready page:load', function () {
+document.addEventListener("turbolinks:load", function() {
   $(document).foundation();
-  console.log('Frontend Loaded.');
 });
 

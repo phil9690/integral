@@ -13,6 +13,8 @@ PATH
       devise
       devise_invitable
       draper
+      factory_girl_rails
+      faker
       font-awesome-sass (~> 4.3)
       foundation-rails
       friendly_id
@@ -30,6 +32,8 @@ PATH
       slack-notifier
       turbolinks
       wice_grid
+      will_paginate
+      will_paginate-foundation
 
 GEM
   remote: https://rubygems.org/
@@ -342,6 +346,9 @@ GEM
       activerecord (> 3.2)
       coffee-rails (> 3.2)
       kaminari (~> 0.16)
+    will_paginate (3.1.0)
+    will_paginate-foundation (6.2.0)
+      will_paginate (>= 3.0.3)
     yard (0.8.7.6)
 
 PLATFORMS
@@ -351,8 +358,6 @@ DEPENDENCIES
   brakeman
   cane
   database_cleaner
-  factory_girl_rails
-  faker
   flay
   flog
   fudge

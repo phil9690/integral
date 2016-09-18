@@ -4,6 +4,7 @@ require "integral/configuration"
 require "integral/engine"
 require "integral/slack_bot"
 require "integral/page_router"
+require "integral/foundation_builder"
 
 # Integral
 module Integral

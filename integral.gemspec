@@ -30,6 +30,8 @@ Gem::Specification.new do |s|
   s.add_dependency "client_side_validations" # Client-side validations
   s.add_dependency "client_side_validations-simple_form" # Simpleform integration for Client-side validations
   s.add_dependency "wice_grid" # Grids
+  s.add_dependency "will_paginate" # Pagination
+  s.add_dependency "will_paginate-foundation" # Pagination for Foundation
   s.add_dependency "font-awesome-sass", '~> 4.3' # Grid Icons
   s.add_dependency "breadcrumbs_on_rails" # Breadcrumbs
   s.add_dependency "carrierwave" # File uploader
@@ -43,14 +45,14 @@ Gem::Specification.new do |s|
 
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
   s.add_dependency "i18n-js" # Clientside translations
+  s.add_dependency 'factory_girl_rails' # Create reusable object templates
+  s.add_dependency 'faker' # Random data generator
 
   s.add_development_dependency "pry-rails" # Debugger
   s.add_development_dependency "sqlite3" # Database
   s.add_development_dependency 'rspec-rails' # Testing framework
   s.add_development_dependency 'database_cleaner' # Manages database for consistent data setup
   s.add_development_dependency 'shoulda-matchers' # Extra matchers for testing
-  s.add_development_dependency 'factory_girl_rails' # Create reusable object templates
-  s.add_development_dependency 'faker' # Random data generator
   # s.add_development_dependency 'capybara'
 
   # CI, code coverage, analysis and documentation tools
