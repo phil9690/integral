@@ -29,6 +29,7 @@ module Integral
     require 'factory_girl_rails'
     require 'faker'
     require 'will_paginate'
+    require 'will_paginate-foundation'
 
     isolate_namespace Integral
 

@@ -5,6 +5,10 @@ Integral::Engine.routes.draw do
   Integral::PageRouter.load
 
   # Frontend Blog routes
+  scope Integral.configuration.blog_namespace do
+    resources :tags, only: [:index, :show]
+  end
+  # Post Routing must go after tags otherwise it will override
   resources Integral.configuration.blog_namespace, only: [ :show, :index ], as: :posts, to: 'posts'
 
   # Backend [User Only]

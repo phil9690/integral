@@ -1,13 +1,5 @@
 = render layout: 'integral/shared/blog_layout' do
   - @posts.each do |post|
-    .blog-post
-      %h3= post.title
-      -# <h3>Awesome blog post title <small>3/6/2015</small></h3>
-      = link_to post_path(post) do
-        %img.thumbnail{ src: "http://placehold.it/850x350" }
-      %p= post.description
-      .callout
-        %ul.menu.simple
-          %li= post.author.name
-          %li= link_to 'Comments: 3', post_path(post)
+    = render partial: 'integral/posts/item', locals: { post: post }
 
+  = will_paginate @posts, renderer: FoundationPagination::Rails

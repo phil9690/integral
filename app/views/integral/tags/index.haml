@@ -1,0 +1,11 @@
+= render layout: 'integral/shared/blog_layout' do
+  %h1= t('integral.tags.index.title')
+  - @tags.each do |tag|
+    .blog-tag
+      = link_to tag_path(tag.name) do
+        %h3= tag.name
+        %p= tag.count
+        %hr
+
+  = will_paginate @tags, renderer: FoundationPagination::Rails
+
