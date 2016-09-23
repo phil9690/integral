@@ -6,6 +6,7 @@
     = f.input :url, input_html: { class: 'url-field' }
     = f.input :image
     = f.input :target
+    = f.input :priority, as: :hidden, input_html: { class: 'priority-field' }
 
     .modal-footer
       = link_to 'Ok', '#', class: 'btn confirm-btn'

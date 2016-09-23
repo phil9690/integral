@@ -12,6 +12,8 @@ class this.MenuItem
 
   setupEvents: ->
     @modal.find('.confirm-btn').click (e) =>
+      e.preventDefault()
+
       # Validate form before closing Modal
       if @_getForm().isValid(@_getFormValidators(@_getForm()))
         @modal.closeModal()

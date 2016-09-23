@@ -1,5 +1,8 @@
 module Integral
   class MenuItem < ActiveRecord::Base
+    # Default scope orders by priority
+    default_scope { order(:priority) }
+
     # Associations
     has_and_belongs_to_many(:children,
                             :join_table => "integral_menu_item_connections",
