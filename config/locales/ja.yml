@@ -67,10 +67,12 @@ ja:
         title: 'ページ'
     roles:
       labels:
-        user_manager: '[JA] User Manager'
-        image_manager: '[JA] Image Manager'
-        page_manager: '[JA] Page Manager'
-        post_manager: '[JA] Post Manager'
+        user_manager: '[JA] ユーザーマネージャー'
+        image_manager: '[JA] イメージマネージャー'
+        page_manager: '[JA]ページマネージャー'
+        post_manager: '[JA] ポストマネージャー'
+
+
     posts:
       grid:
         columns:
@@ -164,7 +166,7 @@ ja:
         delete_success: 'ユーザーの削除に成功'
         delete_failure: 'ユーザーの削除に失敗'
       prompts:
-        select_language: '[JA] Select language..'
+        select_language: '言語選択'
       grid:
         columns:
           name: '名前'
@@ -186,10 +188,10 @@ ja:
       index:
         no_messages: 'メッセージがありません :('
     boolean:
-      'true': '[JA] True'
-      'false': '[JA] False'
-    date_selector_tooltip_from: '[JA] From'
-    date_selector_tooltip_to: '[JA] To'
+      'true': '真'
+      'false': '偽'
+    date_selector_tooltip_from: 'フロム'
+    date_selector_tooltip_to: 'ツー'
 
   simple_form:
     inputs:

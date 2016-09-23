@@ -1,0 +1,10 @@
+.nested-fields
+  = f.input :title
+  = link_to_remove_association "remove menu item", f
+
+  .child-menu
+    = f.simple_fields_for :children do |child|
+      = render 'child2_fields', f: child
+  -# .links
+  -#   = link_to_add_association 'Add Menu Item', f, :children
+

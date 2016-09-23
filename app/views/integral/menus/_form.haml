@@ -1,0 +1,10 @@
+.row
+  = simple_form_for @menu, validate: true  do |f|
+    .col.s12
+      .card-panel
+        .row
+        = f.input :title
+        = f.input :description, as: :text
+
+    = f.button :button
+

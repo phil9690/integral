@@ -1,0 +1,14 @@
+.modal.menu-item-modal{id: "menu-item-modal-#{f.object.id}"}
+  .modal-content
+    %h4 Edit Menu Item
+
+    = f.input :title, input_html: { class: 'title-field' }
+    = f.input :url, input_html: { class: 'url-field' }
+    = f.input :image
+    = f.input :target
+
+    .modal-footer
+      = link_to 'Ok', '#', class: 'btn confirm-btn'
+      = link_to_remove_association 'Remove', f, class: 'btn red modal-close', wrapper_class: 'menu-item-container'
+
+
