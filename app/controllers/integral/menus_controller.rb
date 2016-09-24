@@ -8,7 +8,7 @@ module Integral
     # GET /
     # Lists all menus
     def index
-      @menus = Menu.all
+      @menus_grid = initialize_grid(Menu)
     end
 
     # GET /:id
@@ -68,7 +68,7 @@ module Integral
         flash[:error] = I18n.t('integral.menus.notification.delete_failure')
       end
 
-      redirect_to img_index_path
+      redirect_to menus_path
     end
 
     private

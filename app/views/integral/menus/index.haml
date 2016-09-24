@@ -1,5 +1,5 @@
-= link_to 'Create Menu!', new_menu_path, class: 'btn'
-%ul
-  - @menus.each do |menu|
-    %li
-      = link_to menu.title, menu_path(menu)
+= icon_link_to 'add', new_menu_path, class: 'waves-effect waves-light btn mr-1em', text: t('.add_menu')
+
+.card-panel
+  = render 'grid'
+

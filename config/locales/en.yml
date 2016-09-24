@@ -33,6 +33,10 @@ en:
       read_more: 'Read more..'
       reply: 'Reply'
 
+    placeholders:
+      description: 'Description'
+      title: 'Title'
+
     breadcrumbs:
       dashboard: 'Dashboard'
       settings: 'Settings'
@@ -41,6 +45,7 @@ en:
       posts: 'Posts'
       users: 'Users'
       images: 'Images'
+      menus: 'Menus'
       galleries: 'Galleries'
       messages: 'Messages'
       new: 'New'
@@ -72,7 +77,25 @@ en:
         image_manager: 'Image Manager'
         page_manager: 'Page Manager'
         post_manager: 'Post Manager'
- 
+
+    menus:
+      index:
+        add_menu: 'Add menu'
+        non_available: 'No Menus currently available. Try creating one!'
+      show:
+        title: "Menu - %{title}"
+      grid:
+        columns:
+          title: 'Title'
+          description: 'Description'
+      notification:
+        creation_success: 'Menu successfully created.'
+        creation_failure: 'Menu creation failed.'
+        edit_success: 'Menu successfully updated.'
+        edit_failure: 'Failed to update menu.'
+        delete_success: 'Menu successfully deleted.'
+        delete_failure: 'Failed to delete menu.'
+
     posts:
       grid:
         columns:
