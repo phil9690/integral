@@ -82,7 +82,7 @@ module Integral
     end
 
     def menu_params
-      params.require(:menu).permit(:title, :description, menu_items_attributes: [:id, :title, :url, :image, :target, :priority, :_destroy, children_attributes: [:id, :title, :url, :image, :target, :priority, :_destroy]])
+      params.require(:menu).permit(:title, :description, menu_items_attributes: [:id, :title, :url, :image_id, :target, :priority, :_destroy, children_attributes: [:id, :title, :url, :image_id, :target, :priority, :_destroy]])
     end
 
     def set_breadcrumbs

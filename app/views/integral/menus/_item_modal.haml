@@ -4,8 +4,9 @@
 
     = f.input :title, input_html: { class: 'title-field' }
     = f.input :url, input_html: { class: 'url-field' }
-    = f.input :image
-    = f.input :target
+    = f.association :image, prompt: t('integral.prompts.select_image'), collection: Integral::Image.all.order(:title)
+
+    = f.input :target, as: :boolean, checked_value: '_blank'
     = f.input :priority, as: :hidden, input_html: { class: 'priority-field' }
 
     .modal-footer

@@ -4,6 +4,7 @@ module Integral
     default_scope { order(:priority) }
 
     # Associations
+    belongs_to :image
     has_and_belongs_to_many(:children,
                             :join_table => "integral_menu_item_connections",
                             :foreign_key => "parent_id",

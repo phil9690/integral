@@ -82,6 +82,7 @@ class this.Menu
 
     @_initializeSortable()
     @_calculateMenuItemPriorities()
+    new_item.find('select').material_select()
 
     # Initialize & open modal
     modalTrigger.leanModal()

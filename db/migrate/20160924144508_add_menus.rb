@@ -8,9 +8,10 @@ class AddMenus < ActiveRecord::Migration
     create_table "integral_menu_items", :force => true do |t|
       t.string  "title", :null => false
       t.string  "url"
-      t.string  "image"
+      t.integer  "image_id"
       t.string  "target"
       t.integer "menu_id"
+      t.integer "priority"
     end
 
     create_table "integral_menu_item_connections", :force => true, :id => false do |t|
