@@ -18,7 +18,6 @@
           = link_to_add_association f, :menu_items, 'data-association-insertion-method' => 'after', id: 'top-add-menu-button', 'data-association-insertion-node' => '#top-add-menu-button' do
             .add-menu-item
               %i.material-icons add
-
           = f.simple_fields_for :menu_items do |menu_item|
             = render 'menu_item_fields', f: menu_item
       = f.button :button

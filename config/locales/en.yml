@@ -211,6 +211,8 @@ en:
         turn_on: 'On'
         turn_off: 'Off'
     labels:
+      children:
+        target: 'Opens in new window?'
       menu_items:
         target: 'Opens in new window?'
       user:

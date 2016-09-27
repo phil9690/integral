@@ -9,8 +9,17 @@ class this.Menu
 
   setupEvents: ->
     # Handle sorting
-    sortable('.sortable')[0].addEventListener 'sortupdate', =>
-      @_calculateMenuItemPriorities()
+    # $('.sortable').each (sortable_index, sortable_element) =>
+    #   sortable_element.addEventListener 'sortstart', (ev) =>
+    #     item = $(ev.detail.item)
+    #     placeholder = $(ev.detail.placeholder)
+    #
+    #     placeholder.css('height', item.css('height'))
+    #     placeholder.css('width', item.css('width'))
+
+    $('.sortable').each (sortable_index, sortable_element) =>
+      sortable_element.addEventListener 'sortupdate', =>
+        @_calculateMenuItemPriorities()
 
     # Handle new MenuItem Insertion & Removal
     $('#menu-items')
@@ -78,16 +87,12 @@ class this.Menu
     modalTrigger.attr("href","#menu-item-modal-#{$.now()}")
 
     # Initialize new MenuItem
-    new MenuItem(new_item)
+    menu_item = new MenuItem(new_item)
 
     @_initializeSortable()
     @_calculateMenuItemPriorities()
     new_item.find('select').material_select()
 
-    # Initialize & open modal
-    modalTrigger.leanModal()
-    modal.openModal
-      dismissible: false,
-      ready: =>
-        modal.find('input').enableClientSideValidations()
+    # Open modal
+    menu_item.openModal()
 

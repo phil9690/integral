@@ -32,7 +32,6 @@ $(document).on('ready page:load', function () {
   $(".button-collapse").sideNav();
   $(".dropdown-button").dropdown();
   $('body').addClass('loaded');
-  $('.modal-trigger').leanModal();
   $('.collapsible').collapsible({
     accordion : false
   });
