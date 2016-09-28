@@ -1,18 +1,17 @@
-.modal.menu-item-modal{id: "menu-item-modal-#{f.object.id}"}
+.modal.menu-item-modal.modal-fixed-footer{id: "menu-item-modal-#{f.object.id}"}
   .modal-content
-    %h4.center Edit Menu Item
+    %h4.center Edit List Item
 
     = f.input :title, input_html: { class: 'title-field' }
-    = f.input :description, as: :string
     = f.input :url, input_html: { class: 'url-field' }
-    = f.association :image, prompt: t('integral.prompts.select_image'), collection: Integral::Image.all.order(:title)
-
     = f.input :target, as: :boolean, checked_value: '_blank', unchecked_value: '_self', input_html: { class: 'target-field' }
+    = f.input :description, as: :string
     = f.input :html_classes
+
+    = f.association :image, prompt: t('integral.prompts.select_image'), collection: Integral::Image.all.order(:title)
     = f.input :priority, as: :hidden, input_html: { class: 'priority-field' }
 
-    .modal-footer
-      = link_to 'Ok', '#', class: 'btn confirm-btn'
-      = link_to_remove_association 'Remove', f, class: 'btn red modal-close', wrapper_class: 'menu-item-container'
-
+  .modal-footer
+    = link_to 'Ok', '#', class: 'btn confirm-btn'
+    = link_to_remove_association 'Remove', f, class: 'btn red lighten-1 modal-close', wrapper_class: 'menu-item-container'
 

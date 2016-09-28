@@ -212,9 +212,13 @@ en:
         turn_off: 'Off'
     labels:
       children:
-        target: 'Opens in new window?'
+        target: 'New Tab?'
+        url: 'URL'
+        html_classes: 'HTML Classes'
       menu_items:
-        target: 'Opens in new window?'
+        target: 'New Tab?'
+        url: 'URL'
+        html_classes: 'HTML Classes'
       user:
         locale: 'Language'
 

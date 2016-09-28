@@ -9,7 +9,7 @@
             = @menu.title
             - unless @menu.locked?
               %i.material-icons edit
-            = f.input :title, placeholder: t('integral.placeholders.title'), label: false, wrapper_html: { class: 'hide' }
+          = f.input :title, placeholder: t('integral.placeholders.title'), label: false, wrapper_html: { class: 'hide' }
           %p.center.description.input-display
             = @menu.description
             - unless @menu.locked?
