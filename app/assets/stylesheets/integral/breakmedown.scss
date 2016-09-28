@@ -86,7 +86,7 @@ nav {
   li {
     height: 50px;
     &:hover {
-     @extend .blue-grey, .darken-2; 
+     @extend .blue-grey, .darken-2;
     }
   }
   span {
@@ -200,7 +200,7 @@ nav {
 
 #user-menu-contents {
   height: 4rem;
-  padding-top: 0.7rem; 
+  padding-top: 0.7rem;
 }
 
 .breadcrumb_nav {
@@ -398,7 +398,7 @@ nav {
     }
     &:hover {
       background: #fff;
-    } 
+    }
   }
   .collapsible-body {
     background: #fff;
@@ -530,5 +530,15 @@ nav {
         margin-bottom: 0;
       }
     }
+  }
+}
+
+.input-field.boolean {
+  label {
+    &:before {
+      margin-left: 5px;
+    }
+    position: initial;
+    margin-left: 5px;
   }
 }

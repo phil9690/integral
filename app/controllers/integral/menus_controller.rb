@@ -54,7 +54,6 @@ module Integral
         redirect_to menu_path
       else
         flash[:error] = I18n.t('integral.menus.notification.edit_failure')
-        require 'pry'; binding.pry
 
         render 'edit'
       end
@@ -65,7 +64,8 @@ module Integral
       if @menu.destroy
         flash[:notice] = I18n.t('integral.menus.notification.delete_success')
       else
-        flash[:error] = I18n.t('integral.menus.notification.delete_failure')
+        error_message = @menu.errors.full_messages.to_sentence
+        flash[:error] = "#{I18n.t('integral.menus.notification.delete_failure')} - #{error_message}"
       end
 
       redirect_to menus_path
@@ -82,7 +82,7 @@ module Integral
     end
 
     def menu_params
-      params.require(:menu).permit(:title, :description, menu_items_attributes: [:id, :title, :url, :image_id, :target, :priority, :_destroy, children_attributes: [:id, :title, :url, :image_id, :target, :priority, :_destroy]])
+      params.require(:menu).permit(:title, :description, menu_items_attributes: [:id, :title, :url, :image_id, :target, :priority, :_destroy, :description, :html_classes, children_attributes: [:id, :title, :url, :image_id, :target, :priority, :description, :html_classes, :_destroy]])
     end
 
     def set_breadcrumbs
