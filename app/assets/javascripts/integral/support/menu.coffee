@@ -95,4 +95,3 @@ class this.Menu
 
     # Open modal
     menu_item.openModal()
-

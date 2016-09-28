@@ -2,12 +2,11 @@
   .menu-item
     = render 'item_modal', f:f
     .col.m1
-      %i.material-icons add
+      %i.material-icons.identifier web
     .data.col.m9
       %span.title= f.object.title
       %span.url= f.object.url
     .actions.col.m2.center
       = link_to "#menu-item-modal-#{f.object.id}", class: 'modal-trigger' do
         %i.material-icons.action edit
-
 

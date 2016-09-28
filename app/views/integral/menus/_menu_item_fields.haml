@@ -2,7 +2,7 @@
   .menu-item
     = render 'item_modal', f:f
     .col.m1
-      %i.material-icons add
+      %i.material-icons.identifier web
     .data.col.m9
       %span.title= f.object.title
       %span.url= f.object.url
@@ -14,7 +14,7 @@
         = link_to_add_association f, :children, 'data-association-insertion-method' => 'prepend' do
           %i.material-icons.action add
 
-  .children.sortable
+  .children.sortable.hide
     = f.simple_fields_for :children do |menu_item|
       = render 'child_fields', f: menu_item
 
