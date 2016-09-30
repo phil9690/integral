@@ -38,7 +38,7 @@ class CollectionSelectInput < SimpleForm::Inputs::CollectionSelectInput
       material_select.children.first.add_next_sibling(material_prompt)
       material_select.children.first.remove
     else
-      material_select.children.first.add_next_sibling(material_prompt)
+      material_select.children.first.add_previous_sibling(material_prompt)
     end
 
     material_select
