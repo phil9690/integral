@@ -9,6 +9,10 @@ class this.MenuItem
     @urlField = @modal.find('.url-field')
     @titleField = @modal.find('.title-field')
     @targetField = @modal.find('.target-field')
+    @objectField = @modal.find('.object-field')
+    @objectTypeField = @modal.find('.object-type-field')
+    @objectWrapper = @modal.find('.object-wrapper')
+    @linkWrapper = @modal.find('.link-wrapper')
 
     @setIcon()
     @setupEvents()
@@ -39,6 +43,33 @@ class this.MenuItem
     @outerContainer.on 'cocoon:after-remove', '.children', =>
         @setIcon()
 
+    @objectField.change (e) =>
+      @handleObjectUpdate()
+
+  handleObjectUpdate: ->
+    switch @objectField.val()
+      when 'basic' then @handleBasicSelection()
+      when 'link' then @handleLinkSelection()
+      when 'object' then @handleObjectSelection()
+
+  handleBasicSelection: ->
+    @objectWrapper.addClass 'hide'
+    @linkWrapper.addClass 'hide'
+
+  handleLinkSelection: ->
+    @objectWrapper.addClass 'hide'
+    @linkWrapper.removeClass 'hide'
+
+
+  handleObjectSelection: ->
+    objectType = @objectField.find(":selected").data('object-type')
+    @objectTypeField.val(objectType)
+    console.log "Set type field to #{objectType}"
+
+    # TODO: Implement proper object selection through additional modal
+    @objectWrapper.removeClass 'hide'
+    @linkWrapper.removeClass 'hide'
+
   expandChildren: ->
     @_getChildren().removeClass 'hide'
     @setIcon()
@@ -52,6 +83,7 @@ class this.MenuItem
       classes = 'action'
     else
       icon = 'cloud' if @targetField.is(':checked')
+      icon = 'list' if @objectField.val() == 'basic'
 
     @container.find('.identifier').addClass(classes)
     @container.find('.identifier').text(icon)

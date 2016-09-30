@@ -34,6 +34,7 @@ en:
       reply: 'Reply'
     prompts:
       select_image: 'Select Image..'
+      select_type: 'Select Type..'
     placeholders:
       description: 'Description'
       title: 'Title'
@@ -79,6 +80,12 @@ en:
         page_manager: 'Page Manager'
         post_manager: 'Post Manager'
 
+    lists:
+      items:
+        type:
+          basic: 'Basic'
+          link: 'Link'
+          post: 'Post'
     menus:
       index:
         add_menu: 'Add menu'
