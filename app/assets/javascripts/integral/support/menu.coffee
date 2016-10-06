@@ -5,9 +5,12 @@ class this.Menu
 
     @_createMenuItems()
     @_initializeSortable()
-    @setupEvents()
+    @_setupEvents()
 
-  setupEvents: ->
+    @_setupForm()
+   
+
+  _setupEvents: ->
     # Handle sorting
     # $('.sortable').each (sortable_index, sortable_element) =>
     #   sortable_element.addEventListener 'sortstart', (ev) =>
@@ -48,6 +51,19 @@ class this.Menu
           @_hideMenuField(e.target)
 
 
+  _setupForm: ->
+    @formValidator = $("form").validate
+      errorElement: 'span'
+      errorClass: 'has-error'
+      validClass: ''
+      highlight: (element, errorClass) ->
+        $(element).closest('.input-field').addClass(errorClass)
+      unhighlight: (element, errorClass) ->
+        $(element).closest('.input-field').removeClass(errorClass)
+        $(element).closest('.input-field').find('span.has-error').hide()
+      ignore: ":hidden:not(select)"
+
+
   # Hides title or description input
   _hideMenuField: (input) ->
     iconHtml = "<i class='material-icons'>edit</i>"
@@ -71,7 +87,7 @@ class this.Menu
   # Create Menu Item objects
   _createMenuItems: ->
     @menuItemContainer.each (i, itemContainer) =>
-      new MenuItem(itemContainer)
+      new MenuItem(@, itemContainer)
 
   # Calculate & set menu item priorities
   _calculateMenuItemPriorities: ->
@@ -87,7 +103,7 @@ class this.Menu
     modalTrigger.attr("href","#menu-item-modal-#{$.now()}")
 
     # Initialize new MenuItem
-    menu_item = new MenuItem(new_item)
+    menu_item = new MenuItem(@, new_item)
 
     @_initializeSortable()
     @_calculateMenuItemPriorities()

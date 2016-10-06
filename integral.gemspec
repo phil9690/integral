@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency "paranoia", "~> 2.0" # Soft-delete records
   s.add_dependency "client_side_validations" # Client-side validations
   s.add_dependency "client_side_validations-simple_form" # Simpleform integration for Client-side validations
+  s.add_dependency "jquery-validation-rails" # Jquery Form Validation plugin
   s.add_dependency "wice_grid" # Grids
   s.add_dependency "font-awesome-sass", '~> 4.3' # Grid Icons
   s.add_dependency "breadcrumbs_on_rails" # Breadcrumbs

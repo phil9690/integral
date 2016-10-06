@@ -2,13 +2,17 @@
   .modal-content
     %h4.center Edit List Item
 
-    = f.input :type, input_html: { class: 'object-field'} do
-      - f.select :type, Integral::MenuItem.types_collection, { include_blank: false, prompt: t('integral.prompts.select_type') }, { class: 'object-field' }
+    = f.input :type, input_html: { class: 'type-field'} do
+      - f.select :type, Integral::MenuItem.types_collection, { include_blank: false, prompt: t('integral.prompts.select_type') }, { class: 'type-field' }
     = f.input :object_type, as: :hidden, input_html: { class: 'object-type-field' }
-    = f.input :object_id, prompt: 'Select Post..', collection: Integral::Post.all, include_blank: false, wrapper_html: { class: 'hide object-wrapper' }
+    .object-wrapper{ class: f.object.object? ? '' : 'hide' }
+      = f.input :object_id do
+        - f.select :object_id, Integral::Post.menu_item_collection, { include_blank: false, prompt: 'Select Post..' }, { class: 'object-id-field' }
+      %hr
+      %small Override defaults &#9660;
     = f.input :title, input_html: { class: 'title-field' }
-    .link-wrapper{ class: f.object.basic? ? 'hide' : '' }
-      = f.input :url, input_html: { class: 'url-field' }
+    .link-wrapper{ class: f.object.basic? || !f.object.persisted? ? 'hide' : '' }
+      = f.input :url, input_html: { class: 'url-field' }, as: :string
       = f.input :target, as: :boolean, checked_value: '_blank', unchecked_value: '_self', input_html: { class: 'target-field' }
     = f.input :description, as: :string
     = f.input :html_classes

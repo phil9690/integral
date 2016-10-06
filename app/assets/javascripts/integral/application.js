@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require wice_grid
 //= require cocoon
 //= require ckeditor/loader

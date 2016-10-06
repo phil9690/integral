@@ -1,16 +1,19 @@
 class this.MenuItem
   # MenuItem constructor
-  constructor: (container) ->
+  constructor: (menu, container) ->
+    @menu = menu
     @outerContainer = $(container)
     @container = @outerContainer.find('.menu-item:first')
     @modal = @container.find('.modal')
     @titleText = @container.find('.data .title')
     @urlText = @container.find('.data .url')
     @urlField = @modal.find('.url-field')
+    @typeField = @modal.find('.type-field')
     @titleField = @modal.find('.title-field')
     @targetField = @modal.find('.target-field')
-    @objectField = @modal.find('.object-field')
+    @typeField = @modal.find('.type-field')
     @objectTypeField = @modal.find('.object-type-field')
+    @objectIdField = @modal.find('.object-id-field')
     @objectWrapper = @modal.find('.object-wrapper')
     @linkWrapper = @modal.find('.link-wrapper')
 
@@ -18,6 +21,9 @@ class this.MenuItem
     @setupEvents()
 
   setupEvents: ->
+    @outerContainer.on 'modal-close', =>
+      sortable('.sortable', 'enable')
+
     # Initialize modal trigger
     @container.find('.modal-trigger').leanModal(@_modalOptions())
 
@@ -43,32 +49,44 @@ class this.MenuItem
     @outerContainer.on 'cocoon:after-remove', '.children', =>
         @setIcon()
 
-    @objectField.change (e) =>
+    @typeField.change (e) =>
       @handleObjectUpdate()
 
   handleObjectUpdate: ->
-    switch @objectField.val()
-      when 'basic' then @handleBasicSelection()
-      when 'link' then @handleLinkSelection()
-      when 'object' then @handleObjectSelection()
+    # Remove errors (resetting form causes wierd problems)
+    @menu.formValidator.toHide = @menu.formValidator.errors()
+    @menu.formValidator.hideErrors()
+    $('form .has-error').removeClass('has-error')
+
+    switch @typeField.val()
+      when 'Integral::Basic' then @handleBasicSelection()
+      when 'Integral::Link' then @handleLinkSelection()
+      when 'Integral::Object' then @handleObjectSelection()
 
   handleBasicSelection: ->
     @objectWrapper.addClass 'hide'
     @linkWrapper.addClass 'hide'
+    @titleField.addClass 'required'
 
   handleLinkSelection: ->
     @objectWrapper.addClass 'hide'
     @linkWrapper.removeClass 'hide'
 
+    @titleField.addClass 'required'
+    @urlField.addClass 'required'
+
 
   handleObjectSelection: ->
-    objectType = @objectField.find(":selected").data('object-type')
+    objectType = @typeField.find(":selected").data('object-type')
     @objectTypeField.val(objectType)
-    console.log "Set type field to #{objectType}"
 
     # TODO: Implement proper object selection through additional modal
     @objectWrapper.removeClass 'hide'
     @linkWrapper.removeClass 'hide'
+
+    @titleField.removeClass 'required'
+    @urlField.removeClass 'required'
+    @objectIdField.addClass 'required'
 
   expandChildren: ->
     @_getChildren().removeClass 'hide'
@@ -83,7 +101,7 @@ class this.MenuItem
       classes = 'action'
     else
       icon = 'cloud' if @targetField.is(':checked')
-      icon = 'list' if @objectField.val() == 'basic'
+      icon = 'list' if @basic()
 
     @container.find('.identifier').addClass(classes)
     @container.find('.identifier').text(icon)
@@ -104,37 +122,52 @@ class this.MenuItem
   _getChildren: ->
     @outerContainer.find('.children')
 
+  _updateMenuItem: ->
+    title = ''
+    url = ''
+    if @object()
+      objectData = @_getObjectData()
+      title = objectData.title
+      url = objectData.url
+    title = @titleField.val() if @titleField.val() != ''
+    url = @urlField.val() if @urlField.val() != ''
+
+    @titleText.text(title)
+    @urlText.text(url)
+    @setIcon()
+
+  basic: ->
+    if @typeField.val() == 'Integral::Basic'
+      return true
+    false
+
+  _getObjectData: ->
+    selectedObject = @objectIdField.find(':selected')
+    selectedObject.data()
+
+  object: ->
+    if @typeField.val() == 'Integral::Object'
+      return true
+    false
+
   # Handles when user clicks the ok button on modal
   _handleConfirmClick: ->
     # Validate form before closing Modal
-    if @_formIsValid()
+    if $('form').valid()
       @modal.closeModal()
       @container.trigger 'modal-close'
 
-      # Update the menu item
-      @titleText.text(@titleField.val())
-      @urlText.text(@urlField.val())
-      @setIcon()
+      @_updateMenuItem()
     else
       # TODO: Update to I18n
       Materialize.toast('Please fix the form errors before continuing.', 4000, 'error')
-
-  # Returns validity of form
-  _formIsValid: ->
-    form = $('form')
-
-    return false unless form.isValid(ClientSideValidations.forms[form.attr('id')].validators)
-
-    # Have to add custom validation as for some reason ClientSideValidation is not working for children menu items
-    if $.trim(@titleField.val())=='' or $.trim(@urlField.val())==''
-      return false
-    true
 
   # Modal Initialization options
   _modalOptions: ->
     dismissible: false,
     ready: =>
-      @modal.find('input').enableClientSideValidations()
+      sortable('.sortable', 'disable')
     complete: =>
       @container.trigger 'modal-close'
+
 
