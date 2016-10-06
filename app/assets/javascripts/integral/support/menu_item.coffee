@@ -14,6 +14,7 @@ class this.MenuItem
     @typeField = @modal.find('.type-field')
     @objectTypeField = @modal.find('.object-type-field')
     @objectIdField = @modal.find('.object-id-field')
+    @objectPreview = @modal.find('.object-preview')
     @objectWrapper = @modal.find('.object-wrapper')
     @linkWrapper = @modal.find('.link-wrapper')
 

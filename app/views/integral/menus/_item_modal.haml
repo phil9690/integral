@@ -1,13 +1,24 @@
 .modal.menu-item-modal.modal-fixed-footer{id: "menu-item-modal-#{f.object.id}"}
+  .modal-header
+    %h4 Edit List Item
   .modal-content
-    %h4.center Edit List Item
-
     = f.input :type, input_html: { class: 'type-field'} do
       - f.select :type, Integral::MenuItem.types_collection, { include_blank: false, prompt: t('integral.prompts.select_type') }, { class: 'type-field' }
     = f.input :object_type, as: :hidden, input_html: { class: 'object-type-field' }
     .object-wrapper{ class: f.object.object? ? '' : 'hide' }
       = f.input :object_id do
         - f.select :object_id, Integral::Post.menu_item_collection, { include_blank: false, prompt: 'Select Post..' }, { class: 'object-id-field' }
+
+      .row.object-preview.hoverable
+        .overlay
+          %i.material-icons edit
+        .col.m3
+          = image_tag image_path('integral/defaults/post_image')
+        .col.m8
+          %h5 The Exciting World of Nothing
+          %span.subtitle Published 5 days ago
+          %span.url http://www.lougle.com/?roflcopter
+
       %hr
       %small Override defaults &#9660;
     = f.input :title, input_html: { class: 'title-field' }
