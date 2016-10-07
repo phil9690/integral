@@ -50,9 +50,11 @@ module Integral
 
     def to_menu_item
       {
+        id: id,
         title: title,
+        subtitle: 'TODO',
         description: description,
-        image: image.path,
+        image: image.url,
         url: Rails.application.routes.url_helpers.blog_path(self)
       }
     end

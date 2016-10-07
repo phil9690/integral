@@ -2,13 +2,13 @@ class this.Menu
   # Menu constructor
   constructor: (container) ->
     @menuItemContainer = $('.menu-item-container')
+    @object_selector = new RecordSelector('#record-selector')
 
     @_createMenuItems()
     @_initializeSortable()
     @_setupEvents()
 
     @_setupForm()
-   
 
   _setupEvents: ->
     # Handle sorting

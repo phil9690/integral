@@ -1,0 +1,19 @@
+#record-selector.modal.record-selector.modal-fixed-footer{ data: { record_path: search_path }}
+  .modal-header
+    %i.material-icons.modal-close.close-btn close
+    %h4= title
+  .modal-content
+    = form_tag search_path, method: :get, remote: true, format: :json , data: {'type' => 'json'} do
+      .row
+        %i.search-icon.material-icons search
+        = text_field_tag :search, '', class: 'search-field', placeholder: 'Search'
+        = submit_tag 'Search', class: 'btn disabled search-button'
+    .progress
+      .indeterminate
+
+    .records
+
+  .modal-footer
+    %span.selected
+    = link_to 'Ok', '#', class: 'btn close-button disabled'
+

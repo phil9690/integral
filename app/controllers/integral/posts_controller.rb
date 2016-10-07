@@ -7,15 +7,25 @@ module Integral
     # GET /
     # Lists all posts
     def index
-      grid_options = {
-        order: 'integral_posts.updated_at',
-        order_direction: 'desc'
-      }
+      respond_to do |format|
+        format.html do
+          grid_options = {
+            order: 'integral_posts.updated_at',
+            order_direction: 'desc'
+          }
 
-      @posts_grid = initialize_grid(Post, grid_options)
+          @posts_grid = initialize_grid(Post, grid_options)
 
-      @published_posts_count = Integral::Post.published.count
-      @draft_posts_count = Integral::Post.draft.count
+          @published_posts_count = Integral::Post.published.count
+          @draft_posts_count = Integral::Post.draft.count
+        end
+
+        format.json do
+          @posts = Integral::Post.all.paginate(:page => params[:page])
+          sleep 1
+          render json: { content: render_to_string(partial: 'integral/shared/record_selector/collection', locals: { collection: @posts }) }
+        end
+      end
     end
 
     # GET /new

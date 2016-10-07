@@ -24,3 +24,5 @@
             = render 'menu_item_fields', f: menu_item
       = f.button :button
       -# = link_to 'Cancel', '#', class: 'btn grey text-white lighten-1 cancel-form'
+
+= render partial: 'integral/shared/record_selector/modal', locals: { search_path: posts_path, title: 'Record Selector' }
