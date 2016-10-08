@@ -4,29 +4,26 @@ class this.RecordSelector
     @containerSelector = containerSelector
     @container = $(containerSelector)
     @progressBar = @container.find('.progress')
-    @closeButton = @container.find('.close-button')
+    @confirmButton = @container.find('.close-button')
+    @closeButton = @container.find('.close-btn')
     @searchButton = @container.find('.search-button')
     @searchPath = @container.data('record-path')
     @searchField = @container.find('.search-field')
-    @searchIcon = @container.find('.search-icon')
+    @pageField = @container.find('.page-field')
     @recordsContainer = @container.find('.records')
     @selectedText = @container.find('.selected')
+    @previousSearch = ''
     @form = @container.find('form')
 
-    #
-    # Initially create the selector
-    # selector.open(objectId)
-    #
-    # selector highlights the current selected object
-    #
-    # Only one record selector for all menu items
-
     @_setupEvents()
-    # @_setupForm()
 
-  open: (objectId=-1) ->
-    @container.openModal()
+  # TODO: Set this to accept options
+  open: (selectedId=-1, callbackSuccess, callbackFailure) ->
+    @selectedId = selectedId
+    @container.openModal(dismissible: false)
     @form.submit()
+    @_callbackSuccess = callbackSuccess
+    @_callbackFailure = callbackFailure
 
   _setupEvents: ->
     # Handle click on record
@@ -34,24 +31,23 @@ class this.RecordSelector
       $(@containerSelector).find(".record.selected").removeClass 'selected'
       @selectedRecord = $(e.target).closest('.record')
       @selectedData = @selectedRecord.data()
+      @selectedId = @selectedData.id
       @selectedRecord.addClass 'selected'
-      @closeButton.removeClass 'disabled'
+      @confirmButton.removeClass 'disabled'
       @selectedText.text("Selected: #{@selectedData.title}")
 
-     @searchField.keypress (ev) =>
-       if ev.which == 13
-         @form.submit() if @searchField.val() != ''
+    @searchField.keypress (ev) =>
+      @pageField.val(1)
+      @form.submit() if @searchField.val() != @previousSearch && ev.which == 13
 
+    @searchButton.click (ev) =>
+      @pageField.val(1)
 
-    # @recordsContainer.on 'click', '.record', (e) =>
-
-
-    # @searchField.blur =>
-    #   @searchIcon.removeClass 'active'
-    #
-    # @searchField.focus =>
-    #   debugger
-    #   @searchIcon.addClass 'active'
+    @recordsContainer.on 'click', '.pagination a', (ev) =>
+      ev.preventDefault()
+      pageNumber = @getUrlVars(ev.target.href)['page']
+      @pageField.val(pageNumber)
+      @form.submit()
 
     @form.on "ajax:beforeSend", (e, data, status, xhr) =>
       @_handleSearchSubmission()
@@ -60,26 +56,30 @@ class this.RecordSelector
     @form.on "ajax:error", (e, xhr, status, error) =>
       @_handleFailedSearch(error)
 
-    @searchField.on 'input propertychange paste change', =>
-      if @searchField.val() == ''
-        @searchButton.addClass 'disabled'
-      else
-        @searchButton.removeClass 'disabled'
-
     @searchButton.click (ev) =>
-      ev.preventDefault() if @searchField.val() == ''
+      ev.preventDefault() if @searchField.val() == @previousSearch
 
     @closeButton.click (ev) =>
+      @_handleQuit()
+
+    @confirmButton.click (ev) =>
       ev.preventDefault()
-      @container.closeModal() if @selectedRecord
+      if @selectedRecord
+        @container.closeModal()
+        @container.trigger 'object-selection', [@selectedData]
+        @_callbackSuccess(@selectedData)
+
+  _handleQuit: ->
+    @_callbackFailure()
 
   _handleSuccessfulSearch: (data) ->
     @recordsContainer.html(data['content'])
     @progressBar.hide()
     @recordsContainer.show()
 
-    $(@containerSelector).find(".record[data-id='" + @selectedData.id + "']").addClass 'selected' if @selectedData
+    $(@containerSelector).find(".record[data-id='" + @selectedId + "']").addClass 'selected' if @selectedId
 
+  # TODO: Implement this properly
   _handleFailedSearch: (data) ->
     console.log 'Fail'
     console.log data
@@ -87,3 +87,19 @@ class this.RecordSelector
   _handleSearchSubmission: ->
     @progressBar.show()
     @recordsContainer.hide()
+    @previousSearch = @searchField.val()
+
+  # Move out into main file to extend jquery
+  getUrlVars: (url) ->
+    vars = []
+    hashes = url.slice(url.indexOf('?') + 1).split('&')
+
+    for hash in hashes
+      hashArr = hash.split('=')
+      vars.push(hashArr[0])
+      vars[hashArr[0]] = hashArr[1]
+    vars
+
+  getUrlVar: (url, name) ->
+    @getUrlVars(url)[name]
+

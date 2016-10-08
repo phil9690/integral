@@ -7,4 +7,9 @@
       %h5= menu_item[:title]
       %span.subtitle= menu_item[:subtitle]
 
-= will_paginate collection
+- if collection.empty?
+  .no-records
+    %span No Records Found.
+
+-# TODO: Fix gem throwing undefined method `prepare'
+= will_paginate collection #, renderer: MaterializePagination::MaterializeRenderer

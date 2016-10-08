@@ -41,6 +41,11 @@ module Integral
       statuses.each(&:reverse!) if opts[:reverse]
     end
 
+    # Searches for posts where title is like specified query
+    def self.search(search)
+      where("lower(title) LIKE ?", "%#{search.downcase}%")
+    end
+
     # Increments the view count of the post if a PostViewing is successfully added
     #
     # @param ip_address [String] Viewers IP address

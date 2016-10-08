@@ -3,6 +3,7 @@ class this.MenuItem
   constructor: (menu, container) ->
     @menu = menu
     @outerContainer = $(container)
+    @identifier = @_uniqID()
     @container = @outerContainer.find('.menu-item:first')
     @modal = @container.find('.modal')
     @titleText = @container.find('.data .title')
@@ -53,6 +54,9 @@ class this.MenuItem
     @typeField.change (e) =>
       @handleObjectUpdate()
 
+    @objectPreview.click =>
+      @menu.objectSelector.open(@objectIdField.val(), @handleObjectSelection, @handleObjectSelectionFail)
+
   handleObjectUpdate: ->
     # Remove errors (resetting form causes wierd problems)
     @menu.formValidator.toHide = @menu.formValidator.errors()
@@ -62,7 +66,7 @@ class this.MenuItem
     switch @typeField.val()
       when 'Integral::Basic' then @handleBasicSelection()
       when 'Integral::Link' then @handleLinkSelection()
-      when 'Integral::Object' then @handleObjectSelection()
+      when 'Integral::Object' then @handleObjectTypeSelection()
 
   handleBasicSelection: ->
     @objectWrapper.addClass 'hide'
@@ -76,15 +80,28 @@ class this.MenuItem
     @titleField.addClass 'required'
     @urlField.addClass 'required'
 
+  handleObjectTypeSelection: ->
+    @menu.objectSelector.open(@objectIdField.val(), @handleObjectSelection, @handleObjectSelectionFail)
 
-  handleObjectSelection: ->
+  handleObjectSelectionFail: =>
+    @typeField.val('Integral::Basic')
+    @typeField.material_select()
+
+  handleObjectSelection: (data) =>
     objectType = @typeField.find(":selected").data('object-type')
     @objectTypeField.val(objectType)
 
-    # TODO: Implement proper object selection through additional modal
+    # Update object preview
+    @objectIdField.val(data.id)
+    @objectPreview.find('img').attr('src', data.image)
+    @objectPreview.find('h5').text(data.title)
+    @objectPreview.find('.subtitle').text(data.subtitle)
+    @objectPreview.find('.url').text(data.url)
+
     @objectWrapper.removeClass 'hide'
     @linkWrapper.removeClass 'hide'
 
+    # Update validation
     @titleField.removeClass 'required'
     @urlField.removeClass 'required'
     @objectIdField.addClass 'required'
@@ -171,4 +188,17 @@ class this.MenuItem
     complete: =>
       @container.trigger 'modal-close'
 
+  # TODO: Remove this
+  _uniqID: ->
+    charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('')
+    uniqid = ''
+    idlength = Math.floor(Math.random() * charstoformid.length)
 
+    for num in [0..idlength]
+      uniqid += charstoformid[Math.floor(Math.random() * charstoformid.length)]
+
+    # One last step is to check if this ID is already taken by an element before
+    if $("#"+uniqid).length == 0
+      return uniqid
+    else
+      return uniqID(20)
