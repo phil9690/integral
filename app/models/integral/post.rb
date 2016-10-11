@@ -60,7 +60,8 @@ module Integral
         subtitle: 'TODO',
         description: description,
         image: image.url,
-        url: Rails.application.routes.url_helpers.blog_path(self)
+        url: 'Override me'
+        #url: Rails.application.routes.url_helpers.blog_path(self)
       }
     end
 

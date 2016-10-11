@@ -6,10 +6,10 @@ module Integral
     # Associations
     belongs_to :image
     has_and_belongs_to_many(:children,
-                            :join_table => "integral_menu_item_connections",
-                            :foreign_key => "parent_id",
-                            :association_foreign_key => "child_id",
-                            :class_name => 'MenuItem')
+                            join_table: "integral_menu_item_connections",
+                            foreign_key: "parent_id",
+                            association_foreign_key: "child_id",
+                            class_name: 'MenuItem')
 
     # Nested forms
     accepts_nested_attributes_for :children, reject_if: :all_blank, allow_destroy: true
@@ -29,6 +29,10 @@ module Integral
 
     def basic?
       false
+    end
+
+    def has_children?
+      children.present?
     end
   end
 end

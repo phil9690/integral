@@ -87,6 +87,10 @@ en:
           link: 'Link'
           post: 'Post'
     menus:
+      new:
+        title: 'New Menu'
+      edit:
+        title: 'Edit Menu'
       index:
         add_menu: 'Add menu'
         non_available: 'No Menus currently available. Try creating one!'
