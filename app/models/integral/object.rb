@@ -3,35 +3,6 @@ module Integral
     # Validations
     validates :object_type, :object_id, presence: true
 
-    # This is view stuff which should be moved out into some sort of menuitempresenter
-    def title
-      override = super
-      return override if override.present?
-
-      object_klass.find(object_id).to_menu_item[:title]
-    end
-
-    def description
-      override = super
-      return override if override.present?
-
-      object_klass.find(object_id).to_menu_item[:description]
-    end
-
-    def url
-      override = super
-      return override if override.present?
-
-      object_klass.find(object_id).to_menu_item[:url]
-    end
-
-    def image
-      override = super
-      return override if override.present?
-
-      object_klass.find(object_id).to_menu_item[:image]
-    end
-
     def object?
       true
     end
