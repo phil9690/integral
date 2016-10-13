@@ -6,8 +6,9 @@ module Integral
     include CarrierWave::MiniMagick
 
     # Compress images without any loss of quality (removes meta data)
-    include CarrierWave::ImageOptimizer
-    process :optimize
+    # TODO: Reenable with delayed optimizer. Doing optimization inline is causing timeouts.
+    # include CarrierWave::ImageOptimizer
+    # process :optimize
 
     # Override the directory where uploaded files will be stored.
     def store_dir
