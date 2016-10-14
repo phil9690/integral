@@ -2,8 +2,9 @@
   .modal-header
     %h4 Edit List Item
   .modal-content
-    = f.input :type, input_html: { class: 'type-field'} do
-      - f.select :type, Integral::MenuItem.types_collection, { include_blank: false, prompt: t('integral.prompts.select_type') }, { class: 'type-field' }
+    = f.input :type, as: :hidden, input_html: { class: 'type-field' }
+    = f.input :fake_type, input_html: { class: 'faketype-field'} do
+      - select_tag :fake_type, options_for_select(Integral::MenuItem.types_collection, formatted_item.type_for_dropdown), { include_blank: false, prompt: t('integral.prompts.select_type'), disabled: f.object.persisted?, class: 'faketype-field' }
     = f.input :object_type, as: :hidden, input_html: { class: 'object-type-field' }
     .object-wrapper{ class: f.object.object? ? '' : 'hide' }
       = f.input :object_id, as: :hidden, input_html: { class: 'object-id-field' }
@@ -12,11 +13,11 @@
         .overlay
           %i.material-icons edit
         .col.m3
-          = image_tag image_path(f.object.image)
+          = image_tag image_path(formatted_item.image)
         .col.m9
-          %h5= f.object.title
-          %span.subtitle= f.object.subtitle
-          %span.url= f.object.url
+          %h5= formatted_item.title
+          %span.subtitle= formatted_item.subtitle
+          %span.url= formatted_item.url
 
       %hr
       %small Override defaults &#9660;

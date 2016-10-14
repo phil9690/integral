@@ -10,10 +10,7 @@ module Integral
     # Calculate the object class associated to the menu item based on numeric value set within the modal
     # A numeric value is used rather than setting the actual class for security purposes
     def object_klass
-      case object_type
-      when 0
-        Integral::Post
-      end
+      object_type.constantize
     end
   end
 end

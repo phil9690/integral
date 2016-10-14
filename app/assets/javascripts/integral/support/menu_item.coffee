@@ -8,10 +8,10 @@ class this.MenuItem
     @titleText = @container.find('.data .title')
     @urlText = @container.find('.data .url')
     @urlField = @modal.find('.url-field')
-    @typeField = @modal.find('.type-field')
     @titleField = @modal.find('.title-field')
     @targetField = @modal.find('.target-field')
     @typeField = @modal.find('.type-field')
+    @fakeTypeField = @modal.find('.faketype-field')
     @objectTypeField = @modal.find('.object-type-field')
     @objectIdField = @modal.find('.object-id-field')
     @objectPreview = @modal.find('.object-preview')
@@ -53,7 +53,7 @@ class this.MenuItem
     @outerContainer.on 'cocoon:after-remove', '.children', =>
         @setIcon()
 
-    @typeField.change (e) =>
+    @fakeTypeField.change (e) =>
       @handleObjectUpdate()
 
     @objectPreview.click =>
@@ -65,6 +65,7 @@ class this.MenuItem
     @menu.formValidator.hideErrors()
     $('form .has-error').removeClass('has-error')
 
+    @typeField.val @fakeTypeField.find(':selected').data('true-value')
     switch @typeField.val()
       when 'Integral::Basic' then @handleBasicSelection()
       when 'Integral::Link' then @handleLinkSelection()
@@ -197,5 +198,5 @@ class this.MenuItem
       callbackSuccess: @handleObjectSelection
       callbackFailure: @handleObjectSelectionFail
 
-    RecordSelector.open(@typeField.find(":selected").data('record-selector'), selectorOpts)
+    RecordSelector.open(@fakeTypeField.find(":selected").data('record-selector'), selectorOpts)
 

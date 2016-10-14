@@ -49,6 +49,11 @@ module Integral
       children
     end
 
+    def type_for_dropdown
+      menu_item.type if !menu_item.object?
+      menu_item.object_type.to_s
+    end
+
     def title
       provide_attr(:title)
     end

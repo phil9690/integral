@@ -54,8 +54,7 @@ module Integral
         redirect_to menu_path
       else
         flash[:error] = I18n.t('integral.menus.notification.edit_failure')
-
-        render 'edit'
+        render 'show'
       end
     end
 
