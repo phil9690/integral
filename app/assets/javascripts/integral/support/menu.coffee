@@ -2,8 +2,6 @@ class this.Menu
   # Menu constructor
   constructor: (container) ->
     @menuItemContainer = $('.menu-item-container')
-    @objectSelector = new RecordSelector('#record-selector')
-
     @_createMenuItems()
     @_initializeSortable()
     @_setupEvents()
@@ -11,7 +9,7 @@ class this.Menu
     @_setupForm()
 
   _setupEvents: ->
-    # Handle sorting
+    # Attempt to handle dynamic placeholder lengths
     # $('.sortable').each (sortable_index, sortable_element) =>
     #   sortable_element.addEventListener 'sortstart', (ev) =>
     #     item = $(ev.detail.item)

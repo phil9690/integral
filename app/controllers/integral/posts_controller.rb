@@ -22,7 +22,6 @@ module Integral
 
         format.json do
           @posts = Integral::Post.search(params[:search]).paginate(page: params[:page])
-          sleep 1
           render json: { content: render_to_string(partial: 'integral/shared/record_selector/collection', locals: { collection: @posts }) }
         end
       end

@@ -65,14 +65,22 @@ module Integral
       }
     end
 
-    # @return [Array] list of posts in menu item form
-    def self.menu_item_collection
-      collection = []
-      self.all.each do |post|
-        collection << [ post.title, post.id, { data: { url: Rails.application.routes.url_helpers.blog_path(post), title: post.title } } ]
-      end
-      collection
+    def self.listable_options
+      {
+        record_title: 'Post',
+        selector_path: Engine.routes.url_helpers.posts_path,
+        selector_title: 'Select a Post..'
+      }
     end
+
+    # # @return [Array] list of posts in menu item form
+    # def self.menu_item_collection
+    #   collection = []
+    #   self.all.each do |post|
+    #     collection << [ post.title, post.id, { data: { url: Rails.application.routes.url_helpers.blog_path(post), title: post.title } } ]
+    #   end
+    #   collection
+    # end
 
     private
 

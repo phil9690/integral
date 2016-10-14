@@ -1,6 +1,44 @@
-# Modal which contains list of records
+# Used to select different objects
+# In future should be able to handle multi-selection
 class this.RecordSelector
-  constructor: (containerSelector) ->
+  @instances = []
+
+  @init: ->
+    for selector in $('.record-selector')
+      $selector = $(selector)
+      name = $selector.data('record-selector-name')
+      return unless name
+
+      console.log "RecordSelector Initializing #{name}.."
+      selectorId = @generateUniqueId()
+      $selector.attr('id', selectorId)
+      @instances.push new RecordSelector("##{selectorId}", name)
+
+  # Open Record Selector with given name - If no such RecordSelector exists do nothing
+  @open: (selectorName, opts={}) ->
+    for selector in @instances
+      if selector.name == selectorName
+        selector.open(opts)
+        return
+
+    console.log "RecordSelector: No such selector exists - #{selectorName}"
+
+  @generateUniqueId: ->
+    charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('')
+    uniqid = ''
+    idlength = Math.floor(Math.random() * charstoformid.length)
+
+    for num in [0..idlength]
+      uniqid += charstoformid[Math.floor(Math.random() * charstoformid.length)]
+
+    # One last step is to check if this ID is already taken by an element before
+    if $("#"+uniqid).length == 0
+      return uniqid
+    else
+      return uniqID(20)
+
+  constructor: (containerSelector, name) ->
+    @name = name
     @containerSelector = containerSelector
     @container = $(containerSelector)
     @progressBar = @container.find('.progress')
@@ -17,13 +55,12 @@ class this.RecordSelector
 
     @_setupEvents()
 
-  # TODO: Set this to accept options
-  open: (selectedId=-1, callbackSuccess, callbackFailure) ->
-    @selectedId = selectedId
+  open: (opts={}) ->
+    @_callbackSuccess = opts['callbackSuccess'] ? undefined
+    @_callbackFailure = opts['callbackFailure'] ? undefined
+    @selectedId = opts['preselectedId'] ? -1
     @container.openModal(dismissible: false)
     @form.submit()
-    @_callbackSuccess = callbackSuccess
-    @_callbackFailure = callbackFailure
 
   _setupEvents: ->
     # Handle click on record
@@ -67,10 +104,10 @@ class this.RecordSelector
       if @selectedRecord
         @container.closeModal()
         @container.trigger 'object-selection', [@selectedData]
-        @_callbackSuccess(@selectedData)
+        @_callbackSuccess(@selectedData) if @_callbackSuccess
 
   _handleQuit: ->
-    @_callbackFailure()
+    @_callbackFailure() if @_callbackFailure
 
   _handleSuccessfulSearch: (data) ->
     @recordsContainer.html(data['content'])

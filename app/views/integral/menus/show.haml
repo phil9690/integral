@@ -25,4 +25,5 @@
       = f.button :button
       -# = link_to 'Cancel', '#', class: 'btn grey text-white lighten-1 cancel-form'
 
-= render partial: 'integral/shared/record_selector/modal', locals: { search_path: posts_path, title: 'Select a Post..' }
+- Integral::MenuItem.listable_objects.each do |listable|
+  = render partial: 'integral/shared/record_selector/modal', locals: { search_path: listable.listable_options[:selector_path], title: listable.listable_options[:selector_title], name: listable.to_s.parameterize }

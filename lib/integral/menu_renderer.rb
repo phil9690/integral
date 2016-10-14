@@ -15,7 +15,8 @@ module Integral
     end
 
     def render
-      return render_empty_menu if @menu.menu_items.empty?
+      return render_no_menu_warning if @menu.nil?
+      return render_no_items_warning if @menu.menu_items.empty?
 
       rendered_items = ''
 
@@ -26,9 +27,14 @@ module Integral
       content_tag 'ul', rendered_items, html_options, false
     end
 
-    def render_empty_menu
-      # TODO: This should be a HTML comment
-      'Menu does not contain any items!'
+    def render_no_menu_warning
+      Rails.logger.error('IntegralError: Tried to render a menu with a nil argument.')
+      '<!-- Warning: Tried to render a menu with a nil argument. -->'
+    end
+
+    def render_no_items_warning
+      Rails.logger.error('IntegralError: Tried to render a menu with no items.')
+      '<!-- Warning: Tried to render a menu with no items. -->'
     end
 
     private

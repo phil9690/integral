@@ -8,10 +8,19 @@ module Integral
     # GET /
     # Lists all pages
     def index
-      @pages_grid = initialize_grid(Page)
+      respond_to do |format|
+        format.html do
+          @pages_grid = initialize_grid(Page)
 
-      @published_pages_count = Integral::Page.published.count
-      @draft_pages_count = Integral::Page.draft.count
+          @published_pages_count = Integral::Page.published.count
+          @draft_pages_count = Integral::Page.draft.count
+        end
+
+        format.json do
+          pages = Integral::Page.search(params[:search]).paginate(page: params[:page])
+          render json: { content: render_to_string(partial: 'integral/shared/record_selector/collection', locals: { collection: pages }) }
+        end
+      end
     end
 
     # GET /new

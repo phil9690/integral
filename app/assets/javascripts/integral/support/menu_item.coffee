@@ -3,7 +3,6 @@ class this.MenuItem
   constructor: (menu, container) ->
     @menu = menu
     @outerContainer = $(container)
-    @identifier = @_uniqID()
     @container = @outerContainer.find('.menu-item:first')
     @modal = @container.find('.modal')
     @titleText = @container.find('.data .title')
@@ -18,6 +17,9 @@ class this.MenuItem
     @objectPreview = @modal.find('.object-preview')
     @objectWrapper = @modal.find('.object-wrapper')
     @linkWrapper = @modal.find('.link-wrapper')
+
+    if @object()
+      @objectData = @objectPreview.data()
 
     @setIcon()
     @setupEvents()
@@ -55,7 +57,7 @@ class this.MenuItem
       @handleObjectUpdate()
 
     @objectPreview.click =>
-      @menu.objectSelector.open(@objectIdField.val(), @handleObjectSelection, @handleObjectSelectionFail)
+      @_openSelector()
 
   handleObjectUpdate: ->
     # Remove errors (resetting form causes wierd problems)
@@ -81,7 +83,7 @@ class this.MenuItem
     @urlField.addClass 'required'
 
   handleObjectTypeSelection: ->
-    @menu.objectSelector.open(@objectIdField.val(), @handleObjectSelection, @handleObjectSelectionFail)
+    @_openSelector()
 
   handleObjectSelectionFail: =>
     @typeField.val('Integral::Basic')
@@ -90,6 +92,7 @@ class this.MenuItem
   handleObjectSelection: (data) =>
     objectType = @typeField.find(":selected").data('object-type')
     @objectTypeField.val(objectType)
+    @objectData = data
 
     # Update object preview
     @objectIdField.val(data.id)
@@ -144,9 +147,8 @@ class this.MenuItem
     title = ''
     url = ''
     if @object()
-      objectData = @_getObjectData()
-      title = objectData.title
-      url = objectData.url
+      title = @objectData.title
+      url = @objectData.url
     title = @titleField.val() if @titleField.val() != ''
     url = @urlField.val() if @urlField.val() != ''
 
@@ -188,17 +190,12 @@ class this.MenuItem
     complete: =>
       @container.trigger 'modal-close'
 
-  # TODO: Remove this
-  _uniqID: ->
-    charstoformid = '_0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('')
-    uniqid = ''
-    idlength = Math.floor(Math.random() * charstoformid.length)
 
-    for num in [0..idlength]
-      uniqid += charstoformid[Math.floor(Math.random() * charstoformid.length)]
+  _openSelector: ->
+    selectorOpts =
+      preselectedId: @objectIdField.val()
+      callbackSuccess: @handleObjectSelection
+      callbackFailure: @handleObjectSelectionFail
 
-    # One last step is to check if this ID is already taken by an element before
-    if $("#"+uniqid).length == 0
-      return uniqid
-    else
-      return uniqID(20)
+    RecordSelector.open(@typeField.find(":selected").data('record-selector'), selectorOpts)
+
