@@ -1,7 +1,7 @@
 module Integral
-  class Menu < ActiveRecord::Base
+  class List < ActiveRecord::Base
     # Associations
-    has_many :menu_items
+    has_many :list_items
 
     # Validations
     validates :title, presence: true
@@ -9,7 +9,7 @@ module Integral
     before_destroy :validate_unlocked
 
     # Nested forms
-    accepts_nested_attributes_for :menu_items, reject_if: :all_blank, allow_destroy: true
+    accepts_nested_attributes_for :list_items, reject_if: :all_blank, allow_destroy: true
 
     private
 

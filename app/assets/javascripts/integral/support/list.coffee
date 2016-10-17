@@ -1,8 +1,8 @@
-class this.Menu
-  # Menu constructor
+class this.List
+  # List constructor
   constructor: (container) ->
-    @menuItemContainer = $('.menu-item-container')
-    @_createMenuItems()
+    @listItemContainer = $('.list-item-container')
+    @_createListItems()
     @_initializeSortable()
     @_setupEvents()
 
@@ -20,23 +20,23 @@ class this.Menu
 
     $('.sortable').each (sortable_index, sortable_element) =>
       sortable_element.addEventListener 'sortupdate', =>
-        @_calculateMenuItemPriorities()
+        @_calculateListItemPriorities()
 
-    # Handle new MenuItem Insertion & Removal
-    $('#menu-items')
+    # Handle new ListItem Insertion & Removal
+    $('#list-items')
       .on 'cocoon:after-insert', (e, new_item) =>
-        @_handleMenuItemInsertion(new_item)
+        @_handleListItemInsertion(new_item)
 
       .on 'cocoon:before-remove', (e, removed_item) =>
-        @_calculateMenuItemPriorities()
+        @_calculateListItemPriorities()
 
     # Handle Edit click for title or description
     $('.overview .input-display').on 'click', '.material-icons', (e) =>
-      @_showMenuField(e.target)
+      @_showListField(e.target)
 
     # Handle overview input-field defocus
     $('.overview input').focusout (e) =>
-      @_hideMenuField(e.target)
+      @_hideListField(e.target)
 
     # Do not allow submit on enter
     $('form').on 'keyup keypress', (e) =>
@@ -45,8 +45,8 @@ class this.Menu
         e.preventDefault()
         inputId = e.target.id
 
-        if inputId == 'menu_description' or inputId == 'menu_title'
-          @_hideMenuField(e.target)
+        if inputId == 'list_description' or inputId == 'list_title'
+          @_hideListField(e.target)
 
 
   _setupForm: ->
@@ -63,7 +63,7 @@ class this.Menu
 
 
   # Hides title or description input
-  _hideMenuField: (input) ->
+  _hideListField: (input) ->
     iconHtml = "<i class='material-icons'>edit</i>"
     inputContainer = $(input.closest('.input-field'))
     inputContainer.addClass 'hide'
@@ -71,7 +71,7 @@ class this.Menu
     inputContainer.prev('.input-display').removeClass 'hide'
 
   # Shows title or description input
-  _showMenuField: (input) ->
+  _showListField: (input) ->
     displayContainer = $(input.closest('.input-display'))
     displayContainer.addClass 'hide'
     displayContainer.next('.input-field').removeClass 'hide'
@@ -80,32 +80,32 @@ class this.Menu
   # Initalize drag and drop
   _initializeSortable: ->
     sortable '.sortable',
-      items: '.menu-item-container'
+      items: '.list-item-container'
 
-  # Create Menu Item objects
-  _createMenuItems: ->
-    @menuItemContainer.each (i, itemContainer) =>
-      new MenuItem(@, itemContainer)
+  # Create List Item objects
+  _createListItems: ->
+    @listItemContainer.each (i, itemContainer) =>
+      new ListItem(@, itemContainer)
 
-  # Calculate & set menu item priorities
-  _calculateMenuItemPriorities: ->
-    $('.menu-item-container').each (priority, itemContainer) =>
+  # Calculate & set list item priorities
+  _calculateListItemPriorities: ->
+    $('.list-item-container').each (priority, itemContainer) =>
       $(itemContainer).find('.priority-field').val(priority)
 
-  # Initializes new Menu Item
-  _handleMenuItemInsertion: (new_item) ->
+  # Initializes new List Item
+  _handleListItemInsertion: (new_item) ->
     # Create connection to modal
     modal = new_item.find('.modal')
     modalTrigger = new_item.find('.modal-trigger')
-    modal.attr("id","menu-item-modal-#{$.now()}")
-    modalTrigger.attr("href","#menu-item-modal-#{$.now()}")
+    modal.attr("id","list-item-modal-#{$.now()}")
+    modalTrigger.attr("href","#list-item-modal-#{$.now()}")
 
-    # Initialize new MenuItem
-    menu_item = new MenuItem(@, new_item)
+    # Initialize new ListItem
+    list_item = new ListItem(@, new_item)
 
     @_initializeSortable()
-    @_calculateMenuItemPriorities()
+    @_calculateListItemPriorities()
     new_item.find('select').material_select()
 
     # Open modal
-    menu_item.openModal()
+    list_item.openModal()

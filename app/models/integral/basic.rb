@@ -1,5 +1,5 @@
 module Integral
-  class Basic < MenuItem
+  class Basic < ListItem
 
     # Validations
     validates :title, presence: true

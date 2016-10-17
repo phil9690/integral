@@ -53,7 +53,7 @@ module Integral
       increment!(:view_count) if PostViewing.add(self, ip_address)
     end
 
-    def to_menu_item
+    def to_list_item
       {
         id: id,
         title: title,
@@ -72,15 +72,6 @@ module Integral
         selector_title: 'Select a Post..'
       }
     end
-
-    # # @return [Array] list of posts in menu item form
-    # def self.menu_item_collection
-    #   collection = []
-    #   self.all.each do |post|
-    #     collection << [ post.title, post.id, { data: { url: Rails.application.routes.url_helpers.blog_path(post), title: post.title } } ]
-    #   end
-    #   collection
-    # end
 
     private
 

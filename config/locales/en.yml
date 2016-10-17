@@ -47,7 +47,7 @@ en:
       posts: 'Posts'
       users: 'Users'
       images: 'Images'
-      menus: 'Menus'
+      lists: 'Lists'
       galleries: 'Galleries'
       messages: 'Messages'
       new: 'New'
@@ -60,7 +60,7 @@ en:
       pages: 'Pages'
       users: 'Users'
       images: 'Images'
-      menus: 'Menus'
+      lists: 'Lists'
       log_out: 'Logout'
       my_account: 'Account & Profile'
 
@@ -86,27 +86,26 @@ en:
           basic: 'Basic'
           link: 'Link'
           post: 'Post'
-    menus:
       new:
-        title: 'New Menu'
+        title: 'New List'
       edit:
-        title: 'Edit Menu'
+        title: 'Edit List'
       index:
-        add_menu: 'Add menu'
-        non_available: 'No Menus currently available. Try creating one!'
+        add_list: 'Add list'
+        non_available: 'No Lists currently available. Try creating one!'
       show:
-        title: "Menu - %{title}"
+        title: "List - %{title}"
       grid:
         columns:
           title: 'Title'
           description: 'Description'
       notification:
-        creation_success: 'Menu successfully created.'
-        creation_failure: 'Menu creation failed.'
-        edit_success: 'Menu successfully updated.'
-        edit_failure: 'Failed to update menu.'
-        delete_success: 'Menu successfully deleted.'
-        delete_failure: 'Failed to delete menu.'
+        creation_success: 'List successfully created.'
+        creation_failure: 'List creation failed.'
+        edit_success: 'List successfully updated.'
+        edit_failure: 'Failed to update list.'
+        delete_success: 'List successfully deleted.'
+        delete_failure: 'Failed to delete list.'
 
     posts:
       grid:
@@ -214,6 +213,7 @@ en:
     index:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
       post_info: "Posted by %{name} on %{date}"
+
   simple_form:
     inputs:
       file:
@@ -226,7 +226,8 @@ en:
         target: 'New Tab?'
         url: 'URL'
         html_classes: 'HTML Classes'
-      menu_items:
+      list_items:
+        fake_type: 'Type'
         target: 'New Tab?'
         url: 'URL'
         html_classes: 'HTML Classes'

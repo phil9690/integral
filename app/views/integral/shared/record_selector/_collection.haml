@@ -1,11 +1,11 @@
 - collection.each do |obj|
-  - menu_item = obj.to_menu_item
-  .record.row.hoverable{data: menu_item }
+  - list_item = obj.to_list_item
+  .record.row.hoverable{data: list_item }
     .col.m2
-      = image_tag menu_item[:image]
+      = image_tag list_item[:image]
     .col.m10
-      %h5= menu_item[:title]
-      %span.subtitle= menu_item[:subtitle]
+      %h5= list_item[:title]
+      %span.subtitle= list_item[:subtitle]
 
 - if collection.empty?
   .no-records

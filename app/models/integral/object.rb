@@ -1,5 +1,5 @@
 module Integral
-  class Object < MenuItem
+  class Object < ListItem
     # Validations
     validates :object_type, :object_id, presence: true
 
@@ -7,7 +7,7 @@ module Integral
       true
     end
 
-    # Calculate the object class associated to the menu item based on numeric value set within the modal
+    # Calculate the object class associated to the list item based on numeric value set within the modal
     # A numeric value is used rather than setting the actual class for security purposes
     def object_klass
       object_type.constantize

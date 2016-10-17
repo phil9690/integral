@@ -27,7 +27,7 @@ module Integral
       where("lower(title) LIKE ?", "%#{search.downcase}%")
     end
 
-    def to_menu_item
+    def to_list_item
       {
         id: id,
         title: title,
@@ -47,16 +47,6 @@ module Integral
         selector_title: 'Select a Page..'
       }
     end
-
-    # # @return [Array] list of pages in menu item form
-    # # TODO: Should this not be an instance method.. exactly like to menu item?
-    # def self.menu_item_collection
-    #   collection = []
-    #   self.all.each do |post|
-    #     collection << [ post.title, post.id, { data: { url: Rails.application.routes.url_helpers.blog_path(post), title: post.title } } ]
-    #   end
-    #   collection
-    # end
 
     private
 

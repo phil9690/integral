@@ -78,21 +78,21 @@ FactoryGirl.define do
     ip_address { Faker::Internet.ip_v4_address }
   end
 
-  factory :integral_menu_item_basic, class: 'Integral::Basic' do
+  factory :integral_list_item_basic, class: 'Integral::Basic' do
     title
   end
 
-  factory :integral_menu_item_link, class: 'Integral::Link' do
+  factory :integral_list_item_link, class: 'Integral::Link' do
     title
     url
   end
 
-  factory :integral_menu_item_object, class: 'Integral::Object' do
+  factory :integral_list_item_object, class: 'Integral::Object' do
     object_type 0
     object { create(:integral_post) }
   end
 
-  factory :integral_menu, class: 'Integral::Menu' do
+  factory :integral_list, class: 'Integral::List' do
     title
     description
   end

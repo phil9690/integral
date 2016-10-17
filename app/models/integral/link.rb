@@ -1,5 +1,5 @@
 module Integral
-  class Link < MenuItem
+  class Link < ListItem
 
     # Validations
     validates :title, :url, presence: true

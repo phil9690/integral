@@ -7,8 +7,8 @@
   - if policy(Integral::Page).manager?
     = render partial: 'card', locals: { link_path: pages_path, image_path: 'integral/tiles/pages.png', title: t('integral.navigation.pages'), image_classes: 'orange lighten-4' }
 
-  - if policy(Integral::Menu).manager?
-    = render partial: 'card', locals: { link_path: menus_path, image_path: 'integral/tiles/menus.png', title: t('integral.navigation.menus'), image_classes: 'orange lighten-4' }
+  - if policy(Integral::List).manager?
+    = render partial: 'card', locals: { link_path: lists_path, image_path: 'integral/tiles/lists.png', title: t('integral.navigation.lists'), image_classes: 'orange lighten-4' }
 
   - if policy(current_user).manager?
     = render partial: 'card', locals: { link_path: users_path, image_path: 'integral/tiles/users.png', title: t('integral.navigation.users'), image_classes: 'blue lighten-2'}

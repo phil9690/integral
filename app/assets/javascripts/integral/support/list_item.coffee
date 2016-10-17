@@ -1,9 +1,9 @@
-class this.MenuItem
-  # MenuItem constructor
-  constructor: (menu, container) ->
-    @menu = menu
+class this.ListItem
+  # ListItem constructor
+  constructor: (list, container) ->
+    @list = list
     @outerContainer = $(container)
-    @container = @outerContainer.find('.menu-item:first')
+    @container = @outerContainer.find('.list-item:first')
     @modal = @container.find('.modal')
     @titleText = @container.find('.data .title')
     @urlText = @container.find('.data .url')
@@ -31,7 +31,7 @@ class this.MenuItem
     # Initialize modal trigger
     @container.find('.modal-trigger').leanModal(@_modalOptions())
 
-    # Set children menu items to be inserted in correct location
+    # Set children list items to be inserted in correct location
     @container.find('.add-children a').data "association-insertion-node", (link) =>
       @outerContainer.find('.children')
 
@@ -43,11 +43,11 @@ class this.MenuItem
       e.preventDefault()
       @_handleConfirmClick()
 
-    # Handle clicks on identifier button (submenu dropdown toggle)
+    # Handle clicks on identifier button (sublist dropdown toggle)
     @container.on 'click', '.identifier.action', =>
       @_toggleChildren()
 
-    # Handle new MenuItem Insertion & Removal
+    # Handle new ListItem Insertion & Removal
     @outerContainer.on 'cocoon:after-insert', '.children', =>
         @setIcon()
     @outerContainer.on 'cocoon:after-remove', '.children', =>
@@ -61,8 +61,8 @@ class this.MenuItem
 
   handleObjectUpdate: ->
     # Remove errors (resetting form causes wierd problems)
-    @menu.formValidator.toHide = @menu.formValidator.errors()
-    @menu.formValidator.hideErrors()
+    @list.formValidator.toHide = @list.formValidator.errors()
+    @list.formValidator.hideErrors()
     $('form .has-error').removeClass('has-error')
 
     @typeField.val @fakeTypeField.find(':selected').data('true-value')
@@ -129,7 +129,7 @@ class this.MenuItem
     @container.find('.identifier').text(icon)
 
   _hasChildren: ->
-    return true if @outerContainer.has('.children .menu-item').length
+    return true if @outerContainer.has('.children .list-item').length
     false
 
   openModal: ->
@@ -144,7 +144,7 @@ class this.MenuItem
   _getChildren: ->
     @outerContainer.find('.children')
 
-  _updateMenuItem: ->
+  _updateListItem: ->
     title = ''
     url = ''
     if @object()
@@ -178,7 +178,7 @@ class this.MenuItem
       @modal.closeModal()
       @container.trigger 'modal-close'
 
-      @_updateMenuItem()
+      @_updateListItem()
     else
       # TODO: Update to I18n
       Materialize.toast('Please fix the form errors before continuing.', 4000, 'error')

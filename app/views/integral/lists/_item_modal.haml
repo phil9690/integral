@@ -1,10 +1,10 @@
-.modal.menu-item-modal.modal-fixed-footer{id: "menu-item-modal-#{f.object.id}"}
+.modal.list-item-modal.modal-fixed-footer{id: "list-item-modal-#{f.object.id}"}
   .modal-header
     %h4 Edit List Item
   .modal-content
     = f.input :type, as: :hidden, input_html: { class: 'type-field' }
     = f.input :fake_type, input_html: { class: 'faketype-field'} do
-      - select_tag :fake_type, options_for_select(Integral::MenuItem.types_collection, formatted_item.type_for_dropdown), { include_blank: false, prompt: t('integral.prompts.select_type'), disabled: f.object.persisted?, class: 'faketype-field' }
+      - select_tag :fake_type, options_for_select(Integral::ListItem.types_collection, formatted_item.type_for_dropdown), { include_blank: false, prompt: t('integral.prompts.select_type'), disabled: f.object.persisted?, class: 'faketype-field' }
     = f.input :object_type, as: :hidden, input_html: { class: 'object-type-field' }
     .object-wrapper{ class: f.object.object? ? '' : 'hide' }
       = f.input :object_id, as: :hidden, input_html: { class: 'object-id-field' }
@@ -33,5 +33,5 @@
 
   .modal-footer
     = link_to 'Ok', '#', class: 'btn confirm-btn'
-    = link_to_remove_association 'Remove', f, class: 'btn red lighten-1 modal-close', wrapper_class: 'menu-item-container'
+    = link_to_remove_association 'Remove', f, class: 'btn red lighten-1 modal-close', wrapper_class: 'list-item-container'
 

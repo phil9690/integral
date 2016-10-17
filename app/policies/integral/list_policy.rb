@@ -1,6 +1,6 @@
 module Integral
-  # Handles Menu authorization
-  class MenuPolicy
+  # Handles List authorization
+  class ListPolicy
     attr_reader :user, :instance
 
     def initialize(user, instance)

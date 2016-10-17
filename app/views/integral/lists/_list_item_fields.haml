@@ -1,6 +1,6 @@
-.menu-item-container
-  .menu-item
-    - formatted_item = Integral::MenuItemRenderer.new(f.object)
+.list-item-container
+  .list-item
+    - formatted_item = Integral::ListItemRenderer.new(f.object)
     = render 'item_modal', f:f, formatted_item: formatted_item
     .col.m1
       %i.material-icons.identifier web
@@ -8,7 +8,7 @@
       %span.title= formatted_item.title
       %span.url= formatted_item.url
     .actions.col.m2.center
-      = link_to "#menu-item-modal-#{f.object.id}", class: 'modal-trigger' do
+      = link_to "#list-item-modal-#{f.object.id}", class: 'modal-trigger' do
         %i.material-icons.action edit
 
       .add-children
@@ -16,6 +16,6 @@
           %i.material-icons.action add
 
   .children.sortable.hide
-    = f.simple_fields_for :children do |menu_item|
-      = render 'child_fields', f: menu_item
+    = f.simple_fields_for :children do |list_item|
+      = render 'child_fields', f: list_item
 

@@ -1,23 +1,23 @@
 module Integral
-  class MenuItemRenderer
+  class ListItemRenderer
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::TextHelper
     include ActionView::Context
 
-    attr_accessor :menu_item
+    attr_accessor :list_item
 
-    def self.render(menu_item)
-      renderer = self.new(menu_item)
+    def self.render(list_item)
+      renderer = self.new(list_item)
       renderer.render
     end
 
-    def initialize(menu_item)
-      @menu_item = menu_item
+    def initialize(list_item)
+      @list_item = list_item
     end
 
     def render
-      content_tag :li, class: menu_item.html_classes do
-        if menu_item.has_children?
+      content_tag :li, class: list_item.html_classes do
+        if list_item.has_children?
           concat render_item
           concat content_tag :ul, render_children, { class: 'dropdown-content' }, false
         else
@@ -32,7 +32,7 @@ module Integral
 
     def item_options
       opts = {}
-      opts[:class] = 'dropdown-button' if menu_item.has_children?
+      opts[:class] = 'dropdown-button' if list_item.has_children?
       opts[:href] = url if url.present?
       opts[:target] = target if target.present?
 
@@ -42,7 +42,7 @@ module Integral
     def render_children
       children = ''
 
-      menu_item.children.each do |child|
+      list_item.children.each do |child|
         children += self.class.render(child)
       end
 
@@ -50,8 +50,8 @@ module Integral
     end
 
     def type_for_dropdown
-      menu_item.type if !menu_item.object?
-      menu_item.object_type.to_s
+      return list_item.type if !list_item.object?
+      list_item.object_type.to_s
     end
 
     def title
@@ -63,11 +63,11 @@ module Integral
     end
 
     def target
-      menu_item.target if !menu_item.basic?
+      list_item.target if !list_item.basic?
     end
 
     def url
-      provide_attr(:url) if !menu_item.basic?
+      provide_attr(:url) if !list_item.basic?
     end
 
     def subtitle
@@ -90,14 +90,14 @@ module Integral
     #
     # @return [String] value of attribute
     def provide_attr(attr)
-      menu_item_attr_value = menu_item.public_send(attr)
-      return menu_item_attr_value if !menu_item.object? || menu_item_attr_value.present?
+      list_item_attr_value = list_item.public_send(attr)
+      return list_item_attr_value if !list_item.object? || list_item_attr_value.present?
 
       object_data[attr]
     end
 
     def object_data
-      @object_data ||= menu_item.object_klass.find(menu_item.object_id).to_menu_item
+      @object_data ||= list_item.object_klass.find(list_item.object_id).to_list_item
     end
   end
 end
