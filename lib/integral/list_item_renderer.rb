@@ -78,8 +78,8 @@ module Integral
       provide_attr(:image)
     end
 
-    def has_children?
-      children.present?
+    def title_required?
+      !list_item.object?
     end
 
     private

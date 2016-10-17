@@ -21,7 +21,7 @@
 
       %hr
       %small Override defaults &#9660;
-    = f.input :title, input_html: { class: 'title-field' }
+    = f.input :title, input_html: { class: formatted_item.title_required? ? 'title-field required' : 'title-field' }
     .link-wrapper{ class: f.object.basic? || !f.object.persisted? ? 'hide' : '' }
       = f.input :url, input_html: { class: 'url-field' }, as: :string
       = f.input :target, as: :boolean, checked_value: '_blank', unchecked_value: '_self', input_html: { class: 'target-field' }

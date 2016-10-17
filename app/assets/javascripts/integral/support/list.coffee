@@ -50,17 +50,13 @@ class this.List
 
 
   _setupForm: ->
-    @formValidator = $("form").validate
-      errorElement: 'span'
-      errorClass: 'has-error'
-      validClass: ''
-      highlight: (element, errorClass) ->
-        $(element).closest('.input-field').addClass(errorClass)
-      unhighlight: (element, errorClass) ->
-        $(element).closest('.input-field').removeClass(errorClass)
-        $(element).closest('.input-field').find('span.has-error').hide()
-      ignore: ":hidden:not(select)"
-
+    @formValidator = $('.edit_list').parsley
+      successClass: '',
+      errorClass: 'has-error',
+      errorsWrapper: '<div class=\"parsley-error-block\"></div>',
+      errorTemplate: '<span></span>'
+      classHandler: (element) =>
+        element.$element.closest('.input-field')
 
   # Hides title or description input
   _hideListField: (input) ->

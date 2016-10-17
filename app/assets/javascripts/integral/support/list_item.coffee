@@ -60,10 +60,7 @@ class this.ListItem
       @_openSelector()
 
   handleObjectUpdate: ->
-    # Remove errors (resetting form causes wierd problems)
-    @list.formValidator.toHide = @list.formValidator.errors()
-    @list.formValidator.hideErrors()
-    $('form .has-error').removeClass('has-error')
+    @list.formValidator.reset()
 
     @typeField.val @fakeTypeField.find(':selected').data('true-value')
     switch @typeField.val()
@@ -87,8 +84,8 @@ class this.ListItem
     @_openSelector()
 
   handleObjectSelectionFail: =>
-    @typeField.val('Integral::Basic')
-    @typeField.material_select()
+    @fakeTypeField.val('Integral::Basic')
+    @fakeTypeField.material_select()
 
   handleObjectSelection: (data) =>
     objectType = @typeField.find(":selected").data('object-type')
@@ -174,7 +171,7 @@ class this.ListItem
   # Handles when user clicks the ok button on modal
   _handleConfirmClick: ->
     # Validate form before closing Modal
-    if $('form').valid()
+    if @list.formValidator.validate()
       @modal.closeModal()
       @container.trigger 'modal-close'
 

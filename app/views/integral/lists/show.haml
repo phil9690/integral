@@ -2,7 +2,7 @@
 
 .row.lists-container
   .col.s12
-    = simple_form_for @list do |f|
+    = simple_form_for @list, data: { 'priority-enabled' => false } do |f|
       .card-panel
         .overview
           %h2.center.title.input-display
