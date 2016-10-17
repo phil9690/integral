@@ -223,6 +223,7 @@ en:
         turn_off: 'Off'
     labels:
       children:
+        fake_type: 'Type'
         target: 'New Tab?'
         url: 'URL'
         html_classes: 'HTML Classes'

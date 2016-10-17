@@ -81,7 +81,7 @@ module Integral
     end
 
     def list_params
-      params.require(:list).permit(:title, :description, :html_id, :html_classes, list_items_attributes: [:id, :type, :object_type, :object_id,  :title, :url, :image_id, :target, :priority, :_destroy, :description, :html_classes, children_attributes: [:id, :type, :object_type, :object_id, :title, :url, :image_id, :target, :priority, :description, :html_classes, :_destroy]])
+      params.require(:list).permit(:title, :description, :html_id, :html_classes, list_items_attributes: [:id, :type, :object_type, :object_id,  :title, :subtitle, :url, :image_id, :target, :priority, :_destroy, :description, :html_classes, children_attributes: [:id, :type, :object_type, :object_id, :title, :url, :image_id, :target, :priority, :description, :subtitle, :html_classes, :_destroy]])
     end
 
     def set_breadcrumbs

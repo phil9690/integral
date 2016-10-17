@@ -4,7 +4,7 @@
   .modal-content
     = f.input :type, as: :hidden, input_html: { class: 'type-field' }
     = f.input :fake_type, input_html: { class: 'faketype-field'} do
-      - select_tag :fake_type, options_for_select(Integral::ListItem.types_collection, formatted_item.type_for_dropdown), { include_blank: false, prompt: t('integral.prompts.select_type'), disabled: f.object.persisted?, class: 'faketype-field' }
+      - select_tag :fake_type, options_for_select(Integral::ListItem.types_collection, formatted_item.type_for_dropdown), { include_blank: false, disabled: f.object.persisted?, class: 'faketype-field' }
     = f.input :object_type, as: :hidden, input_html: { class: 'object-type-field' }
     .object-wrapper{ class: f.object.object? ? '' : 'hide' }
       = f.input :object_id, as: :hidden, input_html: { class: 'object-id-field' }
@@ -25,6 +25,7 @@
     .link-wrapper{ class: f.object.basic? || !f.object.persisted? ? 'hide' : '' }
       = f.input :url, input_html: { class: 'url-field' }, as: :string
       = f.input :target, as: :boolean, checked_value: '_blank', unchecked_value: '_self', input_html: { class: 'target-field' }
+    = f.input :subtitle, as: :string
     = f.input :description, as: :string
     = f.input :html_classes
 
