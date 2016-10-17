@@ -1,8 +1,5 @@
 class CreateLists < ActiveRecord::Migration
   def change
-    create_table :lists do |t|
-    end
-
     create_table :integral_lists do |t|
       t.string    "title", :null => false
       t.text      "description"

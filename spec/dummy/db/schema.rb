@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011230152) do
+ActiveRecord::Schema.define(version: 20161014175823) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -55,28 +55,27 @@ ActiveRecord::Schema.define(version: 20161011230152) do
 
   add_index "integral_images", ["deleted_at"], name: "index_integral_images_on_deleted_at"
 
-  create_table "integral_menu_item_connections", id: false, force: :cascade do |t|
+  create_table "integral_list_item_connections", id: false, force: :cascade do |t|
     t.integer "parent_id", null: false
     t.integer "child_id",  null: false
   end
 
-  create_table "integral_menu_items", force: :cascade do |t|
+  create_table "integral_list_items", force: :cascade do |t|
+    t.integer "list_id"
     t.string  "title"
+    t.text    "description"
+    t.string  "subtitle"
     t.string  "url"
     t.integer "image_id"
     t.string  "target"
-    t.integer "menu_id"
-    t.integer "priority"
-    t.boolean "locked"
     t.string  "html_classes"
-    t.text    "description"
-    t.string  "type",         default: "0"
-    t.integer "object_type",  default: 0
-    t.integer "object_id",    default: 0
-    t.string  "subtitle"
+    t.integer "priority"
+    t.integer "object_id"
+    t.string  "type"
+    t.string  "object_type"
   end
 
-  create_table "integral_menus", force: :cascade do |t|
+  create_table "integral_lists", force: :cascade do |t|
     t.string  "title",        null: false
     t.text    "description"
     t.boolean "locked"
