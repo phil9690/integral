@@ -88,7 +88,7 @@ class this.ListItem
     @fakeTypeField.material_select()
 
   handleObjectSelection: (data) =>
-    objectType = @typeField.find(":selected").data('object-type')
+    objectType = @fakeTypeField.find(":selected").data('object-type')
     @objectTypeField.val(objectType)
     @objectData = data
 

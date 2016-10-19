@@ -16,6 +16,8 @@ module Integral
     end
 
     def render
+      return render_no_object_warning if list_item.object? && !object_available?
+
       content_tag :li, class: list_item.html_classes do
         if list_item.has_children?
           concat render_item
@@ -82,6 +84,11 @@ module Integral
       !list_item.object?
     end
 
+    def render_no_object_warning
+      Rails.logger.error('IntegralError: Tried to render a list item with no object.')
+      '<!-- Warning: Tried to render a list item with no object. -->'
+    end
+
     private
 
     # Works out what the provided attr evaluates to.
@@ -91,13 +98,22 @@ module Integral
     # @return [String] value of attribute
     def provide_attr(attr)
       list_item_attr_value = list_item.public_send(attr)
-      return list_item_attr_value if !list_item.object? || list_item_attr_value.present?
 
-      object_data[attr]
+      return list_item_attr_value if list_item_attr_value.present?
+
+      return object_data[attr] if object_available?
+      return 'Object Unavailable' if list_item.object? && !object_available?
+      ''
     end
 
     def object_data
       @object_data ||= list_item.object_klass.find(list_item.object_id).to_list_item
+    end
+
+    def object_available?
+      return false unless list_item.object?
+
+      list_item.object_klass.exists?(list_item.object_id)
     end
   end
 end
