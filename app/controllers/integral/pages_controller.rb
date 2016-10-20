@@ -17,8 +17,7 @@ module Integral
         end
 
         format.json do
-          pages = Integral::Page.search(params[:search]).paginate(page: params[:page])
-          render json: { content: render_to_string(partial: 'integral/shared/record_selector/collection', locals: { collection: pages }) }
+          respond_to_record_selector(Integral::Page)
         end
       end
     end

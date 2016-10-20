@@ -14,6 +14,11 @@ module Integral
 
     private
 
+    def respond_to_record_selector(klass)
+      records = klass.search(params[:search]).paginate(page: params[:page])
+      render json: { content: render_to_string(partial: 'integral/shared/record_selector/collection', locals: { collection: records }) }
+    end
+
     # Redirect user to integral.root_path after successful login
     def after_sign_in_path_for(resource)
       integral.root_path
