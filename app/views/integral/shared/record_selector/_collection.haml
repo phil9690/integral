@@ -2,7 +2,7 @@
   - list_item = obj.to_list_item
   .record.row.hoverable{data: list_item }
     .col.m2
-      = image_tag list_item[:image]
+      = image_tag (list_item[:image].present? ? list_item[:image] : image_url('integral/defaults/no_image_available.jpg'))
     .col.m10
       %h5= list_item[:title]
       %span.subtitle= list_item[:subtitle]
