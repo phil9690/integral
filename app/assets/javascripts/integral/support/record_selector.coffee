@@ -116,10 +116,10 @@ class this.RecordSelector
 
     $(@containerSelector).find(".record[data-id='" + @selectedId + "']").addClass 'selected' if @selectedId
 
-  # TODO: Implement this properly
   _handleFailedSearch: (data) ->
-    console.log 'Fail'
-    console.log data
+    @container.closeModal()
+    Materialize.toast('Sorry, an error has occurred. Please contact your webmaster.', 4000, 'error')
+    @_callbackFailure() if @_callbackFailure
 
   _handleSearchSubmission: ->
     @progressBar.show()
