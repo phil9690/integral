@@ -31,6 +31,9 @@ module Integral
     # Aliases
     alias_method :author, :user
 
+    # Scopes
+    scope :search, -> (query) { where("lower(title) LIKE ?", "%#{query.downcase}%") }
+
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses(opts={ reverse: false })
       statuses = [
@@ -39,11 +42,6 @@ module Integral
       ]
 
       statuses.each(&:reverse!) if opts[:reverse]
-    end
-
-    # Searches for posts where title is like specified query
-    def self.search(search)
-      where("lower(title) LIKE ?", "%#{search.downcase}%")
     end
 
     # Increments the view count of the post if a PostViewing is successfully added
