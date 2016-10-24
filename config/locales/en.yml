@@ -227,6 +227,9 @@ en:
         target: 'New Tab?'
         url: 'URL'
         html_classes: 'HTML Classes'
+      list:
+        html_id: HTML ID
+        html_classes: HTML Classes
       list_items:
         fake_type: 'Type'
         target: 'New Tab?'

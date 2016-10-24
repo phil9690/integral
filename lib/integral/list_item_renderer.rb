@@ -2,26 +2,32 @@ module Integral
   class ListItemRenderer
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::TextHelper
+    include ActionView::Helpers::AssetTagHelper
     include ActionView::Context
 
-    attr_accessor :list_item
+    attr_accessor :list_item, :opts
 
-    def self.render(list_item)
-      renderer = self.new(list_item)
+    def self.render(list_item, opts={})
+      renderer = self.new(list_item, opts)
       renderer.render
     end
 
-    def initialize(list_item)
+    def initialize(list_item, opts={})
+      @opts = opts.reverse_merge({
+        wrapper_element: 'li',
+        child_wrapper_element: 'ul'
+      })
+
       @list_item = list_item
     end
 
     def render
       return render_no_object_warning if list_item.object? && !object_available?
 
-      content_tag :li, class: list_item.html_classes do
+      content_tag opts[:wrapper_element], class: html_classes do
         if list_item.has_children?
           concat render_item
-          concat content_tag :ul, render_children, { class: 'dropdown-content' }, false
+          concat content_tag opts[:child_wrapper_element], render_children, { class: 'dropdown-content' }, false
         else
           render_item
         end
@@ -114,6 +120,12 @@ module Integral
       return false unless list_item.object?
 
       list_item.object_klass.exists?(list_item.object_id)
+    end
+
+    def html_classes
+      return list_item.html_classes unless opts[:html_classes].present?
+
+      "#{list_item.html_classes} #{opts[:html_classes]}"
     end
   end
 end
