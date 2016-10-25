@@ -8,8 +8,16 @@ module Integral
     # GET /
     # Lists all images
     def index
-      @images = Image.all.order('created_at DESC')
-      @image = Image.new
+      respond_to do |format|
+        format.html do
+          @images = Image.all.order('created_at DESC')
+          @image = Image.new
+        end
+
+        format.json do
+          respond_to_record_selector(Integral::Image)
+        end
+      end
     end
 
     # GET /new

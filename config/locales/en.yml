@@ -79,7 +79,7 @@ en:
         image_manager: 'Image Manager'
         page_manager: 'Page Manager'
         post_manager: 'Post Manager'
-
+        list_manager: 'List Manager'
     lists:
       items:
         type:

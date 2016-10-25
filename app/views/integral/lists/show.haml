@@ -27,3 +27,6 @@
 
 - Integral::ListItem.listable_objects.each do |listable|
   = render partial: 'integral/shared/record_selector/modal', locals: { search_path: listable.listable_options[:selector_path], title: listable.listable_options[:selector_title], name: listable.to_s.parameterize }
+
+
+= render partial: 'integral/shared/record_selector/modal', locals: { search_path: img_index_path, title: 'Select an Image..', name: 'Image' }

@@ -11,10 +11,12 @@ class this.ListItem
     @titleField = @modal.find('.title-field')
     @targetField = @modal.find('.target-field')
     @typeField = @modal.find('.type-field')
+    @imageField = @modal.find('.image-field')
     @fakeTypeField = @modal.find('.faketype-field')
     @objectTypeField = @modal.find('.object-type-field')
     @objectIdField = @modal.find('.object-id-field')
     @objectPreview = @modal.find('.object-preview')
+    @imagePreview = @modal.find('.image-preview img')
     @objectWrapper = @modal.find('.object-wrapper')
     @linkWrapper = @modal.find('.link-wrapper')
 
@@ -59,6 +61,13 @@ class this.ListItem
     @objectPreview.click =>
       @_openSelector()
 
+    @imagePreview.click =>
+      selectorOpts =
+        preselectedId: @imageField.val()
+        callbackSuccess: @handleImageSelection
+
+      RecordSelector.open('image', selectorOpts)
+
   handleObjectUpdate: ->
     @list.formValidator.reset()
 
@@ -86,6 +95,10 @@ class this.ListItem
   handleObjectSelectionFail: =>
     @fakeTypeField.val('Integral::Basic')
     @fakeTypeField.material_select()
+
+  handleImageSelection: (data) =>
+    @imageField.val(data.id)
+    @imagePreview.attr('src', data.image)
 
   handleObjectSelection: (data) =>
     objectType = @fakeTypeField.find(":selected").data('object-type')

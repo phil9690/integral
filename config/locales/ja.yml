@@ -71,8 +71,7 @@ ja:
         image_manager: '[JA] イメージマネージャー'
         page_manager: '[JA]ページマネージャー'
         post_manager: '[JA] ポストマネージャー'
-
-
+        list_manager: '[JA] List Manager'
     posts:
       grid:
         columns:

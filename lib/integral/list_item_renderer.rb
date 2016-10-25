@@ -82,8 +82,14 @@ module Integral
       provide_attr(:subtitle)
     end
 
+    # Returns the image path rather than an actual Integral::Image object
     def image
-      provide_attr(:image)
+      image = provide_attr(:image)
+
+      return image.file.url if image.respond_to?(:file)
+      return image if image.present?
+
+      ActionController::Base.helpers.image_path('integral/defaults/no_image_available.jpg')
     end
 
     def title_required?

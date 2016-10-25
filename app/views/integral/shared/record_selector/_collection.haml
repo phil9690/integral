@@ -1,7 +1,7 @@
 - collection.each do |obj|
   - list_item = obj.to_list_item
   - list_item[:image] = list_item[:image].present? ? list_item[:image] : image_url('integral/defaults/no_image_available.jpg')
-  .record.row.hoverable{data: list_item }
+  .record.row.valign-wrapper.hoverable{data: list_item }
     .col.m2
       = image_tag list_item[:image]
     .col.m10

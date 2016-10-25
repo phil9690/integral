@@ -9,7 +9,6 @@ class this.RecordSelector
       name = $selector.data('record-selector-name')
       return unless name
 
-      console.log "RecordSelector Initializing #{name}.."
       selectorId = @generateUniqueId()
       $selector.attr('id', selectorId)
       @instances.push new RecordSelector("##{selectorId}", name)
@@ -17,7 +16,7 @@ class this.RecordSelector
   # Open Record Selector with given name - If no such RecordSelector exists do nothing
   @open: (selectorName, opts={}) ->
     for selector in @instances
-      if selector.name == selectorName
+      if selector.name.toLowerCase() == selectorName.toLowerCase()
         selector.open(opts)
         return
 

@@ -28,9 +28,14 @@
     = f.input :subtitle, as: :string
     = f.input :description, as: :string
     = f.input :html_classes
-
-    = f.association :image, prompt: t('integral.prompts.select_image'), collection: Integral::Image.all.order(:title)
+    = f.input :image_id, as: :hidden, input_html: { class: 'image-field' }
     = f.input :priority, as: :hidden, input_html: { class: 'priority-field' }
+
+    .row
+      .image-preview.center
+        .image-container
+          = image_tag formatted_item.image, class: 'clickable hoverable'
+          %span.material-icons.grey-text.text-darken-3.clickable edit
 
   .modal-footer
     = link_to 'Ok', '#', class: 'btn confirm-btn'
