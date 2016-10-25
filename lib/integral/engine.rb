@@ -8,6 +8,7 @@ module Integral
     require 'cocoon'
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
+    require 'parsley-rails'
     require 'wice_grid'
     require 'font-awesome-sass'
     require 'breadcrumbs_on_rails'

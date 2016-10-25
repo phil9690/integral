@@ -8,10 +8,18 @@ module Integral
     # GET /
     # Lists all pages
     def index
-      @pages_grid = initialize_grid(Page)
+      respond_to do |format|
+        format.html do
+          @pages_grid = initialize_grid(Page)
 
-      @published_pages_count = Integral::Page.published.count
-      @draft_pages_count = Integral::Page.draft.count
+          @published_pages_count = Integral::Page.published.count
+          @draft_pages_count = Integral::Page.draft.count
+        end
+
+        format.json do
+          respond_to_record_selector(Integral::Page)
+        end
+      end
     end
 
     # GET /new

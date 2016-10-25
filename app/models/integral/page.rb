@@ -22,6 +22,32 @@ module Integral
     validates :description, presence: true, length: { maximum: 160 }
     validate :validate_path_is_not_black_listed
 
+    # Searches for pages where title is like specified query
+    def self.search(search)
+      where("lower(title) LIKE ?", "%#{search.downcase}%")
+    end
+
+    def to_list_item
+      {
+        id: id,
+        title: title,
+        subtitle: 'TODO',
+        description: description,
+        # TODO: Add images to pages
+        # image: image.url,
+        url: 'Override me'
+        #url: Rails.application.routes.url_helpers.blog_path(self)
+      }
+    end
+
+    def self.listable_options
+      {
+        record_title: 'Page',
+        selector_path: Engine.routes.url_helpers.pages_path,
+        selector_title: 'Select a Page..'
+      }
+    end
+
     private
 
     # @return [Array] containing available human readable statuses against there numeric value

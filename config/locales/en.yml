@@ -32,6 +32,12 @@ en:
       view: 'View'
       read_more: 'Read more..'
       reply: 'Reply'
+    prompts:
+      select_image: 'Select Image..'
+      select_type: 'Select Type..'
+    placeholders:
+      description: 'Description'
+      title: 'Title'
 
     breadcrumbs:
       dashboard: 'Dashboard'
@@ -41,6 +47,7 @@ en:
       posts: 'Posts'
       users: 'Users'
       images: 'Images'
+      lists: 'Lists'
       galleries: 'Galleries'
       messages: 'Messages'
       new: 'New'
@@ -53,6 +60,7 @@ en:
       pages: 'Pages'
       users: 'Users'
       images: 'Images'
+      lists: 'Lists'
       log_out: 'Logout'
       my_account: 'Account & Profile'
 
@@ -71,7 +79,34 @@ en:
         image_manager: 'Image Manager'
         page_manager: 'Page Manager'
         post_manager: 'Post Manager'
- 
+
+    lists:
+      items:
+        type:
+          basic: 'Basic'
+          link: 'Link'
+          post: 'Post'
+      new:
+        title: 'New List'
+      edit:
+        title: 'Edit List'
+      index:
+        add_list: 'Add list'
+        non_available: 'No Lists currently available. Try creating one!'
+      show:
+        title: "List - %{title}"
+      grid:
+        columns:
+          title: 'Title'
+          description: 'Description'
+      notification:
+        creation_success: 'List successfully created.'
+        creation_failure: 'List creation failed.'
+        edit_success: 'List successfully updated.'
+        edit_failure: 'Failed to update list.'
+        delete_success: 'List successfully deleted.'
+        delete_failure: 'Failed to delete list.'
+
     posts:
       grid:
         columns:
@@ -178,6 +213,7 @@ en:
     index:
       post_info_with_comments: "Posted by %{name} on %{date} | %{comments}"
       post_info: "Posted by %{name} on %{date}"
+
   simple_form:
     inputs:
       file:
@@ -186,6 +222,19 @@ en:
         turn_on: 'On'
         turn_off: 'Off'
     labels:
+      children:
+        fake_type: 'Type'
+        target: 'New Tab?'
+        url: 'URL'
+        html_classes: 'HTML Classes'
+      list:
+        html_id: HTML ID
+        html_classes: HTML Classes
+      list_items:
+        fake_type: 'Type'
+        target: 'New Tab?'
+        url: 'URL'
+        html_classes: 'HTML Classes'
       user:
         locale: 'Language'
 

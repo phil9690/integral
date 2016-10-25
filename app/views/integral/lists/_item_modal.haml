@@ -1,0 +1,38 @@
+.modal.list-item-modal.modal-fixed-footer{id: "list-item-modal-#{f.object.id}"}
+  .modal-header
+    %h4 Edit List Item
+  .modal-content
+    = f.input :type, as: :hidden, input_html: { class: 'type-field' }
+    = f.input :fake_type, input_html: { class: 'faketype-field'} do
+      - select_tag :fake_type, options_for_select(Integral::ListItem.types_collection, formatted_item.type_for_dropdown), { include_blank: false, disabled: f.object.persisted?, class: 'faketype-field' }
+    = f.input :object_type, as: :hidden, input_html: { class: 'object-type-field' }
+    .object-wrapper{ class: f.object.object? ? '' : 'hide' }
+      = f.input :object_id, as: :hidden, input_html: { class: 'object-id-field' }
+
+      .row.object-preview.hoverable
+        .overlay
+          %i.material-icons edit
+        .col.m3
+          = image_tag image_path(formatted_item.image)
+        .col.m9
+          %h5= formatted_item.title
+          %span.subtitle= formatted_item.subtitle
+          %span.url= formatted_item.url
+
+      %hr
+      %small Override defaults &#9660;
+    = f.input :title, input_html: { class: formatted_item.title_required? ? 'title-field required' : 'title-field' }
+    .link-wrapper{ class: f.object.basic? || !f.object.persisted? ? 'hide' : '' }
+      = f.input :url, input_html: { class: 'url-field' }, as: :string
+      = f.input :target, as: :boolean, checked_value: '_blank', unchecked_value: '_self', input_html: { class: 'target-field' }
+    = f.input :subtitle, as: :string
+    = f.input :description, as: :string
+    = f.input :html_classes
+
+    = f.association :image, prompt: t('integral.prompts.select_image'), collection: Integral::Image.all.order(:title)
+    = f.input :priority, as: :hidden, input_html: { class: 'priority-field' }
+
+  .modal-footer
+    = link_to 'Ok', '#', class: 'btn confirm-btn'
+    = link_to_remove_association 'Remove', f, class: 'btn red lighten-1 modal-close', wrapper_class: 'list-item-container'
+

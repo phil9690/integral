@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809115906) do
+ActiveRecord::Schema.define(version: 20161014175823) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -50,6 +50,37 @@ ActiveRecord::Schema.define(version: 20160809115906) do
     t.integer  "height"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
+  end
+
+  add_index "integral_images", ["deleted_at"], name: "index_integral_images_on_deleted_at"
+
+  create_table "integral_list_item_connections", id: false, force: :cascade do |t|
+    t.integer "parent_id", null: false
+    t.integer "child_id",  null: false
+  end
+
+  create_table "integral_list_items", force: :cascade do |t|
+    t.integer "list_id"
+    t.string  "title"
+    t.text    "description"
+    t.string  "subtitle"
+    t.string  "url"
+    t.integer "image_id"
+    t.string  "target"
+    t.string  "html_classes"
+    t.integer "priority"
+    t.integer "object_id"
+    t.string  "type"
+    t.string  "object_type"
+  end
+
+  create_table "integral_lists", force: :cascade do |t|
+    t.string  "title",        null: false
+    t.text    "description"
+    t.boolean "locked"
+    t.string  "html_classes"
+    t.string  "html_id"
   end
 
   create_table "integral_pages", force: :cascade do |t|
@@ -60,7 +91,10 @@ ActiveRecord::Schema.define(version: 20160809115906) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "status",      default: 0
+    t.datetime "deleted_at"
   end
+
+  add_index "integral_pages", ["deleted_at"], name: "index_integral_pages_on_deleted_at"
 
   create_table "integral_post_viewings", force: :cascade do |t|
     t.integer  "post_id"
@@ -83,8 +117,10 @@ ActiveRecord::Schema.define(version: 20160809115906) do
     t.integer  "view_count",   default: 0
     t.datetime "published_at"
     t.integer  "status",       default: 0
+    t.datetime "deleted_at"
   end
 
+  add_index "integral_posts", ["deleted_at"], name: "index_integral_posts_on_deleted_at"
   add_index "integral_posts", ["slug"], name: "index_integral_posts_on_slug", unique: true
   add_index "integral_posts", ["user_id"], name: "index_integral_posts_on_user_id"
 
@@ -103,12 +139,12 @@ ActiveRecord::Schema.define(version: 20160809115906) do
   end
 
   create_table "integral_users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",   null: false
+    t.string   "encrypted_password",     default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -117,6 +153,7 @@ ActiveRecord::Schema.define(version: 20160809115906) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "avatar"
+    t.string   "locale",                 default: "en", null: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -125,8 +162,10 @@ ActiveRecord::Schema.define(version: 20160809115906) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.datetime "deleted_at"
   end
 
+  add_index "integral_users", ["deleted_at"], name: "index_integral_users_on_deleted_at"
   add_index "integral_users", ["email"], name: "index_integral_users_on_email", unique: true
   add_index "integral_users", ["invitation_token"], name: "index_integral_users_on_invitation_token", unique: true
   add_index "integral_users", ["invitations_count"], name: "index_integral_users_on_invitations_count"

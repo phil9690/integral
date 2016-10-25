@@ -1,20 +1,25 @@
-@import "materialize";
+@import 'integral/materialize';
 @import "materialize_clockpicker";
 @import "materialize-tags";
 @import "wice_grid";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "parsley";
 @import "integral/login_pages";
 @import "integral/breakmedown";
 @import "integral/users";
 @import "integral/images";
 @import "integral/posts";
+@import "integral/lists";
 @import "integral/dashboard";
 @import "integral/validations";
 @import "integral/flash_notifications";
 @import "integral/collapsible_extensions";
 @import "integral/shared";
+@import "integral/modal";
+@import "integral/record_selector";
 @import "integral/overrides";
+
 
 .remove-button {
   i {

@@ -31,6 +31,9 @@ module Integral
     # Aliases
     alias_method :author, :user
 
+    # Scopes
+    scope :search, -> (query) { where("lower(title) LIKE ?", "%#{query.downcase}%") }
+
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses(opts={ reverse: false })
       statuses = [
@@ -46,6 +49,26 @@ module Integral
     # @param ip_address [String] Viewers IP address
     def increment_count!(ip_address)
       increment!(:view_count) if PostViewing.add(self, ip_address)
+    end
+
+    def to_list_item
+      {
+        id: id,
+        title: title,
+        subtitle: 'TODO',
+        description: description,
+        image: image.url,
+        url: 'Override me'
+        #url: Rails.application.routes.url_helpers.blog_path(self)
+      }
+    end
+
+    def self.listable_options
+      {
+        record_title: 'Post',
+        selector_path: Engine.routes.url_helpers.posts_path,
+        selector_title: 'Select a Post..'
+      }
     end
 
     private

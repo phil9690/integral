@@ -19,6 +19,9 @@ Integral::Engine.routes.draw do
   # Page Management
   resources :pages, except: [ :show ]
 
+  # List Management
+  resources :lists
+
   # Post Management
   resources :posts, except: [ :show ] do
     # resources :comments, only: [:create, :destroy]

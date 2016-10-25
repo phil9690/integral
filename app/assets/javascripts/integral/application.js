@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require parsley
 //= require wice_grid
 //= require cocoon
 //= require ckeditor/loader
@@ -37,6 +38,8 @@ $(document).on('ready page:load', function () {
   });
 
   SlugGenerator.check_for_slugs();
+  RecordSelector.init();
+
   var filterSuggestions = function(suggestableInput, suggestions) {
     existingItems = suggestableInput.val().split(',')
 
@@ -44,7 +47,6 @@ $(document).on('ready page:load', function () {
       return existingItems.indexOf( el ) < 0;
     });
   };
-
 
   $("input[data-role=materialtags]").each(function( index ) {
     suggestableInput = $(this)

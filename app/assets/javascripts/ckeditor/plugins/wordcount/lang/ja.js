@@ -6,8 +6,9 @@ CKEDITOR.plugins.setLang('wordcount', 'ja', {
     WordCount: '単語数:',
     CharCount: '文字数:',
     CharCountWithHTML: '文字数 (with HTML):',
-    Paragraphs: '[JA] Paragraphs:',
-    pasteWarning: '[JA] Content can not be pasted because it is above the allowed limit',
-    Selected: '[JA] Selected: ',
+    Paragraphs: '段落:',
+    pasteWarning: '制限を越えるので内容を貼り付けできません',
+    Selected: '選択済:',
+
     title: 'ワードカウント'
 });
