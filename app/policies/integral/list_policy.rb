@@ -9,7 +9,7 @@ module Integral
     end
 
     def manager?
-      user.has_role?(:image_manager)
+      user.has_role?(:list_manager)
     end
 
     alias_method :destroy?, :manager?
