@@ -1,6 +1,8 @@
 module Integral
   class ListRenderer
     include ActionView::Helpers::TagHelper
+    include ActionView::Helpers::TextHelper
+    include ActionView::Helpers::AssetTagHelper
     include ActionView::Context
 
     attr_accessor :list, :opts
