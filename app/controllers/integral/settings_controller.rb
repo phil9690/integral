@@ -11,25 +11,24 @@ module Integral
     # POST /
     # Update settings
     def create
+      # Parse for booleans
       settings_params.each do | key, value |
         Settings[key] = parsed_value(value) if value.present?
       end
-
-      # render :index
     end
 
     private
 
     def parsed_value(value)
-      return true if value == '1'
-      return false if value == '0'
+      return true if value == '_1'
+      return false if value == '_0'
 
       value
     end
 
     def settings_params
       params[:settings].permit(:website_title, :contact_email, :twitter_handler, :facebook_handler, :youtube_handler,
-                               :google_plus_handler, :linkedin_handle, :business_name, :business_slogan,
+                               :google_plus_handler, :linkedin_handle,
                                :google_tracking_code
                               )
     end

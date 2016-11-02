@@ -51,7 +51,7 @@ module Integral
       children = ''
 
       list_item.children.each do |child|
-        children += self.class.render(child)
+        children += self.class.render(child, opts)
       end
 
       children
