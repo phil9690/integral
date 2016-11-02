@@ -63,6 +63,7 @@ en:
       lists: 'Lists'
       log_out: 'Logout'
       my_account: 'Account & Profile'
+      settings: 'Settings'
 
     confirmation_modal:
       title: 'Confirmation'
@@ -107,6 +108,27 @@ en:
         delete_success: 'List successfully deleted.'
         delete_failure: 'Failed to delete list.'
 
+    settings:
+      index:
+        title: Settings
+        general:
+          title: General
+          description: Vital information used across the website
+        social:
+          title: Social Media
+          description: Set or update your social media profile links
+        seo:
+          title: SEO
+          description: Website SEO and tracking
+      placeholder:
+        website_title: Super Awesome Website
+        contact_email: test@example.com
+        google_tracking_code: 'UA-11111111-1'
+        twitter_handler: barackobama
+        facebook_handler: mark_zuckerberg
+        google_plus_handler: eric_schmit
+        linkedin_handler: williamhgates
+        youtube_handler: justinbeiber
     posts:
       grid:
         columns:
@@ -237,6 +259,15 @@ en:
         html_classes: 'HTML Classes'
       user:
         locale: 'Language'
+      settings:
+        website_title: Website Title
+        contact_email: Contact Form Email Address
+        google_tracking_code: Google Tracking Code
+        twitter_handler: Twitter Handler
+        facebook_handler: Facebook Handler
+        google_plus_handler: Google Plus Handler
+        linkedin_handler: LinkedIn Handler
+        youtube_handler: Youtube Handler
 
   helpers:
     submit:

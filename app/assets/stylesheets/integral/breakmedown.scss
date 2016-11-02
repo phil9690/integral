@@ -220,6 +220,9 @@ nav {
 }
 
 .settings {
+  .collapsible-header:hover {
+    color: $secondary-color;
+  }
   .collapsible {
     .collapsible-header {
       min-height: 6rem;

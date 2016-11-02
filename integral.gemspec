@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
   s.add_dependency "friendly_id" # Slugging
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
   s.add_dependency "i18n-js" # Clientside translations
+  s.add_dependency "rails-settings-cached" # Persisted settings
 
   s.add_development_dependency "pry-rails" # Debugger
   s.add_development_dependency "sqlite3" # Database

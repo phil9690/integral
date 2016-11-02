@@ -1,0 +1,10 @@
+%li
+  .collapsible-header
+    %i.material-icons{ class: classes }= icon
+    %h5= title
+    .header-body= description
+  .collapsible-body
+    .row
+      .col.s12.m11.l11
+        = yield
+
