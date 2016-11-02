@@ -100,27 +100,27 @@ ja:
         delete_success: '投稿の削除に成功'
         delete_failure: '投稿の削除に失敗'
 
-    settings: 
-    index:
-      title:設定
+    settings:
+      index:
+        title: 設定
         general:
           title: JA General
           description: JA Vital information used across the website
         social:
           title: JA Social Media
           description: JA Set or update your social media profile links
-        seo:
-          title: JA SEO
-          description: JA Website SEO and tracking
-      placeholder:
-        website_title: Super Awesome Website
-        contact_email: test@example.com
-        google_tracking_code: 'UA-11111111-1'
-        twitter_handler: barackobama
-        facebook_handler: mark_zuckerberg
-        google_plus_handler: eric_schmit
-        linkedin_handler: williamhgates
-        youtube_handler: justinbeiber
+          seo:
+            title: JA SEO
+            description: JA Website SEO and tracking
+        placeholder:
+          website_title: Super Awesome Website
+          contact_email: test@example.com
+          google_tracking_code: 'UA-11111111-1'
+          twitter_handler: barackobama
+          facebook_handler: mark_zuckerberg
+          google_plus_handler: eric_schmit
+          linkedin_handler: williamhgates
+          youtube_handler: justinbeiber
     pages:
       index:
         title: 'ページ一覧'
@@ -140,7 +140,6 @@ ja:
         delete_success: '投稿の削除に成功'
         delete_failure: '投稿の削除に失敗'
 
-    
       grid:
         columns:
           title: 'タイトル'
