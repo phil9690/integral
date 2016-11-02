@@ -22,6 +22,7 @@ module Integral
     require 'acts-as-taggable-on'
     require 'slack-notifier'
     require 'paranoia'
+    require 'rails-settings-cached'
 
     isolate_namespace Integral
 

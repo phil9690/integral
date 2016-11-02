@@ -1,0 +1,21 @@
+= content_for :title, t('.title')
+
+.row.settings
+  = simple_form_for :settings, url: settings_path, class: "col s12", :defaults => {:required => false}, remote: true, html: { id: :update_settings } do |f|
+    .col.s12.m11.l12
+      %ul.collapsible{ data: { collapsible: 'accordion' }}
+        = render layout: 'integral/settings/section', locals: { f: f, icon: 'settings', title: t('.general.title'), description: t('.general.description'), classes: 'green lighten-1' } do
+          = f.input :website_title, input_html: { value: Integral::Settings.website_title }, placeholder: t('integral.settings.placeholder.website_title')
+          = f.input :contact_email, input_html: { value: Integral::Settings.contact_email }, placeholder: t('integral.settings.placeholder.contact_email')
+
+        = render layout: 'integral/settings/section', locals: { f: f, icon: 'search', title: t('.seo.title'), description: t('.seo.description'), classes: 'blue lighten-1' } do
+          = f.input :google_tracking_code, input_html: { class: 'materialize-textarea', placeholder: t('integral.settings.placeholder.google_tracking_code'), value: Integral::Settings.google_tracking_code }
+
+        = render layout: 'integral/settings/section', locals: { f: f, icon: 'exposure_plus_1', title: t('.social.title'), description: t('.social.description'), classes: 'red lighten-1' } do
+          = f.input :twitter_handler, input_html: { value: Integral::Settings.twitter_handler }, placeholder: t('integral.settings.placeholder.twitter_handler')
+          = f.input :facebook_handler, input_html: { value: Integral::Settings.facebook_handler }, placeholder: t('integral.settings.placeholder.facebook_handler')
+          = f.input :google_plus_handler, input_html: { value: Integral::Settings.google_plus_handler }, placeholder: t('integral.settings.placeholder.google_plus_handler')
+          = f.input :linkedin_handler, input_html: { value: Integral::Settings.linkedin_handler }, placeholder: t('integral.settings.placeholder.linkedin_handler')
+          = f.input :youtube_handler, input_html: { value: Integral::Settings.youtube_handler }, placeholder: t('integral.settings.placeholder.youtube_handler')
+
+    = f.button :button, t('integral.actions.update')
