@@ -4,6 +4,7 @@ class this.RecordSelector
   @instances = []
 
   @init: ->
+    @instances = []
     for selector in $('.record-selector')
       $selector = $(selector)
       name = $selector.data('record-selector-name')
