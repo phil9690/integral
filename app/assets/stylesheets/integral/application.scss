@@ -18,6 +18,7 @@
 @import "integral/shared";
 @import "integral/modal";
 @import "integral/record_selector";
+@import "integral/wice_grid_overrides";
 @import "integral/overrides";
 
 
@@ -61,24 +62,3 @@
 .width-100 {
   width: 100%;
 }
-
-// WiceGrid Overrides
-.wice-grid, .wg-detached-filter {
-  tr.wg-filter-row input[type=text] {
-    width: 100%;
-  }
-
-  thead th select, .wice-grid thead th select {
-    display: none;
-  }
-
-  // Currently hiding multi-select icons as they don't work
-  .custom-dropdown-container .collapse-multi-select-icon, .custom-dropdown-container .expand-multi-select-icon {
-    display: none;
-  }
-  .filter_icons {
-    text-align: center;
-  }
-}
-
-
