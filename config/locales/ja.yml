@@ -68,11 +68,11 @@ ja:
         title: 'ページ'
     roles:
       labels:
-        user_manager: '[JA] ユーザーマネージャー'
-        image_manager: '[JA] イメージマネージャー'
-        page_manager: '[JA]ページマネージャー'
-        post_manager: '[JA] ポストマネージャー'
-        list_manager: '[JA] List Manager'
+        user_manager: 'ユーザーマネージャー'
+        image_manager: 'イメージマネージャー'
+        page_manager: 'ページマネージャー'
+        post_manager: 'ポストマネージャー'
+        list_manager: リストマネージャー
     posts:
       grid:
         columns:
@@ -104,14 +104,14 @@ ja:
       index:
         title: 設定
         general:
-          title: JA General
-          description: JA Vital information used across the website
+          title: 一般
+          description: 必須項目はソーシャルメディアを通したプロモーションに活用されます
         social:
-          title: JA Social Media
-          description: JA Set or update your social media profile links
-          seo:
-            title: JA SEO
-            description: JA Website SEO and tracking
+          title: ソーシャルメディア
+          description: ソーシャルメディアのプロフィールリンクを設定またはアップデートしてください
+        seo:
+          title: SEO
+          description: ウェブサイトSEOとトラッキング
         placeholder:
           website_title: Super Awesome Website
           contact_email: test@example.com
@@ -230,22 +230,22 @@ ja:
       page:
         title: 'タイトル'
         description: '説明'
-        path: '[JA] Path'
+        path: 'パス'
       post:
         title: 'タイトル'
-        slug: '[JA] Slug'
+        slug: 'スラッグ'
         description: '説明'
         tag_list: 'タグリスト'
       image:
         title: 'タイトル'
         description: '説明'
       settings:
-        website_title: JA Website Title
-        contact_email: JA Contact Form Email Address
-        google_tracking_code: JA Google Tracking Code
-        twitter_handler: JA Twitter Handler
-        facebook_handler: JA Facebook Handler
-        google_plus_handler: JA Google Plus Handler
-        linkedin_handler: JA LinkedIn Handler
-        youtube_handler: JA Youtube Handler
+        website_title: ウェブサイトタイトル
+        contact_email: Eメールアドレス
+        google_tracking_code: Googleトラッキングコード
+        twitter_handler: Twitterハンドラー
+        facebook_handler: Facebookハンドラー
+        google_plus_handler: Google Plusハンドラー
+        linkedin_handler: LinkedInハンドラー
+        youtube_handler: Youtubeハンドラー
 
