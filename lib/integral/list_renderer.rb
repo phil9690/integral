@@ -55,6 +55,7 @@ module Integral
       opts = {}
       opts[:id] = list.html_id if list.html_id.present?
       opts[:class] = html_classes if html_classes.present?
+      opts[:data] = self.opts[:data_attributes]
 
       opts
     end
