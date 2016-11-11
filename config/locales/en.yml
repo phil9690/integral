@@ -92,6 +92,7 @@ en:
       edit:
         title: 'Edit List'
       index:
+        title: 'Lists'
         add_list: 'Add list'
         non_available: 'No Lists currently available. Try creating one!'
       show:
