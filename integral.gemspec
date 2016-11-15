@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency "paranoia", "~> 2.0" # Soft-delete records
   s.add_dependency "client_side_validations" # Client-side validations
   s.add_dependency "client_side_validations-simple_form" # Simpleform integration for Client-side validations
+  s.add_dependency "parsley-rails" # Jquery form validation plugin
   s.add_dependency "wice_grid" # Grids
   s.add_dependency "will_paginate" # Pagination
   s.add_dependency "will_paginate-foundation" # Pagination for Foundation
@@ -42,11 +43,12 @@ Gem::Specification.new do |s|
   s.add_dependency "friendly_id" # Slugging
   s.add_dependency "meta-tags" # Meta Tag Management (SEO)
   s.add_dependency "rails4_before_render" # Callbacks after an action before rendering
-
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
   s.add_dependency "i18n-js" # Clientside translations
+
   s.add_dependency 'factory_girl_rails' # Create reusable object templates
   s.add_dependency 'faker' # Random data generator
+  s.add_dependency "rails-settings-cached" # Persisted settings
 
   s.add_development_dependency "pry-rails" # Debugger
   s.add_development_dependency "sqlite3" # Database

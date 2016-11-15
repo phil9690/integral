@@ -21,7 +21,7 @@
                   = current_user.name
             %div
               %li
-                = link_to root_path do
+                = link_to backend_dashboard_path do
                   %span.material-icons.red-text.text-lighten-1 home
                   = t('integral.navigation.home')
 
@@ -37,6 +37,12 @@
                     %span.material-icons.blue-text.text-lighten-3 create
                     = t('integral.navigation.pages')
 
+              - if policy(Integral::List).manager?
+                %li
+                  = link_to backend_lists_path do
+                    %span.material-icons.yellow-text.text-lighten-1 list
+                    = t('integral.navigation.lists')
+
               - if policy(Integral::Image).manager?
                 %li
                   = link_to backend_img_index_path do
@@ -48,6 +54,10 @@
                   = link_to backend_users_path do
                     %span.material-icons.orange-text.text-lighten-1 supervisor_account
                     = t('integral.navigation.users')
+                %li
+                  = link_to backend_settings_path do
+                    %span.material-icons.red-text.text-lighten-1 settings
+                    = t('integral.navigation.settings')
 
             #admin-menu-footer
               %li

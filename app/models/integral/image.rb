@@ -10,9 +10,22 @@ module Integral
 
     mount_uploader :file, ImageUploader
 
+    # Scopes
+    scope :search, -> (query) { where("lower(title) LIKE ?", "%#{query.downcase}%") }
+
     # @return [String] represents the original size of the image
     def size
       "#{width}x#{height}"
+    end
+
+    def to_list_item
+      {
+        id: id,
+        title: title,
+        subtitle: description,
+        description: description,
+        image: file.url,
+      }
     end
   end
 end

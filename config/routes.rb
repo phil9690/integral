@@ -39,5 +39,11 @@ Integral::Engine.routes.draw do
     resources :posts, except: [ :show ] do
       # resources :comments, only: [:create, :destroy]
     end
+
+    # List Management
+    resources :lists
+
+    # Settings Management
+    resources :settings, only: [:index, :create]
   end
 end

@@ -5,10 +5,11 @@ require "integral/engine"
 require "integral/slack_bot"
 require "integral/page_router"
 require "integral/foundation_builder"
+require "integral/list_renderer"
+require "integral/list_item_renderer"
 
 # Integral
 module Integral
-
   # Enables engine configuration
   def self.configure
     yield(configuration)

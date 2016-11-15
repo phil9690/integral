@@ -9,6 +9,7 @@ module Integral
     require 'draper'
     require 'client_side_validations'
     require 'client_side_validations/simple_form'
+    require 'parsley-rails'
     require 'wice_grid'
     require 'font-awesome-sass'
     require 'breadcrumbs_on_rails'
@@ -30,6 +31,7 @@ module Integral
     require 'faker'
     require 'will_paginate'
     require 'will_paginate-foundation'
+    require 'rails-settings-cached'
 
     isolate_namespace Integral
 

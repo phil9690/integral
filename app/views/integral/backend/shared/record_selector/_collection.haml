@@ -1,0 +1,16 @@
+- collection.each do |obj|
+  - list_item = obj.to_list_item
+  - list_item[:image] = list_item[:image].present? ? list_item[:image] : image_url('integral/defaults/no_image_available.jpg')
+  .record.row.valign-wrapper.hoverable{data: list_item }
+    .col.m2
+      = image_tag list_item[:image]
+    .col.m10
+      %h5= list_item[:title]
+      %span.subtitle= list_item[:subtitle]
+
+- if collection.empty?
+  .no-records
+    %span No Records Found.
+
+-# TODO: Fix gem throwing undefined method `prepare'
+= will_paginate collection #, renderer: MaterializePagination::MaterializeRenderer

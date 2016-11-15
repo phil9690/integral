@@ -7,6 +7,9 @@
   - if policy(Integral::Page).manager?
     = render partial: 'card', locals: { link_path: backend_pages_path, image_path: 'integral/tiles/pages.png', title: t('integral.navigation.pages'), description: 'Add, edit and remove pages', image_classes: 'orange lighten-4' }
 
+  - if policy(Integral::List).manager?
+    = render partial: 'card', locals: { link_path: backend_lists_path, image_path: 'integral/tiles/lists.png', title: t('integral.navigation.lists'), image_classes: 'orange lighten-4' }
+
   - if policy(current_user).manager?
     = render partial: 'card', locals: { link_path: backend_users_path, image_path: 'integral/tiles/users.png', title: t('integral.navigation.users'), description: 'Add, edit and remove users', image_classes: 'blue lighten-2'}
 

@@ -54,6 +54,7 @@ ja:
       images: 'イメージ'
       log_out: 'ログアウト'
       my_account: 'アカウント＆プロフィール'
+      settings: '設定'
 
     confirmation_modal:
       title: '確認書'
@@ -67,10 +68,10 @@ ja:
         title: 'ページ'
     roles:
       labels:
-        user_manager: '[JA] User Manager'
         image_manager: '[JA] Image Manager'
         page_manager: '[JA] Page Manager'
         post_manager: '[JA] Post Manager'
+        list_manager: リストマネージャー
     backend:
       posts:
         grid:
@@ -179,16 +180,36 @@ ja:
         show:
           title: "プロフィール表示 - %{name}"
           member_since: "メンバー暦: %{start_date}"
-
+      settings:
+        index:
+          title: 設定
+          general:
+            title: 一般
+            description: 必須項目はソーシャルメディアを通したプロモーションに活用されます
+          social:
+            title: ソーシャルメディア
+            description: ソーシャルメディアのプロフィールリンクを設定またはアップデートしてください
+          seo:
+            title: SEO
+            description: ウェブサイトSEOとトラッキング
+          placeholder:
+            website_title: Super Awesome Website
+            contact_email: test@example.com
+            google_tracking_code: 'UA-11111111-1'
+            twitter_handler: barackobama
+            facebook_handler: mark_zuckerberg
+            google_plus_handler: eric_schmit
+            linkedin_handler: williamhgates
+            youtube_handler: justinbeiber
     messages:
       reply_subject: 'あなたのメッセージへの返信'
       index:
         no_messages: 'メッセージがありません :('
     boolean:
-      'true': '[JA] True'
-      'false': '[JA] False'
-    date_selector_tooltip_from: '[JA] From'
-    date_selector_tooltip_to: '[JA] To'
+      'true': '真'
+      'false': '偽'
+    date_selector_tooltip_from: 'フロム'
+    date_selector_tooltip_to: 'ツー'
 
   simple_form:
     inputs:
@@ -207,12 +228,22 @@ ja:
       page:
         title: 'タイトル'
         description: '説明'
-        path: '[JA] Path'
+        path: 'パス'
       post:
         title: 'タイトル'
-        slug: '[JA] Slug'
+        slug: 'スラッグ'
         description: '説明'
         tag_list: 'タグリスト'
       image:
         title: 'タイトル'
         description: '説明'
+      settings:
+        website_title: ウェブサイトタイトル
+        contact_email: Eメールアドレス
+        google_tracking_code: Googleトラッキングコード
+        twitter_handler: Twitterハンドラー
+        facebook_handler: Facebookハンドラー
+        google_plus_handler: Google Plusハンドラー
+        linkedin_handler: LinkedInハンドラー
+        youtube_handler: Youtubeハンドラー
+

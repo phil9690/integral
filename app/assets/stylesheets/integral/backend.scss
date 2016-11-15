@@ -1,25 +1,31 @@
-@import "materialize";
+@import 'integral/materialize';
 @import "materialize_clockpicker";
 @import "materialize-tags";
 @import "wice_grid";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "parsley";
 @import "integral/login_pages";
 @import "integral/breakmedown";
 @import "integral/users";
 @import "integral/images";
 @import "integral/posts";
+@import "integral/lists";
 @import "integral/dashboard";
 @import "integral/validations";
 @import "integral/flash_notifications";
 @import "integral/collapsible_extensions";
 @import "integral/shared";
+@import "integral/modal";
+@import "integral/record_selector";
+@import "integral/wice_grid_overrides";
 @import "integral/overrides";
 
 .turbolinks-progress-bar {
   height: 5px;
-  background-color: green;
+  background-color: $secondary-color;
   }
+
 .remove-button {
   i {
     @extend .red-text, .text-lighten-1;
@@ -60,24 +66,3 @@
 .width-100 {
   width: 100%;
 }
-
-// WiceGrid Overrides
-.wice-grid, .wg-detached-filter {
-  tr.wg-filter-row input[type=text] {
-    width: 100%;
-  }
-
-  thead th select, .wice-grid thead th select {
-    display: none;
-  }
-
-  // Currently hiding multi-select icons as they don't work
-  .custom-dropdown-container .collapse-multi-select-icon, .custom-dropdown-container .expand-multi-select-icon {
-    display: none;
-  }
-  .filter_icons {
-    text-align: center;
-  }
-}
-
-

@@ -24,8 +24,10 @@ PATH
       meta-tags
       mini_magick
       paranoia (~> 2.0)
+      parsley-rails
       pundit
       rails (~> 4.2.4)
+      rails-settings-cached
       rails4_before_render
       sass-rails
       simple_form
@@ -103,13 +105,13 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
-    carrierwave-imageoptimizer (1.2.1)
+    carrierwave-imageoptimizer (1.3.0)
       carrierwave (~> 0.8)
-      image_optimizer (~> 1.2)
+      image_optimizer (~> 1.6)
     ckeditor (4.2.0)
       cocaine
       orm_adapter (~> 0.5.0)
-    client_side_validations (4.2.6)
+    client_side_validations (4.2.7)
       jquery-rails (>= 3.1.2, < 5.0.0)
       js_regex (~> 1.0, >= 1.0.9)
       rails (>= 4.0.0, < 4.3.0)
@@ -164,7 +166,7 @@ GEM
     flog (4.3.2)
       ruby_parser (~> 3.1, > 3.1.0)
       sexp_processor (~> 4.4)
-    font-awesome-sass (4.6.2)
+    font-awesome-sass (4.7.0)
       sass (>= 3.2)
     foundation-rails (6.2.3.0)
       railties (>= 3.1.0)
@@ -194,7 +196,7 @@ GEM
     i18n (0.7.0)
     i18n-js (2.1.2)
       i18n
-    image_optimizer (1.5.0)
+    image_optimizer (1.6.1)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -227,8 +229,10 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     parallel (1.6.1)
-    paranoia (2.1.5)
-      activerecord (~> 4.0)
+    paranoia (2.2.0)
+      activerecord (>= 4.0, < 5.1)
+    parsley-rails (2.4.4.0)
+      railties (>= 3.0.0)
     pkg-config (1.1.7)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -260,6 +264,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-settings-cached (0.6.5)
+      rails (>= 4.2.0)
     rails4_before_render (0.2.1)
       rails (~> 4.0)
     railties (4.2.5.1)

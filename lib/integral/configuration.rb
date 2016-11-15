@@ -8,7 +8,8 @@ module Integral
                   :facebook_app_id,
                   :twitter_handler,
                   :backend_namespace,
-                  :blog_namespace
+                  :blog_namespace,
+                  :listable_objects
 
     def initialize
       set_defaults
@@ -23,6 +24,11 @@ module Integral
       @blog_namespace = 'blog'
       @black_listed_paths = [
         '/admin/'
+      ]
+
+      @listable_objects = [
+        'Integral::Post',
+        'Integral::Page',
       ]
     end
   end

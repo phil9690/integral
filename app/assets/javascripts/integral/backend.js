@@ -16,10 +16,14 @@
 //= require turbolinks
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require parsley
 //= require wice_grid
 //= require cocoon
 //= require ckeditor/loader
+//= require i18n
 //= require i18n/translations
+//= require integral/images
+//= require integral/lists
 //= require integral/extensions
 //= require_directory ./support
 
@@ -35,6 +39,7 @@ document.addEventListener("turbolinks:load", function() {
   });
 
   SlugGenerator.check_for_slugs();
+  RecordSelector.init();
 
   // Used for Autocomplete
   var filterSuggestions = function(suggestableInput, suggestions) {

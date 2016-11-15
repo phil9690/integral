@@ -3,9 +3,10 @@ Integral::Role.create!(name: 'UserManager')
 Integral::Role.create!(name: 'ImageManager')
 Integral::Role.create!(name: 'PageManager')
 Integral::Role.create!(name: 'PostManager')
+Integral::Role.create!(name: 'ListManager')
 
 # Demo User
-Integral::User.create!({ name: 'Integrico', email: 'info@integralrails.com', password: 'password', role_ids: Integral::Role.ids })
+Integral::User.create!({ name: 'Integrico', email: 'user@integralrails.com', password: 'password', role_ids: Integral::Role.ids })
 
 # Demo Page
 Integral::Page.create!(title: 'Integral Demo Page',
