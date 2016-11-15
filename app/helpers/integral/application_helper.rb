@@ -2,6 +2,26 @@ module Integral
   # Base helper inherited from all Integral helpers
   module ApplicationHelper
 
+    # TODO: Could look to move this out into seperate helper class
+    def google_tag_manager
+      gtm_id = Settings.google_tag_manager_id
+      return if gtm_id.blank? || !Rails.env.production?
+
+      snippet = <<-HTML
+       <!-- Google Tag Manager -->
+       <noscript><iframe src="//www.googletagmanager.com/ns.html?id=#{gtm_id}"
+       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                                                            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                                                            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+       })(window,document,'script','dataLayer','#{gtm_id}');</script>
+       <!-- End Google Tag Manager -->
+      HTML
+
+      snippet.html_safe
+    end
+
     # Creates an anchor link
     #
     # @param body [String] body of the link

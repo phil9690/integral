@@ -128,7 +128,7 @@ en:
         placeholder:
           website_title: Super Awesome Website
           contact_email: test@example.com
-          google_tracking_code: 'UA-11111111-1'
+          google_tag_manager_id: GTM-xxxx
           twitter_handler: barackobama
           facebook_handler: mark_zuckerberg
           google_plus_handler: eric_schmit
@@ -333,7 +333,7 @@ en:
       settings:
         website_title: Website Title
         contact_email: Contact Form Email Address
-        google_tracking_code: Google Tracking Code
+        google_tag_manager_id: Google Tag Manager ID
         twitter_handler: Twitter Handler
         facebook_handler: Facebook Handler
         google_plus_handler: Google Plus Handler

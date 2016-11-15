@@ -9,7 +9,7 @@
           = f.input :contact_email, input_html: { value: Integral::Settings.contact_email }, placeholder: t('integral.backend.settings.placeholder.contact_email')
 
         = render layout: 'integral/backend/settings/section', locals: { f: f, icon: 'search', title: t('.seo.title'), description: t('.seo.description'), classes: 'blue lighten-1' } do
-          = f.input :google_tracking_code, input_html: { class: 'materialize-textarea', placeholder: t('integral.backend.settings.placeholder.google_tracking_code'), value: Integral::Settings.google_tracking_code }
+          = f.input :google_tag_manager_id, input_html: { class: 'materialize-textarea', placeholder: t('integral.backend.settings.placeholder.google_tag_manager_id'), value: Integral::Settings.google_tag_manager_id }
 
         = render layout: 'integral/backend/settings/section', locals: { f: f, icon: 'exposure_plus_1', title: t('.social.title'), description: t('.social.description'), classes: 'red lighten-1' } do
           = f.input :twitter_handler, input_html: { value: Integral::Settings.twitter_handler }, placeholder: t('integral.backend.settings.placeholder.twitter_handler')

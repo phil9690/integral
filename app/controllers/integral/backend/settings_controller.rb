@@ -30,7 +30,7 @@ module Integral
       def settings_params
         params[:settings].permit(:website_title, :contact_email, :twitter_handler, :facebook_handler, :youtube_handler,
                                  :google_plus_handler, :linkedin_handler,
-                                 :google_tracking_code
+                                 :google_tag_manager_id
                                 )
       end
 
