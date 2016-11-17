@@ -91,8 +91,7 @@ document.addEventListener("turbolinks:load", function() {
   });
 });
 
-// TODO Still need this?
-$(document).on('page:load', function () {
+document.addEventListener("turbolinks:render", function() {
   $('input, textarea').characterCounter();
   $('.tooltipped').tooltip({delay: 50});
   $('ul.tabs').tabs();

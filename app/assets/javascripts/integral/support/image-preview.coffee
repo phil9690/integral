@@ -1,4 +1,4 @@
-$(document).on "ready page:load", ->
+document.addEventListener "turbolinks:load", ->
   imageUploader = $(".image-uploader")
 
   imageUploader.on 'change', ->
