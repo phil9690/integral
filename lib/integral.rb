@@ -3,6 +3,7 @@ require 'devise_invitable'
 require "integral/configuration"
 require "integral/engine"
 require "integral/slack_bot"
+require "integral/router"
 require "integral/page_router"
 require "integral/foundation_builder"
 require "integral/list_renderer"

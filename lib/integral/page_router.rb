@@ -1,9 +1,11 @@
 # Handles dynamic page routing.
 # Adapted from the below tutorial
 # http://codeconnoisseur.org/ramblings/creating-dynamic-routes-at-runtime-in-rails-4
+#
+# Note: Currently a server restart is required when creating pages using Heroku for the routes to show up.
 module Integral
   class PageRouter
-    # Add localized page routes
+    # Adds dynamic page routes
     def self.load
       # Allows tasks like assets:precompile to take place without the database setup
       return unless database_is_ready?
