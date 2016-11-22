@@ -32,9 +32,15 @@ ja:
       view: 'ビュー'
       read_more: 'もっと読む'
       reply: '返信'
+    placeholders:
+      description: '[JA] Description'
+      title: '[JA] Title'
+
 
     breadcrumbs:
+      home: 'ダッシュボード'
       dashboard: 'ダッシュボード'
+      blog: '投稿'
       settings: '設定'
       posts: '投稿'
       pages: 'ページ'
@@ -44,6 +50,7 @@ ja:
       messages: 'メッセージ'
       new: '新'
       edit: '編集'
+      lists: 'JA Lists'
 
     navigation:
       signed_in_as: 'ログイン名'
@@ -52,27 +59,59 @@ ja:
       pages: 'ページ'
       users: 'ユーザー'
       images: 'イメージ'
+      lists: 'JA Lists'
       log_out: 'ログアウト'
       my_account: 'アカウント＆プロフィール'
       settings: '設定'
 
-    confirmation_modal:
-      title: '確認書'
-      confirm: '確認'
-      cancel: 'キャンセル'
-
-    static_pages:
-      dashboard:
-        title: 'ダッシュボード'
-      pages:
-        title: 'ページ'
-    roles:
-      labels:
-        image_manager: '[JA] Image Manager'
-        page_manager: '[JA] Page Manager'
-        post_manager: '[JA] Post Manager'
-        list_manager: リストマネージャー
     backend:
+      confirmation_modal:
+        title: '確認書'
+        confirm: '確認'
+        cancel: 'キャンセル'
+
+      static_pages:
+        dashboard:
+          title: 'ダッシュボード'
+        pages:
+          title: 'ページ'
+
+      roles:
+        labels:
+          image_manager: '[JA] Image Manager'
+          user_manager: '[JA] User Manager'
+          page_manager: '[JA] Page Manager'
+          post_manager: '[JA] Post Manager'
+          list_manager: リストマネージャー
+
+      lists:
+        items:
+          type:
+            basic: '[JA] Basic'
+            link: '[JA] Link'
+            post: '[JA] Post'
+        new:
+          title: '[JA] New List'
+        edit:
+          title: '[JA] Edit List'
+        index:
+          title: '[JA] Lists'
+          add_list: '[JA] Add list'
+          non_available: '[JA] No Lists currently available. Try creating one!'
+        show:
+          title: "[JA] List - %{title}"
+        grid:
+          columns:
+            title: '[JA] Title'
+            description: '[JA] Description'
+        notification:
+          creation_success: '[JA] List successfully created.'
+          creation_failure: '[JA] List creation failed.'
+          edit_success: '[JA] List successfully updated.'
+          edit_failure: '[JA] Failed to update list.'
+          delete_success: '[JA] List successfully deleted.'
+          delete_failure: '[JA] Failed to delete list.'
+
       posts:
         grid:
           columns:

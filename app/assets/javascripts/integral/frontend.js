@@ -4,6 +4,7 @@
 //= require foundation
 
 document.addEventListener("turbolinks:load", function() {
-  $(document).foundation();
+  // Initialize foundation
+  $(function(){ $(document).foundation(); });
 });
 
