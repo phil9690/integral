@@ -1,7 +1,7 @@
 module Integral
   module Backend
     # Post management
-    class PostsController < ApplicationController
+    class PostsController < BaseController
       before_filter :set_post, only: [:edit, :update, :destroy, :show]
       before_filter :set_breadcrumbs
 
@@ -41,10 +41,10 @@ module Integral
         @post.user = current_user
 
         if @post.save
-          flash[:notice] = I18n.t('integral.posts.notification.creation_success')
+          flash[:notice] = I18n.t('integral.backend.posts.notification.creation_success')
           redirect_to edit_backend_post_path(@post)
         else
-          flash[:error] = I18n.t('integral.posts.notification.creation_failure')
+          flash[:error] = I18n.t('integral.backend.posts.notification.creation_failure')
           render 'new'
         end
       end
@@ -59,10 +59,10 @@ module Integral
       # Updating a post
       def update
         if @post.update(post_params)
-          flash[:notice] = I18n.t('integral.posts.notification.edit_success')
+          flash[:notice] = I18n.t('integral.backend.posts.notification.edit_success')
           redirect_to edit_backend_post_path(@post)
         else
-          flash[:error] = I18n.t('integral.posts.notification.edit_failure')
+          flash[:error] = I18n.t('integral.backend.posts.notification.edit_failure')
           render 'edit'
         end
       end
@@ -70,9 +70,9 @@ module Integral
       # DELETE /:id
       def destroy
         if @post.destroy
-          flash[:notice] = I18n.t('integral.posts.notification.delete_success')
+          flash[:notice] = I18n.t('integral.backend.posts.notification.delete_success')
         else
-          flash[:error] = I18n.t('integral.posts.notification.delete_failure')
+          flash[:error] = I18n.t('integral.backend.posts.notification.delete_failure')
         end
 
         redirect_to backend_posts_path

@@ -1,7 +1,7 @@
 module Integral
   module Backend
     # Images controller
-    class ImagesController < ApplicationController
+    class ImagesController < BaseController
       before_filter :set_image, only: [:edit, :update, :destroy, :show]
       before_filter :authorize_with_klass
       before_filter :set_breadcrumbs

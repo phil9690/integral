@@ -1,10 +1,10 @@
 module Integral
   # Static (not related to a specific model) pages
-  class StaticPagesController < ApplicationController
+  class StaticPagesController < Integral.configuration.frontend_parent_controller
 
     # GET /
-    # Dashboard to show website stats and other useful information
-    def dashboard
+    # Homepage
+    def home
     end
   end
 end

@@ -1,7 +1,7 @@
 module Integral
   module Backend
     # Users controller
-    class UsersController < ApplicationController
+    class UsersController < BaseController
       before_filter :set_user, only: [:edit, :update, :destroy, :show]
 
       before_filter :authorize_with_instance, only: [ :show, :edit, :update ]
@@ -45,9 +45,9 @@ module Integral
         @user = User.invite!(user_params)
 
         if @user.errors.present?
-          respond_failure I18n.t('integral.users.notification.creation_failure'), 'new'
+          respond_failure I18n.t('integral.backend.users.notification.creation_failure'), 'new'
         else
-          respond_successfully I18n.t('integral.users.notification.creation_success'), backend_user_path(@user)
+          respond_successfully I18n.t('integral.backend.users.notification.creation_success'), backend_user_path(@user)
         end
       end
 
@@ -65,9 +65,9 @@ module Integral
         authorized_user_params.delete(:role_ids) unless policy(@user).manager?
 
         if @user.update(authorized_user_params)
-          respond_successfully I18n.t('integral.users.notification.edit_success'), backend_user_path(@user)
+          respond_successfully I18n.t('integral.backend.users.notification.edit_success'), backend_user_path(@user)
         else
-          respond_failure I18n.t('integral.users.notification.edit_failure'), 'edit'
+          respond_failure I18n.t('integral.backend.users.notification.edit_failure'), 'edit'
         end
       end
 
@@ -75,7 +75,7 @@ module Integral
       def destroy
         @user.destroy
 
-        respond_successfully I18n.t('integral.users.notification.delete_success'), backend_users_path
+        respond_successfully I18n.t('integral.backend.users.notification.delete_success'), backend_users_path
       end
 
       private
@@ -95,9 +95,9 @@ module Integral
       end
 
       def user_params
-        return params.require(:user).permit(:name, :email, :avatar, role_ids: [] ) unless params[:user][:password].present?
+        return params.require(:user).permit(:name, :email, :avatar, :locale, role_ids: [] ) unless params[:user][:password].present?
 
-        params.require(:user).permit(:name, :email, :avatar, :password, :password_confirmation, role_ids: [])
+        params.require(:user).permit(:name, :email, :avatar, :locale, :password, :password_confirmation, role_ids: [])
       end
 
       def authorize_with_klass

@@ -1,6 +1,6 @@
 module Integral
   # Renders dynamic pages
-  class PagesController < ApplicationController
+  class PagesController < Integral.configuration.frontend_parent_controller
     before_filter :find_page, only: [:show]
 
     # GET /{page.path}

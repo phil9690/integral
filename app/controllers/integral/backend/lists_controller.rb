@@ -1,7 +1,7 @@
 module Integral
   module Backend
     # List controller
-    class ListsController < ApplicationController
+    class ListsController < BaseController
       before_filter :set_list, only: [:edit, :update, :destroy, :show]
       before_filter :authorize_with_klass, only: [ :index, :new, :create, :edit, :update, :destroy ]
       before_filter :set_breadcrumbs

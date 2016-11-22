@@ -47,5 +47,5 @@ Ckeditor.setup do |config|
   # By default: "/assets/ckeditor/config.js"
   # config.js_config_url = "/assets/ckeditor/config.js"
   #
-  config.parent_controller = 'Integral::Backend::ApplicationController'
+  config.parent_controller = 'Integral::Backend::BaseController'
 end

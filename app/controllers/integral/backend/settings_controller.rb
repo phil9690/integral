@@ -1,7 +1,7 @@
 module Integral
   module Backend
     # Settings management
-    class SettingsController < ApplicationController
+    class SettingsController < BaseController
       before_filter :set_breadcrumbs
 
       # GET /

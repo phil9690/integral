@@ -1,9 +1,6 @@
 module Integral
   # Posts controller
   class PostsController < BlogController
-    # Posts one language only, no need for locale prepend
-    skip_before_action :locale_redirect, except: [:index]
-
     prepend_before_filter :find_post, only: [:show]
     before_filter :find_related_posts, only: [:show]
     after_filter :increment_post_count, only: [:show]
@@ -21,13 +18,10 @@ module Integral
 
       @meta_data = {
         page_title: @post.title,
-        #site_title: "Vacation Niseko Blog",
         page_description: @post.description,
-        # No alternative locale for blog posts
-        alternative: {},
         open_graph:  {
-        image: @post.image.url
-      }
+          image: @post.image.url
+        }
       }
     end
 

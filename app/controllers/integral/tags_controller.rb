@@ -18,8 +18,6 @@ module Integral
         page_title: @tag.name,
       }
 
-      require 'pry'; binding.pry
-
       @tagged_posts = Integral::Post.tagged_with(@tag.name).published.paginate(:page => params[:page])
     end
 

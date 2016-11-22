@@ -9,7 +9,8 @@ module Integral
                   :twitter_handler,
                   :backend_namespace,
                   :blog_namespace,
-                  :listable_objects
+                  :listable_objects,
+                  :frontend_parent_controller
 
     def initialize
       set_defaults
@@ -30,6 +31,8 @@ module Integral
         'Integral::Post',
         'Integral::Page',
       ]
+
+      @frontend_parent_controller = Integral::ApplicationController
     end
   end
 end

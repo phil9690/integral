@@ -1,7 +1,7 @@
 module Integral
   module Backend
     # Pages controller
-    class PagesController < ApplicationController
+    class PagesController < BaseController
       before_filter :set_page, only: [:edit, :update, :destroy]
       before_filter :authorize_with_klass, only: [ :index, :new, :create, :edit, :update, :destroy ]
       before_filter :set_breadcrumbs
@@ -28,10 +28,10 @@ module Integral
         @page = Page.new(page_params)
 
         if @page.save
-          flash[:notice] = I18n.t('integral.pages.notification.creation_success')
+          flash[:notice] = I18n.t('integral.backend.pages.notification.creation_success')
           redirect_to edit_backend_page_path(@page)
         else
-          flash[:error] = I18n.t('integral.pages.notification.creation_failure')
+          flash[:error] = I18n.t('integral.backend.pages.notification.creation_failure')
           render 'new'
         end
       end
@@ -46,10 +46,10 @@ module Integral
       # Updating an page
       def update
         if @page.update(page_params)
-          flash[:notice] = I18n.t('integral.pages.notification.edit_success')
+          flash[:notice] = I18n.t('integral.backend.pages.notification.edit_success')
           redirect_to edit_backend_page_path(@page)
         else
-          flash[:error] = I18n.t('integral.pages.notification.edit_failure')
+          flash[:error] = I18n.t('integral.backend.pages.notification.edit_failure')
           render 'edit'
         end
       end
@@ -57,10 +57,10 @@ module Integral
       # DELETE /:id
       def destroy
         if @page.destroy
-          flash[:notice] = I18n.t('integral.pages.notification.delete_success')
+          flash[:notice] = I18n.t('integral.backend.pages.notification.delete_success')
         else
           error_message = @page.errors.full_messages.to_sentence
-          flash[:error] = "#{I18n.t('integral.pages.notification.delete_failure')} - #{error_message}"
+          flash[:error] = "#{I18n.t('integral.backend.pages.notification.delete_failure')} - #{error_message}"
         end
 
         redirect_to pages_path

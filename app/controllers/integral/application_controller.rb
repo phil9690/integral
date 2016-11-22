@@ -1,5 +1,5 @@
 module Integral
-  # Base controller inherited by all Integral controllers
+  # Base Frontend controller
   class ApplicationController < ActionController::Base
     layout 'integral/frontend'
 
@@ -71,6 +71,11 @@ module Integral
 
     def load_popular_posts
       @popular_posts = Integral::Post.published.order("view_count DESC").limit(4)
+    end
+
+    # Raises 404 if no user is logged in
+    def verify_user
+      raise ActionController::RoutingError.new('Not Found') if current_user.blank?
     end
   end
 end

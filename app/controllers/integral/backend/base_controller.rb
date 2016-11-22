@@ -2,7 +2,7 @@ module Integral
   # Backend module [Users only area]
   module Backend
     # Base controller for backend inherited by all Integral backend controllers
-    class ApplicationController < ActionController::Base
+    class BaseController < ActionController::Base
       layout 'integral/backend'
 
       # User authentication
