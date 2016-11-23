@@ -4,6 +4,7 @@ module Integral
     require 'haml'
     require 'jquery-rails'
     require 'turbolinks'
+    require 'nprogress-rails'
     require 'simple_form'
     require 'cocoon'
     require 'draper'
