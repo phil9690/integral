@@ -63,7 +63,7 @@ module Integral
           flash[:error] = "#{I18n.t('integral.backend.pages.notification.delete_failure')} - #{error_message}"
         end
 
-        redirect_to pages_path
+        redirect_to backend_pages_path
       end
 
       private

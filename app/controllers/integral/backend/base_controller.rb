@@ -21,7 +21,7 @@ module Integral
 
       # Redirect user to integral.root_path after successful login
       def after_sign_in_path_for(resource)
-        backend_dashboard_path
+        integral.root_path
       end
 
       def user_not_authorized

@@ -4,15 +4,15 @@ module Integral
   describe "#configure" do
     let(:foo) { '' }
 
-    before do
-      Integral.configure do |config|
-        # config.foo = foo
-      end
+    after do
+      # Reset to default configuration
+      Integral.configuration = Configuration.new
     end
 
     context 'black_listed_paths' do
       context 'when setting is not set' do
         it 'attempting to create a page under /admin fails' do
+
           expect(build(:integral_page, path: '/admin/').valid?).to be false
         end
       end
