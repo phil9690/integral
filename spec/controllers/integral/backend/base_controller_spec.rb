@@ -19,7 +19,7 @@ module Integral
 
       describe "after sigin-in" do
         it "redirects to user dashboard" do
-          expect(controller.after_sign_in_path_for(user)).to eq Engine.routes.url_helpers.root_path
+          expect(controller.after_sign_in_path_for(user)).to eq Engine.routes.url_helpers.backend_dashboard_path
         end
       end
 
