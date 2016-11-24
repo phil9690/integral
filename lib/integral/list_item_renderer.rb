@@ -82,6 +82,31 @@ module Integral
       provide_attr(:subtitle)
     end
 
+    # Returns the non object image path
+    def object_image
+      image = object_data[:image] if object_available?
+
+      return image.file.url if image.respond_to?(:file)
+      return image if image.present?
+
+      fallback_image
+    end
+
+
+    def has_non_object_image?
+      list_item.image.present?
+    end
+
+    # Returns the non object image path
+    def non_object_image
+      image = list_item.image
+
+      return image.file.url if image.respond_to?(:file)
+      return image if image.present?
+
+      fallback_image
+    end
+
     # Returns the image path rather than an actual Integral::Image object
     def image
       image = provide_attr(:image)
@@ -89,7 +114,7 @@ module Integral
       return image.file.url if image.respond_to?(:file)
       return image if image.present?
 
-      ActionController::Base.helpers.image_path('integral/defaults/no_image_available.jpg')
+      fallback_image
     end
 
     def title_required?
@@ -99,6 +124,10 @@ module Integral
     def render_no_object_warning
       Rails.logger.error('IntegralError: Tried to render a list item with no object.')
       '<!-- Warning: Tried to render a list item with no object. -->'
+    end
+
+    def fallback_image
+      ActionController::Base.helpers.image_path('integral/defaults/no_image_available.jpg')
     end
 
     private

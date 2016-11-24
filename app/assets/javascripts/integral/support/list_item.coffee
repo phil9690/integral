@@ -19,9 +19,13 @@ class this.ListItem
     @imagePreview = @modal.find('.image-preview img')
     @objectWrapper = @modal.find('.object-wrapper')
     @linkWrapper = @modal.find('.link-wrapper')
+    @unlinkButton = @modal.find('.unlink-btn')
 
     if @object()
       @objectData = @objectPreview.data()
+
+    if !@imageField.data().imagePresent
+      @unlinkButton.hide()
 
     @setIcon()
     @setupEvents()
@@ -68,6 +72,12 @@ class this.ListItem
 
       RecordSelector.open('image', selectorOpts)
 
+    @unlinkButton.click (ev) =>
+      ev.preventDefault()
+      @imageField.val('')
+      @imagePreview.attr('src', @imageField.data().fallbackImage)
+      @unlinkButton.hide()
+
   handleObjectUpdate: ->
     @list.formValidator.reset()
 
@@ -99,6 +109,7 @@ class this.ListItem
   handleImageSelection: (data) =>
     @imageField.val(data.id)
     @imagePreview.attr('src', data.image)
+    @unlinkButton.show()
 
   handleObjectSelection: (data) =>
     objectType = @fakeTypeField.find(":selected").data('object-type')

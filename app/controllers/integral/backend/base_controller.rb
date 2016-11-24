@@ -46,7 +46,7 @@ module Integral
 
       def respond_to_record_selector(klass)
         records = klass.search(params[:search]).paginate(page: params[:page])
-        render json: { content: render_to_string(partial: 'integral/shared/record_selector/collection', locals: { collection: records }) }
+        render json: { content: render_to_string(partial: 'integral/backend/shared/record_selector/collection', locals: { collection: records }) }
       end
     end
   end
