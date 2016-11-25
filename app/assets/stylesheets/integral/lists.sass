@@ -1,0 +1,166 @@
+.lists-container
+  .link-wrapper
+    position: relative
+    .boolean
+      vertical-align: text-top
+      position: absolute
+      top: 20%
+      label
+        width: 8em
+  .add-children
+    display: inline-block
+  .children
+    .list-item-container
+      margin-left: 10%
+  .overview
+    margin-bottom: 10px
+    .title
+      .material-icons
+        font-size: 50%
+    .material-icons
+      font-size: 100%
+      margin-left: 10px
+      cursor: pointer
+  .sortable-placeholder
+    border: 1px dashed #CCC
+    background-color: #f9f9f9
+    height: 60px
+    margin-bottom: 5px
+  .list-item-modal
+    .modal-content
+      padding-bottom: 56px
+    .object-wrapper
+      hr
+        border-width: 2px
+        border-color: black
+    .image-preview
+      max-height: none
+      .image-container
+        max-width: 50%
+        position: relative
+        margin: auto
+      span
+        right: 15px
+        bottom: 5px
+      .unlink-btn
+        background-color: white
+        color: red
+        border: 1px solid red
+        border-width: 1px
+        margin-top: 5px
+    .link-wrapper
+      .input-field:first-child
+        width: 70%
+        display: inline-block
+    .input-field.boolean
+      display: initial
+      margin-left: 20px
+    .btn
+      margin: 0
+    .confirm-btn
+      margin-left: 10px
+    .row
+      margin-left: 0
+      margin-right: 0
+
+    .object-preview
+      position: relative
+      padding: 10px
+      border: 1px solid #aaaaaa
+      border-radius: 5px
+      &:hover
+        cursor: pointer
+        .overlay
+          display: block
+      .overlay
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(158, 158, 158, 0.33)
+        display: none
+        text-align: center
+        i
+          color: white
+          font-size: 100px
+      h5
+        margin: 0
+        margin-bottom: 5px
+        font-size: 1.5em
+
+      img
+        width: 100%
+      span
+        color: #7a7a7a
+        margin-bottom: 5px
+  h2
+    font-size: 2em
+    margin: 0px 0
+  #list-items
+    margin: 0 auto
+    width: 50%
+  .child-list
+    margin-left: 30px
+  .list-item
+    background-color: #f7f6f6
+    border-style: solid
+    border-color: aaaaaa
+    border-width: 1px
+    height: 60px
+    border-radius: 2px
+    box-shadow: 0px 0px 2px #969696
+    margin-bottom: 5px
+    .modal
+      &:hover
+        cursor: default
+    &:hover
+      cursor: move
+      box-shadow: 0px 0px 4px #969696
+      background-color: white
+    span
+      display: block
+    .action
+      &:hover
+        background-color: black
+        color: white
+        border-radius: 5px
+        cursor: pointer
+
+    .material-icons
+      margin-top: 15px
+      color: black
+    .data
+      span
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+      .url
+        color: #7a7a7a
+        font-size: 12px
+      .title
+        margin-top: 5px
+        font-size: 20px
+  .add-list-item
+    .material-icons
+      font-weight: 900
+      color: white
+      text-shadow: 0px 0px 2px rgba(150, 150, 150, 1)
+      font-size: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    background-color: #ebebeb
+    border-style: dashed
+    border-color: #444444
+    border-width: 1px
+    height: 60px
+    margin-bottom: 5px
+    border-radius: 2px
+    box-shadow: 0px 0px 2px #969696
+    &:hover
+      box-shadow: 0px 0px 4px #969696
+      .material-icons
+        text-shadow: 0px 0px 6px rgba(150, 150, 150, 1)
+        font-size: 45px

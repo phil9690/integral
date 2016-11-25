@@ -1,6 +1,9 @@
 module Integral
   # User model used to represent a authenticated user
   class User < ActiveRecord::Base
+    # Soft-deletion
+    acts_as_paranoid
+
     mount_uploader :avatar, AvatarUploader
 
     # Included devise modules. Others available are:
@@ -22,6 +25,14 @@ module Integral
     # @return [Boolean]
     def has_role?(role_sym)
       roles.any? { |r| r.name.underscore.to_sym == role_sym }
+    end
+
+    # @return [Array] containing available locales
+    def self.available_locales
+      [
+        ['English', 'en'],
+        ['日本語', 'ja']
+      ]
     end
 
     private

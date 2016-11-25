@@ -1,0 +1,13 @@
+.row
+  = simple_form_for [:backend, @page], validate: true, html: { id: 'page_form' } do |f|
+    .col.s12
+      .card-panel
+        = f.input :title
+        = f.input :description
+        = f.input :path
+        = f.input :body, as: :ckeditor, label: false, input_html: { id: 'content_editor', ckeditor: {toolbar: 'mini', language: current_user.locale} }
+        .radios
+          = f.collection_radio_buttons :status, Integral::Post.available_statuses(reverse: true), :first, :last
+
+    = f.button :button
+

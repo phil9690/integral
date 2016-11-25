@@ -8,7 +8,7 @@ module Integral
 
     # @return [String] label representing the Role
     def label
-      name.underscore.humanize
+      I18n.t("integral.backend.roles.labels.#{name.underscore.downcase}")
     end
   end
 end

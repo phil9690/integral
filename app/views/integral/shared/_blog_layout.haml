@@ -1,0 +1,22 @@
+.row
+  = render_breadcrumbs builder: FoundationBuilder if @breadcrumbs.present?
+#content.row
+  .medium-8.columns
+    = yield
+  .medium-3.columns{ data: { 'sticky-container' => true } }
+    .sticky{ data: {sticky: true, anchor: 'content' } }
+      .blog-widget
+        %h4= t('integral.blog.widgets.recent_posts')
+        %ul
+          - @recent_posts.each do |post|
+            %li= link_to post.title, post
+      .blog-widget
+        %h4= t('integral.blog.widgets.popular_posts')
+        %ul
+          - @popular_posts.each do |post|
+            %li= link_to post.title, post
+      -# .blog-widget
+      -#   %h4= t('integral.blog.widgets.popular_tags')
+      -#   %ul
+      -#     - @popular_posts.each do |post|
+      -#       %li= link_to post.title, post

@@ -1,10 +1,5 @@
-= content_for :title, t('.title')
+= render layout: 'integral/shared/blog_layout' do
+  - @posts.each do |post|
+    = render partial: 'integral/posts/item', locals: { post: post }
 
-= icon_link_to 'add', new_post_path, class: 'waves-effect waves-light btn mr-1em', text: t('.new_post')
-
-%span.status.white-text.green.lighten-1= t('.published_count', count: @published_posts_count)
-%span.status.white-text.orange.lighten-1= t('.drafts_count', count: @draft_posts_count)
-
-.card-panel
-  = render 'grid'
-
+  = will_paginate @posts, renderer: FoundationPagination::Rails

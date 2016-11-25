@@ -21,7 +21,7 @@ module Integral
       it 'returns expected label' do
         subject.name = 'fooBar'
 
-        expect(subject.label).to eq 'Foo bar'
+        expect(subject.label).to eq I18n.t("integral.backend.roles.labels.foo_bar")
       end
     end
   end

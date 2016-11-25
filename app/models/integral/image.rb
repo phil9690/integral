@@ -1,16 +1,31 @@
 module Integral
   # Represents an image uploaded by a user
   class Image < ActiveRecord::Base
-    validates :file, presence: true
+    # Soft-deletion
+    acts_as_paranoid
 
-    validates :title, presence: true, length: { minimum: 5, maximum: 70 }
+    validates :file, presence: true
+    validates :title, presence: true, length: { minimum: 5, maximum: 50 }
     validates :description, length: { maximum: 160 }
 
     mount_uploader :file, ImageUploader
 
+    # Scopes
+    scope :search, -> (query) { where("lower(title) LIKE ?", "%#{query.downcase}%") }
+
     # @return [String] represents the original size of the image
     def size
       "#{width}x#{height}"
+    end
+
+    def to_list_item
+      {
+        id: id,
+        title: title,
+        subtitle: description,
+        description: description,
+        image: file.url,
+      }
     end
   end
 end

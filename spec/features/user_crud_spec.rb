@@ -20,7 +20,7 @@ module Integral
 
       click_on 'Invite User'
 
-      expect(page).to have_content I18n.t('integral.users.notification.creation_success')
+      expect(page).to have_content I18n.t('integral.backend.users.notification.creation_success')
       expect(page).to have_content builder.name
       expect(page).to have_content builder.email
     end
@@ -36,8 +36,7 @@ module Integral
 
       click_on 'Update User'
 
-      expect(page).to have_content 'User successfully updated.'
-      expect(page).to have_content I18n.t('integral.users.notification.edit_success')
+      expect(page).to have_content I18n.t('integral.backend.users.notification.edit_success')
       expect(page).to have_content builder.name
       expect(page).to have_content builder.email
     end
@@ -47,8 +46,7 @@ module Integral
       all('tbody tr.odd a')[2].trigger 'click'
       all('.modal-confirmation a')[0].click
 
-      expect(page).to have_content 'User successfully deleted.'
-      expect(page).to have_content I18n.t('integral.users.notification.delete_success')
+      expect(page).to have_content I18n.t('integral.backend.users.notification.delete_success')
     end
 
     it "can view a user" do

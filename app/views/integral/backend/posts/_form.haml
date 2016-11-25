@@ -1,0 +1,21 @@
+.row
+  = simple_form_for [:backend, @post], validate: true, html: { id: 'post_form' } do |f|
+    .col.s12
+      .card-panel
+        .row
+          .image-preview.col.s2.offset-s5.center
+            = f.input :image, wrapper_html: { class: 'hide' }, input_html: { id: 'post_featured-image-uploader', class: 'image-uploader', data: { preview_selector: '#featured-image' } }
+            = f.label :'featured-image-uploader' do
+              = image_tag @post.image, class: 'clickable hoverable', id: 'featured-image'
+              %span.material-icons.grey-text.text-darken-3.clickable edit
+
+        = f.input :title
+        = f.input :slug, input_html: { data: { 'slugify' => '#post_title' }}
+        = f.input :description, as: :text
+        = f.input :tag_list, input_html: { value: @post.tag_list.join(','), data: { role: "materialtags", typeahead: Integral::Post.tag_counts.collect(&:name).join(' ') } }
+        = f.input :body, as: :ckeditor, label: false, input_html: { id: 'post_body_editor', ckeditor: { language: current_user.locale } }
+        .radios
+          = f.collection_radio_buttons :status, Integral::Post.available_statuses(reverse: true), :first, :last
+
+    = f.button :button
+

@@ -7,6 +7,7 @@ FactoryGirl.define do
   sequence(:description) { |n| Faker::Lorem.paragraph(8)[50..150] }
   sequence(:tag_list) { |n| Faker::Hipster.words(Faker::Number.between(1, 5), true, true) }
   sequence(:view_count) { rand(1000) }
+  sequence(:url) { Faker::Internet.url }
 
   factory :user, class: Integral::User do
     name
@@ -79,6 +80,25 @@ FactoryGirl.define do
   factory :integral_post_viewing, class: 'Integral::PostViewing' do
     post { create(:integral_post) }
     ip_address { Faker::Internet.ip_v4_address }
+  end
+
+  factory :integral_list_item_basic, class: 'Integral::Basic' do
+    title
+  end
+
+  factory :integral_list_item_link, class: 'Integral::Link' do
+    title
+    url
+  end
+
+  factory :integral_list_item_object, class: 'Integral::Object' do
+    object_type 0
+    object { create(:integral_post) }
+  end
+
+  factory :integral_list, class: 'Integral::List' do
+    title
+    description
   end
 end
 

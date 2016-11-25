@@ -1,0 +1,7 @@
+= render layout: 'integral/shared/blog_layout' do
+  .blog-post
+    %h1= @post.title
+    %img.thumbnail{ src: "http://placehold.it/850x350" }
+    %hr
+    %p= @post.body
+

@@ -1,0 +1,10 @@
+= content_for :title, t('.title')
+
+= icon_link_to 'add', new_backend_page_path, class: 'waves-effect waves-light btn mr-1em', text: t('.add_page')
+
+%span.status.white-text.green.lighten-1= t('.published_count', count: @published_pages_count)
+%span.status.white-text.orange.lighten-1= t('.drafts_count', count: @draft_pages_count)
+
+.card-panel
+  = render 'grid'
+

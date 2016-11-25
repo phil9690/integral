@@ -1,0 +1,7 @@
+.fixed-action-btn
+  = link_to root_path, class: 'btn-floating btn-large red waves-effect waves-light', data: { turbolinks: false } do
+    %i.large.material-icons home
+  %ul
+    %li
+      = link_to destroy_user_session_path, class: 'btn-floating blue waves-effect waves-light', data: { method: 'delete' } do
+        %i.large.material-icons power_settings_new

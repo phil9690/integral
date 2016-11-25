@@ -1,0 +1,288 @@
+ja:
+  time:
+    formats:
+      default: "%A %d %B"
+      twelve_hour: "%I:%M %p"
+
+  date:
+    today: 'Today'
+    yesterday: 'Yesterday'
+    formats:
+      default: "%A, %d %B %Y"
+      long: "%H:%M %d/%m/%Y"
+
+  errors:
+    generic: '誤りがあります。もう一度やり直してください。'
+    unauthorized: '実行する権限がありません。'
+
+  mailers:
+    contact_message:
+      new_message:
+        subject: "新しいメッセージ　%{name}"
+
+  integral:
+    actions:
+      confirm: 'これでよろしいですか？'
+      create: '作成'
+      save: '保存'
+      delete: '削除'
+      edit: '編集'
+      update: '更新'
+      send: '送信'
+      view: 'ビュー'
+      read_more: 'もっと読む'
+      reply: '返信'
+    placeholders:
+      description: '[JA] Description'
+      title: '[JA] Title'
+
+
+    breadcrumbs:
+      home: 'ダッシュボード'
+      dashboard: 'ダッシュボード'
+      blog: '投稿'
+      settings: '設定'
+      posts: '投稿'
+      pages: 'ページ'
+      users: 'ユーザー'
+      images: 'イメージ'
+      galleries: 'ギャラリー'
+      messages: 'メッセージ'
+      new: '新'
+      edit: '編集'
+      lists: 'JA Lists'
+
+    navigation:
+      signed_in_as: 'ログイン名'
+      home: 'ホーム'
+      posts: '投稿'
+      pages: 'ページ'
+      users: 'ユーザー'
+      images: 'イメージ'
+      lists: 'JA Lists'
+      log_out: 'ログアウト'
+      my_account: 'アカウント＆プロフィール'
+      settings: '設定'
+
+    backend:
+      confirmation_modal:
+        title: '確認書'
+        confirm: '確認'
+        cancel: 'キャンセル'
+
+      static_pages:
+        dashboard:
+          title: 'ダッシュボード'
+        pages:
+          title: 'ページ'
+
+      roles:
+        labels:
+          image_manager: '[JA] Image Manager'
+          user_manager: '[JA] User Manager'
+          page_manager: '[JA] Page Manager'
+          post_manager: '[JA] Post Manager'
+          list_manager: リストマネージャー
+
+      lists:
+        items:
+          type:
+            basic: '[JA] Basic'
+            link: '[JA] Link'
+            post: '[JA] Post'
+        new:
+          title: '[JA] New List'
+        edit:
+          title: '[JA] Edit List'
+        index:
+          title: '[JA] Lists'
+          add_list: '[JA] Add list'
+          non_available: '[JA] No Lists currently available. Try creating one!'
+        show:
+          title: "[JA] List - %{title}"
+        grid:
+          columns:
+            title: '[JA] Title'
+            description: '[JA] Description'
+        notification:
+          creation_success: '[JA] List successfully created.'
+          creation_failure: '[JA] List creation failed.'
+          edit_success: '[JA] List successfully updated.'
+          edit_failure: '[JA] Failed to update list.'
+          delete_success: '[JA] List successfully deleted.'
+          delete_failure: '[JA] Failed to delete list.'
+
+      posts:
+        grid:
+          columns:
+            title: 'タイトル'
+            description: '説明'
+            last_updated: '最終更新'
+            author: '著者'
+            views: 'ビュー'
+            status: 'ステータス'
+        index:
+          title: '投稿'
+          new_post: '投稿作成'
+          published_count: "%{count} 公開"
+          drafts_count: "%{count} 召集"
+          non_available: '利用できる投稿はありません。作成してください。'
+        edit:
+          title: '投稿の編集'
+        new:
+          title: '新しい投稿'
+        notification:
+          creation_success: '投稿の作成に成功'
+          creation_failure: '投稿の作成に失敗'
+          edit_success: '投稿の編集に成功'
+          edit_failure: '投稿の編集に失敗'
+          delete_success: '投稿の削除に成功'
+          delete_failure: '投稿の削除に失敗'
+
+      pages:
+        index:
+          title: 'ページ一覧'
+          non_available: '利用できるページがありません。作成してください。'
+          add_page: 'ページの追加'
+          published_count: "%{count} 公開"
+          drafts_count: "%{count} 召集"
+        edit:
+          title: '投稿の編集'
+        new:
+          title: '新しい投稿'
+        notification:
+          creation_success: '投稿の作成に成功'
+          creation_failure: '投稿の作成に失敗'
+          edit_success: '投稿の編集に成功'
+          edit_failure: '投稿の編集に失敗'
+          delete_success: '投稿の削除に成功'
+          delete_failure: '投稿の削除に失敗'
+        grid:
+          columns:
+            title: 'タイトル'
+            description: '説明'
+            path: 'パス'
+            last_updated_at: '最終更新'
+        notification:
+          creation_success: 'ページの作成に成功.'
+          creation_failure: 'ページの作成に失敗'
+          edit_success: 'ページの編集に成功'
+          edit_failure: 'ページの編集に失敗'
+          delete_success: 'ページの削除に成功'
+          delete_failure: 'ページの削除に失敗'
+        edit:
+          title: 'ページ追加 - %{title}'
+        new:
+          title: '新しいページ'
+      images:
+        new:
+          title: '新しいイメージ'
+        index:
+          title: 'イメージ一覧'
+          no_images_available: '利用できるイメージがありません。作成してください。'
+          new_image: '新しいイメージ'
+        notification:
+          creation_success: 'イメージの作成に成功'
+          creation_failure: 'イメージの作成に失敗'
+          edit_success: 'イメージの更新に成功'
+          edit_failure: 'イメージの更新に失敗'
+          delete_success: 'イメージの削除に成功'
+          delete_failure: 'イメージの削除に失敗'
+        edit:
+          title: 'イメージ編集 - %{name}'
+
+      users:
+        status:
+          draft: '下書き'
+          published: '公開'
+        notification:
+          creation_success: 'ユーザーの作成に成功'
+          creation_failure: 'ユーザーの作成に失敗'
+          edit_success: 'ユーザーの編集に成功'
+          edit_failure: 'ユーザーの編集に失敗'
+          delete_success: 'ユーザーの削除に成功'
+          delete_failure: 'ユーザーの削除に失敗'
+        prompts:
+          select_language: '[JA] Select language..'
+        grid:
+          columns:
+            name: '名前'
+            email: 'メール'
+            last_signed_in: '最終のサインイン'
+        index:
+          title: 'ユーザー一覧'
+          add_user: 'ユーザー追加'
+        new:
+          title: '新しいユーザー'
+        edit:
+          title: 'プロフィールの編集 - %{name}'
+        show:
+          title: "プロフィール表示 - %{name}"
+          member_since: "メンバー暦: %{start_date}"
+      settings:
+        index:
+          title: 設定
+          general:
+            title: 一般
+            description: 必須項目はソーシャルメディアを通したプロモーションに活用されます
+          social:
+            title: ソーシャルメディア
+            description: ソーシャルメディアのプロフィールリンクを設定またはアップデートしてください
+          seo:
+            title: SEO
+            description: ウェブサイトSEOとトラッキング
+          placeholder:
+            website_title: Super Awesome Website
+            contact_email: test@example.com
+            google_tracking_code: 'UA-11111111-1'
+            twitter_handler: barackobama
+            facebook_handler: mark_zuckerberg
+            google_plus_handler: eric_schmit
+            linkedin_handler: williamhgates
+            youtube_handler: justinbeiber
+    messages:
+      reply_subject: 'あなたのメッセージへの返信'
+      index:
+        no_messages: 'メッセージがありません :('
+    boolean:
+      'true': '真'
+      'false': '偽'
+    date_selector_tooltip_from: 'フロム'
+    date_selector_tooltip_to: 'ツー'
+
+  simple_form:
+    inputs:
+      file:
+        button_label: 'ファイル'
+      switch:
+        turn_on: 'オン'
+        turn_off: 'オフ'
+    labels:
+      user:
+        name: '名前'
+        email: 'メール'
+        password: 'パスワード'
+        password_confirmation: 'パスワードの確認'
+        locale: '言語'
+      page:
+        title: 'タイトル'
+        description: '説明'
+        path: 'パス'
+      post:
+        title: 'タイトル'
+        slug: 'スラッグ'
+        description: '説明'
+        tag_list: 'タグリスト'
+      image:
+        title: 'タイトル'
+        description: '説明'
+      settings:
+        website_title: ウェブサイトタイトル
+        contact_email: Eメールアドレス
+        google_tracking_code: Googleトラッキングコード
+        twitter_handler: Twitterハンドラー
+        facebook_handler: Facebookハンドラー
+        google_plus_handler: Google Plusハンドラー
+        linkedin_handler: LinkedInハンドラー
+        youtube_handler: Youtubeハンドラー
+

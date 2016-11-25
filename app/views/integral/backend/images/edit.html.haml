@@ -1,0 +1,6 @@
+= content_for :title, t('.title', name: @image.title)
+
+.card-panel
+  .center-align
+    = image_tag @image.file, class: 'responsive-img image-preview'
+  = render 'form', form_path: backend_img_path(@image)

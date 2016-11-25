@@ -49,7 +49,7 @@ nav {
   height: 64px;
   line-height: 24px;
   margin-right: 1em;
-  width: 130px;
+  width: 3em;
   padding: 1.4rem;
   display: inline-block;
   @extend .grey-text, .text-darken-3;
@@ -59,6 +59,7 @@ nav {
   transition: transform .15s cubic-bezier(.2,.3,.25,.9);
   &:hover {
     color: #039be5 !important;
+    cursor: pointer;
   }
   &:after {
     content: "";
@@ -85,7 +86,7 @@ nav {
   li {
     height: 50px;
     &:hover {
-     @extend .blue-grey, .darken-2; 
+     @extend .blue-grey, .darken-2;
     }
   }
   span {
@@ -199,7 +200,7 @@ nav {
 
 #user-menu-contents {
   height: 4rem;
-  padding-top: 0.7rem; 
+  padding-top: 0.7rem;
 }
 
 .breadcrumb_nav {
@@ -219,6 +220,9 @@ nav {
 }
 
 .settings {
+  .collapsible-header:hover {
+    color: $secondary-color;
+  }
   .collapsible {
     .collapsible-header {
       min-height: 6rem;
@@ -397,7 +401,7 @@ nav {
     }
     &:hover {
       background: #fff;
-    } 
+    }
   }
   .collapsible-body {
     background: #fff;
@@ -529,5 +533,15 @@ nav {
         margin-bottom: 0;
       }
     }
+  }
+}
+
+.input-field.boolean {
+  label {
+    &:before {
+      margin-left: 5px;
+    }
+    position: initial;
+    margin-left: 5px;
   }
 }

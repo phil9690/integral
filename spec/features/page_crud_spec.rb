@@ -23,7 +23,7 @@ module Integral
 
       click_on 'Create Page'
 
-      expect(page).to have_content I18n.t('integral.pages.notification.creation_success')
+      expect(page).to have_content I18n.t('integral.backend.pages.notification.creation_success')
     end
 
     it "can update a page" do
@@ -40,7 +40,7 @@ module Integral
 
       click_on 'Update Page'
 
-      expect(page).to have_content I18n.t('integral.pages.notification.edit_success')
+      expect(page).to have_content I18n.t('integral.backend.pages.notification.edit_success')
     end
 
     it "can delete a page" do
@@ -48,7 +48,7 @@ module Integral
       all('tbody tr.odd a')[2].trigger 'click'
       all('.modal-confirmation a')[0].click
 
-      expect(page).to have_content I18n.t('integral.pages.notification.delete_success')
+      expect(page).to have_content I18n.t('integral.backend.pages.notification.delete_success')
     end
 
     # it "can view a page" do
