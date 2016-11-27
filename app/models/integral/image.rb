@@ -18,6 +18,7 @@ module Integral
       "#{width}x#{height}"
     end
 
+    # @return [Hash] the instance as a list item
     def to_list_item
       {
         id: id,

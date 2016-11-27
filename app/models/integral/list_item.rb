@@ -1,6 +1,8 @@
 module Integral
+  # Represents an item within a particular list
   class ListItem < ActiveRecord::Base
     after_initialize :set_defaults
+
     # Default scope orders by priority
     default_scope { order(:priority) }
 
@@ -57,6 +59,8 @@ module Integral
     def has_children?
       children.present?
     end
+
+    private
 
     def set_defaults
       self.type ||= 'Integral::Basic'

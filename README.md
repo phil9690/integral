@@ -56,6 +56,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 * Feature specs for all controller actions at the minimum checking for 200 status
 * Add specs for frontend controllers
 * Add specs for all configuration options
+* All TODOs :)
 
 ##
 
