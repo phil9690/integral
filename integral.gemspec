@@ -68,6 +68,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'cane' # Line length
   s.add_development_dependency 'flog' # Complexity
   s.add_development_dependency 'flay' # Duplication
+  s.add_development_dependency 'ruby2ruby' # Ruby diff tool
   s.add_development_dependency 'yard' # Documentation
   s.add_development_dependency 'simplecov' # Coverage
 end
