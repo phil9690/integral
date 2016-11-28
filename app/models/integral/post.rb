@@ -1,6 +1,8 @@
 module Integral
   # Represents a user post
   class Post < ActiveRecord::Base
+    include ActionView::Helpers::DateHelper
+
     # Soft-deletion
     acts_as_paranoid
 
