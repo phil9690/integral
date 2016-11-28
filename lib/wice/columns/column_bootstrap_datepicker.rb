@@ -1,5 +1,6 @@
-module Wice
+module Wice #:nodoc:
   module Columns #:nodoc:
+    # Overridding WiceGrid ViewColumnBootstrapDatepicker in order to implement Material Datepicker for backend
     class ViewColumnBootstrapDatepicker < ViewColumn #:nodoc:
 
       include Wice::BsCalendarHelpers
