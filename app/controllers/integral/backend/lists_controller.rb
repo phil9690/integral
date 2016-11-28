@@ -33,11 +33,9 @@ module Integral
         @list = List.new(list_params)
 
         if @list.save
-          flash.now[:notice] = I18n.t('integral.backend.lists.notification.creation_success')
-          redirect_to backend_list_path(@list)
+          respond_successfully(I18n.t('integral.backend.lists.notification.creation_success'), backend_list_path(@list))
         else
-          flash.now[:error] = I18n.t('integral.backend.lists.notification.creation_failure')
-          render :new
+          respond_failure(I18n.t('integral.backend.lists.notification.creation_failure'), :new)
         end
       end
 
@@ -51,24 +49,21 @@ module Integral
       # Updating an list
       def update
         if @list.update(list_params)
-          flash[:notice] = I18n.t('integral.backend.lists.notification.edit_success')
-          redirect_to backend_list_path
+          respond_successfully(I18n.t('integral.backend.lists.notification.edit_success'), backend_list_path(@list))
         else
-          flash[:error] = I18n.t('integral.backend.lists.notification.edit_failure')
-          render 'show'
+          respond_failure(I18n.t('integral.backend.lists.notification.edit_failure'), :show)
         end
       end
 
       # DELETE /:id
       def destroy
         if @list.destroy
-          flash[:notice] = I18n.t('integral.backend.lists.notification.delete_success')
+          respond_successfully(I18n.t('integral.backend.lists.notification.delete_success'), backend_lists_path)
         else
           error_message = @list.errors.full_messages.to_sentence
           flash[:error] = "#{I18n.t('integral.backend.lists.notification.delete_failure')} - #{error_message}"
+          redirect_to backend_lists_path
         end
-
-        redirect_to backend_lists_path
       end
 
       private

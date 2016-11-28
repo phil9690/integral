@@ -53,6 +53,16 @@ module Integral
         records = klass.search(params[:search]).paginate(page: params[:page])
         render json: { content: render_to_string(partial: 'integral/backend/shared/record_selector/collection', locals: { collection: records }) }
       end
+
+      def respond_successfully(flash_message, redirect_path)
+        flash[:notice] = flash_message
+        redirect_to redirect_path
+      end
+
+      def respond_failure(flash_message, template)
+        flash.now[:error] = flash_message
+        render template
+      end
     end
   end
 end
