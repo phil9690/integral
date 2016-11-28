@@ -14,6 +14,13 @@ module Integral
 
     # @return [Boolean] whether or not user has manager role
     def manager?
+      user.has_role?(role_name)
+    end
+
+    private
+
+    # @return [Symbol] role name
+    def role_name
       raise NotImplementedError
     end
 

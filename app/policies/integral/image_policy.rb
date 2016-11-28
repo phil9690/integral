@@ -1,8 +1,9 @@
 module Integral
   # Handles Image authorization
   class ImagePolicy < BasePolicy
-    def manager?
-      user.has_role?(:image_manager)
+    # @return [Symbol] role name
+    def role_name
+      :image_manager
     end
   end
 end

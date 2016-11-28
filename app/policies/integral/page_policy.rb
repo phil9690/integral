@@ -1,8 +1,9 @@
 module Integral
   # Handles Page authorization
-  class PagePolicy
-    def manager?
-      user.has_role?(:page_manager)
+  class PagePolicy < BasePolicy
+    # @return [Symbol] role name
+    def role_name
+      :page_manager
     end
   end
 end

@@ -3,12 +3,15 @@ module Integral
   class UserPolicy < BasePolicy
     # @return [Boolean] if user is allowed to perform an update
     def update?
-      user.has_role?(:user_manager) || instance == user
+      manager? || instance == user
     end
 
-    # @return [Boolean] if user has manager role
-    def manager?
-      user.has_role?(:user_manager)
+    # @return [Symbol] role name
+    def role_name
+      :user_manager
     end
+
+    alias_method :edit?, :update?
+    alias_method :show?, :update?
   end
 end
