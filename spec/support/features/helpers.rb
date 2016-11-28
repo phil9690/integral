@@ -27,6 +27,7 @@ module Features
     # @param locator [String] Used to locate the editor
     # @param opts [Hash] contains what to fill the editor with and other options (See Capybara docs)
     def fill_in_ckeditor(locator, opts)
+      sleep 1
       content = opts.fetch(:with).to_json
       page.execute_script <<-SCRIPT
               CKEDITOR.instances['#{locator}'].setData(#{content});

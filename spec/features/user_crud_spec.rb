@@ -51,7 +51,7 @@ module Integral
 
     it "can view a user" do
       sleep 1
-      all('tbody tr.odd a')[0].trigger 'click'
+      all('tbody tr.even a')[0].trigger 'click'
 
       expect(page).to have_content user.name
       expect(page).to have_content user.email
