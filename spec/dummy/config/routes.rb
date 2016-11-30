@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  mount Integral::Engine => "/admin"
+  mount Integral::Engine => "/"
+
+  root 'integal/static_pages#home'
 end

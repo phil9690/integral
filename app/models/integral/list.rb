@@ -1,4 +1,5 @@
 module Integral
+  # Represents a generic list such as a gallery or menu
   class List < ActiveRecord::Base
     # Associations
     has_many :list_items
@@ -14,10 +15,10 @@ module Integral
     private
 
     def validate_unlocked
-      if locked?
-        errors.add(:locked, "Cannot delete a locked item")
-        return false
-      end
+      return unless locked?
+
+      errors.add(:locked, "Cannot delete a locked item")
+      false
     end
   end
 end

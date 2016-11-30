@@ -27,6 +27,7 @@ module Integral
       where("lower(title) LIKE ?", "%#{search.downcase}%")
     end
 
+    # @return [Hash] the instance as a list item
     def to_list_item
       {
         id: id,
@@ -35,11 +36,11 @@ module Integral
         description: description,
         # TODO: Add images to pages
         # image: image.url,
-        url: 'Override me'
-        #url: Rails.application.routes.url_helpers.blog_path(self)
+        url: Integral::Engine.routes.url_helpers.page_path(self)
       }
     end
 
+    # @return [Hash] listable options to be used within a RecordSelector widget
     def self.listable_options
       {
         record_title: 'Page',

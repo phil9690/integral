@@ -56,7 +56,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails' # Testing framework
   s.add_development_dependency 'database_cleaner' # Manages database for consistent data setup
   s.add_development_dependency 'shoulda-matchers' # Extra matchers for testing
-  # s.add_development_dependency 'capybara'
+  s.add_development_dependency 'factory_girl_rails' # Create reusable object templates
+  s.add_development_dependency 'faker' # Random data generator
+  s.add_development_dependency 'capybara' # Acceptance testing framework
+  s.add_development_dependency 'poltergeist' # Headless driver for Capybara which supports JS
+  s.add_development_dependency 'launchy' # Automatically launch test pages
 
   # CI, code coverage, analysis and documentation tools
   s.add_development_dependency 'fudge' # Build tool
@@ -64,6 +68,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'cane' # Line length
   s.add_development_dependency 'flog' # Complexity
   s.add_development_dependency 'flay' # Duplication
+  s.add_development_dependency 'ruby2ruby' # Ruby diff tool
   s.add_development_dependency 'yard' # Documentation
   s.add_development_dependency 'simplecov' # Coverage
 end

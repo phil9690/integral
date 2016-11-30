@@ -10,7 +10,7 @@ class FoundationBuilder < BreadcrumbsOnRails::Breadcrumbs::Builder
 
     output += @elements.collect do |element|
       render_element(element)
-    end.join                                                   
+    end.join
 
     output += "</ul>"
     output += "</nav>"

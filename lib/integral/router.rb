@@ -26,7 +26,7 @@ module Integral
           resources :tags, only: [:index, :show]
         end
         # Post Routing must go after tags otherwise it will override
-        resources Integral.configuration.blog_namespace, only: [ :show, :index ], as: :posts, to: 'posts'
+        resources Integral.configuration.blog_namespace, only: [ :show, :index ], as: :posts, controller: 'posts'
       end
     end
 

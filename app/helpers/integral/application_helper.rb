@@ -46,6 +46,7 @@ module Integral
       end
     end
 
+    # @return [Array] localised true and false to be used in dropdowns
     def boolean_select_options
       [
         [I18n.t('integral.boolean.true'), 'true'],

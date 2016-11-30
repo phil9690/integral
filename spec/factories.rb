@@ -23,6 +23,10 @@ FactoryGirl.define do
       role_ids { [ Integral::Role.find_by_name('PageManager').id ] }
     end
 
+    factory :post_manager do
+      role_ids { [ Integral::Role.find_by_name('PostManager').id ] }
+    end
+
     factory :user_manager do
       role_ids { [ Integral::Role.find_by_name('UserManager').id ] }
     end

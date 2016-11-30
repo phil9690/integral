@@ -3,6 +3,10 @@ module Integral
   module Backend
     # Base controller for backend inherited by all Integral backend controllers
     class BaseController < ActionController::Base
+      # Prevent CSRF attacks by raising an exception.
+      # For APIs, you may want to use :null_session instead.
+      protect_from_forgery with: :exception
+
       layout 'integral/backend'
 
       # User authentication
@@ -19,8 +23,13 @@ module Integral
 
       private
 
-      # Redirect user to integral.root_path after successful login
+      # Redirect user to integral dashboard after successful login
       def after_sign_in_path_for(resource)
+        integral.backend_dashboard_path
+      end
+
+      # Redirect user to integral dashboard after successful logout
+      def after_sign_out_path_for(resource_or_scope)
         integral.backend_dashboard_path
       end
 
@@ -47,6 +56,16 @@ module Integral
       def respond_to_record_selector(klass)
         records = klass.search(params[:search]).paginate(page: params[:page])
         render json: { content: render_to_string(partial: 'integral/backend/shared/record_selector/collection', locals: { collection: records }) }
+      end
+
+      def respond_successfully(flash_message, redirect_path)
+        flash[:notice] = flash_message
+        redirect_to redirect_path
+      end
+
+      def respond_failure(flash_message, template)
+        flash.now[:error] = flash_message
+        render template
       end
     end
   end

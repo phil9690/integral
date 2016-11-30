@@ -28,11 +28,9 @@ module Integral
         @page = Page.new(page_params)
 
         if @page.save
-          flash[:notice] = I18n.t('integral.backend.pages.notification.creation_success')
-          redirect_to edit_backend_page_path(@page)
+          respond_successfully(I18n.t('integral.backend.pages.notification.creation_success'), edit_backend_page_path(@page))
         else
-          flash[:error] = I18n.t('integral.backend.pages.notification.creation_failure')
-          render 'new'
+          respond_failure(I18n.t('integral.backend.pages.notification.creation_failure'), :new)
         end
       end
 
@@ -46,24 +44,21 @@ module Integral
       # Updating an page
       def update
         if @page.update(page_params)
-          flash[:notice] = I18n.t('integral.backend.pages.notification.edit_success')
-          redirect_to edit_backend_page_path(@page)
+          respond_successfully(I18n.t('integral.backend.pages.notification.edit_success'), edit_backend_page_path(@page))
         else
-          flash[:error] = I18n.t('integral.backend.pages.notification.edit_failure')
-          render 'edit'
+          respond_failure(I18n.t('integral.backend.pages.notification.edit_failure'), :edit)
         end
       end
 
       # DELETE /:id
       def destroy
         if @page.destroy
-          flash[:notice] = I18n.t('integral.backend.pages.notification.delete_success')
+          respond_successfully(I18n.t('integral.backend.pages.notification.delete_success'), backend_pages_path)
         else
           error_message = @page.errors.full_messages.to_sentence
           flash[:error] = "#{I18n.t('integral.backend.pages.notification.delete_failure')} - #{error_message}"
+          redirect_to backend_pages_path
         end
-
-        redirect_to backend_pages_path
       end
 
       private

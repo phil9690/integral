@@ -42,6 +42,7 @@ And then execute:
 Bug reports and pull requests are welcome on GitHub at https://github.com/patricklindsay/integral. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ### Future works
+* Super admin (able to view & undelete soft-deleted items)
 * Improved image management
 * Delayed image compression
 * Fully dynamic page routing (no restart required for Heroku)
@@ -56,6 +57,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 * Feature specs for all controller actions at the minimum checking for 200 status
 * Add specs for frontend controllers
 * Add specs for all configuration options
+* All TODOs :)
 
 ##
 

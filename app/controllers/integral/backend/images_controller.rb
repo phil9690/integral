@@ -52,23 +52,20 @@ module Integral
       # Updating an image
       def update
         if @image.update(image_params)
-          flash[:notice] = I18n.t('integral.backend.images.notification.edit_success')
-          redirect_to backend_img_index_path
+          respond_successfully(I18n.t('integral.backend.images.notification.edit_success'), backend_img_index_path)
         else
-          flash[:error] = I18n.t('integral.backend.images.notification.edit_failure')
-          render 'edit'
+          respond_failure(I18n.t('integral.backend.images.notification.edit_failure'), :edit)
         end
       end
 
       # DELETE /:id
       def destroy
         if @image.destroy
-          flash[:notice] = I18n.t('integral.backend.images.notification.delete_success')
+          respond_successfully(I18n.t('integral.backend.images.notification.delete_success'), backend_img_index_path)
         else
           flash[:error] = I18n.t('integral.backend.images.notification.delete_failure')
+          redirect_to backend_img_index_path
         end
-
-        redirect_to backend_img_index_path
       end
 
       private
