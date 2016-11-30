@@ -144,17 +144,17 @@ module Integral
       !list_item.object?
     end
 
+    # @return [String] path to fallback image for list items
+    def fallback_image
+      ActionController::Base.helpers.image_path('integral/defaults/no_image_available.jpg')
+    end
+
     private
 
     def render_no_object_warning
       Rails.logger.error('IntegralError: Tried to render a list item with no object.')
       '<!-- Warning: Tried to render a list item with no object. -->'
     end
-
-    def fallback_image
-      ActionController::Base.helpers.image_path('integral/defaults/no_image_available.jpg')
-    end
-
 
     # Works out what the provided attr evaluates to.
     #

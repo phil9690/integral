@@ -1,4 +1,4 @@
 document.addEventListener "turbolinks:load", ->
-  $(".images.index").ready ->
-    ContactCreationModal.init()
+  return unless $(".images.index").length > 0
+  ContactCreationModal.init()
 
