@@ -1,6 +1,8 @@
 module Integral
   # Represents a generic list such as a gallery or menu
   class List < ActiveRecord::Base
+    default_scope { includes(:list_items) }
+
     # Associations
     has_many :list_items
 

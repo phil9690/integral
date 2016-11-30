@@ -3,8 +3,8 @@ module Integral
   class ListItem < ActiveRecord::Base
     after_initialize :set_defaults
 
-    # Default scope orders by priority
-    default_scope { order(:priority) }
+    # Default scope orders by priority and includes children
+    default_scope { includes(:children).includes(:image).order(:priority) }
 
     # Associations
     belongs_to :image
