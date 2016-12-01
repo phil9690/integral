@@ -85,6 +85,16 @@ en:
           page_manager: 'Page Manager'
           post_manager: 'Post Manager'
           list_manager: 'List Manager'
+      record_selector:
+        posts:
+          record: Post
+          title: Select a Post..
+        pages:
+          record: Page
+          title: Select a Page..
+        images:
+          record: Image
+          title: Select an Image..
       lists:
         items:
           type:

@@ -32,20 +32,20 @@ module Integral
       {
         id: id,
         title: title,
-        subtitle: 'TODO',
+        # subtitle: '',
         description: description,
         # TODO: Add images to pages
         # image: image.url,
-        url: Integral::Engine.routes.url_helpers.page_path(self)
+        url: "#{Integral.configuration.website_url}#{self.path}"
       }
     end
 
     # @return [Hash] listable options to be used within a RecordSelector widget
     def self.listable_options
       {
-        record_title: 'Page',
+        record_title: I18n.t('integral.backend.record_selector.pages.record'),
         selector_path: Engine.routes.url_helpers.backend_pages_path,
-        selector_title: 'Select a Page..'
+        selector_title: I18n.t('integral.backend.record_selector.pages.title')
       }
     end
 

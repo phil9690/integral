@@ -62,16 +62,16 @@ module Integral
         subtitle: subtitle,
         description: description,
         image: image.url,
-        url: Integral::Engine.routes.url_helpers.post_path(self)
+        url: Integral::Engine.routes.url_helpers.post_url(self)
       }
     end
 
     # @return [Hash] listable options to be used within a RecordSelector widget
     def self.listable_options
       {
-        record_title: I18n.t('integral.backend.record_selector.posts.title'),
-        selector_path: Engine.routes.url_helpers.posts_path,
-        selector_title: I18n.t('integral.backend.record_selector.posts.selector_title')
+        record_title: I18n.t('integral.backend.record_selector.posts.record'),
+        selector_path: Engine.routes.url_helpers.backend_posts_path,
+        selector_title: I18n.t('integral.backend.record_selector.posts.title')
       }
     end
 

@@ -51,6 +51,8 @@ module Integral
       Dir.glob(Rails.root + "app/extensions/**/*_decorator*.rb").each do |c|
         require_dependency(c)
       end
+
+      Integral::Engine.routes.default_url_options[:host] = Rails.application.routes.default_url_options[:host]
     end
 
     # Clientside I18n

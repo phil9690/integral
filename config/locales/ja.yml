@@ -84,6 +84,16 @@ ja:
           post_manager: '[JA] Post Manager'
           list_manager: リストマネージャー
 
+      record_selector:
+        posts:
+          record: JA Post
+          title: JA Select a Post..
+        pages:
+          record: JA Page
+          title: JA Select a Page..
+        images:
+          record: JA Image
+          title: JA Select an Image..
       lists:
         items:
           type:

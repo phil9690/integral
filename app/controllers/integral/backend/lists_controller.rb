@@ -82,7 +82,7 @@ module Integral
           list_items_attributes: [
                                   :id, :type, :object_type, :object_id,  :title, :subtitle, :url, :image_id, :target,
                                   :priority, :_destroy, :description, :html_classes,
-                                  children_attributes: list_items_attributes
+                                  children_attributes: list_item_attributes
                                  ])
       end
 

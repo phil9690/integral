@@ -95,7 +95,13 @@ module Integral
 
     # @return [String] URL of list item
     def url
-      provide_attr(:url) if !list_item.basic?
+      return if list_item.basic?
+      url = provide_attr(:url)
+
+      return url if url.empty?
+      return url if url =~ URI::regexp
+
+      "#{Rails.application.routes.default_url_options[:host]}#{url}"
     end
 
     # @return [String] subtitle of list item
