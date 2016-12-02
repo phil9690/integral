@@ -13,8 +13,8 @@ module Integral
     end
 
     def add_breadcrumbs
-      add_breadcrumb I18n.t('integral.breadcrumbs.home'), :root_path
-      add_breadcrumb I18n.t('integral.breadcrumbs.blog'), :posts_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.home'), :root_url
+      add_breadcrumb I18n.t('integral.breadcrumbs.blog'), :posts_url
     end
   end
 end

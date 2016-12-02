@@ -12,7 +12,7 @@ module Integral
     # GET /:id
     # Presents blog tags
     def show
-      add_breadcrumb @tag.name, :tag_path
+      add_breadcrumb @tag.name, :tag_url
 
       @meta_data = {
         page_title: @tag.name,
@@ -29,7 +29,7 @@ module Integral
 
     def add_breadcrumbs
       super
-      add_breadcrumb I18n.t('integral.breadcrumbs.tags'), :tags_path
+      add_breadcrumb I18n.t('integral.breadcrumbs.tags'), :tags_url
     end
   end
 end

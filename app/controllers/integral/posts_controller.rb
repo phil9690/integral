@@ -14,7 +14,7 @@ module Integral
     # GET /blog.slug
     # Presents blog postings
     def show
-      add_breadcrumb @post.title, :post_path
+      add_breadcrumb @post.title, :post_url
 
       @meta_data = {
         page_title: @post.title,
