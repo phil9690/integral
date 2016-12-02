@@ -3,14 +3,14 @@ module Integral
   class Configuration
     attr_accessor :black_listed_paths,
                   :slack_web_hook_url,
-                  :website_url,
-                  :site_title,
-                  :facebook_app_id,
-                  :twitter_handler,
                   :backend_namespace,
                   :blog_namespace,
                   :listable_objects,
-                  :frontend_parent_controller
+                  :frontend_parent_controller,
+                  # TODO: Change these settings to be configurable through backend
+                  :facebook_app_id,
+                  :twitter_handler,
+                  :site_title
 
     def initialize
       set_defaults
@@ -19,7 +19,6 @@ module Integral
     private
 
     def set_defaults
-      @website_url = 'https://changemetoyourwebsiteurl.com'
       @site_title = 'Integral Rails'
       @backend_namespace = 'admin'
       @blog_namespace = 'blog'

@@ -36,7 +36,7 @@ module Integral
         description: description,
         # TODO: Add images to pages
         # image: image.url,
-        url: "#{Integral.configuration.website_url}#{self.path}"
+        url: "#{Rails.application.routes.default_url_options[:host]}#{self.path}"
       }
     end
 

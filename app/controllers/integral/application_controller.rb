@@ -33,7 +33,7 @@ module Integral
     end
 
     def set_meta_data
-      canonical_url = "#{Integral.configuration.website_url}#{request.path}"
+      canonical_url = "#{Rails.application.routes.default_url_options[:host]}#{request.path}"
 
       meta_data = @meta_data.blank? ? {} : @meta_data
       meta_data[:open_graph] = {} if meta_data[:open_graph].blank?
