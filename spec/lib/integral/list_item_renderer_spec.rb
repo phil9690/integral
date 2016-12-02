@@ -6,7 +6,7 @@ module Integral
     let(:list_item_no_child) { create(:integral_list_item_link, url: '/first-path', title: 'First List Item', html_classes: 'foo bar') }
     let(:list_item_with_child) { create(:integral_list_item_link, url: '/sub-list-path', title: 'Sub List', children: [list_item_child]) }
     let(:rendered_item_no_child) { "
-      <li class=\"foo bar\"><a href=\"/first-path\">First List Item</a></li>
+      <li class=\"foo bar\"><a href=\"test.somehost.com/first-path\">First List Item</a></li>
     ".strip }
     let(:rendered_item_with_child) { "
       <li><a href=\"/sub-list-path\">Sub List</a>
