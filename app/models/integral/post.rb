@@ -55,7 +55,7 @@ module Integral
 
     # @return [Hash] the instance as a list item
     def to_list_item
-      subtitle = self.published_at.present? ? I18n.t('integral.posts.posted_ago', time: time_ago_in_words(self.published_at)) : I18n.t('integral.users.status.draft')
+      subtitle = self.published_at.present? ? I18n.t('integral.blog.posted_ago', time: time_ago_in_words(self.published_at)) : I18n.t('integral.users.status.draft')
       {
         id: id,
         title: title,
