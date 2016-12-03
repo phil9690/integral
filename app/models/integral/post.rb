@@ -1,6 +1,8 @@
 module Integral
   # Represents a user post
   class Post < ActiveRecord::Base
+    include ActionView::Helpers::DateHelper
+
     # Soft-deletion
     acts_as_paranoid
 
@@ -37,8 +39,8 @@ module Integral
     # @return [Array] containing available human readable statuses against there numeric value
     def self.available_statuses(opts={ reverse: false })
       statuses = [
-        [I18n.t('integral.users.status.draft'), :draft],
-        [I18n.t('integral.users.status.published'), :published]
+        [I18n.t('integral.backend.users.status.draft'), :draft],
+        [I18n.t('integral.backend.users.status.published'), :published]
       ]
 
       statuses.each(&:reverse!) if opts[:reverse]
@@ -51,23 +53,25 @@ module Integral
       increment!(:view_count) if PostViewing.add(self, ip_address)
     end
 
+    # @return [Hash] the instance as a list item
     def to_list_item
+      subtitle = self.published_at.present? ? I18n.t('integral.blog.posted_ago', time: time_ago_in_words(self.published_at)) : I18n.t('integral.users.status.draft')
       {
         id: id,
         title: title,
-        subtitle: 'TODO',
+        subtitle: subtitle,
         description: description,
         image: image.url,
-        url: 'Override me'
-        #url: Rails.application.routes.url_helpers.blog_path(self)
+        url: Integral::Engine.routes.url_helpers.post_url(self)
       }
     end
 
+    # @return [Hash] listable options to be used within a RecordSelector widget
     def self.listable_options
       {
-        record_title: 'Post',
-        selector_path: Engine.routes.url_helpers.posts_path,
-        selector_title: 'Select a Post..'
+        record_title: I18n.t('integral.backend.record_selector.posts.record'),
+        selector_path: Engine.routes.url_helpers.backend_posts_path,
+        selector_title: I18n.t('integral.backend.record_selector.posts.title')
       }
     end
 

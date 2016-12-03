@@ -1,0 +1,17 @@
+<%= grid(@users_grid) do |g|
+  g.column name: t('.columns.name'), attribute: 'name' do |user|
+    "<div class='chip'><img src='#{user.avatar.url}' alt='#{user.name}'>#{user.name}</div>".html_safe
+  end
+
+  g.column name: t('.columns.email'), attribute: 'email'
+  g.column name: t('.columns.last_signed_in'), attribute: 'last_sign_in_at' do |user|
+    l(user.last_sign_in_at) if user.last_sign_in_at.present?
+  end
+
+  g.column   do |user|
+    link_to("<span class='material-icons green-text text-lighten-1'>remove_red_eye</span>".html_safe, backend_user_path(user)) +
+      link_to("<span class='material-icons blue-text text-lighten-1'>edit</span>".html_safe, edit_backend_user_path(user)) +
+      link_to("<span class='material-icons red-text text-lighten-1'>delete</span>".html_safe, backend_user_path(user), method: :delete, data: { confirm: t('integral.actions.confirm') })
+  end
+end -%>
+

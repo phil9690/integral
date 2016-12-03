@@ -1,4 +1,4 @@
-$(document).on "ready page:load", ->
+document.addEventListener "turbolinks:load", ->
   # Could move this into its own class.. something like FlashPresenter.display
   flashList = $('#flash_list .flash')
 

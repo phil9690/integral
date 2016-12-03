@@ -1,0 +1,37 @@
+<%= grid(@posts_grid) do |g|
+  g.column name: t('.columns.title'), attribute: 'title' do |post|
+    post.title.truncate(30)
+  end
+
+  g.column name: t('.columns.author'), attribute: 'user_id', custom_filter: Integral::User.all.map { |p| [p.name, p.id] } do |post|
+    if post.user.present?
+      "<div class='chip'><img src='#{post.user.avatar.url}' alt='#{post.user.name}'>#{post.user.name}</div>".html_safe
+    else
+      "#{post.user_id} [Deleted]"
+    end
+  end
+
+  g.column name: t('.columns.views'), attribute: 'view_count', filter_type: :range do |post|
+    post.view_count
+  end
+
+  g.column name: t('.columns.status'), attribute: 'status', custom_filter: Integral::Post.available_statuses do |post|
+    status_colour = post.draft? ? 'orange' : 'green'
+    "<span class='status white-text #{status_colour} lighten-1'>#{post.status}</span>".html_safe
+  end
+
+  g.column name: t('.columns.last_updated'), attribute: 'updated_at' do |post|
+    l(post.updated_at, format: :long)
+  end
+
+  g.column   do |post|
+    link_to("<span class='material-icons green-text text-lighten-1'>remove_red_eye</span>".html_safe, backend_post_path(post)) +
+      link_to("<span class='material-icons blue-text text-lighten-1'>edit</span>".html_safe, edit_backend_post_path(post)) +
+      link_to("<span class='material-icons red-text text-lighten-1'>delete</span>".html_safe, backend_post_path(post), method: :delete, data: { confirm: t('integral.actions.confirm') })
+  end
+
+  g.blank_slate  do
+    "<div><br />#{t('integral.posts.index.non_available')}</div>"
+  end
+end -%>
+

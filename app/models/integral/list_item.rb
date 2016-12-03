@@ -1,8 +1,10 @@
 module Integral
+  # Represents an item within a particular list
   class ListItem < ActiveRecord::Base
     after_initialize :set_defaults
-    # Default scope orders by priority
-    default_scope { order(:priority) }
+
+    # Default scope orders by priority and includes children
+    default_scope { includes(:children).includes(:image).order(:priority) }
 
     # Associations
     belongs_to :image
@@ -18,8 +20,8 @@ module Integral
     # @return [Array] list of types available for a list item
     def self.types_collection
       collection = [
-        [I18n.t('integral.lists.items.type.basic'), 'Integral::Basic', data: { true_value: 'Integral::Basic' }],
-        [I18n.t('integral.lists.items.type.link'), 'Integral::Link', data: {true_value: 'Integral::Link' }]
+        [I18n.t('integral.backend.lists.items.type.basic'), 'Integral::Basic', data: { true_value: 'Integral::Basic' }],
+        [I18n.t('integral.backend.lists.items.type.link'), 'Integral::Link', data: {true_value: 'Integral::Link' }]
       ]
 
       self.listable_objects.each do |listable|
@@ -57,6 +59,8 @@ module Integral
     def has_children?
       children.present?
     end
+
+    private
 
     def set_defaults
       self.type ||= 'Integral::Basic'

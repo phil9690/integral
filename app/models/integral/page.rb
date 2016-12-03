@@ -27,24 +27,25 @@ module Integral
       where("lower(title) LIKE ?", "%#{search.downcase}%")
     end
 
+    # @return [Hash] the instance as a list item
     def to_list_item
       {
         id: id,
         title: title,
-        subtitle: 'TODO',
+        # subtitle: '',
         description: description,
         # TODO: Add images to pages
         # image: image.url,
-        url: 'Override me'
-        #url: Rails.application.routes.url_helpers.blog_path(self)
+        url: "#{Rails.application.routes.default_url_options[:host]}#{self.path}"
       }
     end
 
+    # @return [Hash] listable options to be used within a RecordSelector widget
     def self.listable_options
       {
-        record_title: 'Page',
-        selector_path: Engine.routes.url_helpers.pages_path,
-        selector_title: 'Select a Page..'
+        record_title: I18n.t('integral.backend.record_selector.pages.record'),
+        selector_path: Engine.routes.url_helpers.backend_pages_path,
+        selector_title: I18n.t('integral.backend.record_selector.pages.title')
       }
     end
 

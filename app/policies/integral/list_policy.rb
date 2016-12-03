@@ -1,23 +1,9 @@
 module Integral
   # Handles List authorization
-  class ListPolicy
-    attr_reader :user, :instance
-
-    def initialize(user, instance)
-      @user = user
-      @instance = instance
+  class ListPolicy < BasePolicy
+    # @return [Symbol] role name
+    def role_name
+      :list_manager
     end
-
-    def manager?
-      user.has_role?(:list_manager)
-    end
-
-    alias_method :destroy?, :manager?
-    alias_method :index?, :manager?
-    alias_method :show?, :manager?
-    alias_method :new?, :manager?
-    alias_method :create?, :manager?
-    alias_method :edit?, :manager?
-    alias_method :update?, :manager?
   end
 end

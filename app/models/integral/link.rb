@@ -1,4 +1,5 @@
 module Integral
+  # List item which contains external or internal link
   class Link < ListItem
 
     # Validations

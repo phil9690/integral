@@ -1,0 +1,76 @@
+CKEDITOR.editorConfig = function( config )
+{
+  <%-
+     attachment_files_path = Ckeditor::Engine.routes.url_helpers.attachment_files_path
+     pictures_path = Ckeditor::Engine.routes.url_helpers.pictures_path
+  %>
+  /* Filebrowser routes */
+  config.filebrowserBrowseUrl = "<%= attachment_files_path %>"
+  config.filebrowserUploadUrl = "<%= attachment_files_path %>"
+  config.filebrowserFlashUploadUrl = "<%= attachment_files_path %>"
+  config.filebrowserFlashBrowseUrl = "<%= attachment_files_path %>"
+  config.filebrowserImageBrowseLinkUrl = "<%= pictures_path %>"
+  config.filebrowserImageBrowseUrl = "<%= pictures_path %>"
+  config.filebrowserImageUploadUrl = "<%= pictures_path %>"
+  config.filebrowserImageBrowseLinkUrl = "<%= pictures_path %>"
+
+  config.allowedContent = true;
+
+  // Toolbar groups configuration.
+  config.toolbarGroups = [
+    { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+    { name: 'styles', groups: [ 'styles' ] },
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+    { name: 'colors', groups: [ 'colors' ] },
+    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+    { name: 'forms', groups: [ 'forms' ] },
+    '/',
+    { name: 'links', groups: [ 'links' ] },
+    { name: 'insert', groups: [ 'insert' ] },
+    { name: 'tools', groups: [ 'tools' ] },
+    { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+    { name: 'others', groups: [ 'others' ] },
+    { name: 'about', groups: [ 'about' ] }
+  ];
+
+  config.removeButtons = 'Cut,Copy,Paste,PasteText,PasteFromWord,Save,Templates,NewPage,Preview,Print,SelectAll,Scayt,Replace,Form,Checkbox,Radio,TextField,HiddenField,ImageButton,Button,Select,Textarea,Language,BidiRtl,BidiLtr,CreateDiv,PageBreak,Smiley,About,Styles,FontSize,Font';
+
+  config.skin = 'flat';
+  config.format_small = { element: 'small' };
+
+  config.format_tags = 'p;h2;h3;h4;h5;h6;pre;small;address;div';
+  config.extraPlugins = 'wordcount,autogrow,htmlbuttons';
+
+  config.autoGrow_maxHeight = 500;
+  config.autoGrow_bottomSpace = 20;
+
+  config.htmlbuttons = [
+    {
+      name:'insert_stuff',
+        icon:'puzzle.png',
+        title:'Insert items',
+        items : [
+        {
+          name:'Button',
+          icon:'icon1.png',
+          html:"<a href='http://www.google.com' class='button large'>Button</a>",
+          title:'Button'
+        },
+        {
+          name:'Hollow button',
+          icon:'icon1.png',
+          html:"<a href='http://www.google.com' class='button large hollow'>Hollow Button</a>",
+          title:'Hollow Button'
+        },
+        {
+          name:'Image container',
+          icon:'icon2.png',
+          html:"<table border='0' cellspacing='1' class='img-container'><tbody><tr><td style='text-align: center;'></td></tr><tr><td style='text-align: center;'><em><sup>Some caption text</sup></em></td></tr></tbody></table>",
+          title:'Image Container'
+        }
+
+      ]
+    }
+  ];
+};

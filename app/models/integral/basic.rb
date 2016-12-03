@@ -1,4 +1,5 @@
 module Integral
+  # Basic list item
   class Basic < ListItem
 
     # Validations

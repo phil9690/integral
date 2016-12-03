@@ -1,0 +1,6 @@
+= render layout: 'integral/shared/blog_layout' do
+  .blog-tag
+    %h1= @tag.name
+    - @tagged_posts.each do |post|
+      = render partial: 'integral/posts/item', locals: { post: post }
+

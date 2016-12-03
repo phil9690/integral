@@ -1,4 +1,5 @@
 module Integral
+  # Handles safely rendering lists
   class ListRenderer
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::TextHelper
@@ -7,11 +8,16 @@ module Integral
 
     attr_accessor :list, :opts
 
+    # Renders the provided list with options given
+    #
+    # @return [String] the rendered list
     def self.render(list, opts={})
       renderer = self.new(list, opts)
       renderer.render_safely
     end
 
+    # @param list [List] object to render
+    # @param opts [Hash] options hash
     def initialize(list, opts={})
       @opts = opts.reverse_merge({
         item_renderer: ListItemRenderer,
@@ -22,6 +28,7 @@ module Integral
       @list = list
     end
 
+    # Performs checks before rendering to see if provided list exists and contains list items
     def render_safely
       return render_no_list_warning if list.nil?
       return render_no_items_warning if list.list_items.empty?
@@ -29,6 +36,9 @@ module Integral
       render
     end
 
+    # Renders the provided list
+    #
+    # @return [String] the rendered list item
     def render
       rendered_items = ''
 
@@ -39,17 +49,20 @@ module Integral
       content_tag opts[:wrapper_element], rendered_items, html_options, false
     end
 
+    private
+
+    # @return [String] HTML comment informing nil argument was provided as the list
     def render_no_list_warning
       Rails.logger.error('IntegralError: Tried to render a list with a nil argument.')
       '<!-- Warning: Tried to render a list with a nil argument. -->'
     end
 
+    # @return [String] HTML comment informing list contains 0 items
     def render_no_items_warning
       Rails.logger.error('IntegralError: Tried to render a list with no items.')
       '<!-- Warning: Tried to render a list with no items. -->'
     end
 
-    private
 
     def html_options
       opts = {}

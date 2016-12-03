@@ -9,11 +9,11 @@ $.rails.showConfirmationDialog = (link) ->
 $.rails.buildConfirmationDialog = (message, modalId, confirmBtnId, cancelBtnId) ->
   "<div id='#{modalId}' class='modal modal-confirmation'>
     <div class='modal-content center-align'>
-      <h4>#{I18n.t('integral.confirmation_modal.title')}</h4>
+      <h4>#{I18n.t('integral.backend.confirmation_modal.title')}</h4>
       <p>#{message}</p>
       <span>
-        <a id='#{confirmBtnId}' class='waves-effect waves-light btn'>#{I18n.t('integral.confirmation_modal.confirm')}</a>
-        <a id='#{cancelBtnId}' class='waves-effect waves-light btn red lighten-2'>#{I18n.t('integral.confirmation_modal.cancel')}</a>
+        <a id='#{confirmBtnId}' class='waves-effect waves-light btn'>#{I18n.t('integral.backend.confirmation_modal.confirm')}</a>
+        <a id='#{cancelBtnId}' class='waves-effect waves-light btn red lighten-2'>#{I18n.t('integral.backend.confirmation_modal.cancel')}</a>
       </span>
     </div>
   </div>"

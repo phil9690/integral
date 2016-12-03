@@ -1,4 +1,5 @@
 module Integral
+  # List item which is linked to a particular object i.e. A Post
   class Object < ListItem
     # Validations
     validates :object_type, :object_id, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014175823) do
+ActiveRecord::Schema.define(version: 20161102094859) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -171,6 +171,17 @@ ActiveRecord::Schema.define(version: 20161014175823) do
   add_index "integral_users", ["invitations_count"], name: "index_integral_users_on_invitations_count"
   add_index "integral_users", ["invited_by_id"], name: "index_integral_users_on_invited_by_id"
   add_index "integral_users", ["reset_password_token"], name: "index_integral_users_on_reset_password_token", unique: true
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "var",                   null: false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", limit: 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

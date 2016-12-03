@@ -1,0 +1,17 @@
+#admin-bar-container.row
+  #admin-bar.columns
+    .top-bar-left
+      %ul.dropdown.menu{"data-dropdown-menu" => ""}
+        %li.menu-text= current_user.name
+    .top-bar-right
+      %ul.dropdown.menu{"data-dropdown-menu" => ""}
+        %li= link_to 'Dashboard', integral.backend_dashboard_path
+        %li
+          %a{:href => "#"} Quick links
+          %ul.menu.vertical
+            %li= link_to 'Users', integral.backend_users_path
+            %li= link_to 'Posts', integral.backend_posts_path
+            %li= link_to 'Pages', integral.backend_pages_path
+            %li= link_to 'My account', integral.backend_user_path(current_user)
+            %li= link_to 'Sign out', integral.destroy_user_session_path, method: :delete
+
