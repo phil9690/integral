@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Patrick Lindsay"]
   s.email       = ["ptricklindsay@gmail.com"]
   s.homepage    = "https://github.com/patricklindsay/integral"
-  s.summary     = "This gem packages together a variety of useful backend features and utilities integral for the foundation of any website or application."
+  s.summary     = "This gem packages together a variety of useful features and utilities integral for the foundation of any website or application."
   s.description = "Integral packages together all the basics to start a website or application so you don't have to.."
   s.license     = "MIT"
 
