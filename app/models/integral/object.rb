@@ -8,6 +8,12 @@ module Integral
       true
     end
 
+    def object
+      @object ||= object_klass.find(object_id)
+    end
+
+    private
+
     # Calculate the object class associated to the list item based on numeric value set within the modal
     # A numeric value is used rather than setting the actual class for security purposes
     def object_klass

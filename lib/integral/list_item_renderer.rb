@@ -178,13 +178,11 @@ module Integral
     end
 
     def object_data
-      @object_data ||= list_item.object_klass.find(list_item.object_id).to_list_item
+      @object_data ||= list_item.object.to_list_item
     end
 
     def object_available?
-      return false unless list_item.object?
-
-      list_item.object_klass.exists?(list_item.object_id)
+      @object_available ||= list_item.object? && list_item.object.present?
     end
 
     def html_classes
