@@ -1,5 +1,5 @@
 module Integral
   # Stores configurable application settings
-  class Settings < RailsSettings::CachedSettings
+  class Settings < RailsSettings::Base
   end
 end
