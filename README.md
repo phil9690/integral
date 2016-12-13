@@ -1,4 +1,4 @@
-# Integral [![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)][travis-ci] [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)][code-climate] [![Dependency Status](https://gemnasium.com/patricklindsay/integral.svg)][gemnasium] [![Inline docs](http://inch-ci.org/github/patricklindsay/integral.svg?branch=master)][inch-ci] [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)][roll-bar]
+# Integral [![Gem Version](https://badge.fury.io/rb/integral.svg)][badge-fury] [![Build Status](https://travis-ci.org/patricklindsay/integral.svg?branch=master)][travis-ci] [![Code Climate](https://codeclimate.com/github/patricklindsay/integral/badges/gpa.svg)][code-climate] [![Dependency Status](https://gemnasium.com/patricklindsay/integral.svg)][gemnasium] [![Inline docs](http://inch-ci.org/github/patricklindsay/integral.svg?branch=master)][inch-ci] [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)][roll-bar]
 
 ## Website in a box
 This engine packages together  all the tools and utilities integral for the foundation of any website.
@@ -73,3 +73,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 [gemnasium]: https://gemnasium.com/patricklindsay/integral
 [foundation]: http://foundation.zurb.com/sites
 [ckeditor]: http://ckeditor.com
+[badge-fury]: https://badge.fury.io/rb/integral
