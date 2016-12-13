@@ -94,6 +94,7 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 document.addEventListener("turbolinks:render", function() {
+  initWiceGrid()
   $('input, textarea').characterCounter();
   $('.tooltipped').tooltip({delay: 50});
   $('ul.tabs').tabs();
