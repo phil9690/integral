@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "Integral packages together all the basics to start a website or application so you don't have to.."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "spec/factories.rb", "spec/support/image.jpg"]
 
   s.add_dependency "rails", "~> 4.2.4"
   s.add_dependency "turbolinks"
