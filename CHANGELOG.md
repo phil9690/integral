@@ -1,5 +1,8 @@
 ## NEXT
 
+## 0.1.2 (December 17, 2016)
+Locked down open ended dependancies
+
 Bugfixes:
   - Host applications now able to use Engines factories
 
