@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "haml-rails", "~> 0.9" # HAML
   s.add_dependency "sass-rails", "~> 5.0" # Sass
   s.add_dependency "materialize-sass", '~> 0.97.5.0' # Material Design UI framework
-  s.add_dependency "foundation-rails", "~> 6.2.4" # Foundation UI Framework
+  s.add_dependency "foundation-rails", "~> 6.2.1" # Foundation UI Framework
   s.add_dependency "simple_form", "~> 3.3" # Form builder
   s.add_dependency "cocoon", "~> 1.2" # Nested forms
   s.add_dependency "draper", "~> 2.1" # Object decoration
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
   s.add_dependency "meta-tags", "~> 2.4" # Meta Tag Management (SEO)
   s.add_dependency "rails4_before_render", "~> 0.2" # Callbacks after an action before rendering
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
-  s.add_dependency "i18n-js", "~> 2.1" # Clientside translations
+  s.add_dependency "i18n-js", "~> 3.0.0.rc15" # Clientside translations
 
   s.add_dependency 'factory_girl_rails', "~> 4.7" # Create reusable object templates
   s.add_dependency 'faker', "~> 1.6" # Random data generator
