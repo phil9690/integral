@@ -8,6 +8,7 @@ module Integral
       true
     end
 
+    # @return [Object] the object associated with the list item
     def object
       @object ||= object_klass.find(object_id)
     end

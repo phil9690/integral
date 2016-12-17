@@ -3,40 +3,40 @@ PATH
   specs:
     integral (0.1.1)
       acts-as-taggable-on (~> 3.4)
-      breadcrumbs_on_rails
-      carrierwave
-      carrierwave-imageoptimizer
-      ckeditor
-      client_side_validations
-      client_side_validations-simple_form
-      cocoon
-      devise
-      devise_invitable
-      draper
-      factory_girl_rails
-      faker
+      breadcrumbs_on_rails (~> 3.0)
+      carrierwave (~> 0.11)
+      carrierwave-imageoptimizer (~> 1.4)
+      ckeditor (~> 4.2)
+      client_side_validations (~> 4.2)
+      client_side_validations-simple_form (~> 3.3)
+      cocoon (~> 1.2)
+      devise (~> 4.2)
+      devise_invitable (~> 1.7)
+      draper (~> 2.1)
+      factory_girl_rails (~> 4.7)
+      faker (~> 1.6)
       font-awesome-sass (~> 4.3)
-      foundation-rails
-      friendly_id
+      foundation-rails (~> 6.2.1)
+      friendly_id (~> 5.2)
       haml-rails (~> 0.9)
-      i18n-js
+      i18n-js (~> 3.0.0.rc15)
       materialize-sass (~> 0.97.5.0)
-      meta-tags
-      mini_magick
-      nprogress-rails
+      meta-tags (~> 2.4)
+      mini_magick (~> 4.6)
+      nprogress-rails (~> 0.2.0)
       paranoia (~> 2.0)
-      parsley-rails
-      pundit
-      rails (~> 4.2.4)
-      rails-settings-cached
-      rails4_before_render
-      sass-rails
-      simple_form
-      slack-notifier
-      turbolinks
-      wice_grid
-      will_paginate
-      will_paginate-foundation
+      parsley-rails (~> 2.4)
+      pundit (~> 1.1)
+      rails (~> 4.2)
+      rails-settings-cached (~> 0.6)
+      rails4_before_render (~> 0.2)
+      sass-rails (~> 5.0)
+      simple_form (~> 3.3)
+      slack-notifier (~> 1.5)
+      turbolinks (~> 5.0)
+      wice_grid (~> 3.6)
+      will_paginate (~> 3.1)
+      will_paginate-foundation (~> 6.2)
 
 GEM
   remote: https://rubygems.org/
@@ -107,10 +107,10 @@ GEM
     carrierwave-imageoptimizer (1.4.0)
       carrierwave (>= 0.8, < 2.0)
       image_optimizer (~> 1.6)
-    ckeditor (4.2.0)
+    ckeditor (4.2.1)
       cocaine
       orm_adapter (~> 0.5.0)
-    client_side_validations (4.2.10)
+    client_side_validations (4.2.11)
       jquery-rails (>= 3.1.2, < 5.0.0)
       js_regex (~> 1.0, >= 1.0.19)
       rails (>= 4.0.0, < 4.3.0)
@@ -130,7 +130,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.2)
     database_cleaner (1.5.3)
     devise (4.2.0)
@@ -151,10 +151,10 @@ GEM
       request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    factory_girl (4.7.0)
+    factory_girl (4.8.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.7.0)
-      factory_girl (~> 4.7.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
     faker (1.6.6)
       i18n (~> 0.5)
@@ -194,14 +194,14 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
-    i18n-js (2.1.2)
-      i18n
+    i18n-js (3.0.0.rc15)
+      i18n (~> 0.6, >= 0.6.6)
     image_optimizer (1.7.0)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    js_regex (1.1.0)
+    js_regex (1.2.0)
       regexp_parser (>= 0.3.6, <= 0.4.1)
     json (1.8.3)
     kaminari (0.17.0)
@@ -215,14 +215,14 @@ GEM
       mime-types (>= 1.16, < 4)
     materialize-sass (0.97.5)
       sass (~> 3.3)
-    meta-tags (2.3.1)
+    meta-tags (2.4.0)
       actionpack (>= 3.2.0, <= 5.1.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
-    mini_magick (4.5.1)
+    mini_magick (4.6.0)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     nokogiri (1.6.8.1)
@@ -366,25 +366,24 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  brakeman
-  cane
-  capybara
-  database_cleaner
-  factory_girl_rails
-  faker
-  flay
-  flog
-  fudge
+  brakeman (~> 3.4)
+  cane (~> 3.0)
+  capybara (~> 2.10)
+  database_cleaner (~> 1.5)
+  faker (~> 1.6)
+  flay (~> 2.8)
+  flog (~> 4.4)
+  fudge (~> 0.6.3)
   integral!
-  launchy
-  poltergeist
-  pry-rails
-  rspec-rails
-  ruby2ruby
-  shoulda-matchers
-  simplecov
-  sqlite3
-  yard
+  launchy (~> 2.4)
+  poltergeist (~> 1.11)
+  pry-rails (~> 0.3)
+  rspec-rails (~> 3.5)
+  ruby2ruby (~> 2.2)
+  shoulda-matchers (~> 3.1)
+  simplecov (~> 0.12)
+  sqlite3 (~> 1.3)
+  yard (~> 0.9.5)
 
 BUNDLED WITH
    1.12.5
