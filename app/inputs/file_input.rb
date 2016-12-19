@@ -9,6 +9,7 @@ class FileInput < SimpleForm::Inputs::Base
     merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
 
     provided_button_label = merged_input_options[:button_label]
+    # Possibly add check for presence of the i18n label
     button_label = provided_button_label.present? ? provided_button_label : I18n.t('simple_form.inputs.file.button_label')
 
     out = "<div class='btn'>"
@@ -16,7 +17,7 @@ class FileInput < SimpleForm::Inputs::Base
     out << @builder.file_field(attribute_name, merged_input_options)
     out << "</div>"
     out << "<div class='file-path-wrapper'>"
-    out << "<input class='file-path validate' type='text'>"
+    out << "<input class='file-path validate' type='text' value='#{object.send(attribute_name).try(:url)}'>"
     out << "</div>"
     out
   end
