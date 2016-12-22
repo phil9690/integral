@@ -40,12 +40,18 @@ And then execute:
   # config/routes.rb
   mount Integral::Engine, at: "/", as: 'integral'
  ```
-2. Make sure you're app runs Integral seed data on setup
+
+2. Lock Ruby version to 2.3.1 or higher
+```
+  # Gemfile
+  ruby '2.3.1'
+```
+3. Make sure you're app runs Integral seed data on setup
  ```
   # db/seeds.rb
   Integral::Engine.load_seed
  ```
-3. Setup database - Copy and run necessary migrations
+4. Setup database - Copy and run necessary migrations
 ```
   rake integral:install:migrations
   rake db:migrate
@@ -59,6 +65,11 @@ And then execute:
   2. https://github.com/jayzes/heroku-buildpack-jpegoptim
   3. https://github.com/jayzes/heroku-buildpack-optipng
 ```
+2. [Setup Puma Web Server][setup-puma]
+
+## Suggested Additional Setup
+1. Install an error tracking management tool such as [Rollbar][roll-bar] or [HoneyBadger][honey-badger]
+2. Install a performance monitoring tool such as [NewRelic][new-relic]
 
 ## Contributing
 
@@ -98,3 +109,6 @@ The gem is available as open source under the terms of the [MIT License](http://
 [foundation]: http://foundation.zurb.com/sites
 [ckeditor]: http://ckeditor.com
 [badge-fury]: https://badge.fury.io/rb/integral
+[honey-badger]: https://www.honeybadger.io
+[new-relic]: https://newrelic.com/ruby/rails
+[setup-puma]: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server

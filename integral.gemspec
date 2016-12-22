@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency "mini_magick", "~> 4.6" # File manipulation
   s.add_dependency "friendly_id", "~> 5.2" # Slugging
   s.add_dependency "meta-tags", "~> 2.4" # Meta Tag Management (SEO)
+  s.add_dependency "gaffe", "~> 1.2" # Custom error pages
   s.add_dependency "rails4_before_render", "~> 0.2" # Callbacks after an action before rendering
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
   s.add_dependency "i18n-js", "~> 3.0.0.rc15" # Clientside translations

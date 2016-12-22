@@ -38,9 +38,8 @@ module Integral
         Rails.logger.info "Dynamic Page Router Disabled"
         false
       end
-
-
     rescue ActiveRecord::NoDatabaseError
+      Rails.logger.info "Dynamic Page Router Disabled"
       false
     end
   end

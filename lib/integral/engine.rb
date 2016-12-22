@@ -33,6 +33,7 @@ module Integral
     require 'will_paginate'
     require 'will_paginate-foundation'
     require 'rails-settings-cached'
+    require 'gaffe'
 
     isolate_namespace Integral
 
@@ -81,7 +82,10 @@ module Integral
 
         # Backend
         "integral/backend.js",
-        "integral/backend.css"
+        "integral/backend.css",
+
+        # Errors
+        "errors.css"
       ]
 
       app.config.assets.precompile.concat assets_for_precompile
