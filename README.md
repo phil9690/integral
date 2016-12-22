@@ -35,7 +35,30 @@ And then execute:
 
 ## Usage
 
-1. TODO
+1. Mount Integral engine routes
+ ```
+  # config/routes.rb
+  mount Integral::Engine, at: "/", as: 'integral'
+ ```
+2. Make sure you're app runs Integral seed data on setup
+ ```
+  # db/seeds.rb
+  Integral::Engine.load_seed
+ ```
+3. Setup database - Copy and run necessary migrations
+```
+  rake integral:install:migrations
+  rake db:migrate
+  rake db:setup
+```
+
+## Heroku Setup
+1. Install required buildpacks:
+```
+  1. heroku/ruby
+  2. https://github.com/jayzes/heroku-buildpack-jpegoptim
+  3. https://github.com/jayzes/heroku-buildpack-optipng
+```
 
 ## Contributing
 
@@ -43,6 +66,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 
 ### Future works
 * Sitemap creation
+* Config generator
 * Super admin (able to view & undelete soft-deleted items)
 * Improved image management
 * Delayed image compression

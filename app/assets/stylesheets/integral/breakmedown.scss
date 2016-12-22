@@ -229,6 +229,10 @@ nav {
       line-height: 2rem;
       padding: 1rem;
       height: auto;
+      border: 1px #e0e0e0 solid;
+    }
+    .collapsible-header.active {
+      color: $secondary-color;
     }
     h5 {
       padding: 0;

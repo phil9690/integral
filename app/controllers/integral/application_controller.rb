@@ -37,7 +37,7 @@ module Integral
 
       meta_data = @meta_data.blank? ? {} : @meta_data
       meta_data[:open_graph] = {} if meta_data[:open_graph].blank?
-      meta_data[:site_title] ||= Integral.configuration.site_title
+      meta_data[:site_title] ||= Settings.website_title
       meta_data[:page_title] ||= t('.title')
       meta_data[:page_description] ||= t('.description')
       meta_data[:canonical] ||= canonical_url

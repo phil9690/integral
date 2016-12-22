@@ -22,6 +22,10 @@ module Integral
       snippet.html_safe
     end
 
+    def site_title
+      Settings.website_title
+    end
+
     # Creates an anchor link
     #
     # @param body [String] body of the link

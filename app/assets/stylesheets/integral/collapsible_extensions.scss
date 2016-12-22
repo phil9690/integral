@@ -6,17 +6,17 @@
 
 // Set active header colours
 .collapsible-header.active, .collapsible-header.active:hover {
-  @extend .red-text, .text-lighten-1;
-}
-
-// Linked-header hover (Stays the same)
-a .collapsible-header:hover {
   @extend .blue-text, .text-lighten-1;
 }
 
-// Header hover
-// @extend .red-text, .text-lighten-2;
-// Want to do the above but doesn't seem to work (?)
-.collapsible-header:hover {
-  color: #F9C9DA;
-}
+// // Linked-header hover (Stays the same)
+// a .collapsible-header:hover {
+//   @extend .blue-text, .text-lighten-1;
+// }
+
+// // Header hover
+// // @extend .red-text, .text-lighten-2;
+// // Want to do the above but doesn't seem to work (?)
+// .collapsible-header:hover {
+//   color: #F9C9DA;
+// }
