@@ -22,11 +22,13 @@ module Integral
         Integral::PageRouter.load
 
         # Frontend Blog routes
-        scope Integral.configuration.blog_namespace do
-          resources :tags, only: [:index, :show]
+        if Integral.configuration.blog_enabled
+          scope Integral.configuration.blog_namespace do
+            resources :tags, only: [:index, :show]
+          end
+          # Post Routing must go after tags otherwise it will override
+          resources Integral.configuration.blog_namespace, only: [ :show, :index ], as: :posts, controller: 'posts'
         end
-        # Post Routing must go after tags otherwise it will override
-        resources Integral.configuration.blog_namespace, only: [ :show, :index ], as: :posts, controller: 'posts'
       end
     end
 
@@ -58,8 +60,10 @@ module Integral
           resources :pages, except: [ :show ]
 
           # Post Management
-          resources :posts, except: [ :show ] do
-            # resources :comments, only: [:create, :destroy]
+          if Integral.configuration.blog_enabled
+            resources :posts, except: [ :show ] do
+              # resources :comments, only: [:create, :destroy]
+            end
           end
 
           # List Management

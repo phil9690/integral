@@ -4,6 +4,7 @@ module Integral
     attr_accessor :black_listed_paths,
                   :slack_web_hook_url,
                   :backend_namespace,
+                  :blog_enabled,
                   :blog_namespace,
                   :listable_objects,
                   :frontend_parent_controller,
@@ -21,6 +22,7 @@ module Integral
     def set_defaults
       @site_title = 'Integral Rails'
       @backend_namespace = 'admin'
+      @blog_enabled = true
       @blog_namespace = 'blog'
       @black_listed_paths = [
         '/admin/'

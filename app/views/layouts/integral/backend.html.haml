@@ -25,7 +25,7 @@
                   %span.material-icons.red-text.text-lighten-1 home
                   = t('integral.navigation.home')
 
-              - if policy(Integral::Post).manager?
+              - if policy(Integral::Post).manager? && Integral.configuration.blog_enabled
                 %li
                   = link_to backend_posts_path do
                     %span.material-icons.orange-text.text-lighten-3 rss_feed
