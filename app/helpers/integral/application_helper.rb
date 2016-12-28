@@ -2,6 +2,14 @@ module Integral
   # Base helper inherited from all Integral helpers
   module ApplicationHelper
 
+    def twitter_url
+      "https://www.twitter.com/#{Settings.twitter_handler}"
+    end
+
+    def facebook_url
+      "https://www.facebook.com/#{Settings.facebook_handler}"
+    end
+
     # TODO: Could look to move this out into seperate helper class
     def google_tag_manager
       gtm_id = Settings.google_tag_manager_id
@@ -64,7 +72,6 @@ module Integral
     # @param [String] url to link to
     # @param [Hash] html_options to pass through to link_to helper
     #
-    # @return [String] twitter url
     def icon_link_to(icon, url, html_options={})
       icon_classes = html_options.delete(:icon_classes)
       icon_text = html_options.delete(:text)
