@@ -21,7 +21,8 @@ module Integral
     def initialize(list_item, opts={})
       @opts = opts.reverse_merge({
         wrapper_element: 'li',
-        child_wrapper_element: 'ul'
+        child_wrapper_element: 'ul',
+        child_wrapper_class: ''
       })
 
       @list_item = list_item
@@ -36,7 +37,7 @@ module Integral
       content_tag opts[:wrapper_element], class: html_classes do
         if list_item.has_children?
           concat render_item
-          concat content_tag opts[:child_wrapper_element], render_children, { class: 'dropdown-content' }, false
+          concat content_tag opts[:child_wrapper_element], render_children, { class: opts[:child_wrapper_class] }, false
         else
           render_item
         end
