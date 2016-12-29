@@ -80,6 +80,32 @@ module Integral
       link_to "<i class='material-icons #{icon_classes}'>#{icon}</i>#{icon_text}".html_safe, url, html_options
     end
 
+    # Override method_missing to check for main app routes before throwing exception
+    def method_missing method, *args, &block
+      if method.to_s.end_with?('_path') or method.to_s.end_with?('_url')
+        if main_app.respond_to?(method)
+          main_app.send(method, *args)
+        else
+          super
+        end
+      else
+        super
+      end
+    end
+
+    # Override respond_to? to check for main app routes
+    def respond_to?(method, include_all=false)
+      if method.to_s.end_with?('_path') or method.to_s.end_with?('_url')
+        if main_app.respond_to?(method)
+          true
+        else
+          super
+        end
+      else
+        super
+      end
+    end
+
     private
 
     def render_flash(type, message)

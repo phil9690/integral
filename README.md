@@ -71,6 +71,10 @@ And then execute:
 1. Install an error tracking management tool such as [Rollbar][roll-bar] or [HoneyBadger][honey-badger]
 2. Install a performance monitoring tool such as [NewRelic][new-relic]
 
+## Useful Gems
+* [Pry Rails][pry-rails] - Debugging
+* [Letter Opener][letter-opener] - Preview emails rather than attempting to send them
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/patricklindsay/integral. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
@@ -112,3 +116,5 @@ The gem is available as open source under the terms of the [MIT License](http://
 [honey-badger]: https://www.honeybadger.io
 [new-relic]: https://newrelic.com/ruby/rails
 [setup-puma]: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
+[pry-rails]: https://github.com/rweng/pry-rails
+[letter-opener]: https://github.com/ryanb/letter_opener
