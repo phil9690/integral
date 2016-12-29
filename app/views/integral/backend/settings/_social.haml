@@ -1,0 +1,7 @@
+= render layout: 'integral/backend/settings/section', locals: { f: f, icon: 'exposure_plus_1', title: t('integral.backend.settings.index.social.title'), description: t('integral.backend.settings.index.social.description'), classes: 'red lighten-1' } do
+  = f.input :twitter_handler, input_html: { value: Integral::Settings.twitter_handler }, placeholder: t('integral.backend.settings.placeholder.twitter_handler')
+  = f.input :facebook_handler, input_html: { value: Integral::Settings.facebook_handler }, placeholder: t('integral.backend.settings.placeholder.facebook_handler')
+  = f.input :google_plus_handler, input_html: { value: Integral::Settings.google_plus_handler }, placeholder: t('integral.backend.settings.placeholder.google_plus_handler')
+  = f.input :linkedin_handler, input_html: { value: Integral::Settings.linkedin_handler }, placeholder: t('integral.backend.settings.placeholder.linkedin_handler')
+  = f.input :youtube_handler, input_html: { value: Integral::Settings.youtube_handler }, placeholder: t('integral.backend.settings.placeholder.youtube_handler')
+

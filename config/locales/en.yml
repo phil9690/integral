@@ -134,6 +134,9 @@ en:
           seo:
             title: SEO
             description: Website SEO and tracking
+          list:
+            title: Lists
+            description: Manage Lists
         placeholder:
           website_title: Super Awesome Website
           contact_email: test@example.com
