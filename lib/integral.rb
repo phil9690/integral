@@ -8,7 +8,9 @@ require "integral/router"
 require "integral/page_router"
 require "integral/foundation_builder"
 require "integral/list_renderer"
+require "integral/swiper_list_renderer"
 require "integral/list_item_renderer"
+require "integral/partial_list_item_renderer"
 
 require "simple_form/helpers/iconify"
 
