@@ -1,5 +1,6 @@
 ## NEXT
 - Add URL to file inputs (This helps indicate that a file has actually been previously uploaded)
+- Fix incorrect page URLs being generated in the page listing
 
 ## 0.1.2 (December 17, 2016)
 Locked down open ended dependancies
