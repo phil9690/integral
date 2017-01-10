@@ -1,6 +1,7 @@
 ## NEXT
 - Add URL to file inputs (This helps indicate that a file has actually been previously uploaded)
 - Fix incorrect page URLs being generated in the page listing
+- Fix when authorization fails now redirects user to backend_dashboard_path rather than root_path
 
 ## 0.1.2 (December 17, 2016)
 Locked down open ended dependancies
