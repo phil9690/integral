@@ -26,6 +26,7 @@
 //= require i18n/translations
 //= require integral/images
 //= require integral/lists
+//= require integral/pickers
 //= require integral/extensions
 //= require_directory ./support
 

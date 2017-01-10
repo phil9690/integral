@@ -1,5 +1,6 @@
 ## NEXT
 - Add URL to file inputs (This helps indicate that a file has actually been previously uploaded)
+- Backend now handles date and time picker (add `datepicker` or `timepicker` class to the relevant input)
 - Fix incorrect page URLs being generated in the page listing
 - Fix when authorization fails now redirects user to backend_dashboard_path rather than root_path
 
