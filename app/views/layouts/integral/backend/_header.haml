@@ -1,0 +1,27 @@
+%header
+  %nav
+    .nav-wrapper
+      %a#admin-menu-toggle.button-collapse{data: { activates: 'admin-menu' }}
+        %span.material-icons menu
+      %span.admin-menu-logo
+        = content_for?(:title) ? yield(:title) : Settings.website_title
+      %ul.side-nav#admin-menu
+        %li#user-menu
+          #user-menu-contents
+            = image_tag(current_user.avatar)
+            %span= t('integral.navigation.signed_in_as')
+            %span#user-menu-name
+              = current_user.name
+        %div
+          = render 'layouts/integral/backend/side_nav_list_items'
+        #admin-menu-footer
+          %li
+            = link_to backend_account_path do
+              %span.material-icons.green-text.text-lighten-1 perm_identity
+              = t('integral.navigation.my_account')
+
+          %li
+            = link_to destroy_user_session_path, :method => :delete do
+              %span.material-icons.grey-text.text-lighten-1 exit_to_app
+              = t('integral.navigation.log_out')
+
