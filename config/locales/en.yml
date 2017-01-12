@@ -292,3 +292,9 @@ en:
     submit:
       user:
         create: 'Invite %{model}'
+
+  devise:
+    mailer:
+      invitation_instructions:
+        someone_invited_you: "%{name} has invited you to %{url}, you can accept it through the link below."
+
