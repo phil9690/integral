@@ -75,6 +75,8 @@ module Integral
         "ckeditor/my_styles.js",
         "ckeditor/my_config.js",
         "ckeditor/filebrowser/*",
+        "ckeditor/skins/*",
+        "ckeditor/plugins/*",
 
         # Frontend
         "integral/frontend.js",
