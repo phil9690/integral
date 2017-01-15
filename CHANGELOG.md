@@ -8,6 +8,8 @@
 - Correct page URLs are now generated in the page listing
 - Authorization fail redirection - now redirects user to backend_dashboard_path rather than root_path
 - Include CKEditor Flat skin and extra plugins
+### Dependancies
+- Temporarily lock CKEditor to 4.2.0 until production asset digesting is fixed
 
 ## 0.1.2 (December 17, 2016)
 Locked down open ended dependancies
