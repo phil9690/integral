@@ -2,6 +2,14 @@ module Integral
   # Base helper inherited from all Integral helpers
   module ApplicationHelper
 
+    def twitter_url
+      "https://www.twitter.com/#{Settings.twitter_handler}"
+    end
+
+    def facebook_url
+      "https://www.facebook.com/#{Settings.facebook_handler}"
+    end
+
     # TODO: Could look to move this out into seperate helper class
     def google_tag_manager
       gtm_id = Settings.google_tag_manager_id
@@ -20,6 +28,10 @@ module Integral
       HTML
 
       snippet.html_safe
+    end
+
+    def site_title
+      Settings.website_title
     end
 
     # Creates an anchor link
@@ -60,13 +72,38 @@ module Integral
     # @param [String] url to link to
     # @param [Hash] html_options to pass through to link_to helper
     #
-    # @return [String] twitter url
     def icon_link_to(icon, url, html_options={})
       icon_classes = html_options.delete(:icon_classes)
       icon_text = html_options.delete(:text)
 
       icon_classes = 'left' if icon_classes.blank?
       link_to "<i class='material-icons #{icon_classes}'>#{icon}</i>#{icon_text}".html_safe, url, html_options
+    end
+
+    # Override method_missing to check for main app routes before throwing exception
+    def method_missing method, *args, &block
+      if method.to_s.end_with?('_path') or method.to_s.end_with?('_url')
+        if main_app.respond_to?(method)
+          main_app.send(method, *args)
+        else
+          super
+        end
+      else
+        super
+      end
+    end
+
+    # Override respond_to? to check for main app routes
+    def respond_to?(method, include_all=false)
+      if method.to_s.end_with?('_path') or method.to_s.end_with?('_url')
+        if main_app.respond_to?(method)
+          true
+        else
+          super
+        end
+      else
+        super
+      end
     end
 
     private

@@ -134,6 +134,9 @@ en:
           seo:
             title: SEO
             description: Website SEO and tracking
+          list:
+            title: Lists
+            description: Manage Lists
         placeholder:
           website_title: Super Awesome Website
           contact_email: test@example.com
@@ -289,3 +292,9 @@ en:
     submit:
       user:
         create: 'Invite %{model}'
+
+  devise:
+    mailer:
+      invitation_instructions:
+        someone_invited_you: "%{name} has invited you to %{url}, you can accept it through the link below."
+

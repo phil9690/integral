@@ -35,7 +35,7 @@ module Integral
 
       def user_not_authorized
         flash[:alert] = I18n.t('errors.unauthorized')
-        redirect_to(root_path)
+        redirect_to(backend_dashboard_path)
       end
 
       # Handle custom devise layouts

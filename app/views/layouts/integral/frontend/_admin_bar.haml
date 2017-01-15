@@ -1,4 +1,4 @@
-#admin-bar-container.row
+#admin-bar-container.row{ data: { 'turbolinks' => 'false' }}
   #admin-bar.columns
     .top-bar-left
       %ul.dropdown.menu{"data-dropdown-menu" => ""}
@@ -10,7 +10,9 @@
           %a{:href => "#"} Quick links
           %ul.menu.vertical
             %li= link_to 'Users', integral.backend_users_path
-            %li= link_to 'Posts', integral.backend_posts_path
+            -# TODO: Add policy checks
+            - if Integral.configuration.blog_enabled
+              %li= link_to 'Posts', integral.backend_posts_path
             %li= link_to 'Pages', integral.backend_pages_path
             %li= link_to 'My account', integral.backend_user_path(current_user)
             %li= link_to 'Sign out', integral.destroy_user_session_path, method: :delete

@@ -35,7 +35,45 @@ And then execute:
 
 ## Usage
 
-1. TODO
+1. Mount Integral engine routes
+ ```
+  # config/routes.rb
+  mount Integral::Engine, at: "/", as: 'integral'
+ ```
+
+2. Lock Ruby version to 2.3.1 or higher
+```
+  # Gemfile
+  ruby '2.3.1'
+```
+3. Make sure you're app runs Integral seed data on setup
+ ```
+  # db/seeds.rb
+  Integral::Engine.load_seed
+ ```
+4. Setup database - Copy and run necessary migrations
+```
+  rake integral:install:migrations
+  rake db:migrate
+  rake db:setup
+```
+
+## Heroku Setup
+1. Install required buildpacks:
+```
+  1. heroku/ruby
+  2. https://github.com/jayzes/heroku-buildpack-jpegoptim
+  3. https://github.com/jayzes/heroku-buildpack-optipng
+```
+2. [Setup Puma Web Server][setup-puma]
+
+## Suggested Additional Setup
+1. Install an error tracking management tool such as [Rollbar][roll-bar] or [HoneyBadger][honey-badger]
+2. Install a performance monitoring tool such as [NewRelic][new-relic]
+
+## Useful Gems
+* [Pry Rails][pry-rails] - Debugging
+* [Letter Opener][letter-opener] - Preview emails rather than attempting to send them
 
 ## Contributing
 
@@ -43,6 +81,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 
 ### Future works
 * Sitemap creation
+* Config generator
 * Super admin (able to view & undelete soft-deleted items)
 * Improved image management
 * Delayed image compression
@@ -74,3 +113,8 @@ The gem is available as open source under the terms of the [MIT License](http://
 [foundation]: http://foundation.zurb.com/sites
 [ckeditor]: http://ckeditor.com
 [badge-fury]: https://badge.fury.io/rb/integral
+[honey-badger]: https://www.honeybadger.io
+[new-relic]: https://newrelic.com/ruby/rails
+[setup-puma]: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
+[pry-rails]: https://github.com/rweng/pry-rails
+[letter-opener]: https://github.com/ryanb/letter_opener

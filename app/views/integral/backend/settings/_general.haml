@@ -1,0 +1,4 @@
+= render layout: 'integral/backend/settings/section', locals: { f: f, icon: 'settings', title: t('integral.backend.settings.index.general.title'), description: t('integral.backend.settings.index.general.description'), classes: 'green lighten-1' } do
+  = f.input :website_title, input_html: { value: Integral::Settings.website_title }, placeholder: t('integral.backend.settings.placeholder.website_title')
+  = f.input :contact_email, input_html: { value: Integral::Settings.contact_email }, placeholder: t('integral.backend.settings.placeholder.contact_email')
+

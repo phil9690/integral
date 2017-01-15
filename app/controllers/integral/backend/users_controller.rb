@@ -42,7 +42,7 @@ module Integral
       # POST /
       # User creation
       def create
-        @user = User.invite!(user_params)
+        @user = User.invite!(user_params, current_user)
 
         if @user.errors.present?
           respond_failure I18n.t('integral.backend.users.notification.creation_failure'), 'new'
