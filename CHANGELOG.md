@@ -1,4 +1,6 @@
 ## NEXT
+
+## 0.1.3 (January 15, 2017)
 - Add URL to file inputs (This helps indicate that a file has actually been previously uploaded)
 - Add Inviter name to invitation email when available
 - Add hidden Integral version to the top of backend layout
