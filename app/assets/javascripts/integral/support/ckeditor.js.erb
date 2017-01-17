@@ -45,6 +45,11 @@ CKEDITOR.editorConfig = function( config )
   config.autoGrow_maxHeight = 500;
   config.autoGrow_bottomSpace = 20;
 
+  // Allow icon insertion
+  config.protectedSource.push( /<i class[\s\S]*?\>/g );
+  config.protectedSource.push( /<\/i>/g );
+  CKEDITOR.dtd.a.div = 1;
+
   config.htmlbuttons = [
     {
       name:'insert_stuff',
