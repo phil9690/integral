@@ -22,6 +22,9 @@ module Integral
     validates :description, presence: true, length: { maximum: 160 }
     validate :validate_path_is_not_black_listed
 
+    # Callbacks
+    after_save :reload_routes
+
     # Searches for pages where title is like specified query
     def self.search(search)
       where("lower(title) LIKE ?", "%#{search.downcase}%")
@@ -71,6 +74,10 @@ module Integral
       end
 
       return valid
+    end
+
+    def reload_routes
+      Integral::PageRouter.reload
     end
   end
 end
