@@ -82,7 +82,7 @@ FactoryGirl.define do
     ip_address { Faker::Internet.ip_v4_address }
   end
 
-  factory :integral_list_item_basic, class: 'Integral::Basic' do
+  factory :integral_list_item_basic, class: 'Integral::Basic', aliases: [:integral_list_item] do
     title
   end
 
