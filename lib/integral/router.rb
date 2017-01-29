@@ -67,7 +67,11 @@ module Integral
           end
 
           # List Management
-          resources :lists
+          resources :lists do
+            member do
+              post 'clone'
+            end
+          end
 
           # Settings Management
           resources :settings, only: [:index, :create]

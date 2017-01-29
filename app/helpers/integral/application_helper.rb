@@ -2,10 +2,16 @@ module Integral
   # Base helper inherited from all Integral helpers
   module ApplicationHelper
 
+    # Combines Twitter base URL and configurable handler to output full Twitter URL
+    #
+    # @return [String] Twitter URL
     def twitter_url
       "https://www.twitter.com/#{Settings.twitter_handler}"
     end
 
+    # Combines Facebook base URL and configurable handler to output full Facebook URL
+    #
+    # @return [String] Facebook URL
     def facebook_url
       "https://www.facebook.com/#{Settings.facebook_handler}"
     end
@@ -30,6 +36,7 @@ module Integral
       snippet.html_safe
     end
 
+    # @return [String] Configurable Website title
     def site_title
       Settings.website_title
     end

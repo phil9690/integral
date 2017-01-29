@@ -7,12 +7,32 @@ module Integral
     has_many :list_items
 
     # Validations
-    validates :title, presence: true
+    validates :title, presence: true, uniqueness: true
 
     before_destroy :validate_unlocked
 
     # Nested forms
     accepts_nested_attributes_for :list_items, reject_if: :all_blank, allow_destroy: true
+
+    # Returns stuff
+    def dup(title='')
+      new_list = super()
+      new_list.title = title if title.present?
+
+      list_items.each do |list_item|
+        new_list_item = list_item.dup
+
+        if list_item.has_children?
+          list_item.children.each do |child|
+            new_list_item.children << child.dup
+          end
+        end
+
+        new_list.list_items << new_list_item
+      end
+
+      new_list
+    end
 
     private
 

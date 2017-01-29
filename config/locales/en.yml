@@ -22,22 +22,23 @@ en:
 
   integral:
     actions:
-      confirm: 'Are you sure?'
-      create: 'Create'
-      save: 'Save'
-      delete: 'Delete'
-      edit: 'Edit'
-      update: 'Update'
-      send: 'Send'
-      view: 'View'
-      read_more: 'Read more..'
-      reply: 'Reply'
+      confirm: Are you sure?
+      create: Create
+      clone: Clone
+      save: Save
+      delete: Delete
+      edit: Edit
+      update: Update
+      send: Send
+      view: View
+      read_more: Read more..
+      reply: Reply
     prompts:
-      select_image: 'Select Image..'
-      select_type: 'Select Type..'
+      select_image: Select Image..
+      select_type: Select Type..
     placeholders:
-      description: 'Description'
-      title: 'Title'
+      description: Description
+      title: Title
 
     breadcrumbs:
       home: 'Home'
