@@ -1,4 +1,5 @@
 ## NEXT
+- Users can now clone lists
 - CKeditor no longer filters out icons
 - Reload routes after a page is saved
 
