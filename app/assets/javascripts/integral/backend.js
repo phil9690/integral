@@ -43,6 +43,7 @@ document.addEventListener("turbolinks:load", function() {
 
   SlugGenerator.check_for_slugs();
   RecordSelector.init();
+  $('.icon-modal-trigger').leanModal();
 
   // Used for Autocomplete
   var filterSuggestions = function(suggestableInput, suggestions) {

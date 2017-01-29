@@ -31,5 +31,6 @@ module Integral
     alias_method :create?, :manager?
     alias_method :edit?, :manager?
     alias_method :update?, :manager?
+    alias_method :clone?, :manager?
   end
 end

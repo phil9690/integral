@@ -24,6 +24,7 @@ ja:
     actions:
       confirm: 'これでよろしいですか？'
       create: '作成'
+      clone: JA Clone
       save: '保存'
       delete: '削除'
       edit: '編集'

@@ -1,5 +1,7 @@
 = content_for :title, t('.title', title: @list.title)
 
+= icon_link_to 'content_copy', '#clone-modal', class: 'icon-modal-trigger right green-text tooltipped', data: { tooltip: t('integral.actions.clone') }, icon_classes: 'small'
+
 .row.lists-container
   .col.s12
     = simple_form_for [:backend, @list], data: { 'priority-enabled' => false } do |f|
@@ -30,3 +32,14 @@
 
 
 = render partial: 'integral/backend/shared/record_selector/modal', locals: { search_path: backend_img_index_path, title: 'Select an Image..', name: 'Image' }
+
+
+#clone-modal.modal
+  .modal-header
+    %i.material-icons.modal-close.close-btn close
+    %h4 Clone List
+  .modal-content
+    = form_tag clone_backend_list_path, validate: true do |f|
+      = text_field_tag :title, '', placeholder: 'New List Title'
+      = submit_tag 'Create', class: 'btn'
+
