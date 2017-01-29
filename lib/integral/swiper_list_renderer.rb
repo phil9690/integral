@@ -1,6 +1,7 @@
 module Integral
   # Swiper list renderer - Renders list items within swiper container
   class SwiperListRenderer < Integral::ListRenderer
+    # Override Integral::ListRenderer#render to wrap swiper-container around all rendered_items
     def render
       rendered_items = ''
       list_items = list.list_items.to_a
