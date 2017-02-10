@@ -25,6 +25,7 @@
 //= require i18n
 //= require i18n/translations
 //= require integral/images
+//= require integral/pages
 //= require integral/lists
 //= require integral/pickers
 //= require integral/extensions

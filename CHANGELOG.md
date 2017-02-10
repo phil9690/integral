@@ -1,6 +1,7 @@
 ## NEXT
 - Users can now clone lists
 - CKeditor no longer filters out icons
+- Addition of unsaved changes check when navigating away from webpage when editing or creating a page
 - Reload routes after a page is saved
 
 ## 0.1.3 (January 15, 2017)

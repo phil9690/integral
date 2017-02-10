@@ -66,6 +66,7 @@ And then execute:
   3. https://github.com/jayzes/heroku-buildpack-optipng
 ```
 2. [Setup Puma Web Server][setup-puma]
+3. Install [rails_12factor gem][rails-12-factor]
 
 ## Suggested Additional Setup
 1. Install an error tracking management tool such as [Rollbar][roll-bar] or [HoneyBadger][honey-badger]
@@ -118,3 +119,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 [setup-puma]: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
 [pry-rails]: https://github.com/rweng/pry-rails
 [letter-opener]: https://github.com/ryanb/letter_opener
+[rails-12-factor]: https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems

@@ -14,7 +14,9 @@ module Integral
     # Nested forms
     accepts_nested_attributes_for :list_items, reject_if: :all_blank, allow_destroy: true
 
-    # Returns stuff
+    # Duplicates the list including all attributes, list items and list item children
+    #
+    # @return [List] Unsaved cloned list
     def dup(title='')
       new_list = super()
       new_list.title = title if title.present?
