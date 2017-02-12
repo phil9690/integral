@@ -1,1 +1,5 @@
-// This is an abstract file which should be overridden in the host application to add javascript configuration to CKeditor
+/* Default CKEditor Styleset
+ *
+ * Override this file to create your own customised Styleset
+ *
+**/

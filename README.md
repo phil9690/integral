@@ -72,6 +72,20 @@ And then execute:
 1. Install an error tracking management tool such as [Rollbar][roll-bar] or [HoneyBadger][honey-badger]
 2. Install a performance monitoring tool such as [NewRelic][new-relic]
 
+## WYSIWYG Editor
+[CKeditor][ckeditor] is the visual editor used to create pages. If you would like to add/remove a plugin, edit the configuration or add your own styles create the following overriding files;
+```
+# JS Configuration - Override this to add plugins etc
+app/assets/javascripts/ckeditor/my_config.js
+
+# Stylesheet - Override this to edit the look of the WYIWYG output
+app/assets/javascripts/ckeditor/my_contents.css
+
+# StyleSet Configuration - Manages styles registration and loading
+app/assets/javascripts/ckeditor/my_styles.js
+
+```
+
 ## Useful Gems
 * [Pry Rails][pry-rails] - Debugging
 * [Letter Opener][letter-opener] - Preview emails rather than attempting to send them
@@ -120,3 +134,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 [pry-rails]: https://github.com/rweng/pry-rails
 [letter-opener]: https://github.com/ryanb/letter_opener
 [rails-12-factor]: https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems
+[ckeditor]: https://github.com/galetahub/ckeditor
