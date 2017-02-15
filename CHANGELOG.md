@@ -4,6 +4,7 @@
 - Addition of unsaved changes check when navigating away from webpage when editing or creating a page
 - Reload routes after a page is saved (Does not seem to work in production using Heroku)
 - Add editor_image_size_limit to configuration
+- Add basic breadcrumb to pages
 
 ## 0.1.3 (January 15, 2017)
 - Add URL to file inputs (This helps indicate that a file has actually been previously uploaded)

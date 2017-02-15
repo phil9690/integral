@@ -2,6 +2,7 @@ module Integral
   # Renders dynamic pages
   class PagesController < Integral.configuration.frontend_parent_controller
     before_filter :find_page, only: [:show]
+    before_filter :set_breadcrumbs
 
     # GET /{page.path}
     # Presents dynamic pages
@@ -25,6 +26,11 @@ module Integral
       end
 
       @page.decorate
+    end
+
+    def set_breadcrumbs
+      add_breadcrumb I18n.t('header.navigation.home'), :root_url
+      add_breadcrumb @page.title
     end
   end
 end
