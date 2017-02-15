@@ -163,8 +163,7 @@
         $dirtyForms = $("form").filter('.' + settings.dirtyClass);
 
         /** CKEDITOR DIRTY CHECKER START **/
-
-        editors = $('form textarea.ckeditor');
+        editors = $('form:not(.submitting) textarea.ckeditor')
         cleanEditors = 0;
         editors.each(function() {
           isDirty = CKEDITOR.instances[this.id].checkDirty();
@@ -201,6 +200,7 @@
 
       $form.submit(function() {
         $form.removeClass(settings.dirtyClass);
+        $form.addClass('submitting')
       });
       $form.bind('reset', function() { setDirtyStatus($form, false); });
       // Add a custom events
