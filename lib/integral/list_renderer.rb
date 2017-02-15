@@ -13,7 +13,7 @@ module Integral
     # @return [String] the rendered list
     def self.render(list, opts={})
       renderer = self.new(list, opts)
-      renderer.render_safely
+      renderer.render_safely.html_safe
     end
 
     # @param list [List] object to render
