@@ -5,6 +5,8 @@
         = f.input :title
         = f.input :description
         = f.input :path
+        = f.input :template, collection: Integral::Page.available_templates, prompt: t('integral.backend.pages.prompts.choose_template'), include_blank: false
+
         = f.input :body, as: :ckeditor, label: false, input_html: { id: 'content_editor', ckeditor: {toolbar: 'mini', language: current_user.locale} }
         .radios
           = f.collection_radio_buttons :status, Integral::Post.available_statuses(reverse: true), :first, :last

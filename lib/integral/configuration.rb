@@ -11,7 +11,8 @@ module Integral
                   # TODO: Change these settings to be configurable through backend
                   :facebook_app_id,
                   :twitter_handler,
-                  :editor_image_size_limit
+                  :editor_image_size_limit,
+                  :additional_page_templates
 
 
     def initialize
@@ -35,6 +36,7 @@ module Integral
 
       @frontend_parent_controller = Integral::ApplicationController
       @editor_image_size_limit = [800, 800]
+      @additional_page_templates = []
     end
   end
 end

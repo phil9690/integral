@@ -14,6 +14,8 @@ module Integral
         open_graph:  {
         }
       }
+
+      render "integral/pages/templates/#{@page.template}"
     end
 
     private

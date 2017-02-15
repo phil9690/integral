@@ -52,6 +52,19 @@ module Integral
       }
     end
 
+    # @return [Array] contains available template label and key pairs
+    def self.available_templates
+      templates = [:default]
+      templates.concat Integral.configuration.additional_page_templates
+
+      available_templates = []
+      templates.each do |template|
+        available_templates << [I18n.t("integral.backend.pages.templates.#{template}"), template]
+      end
+
+      available_templates
+    end
+
     private
 
     # @return [Array] containing available human readable statuses against there numeric value
