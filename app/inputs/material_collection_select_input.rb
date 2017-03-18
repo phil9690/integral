@@ -1,5 +1,5 @@
-# CollectionSelectInput overrides input method on original class to add Materialize prompt
-class CollectionSelectInput < SimpleForm::Inputs::CollectionSelectInput
+# MaterialCollectionSelectInput overrides input method on original class to add Materialize prompt
+class MaterialCollectionSelectInput < SimpleForm::Inputs::CollectionSelectInput
 
   # Generates the HTML output for the input
   #
@@ -7,6 +7,8 @@ class CollectionSelectInput < SimpleForm::Inputs::CollectionSelectInput
   #
   # @return [String] HTML markup of the input
   def input(wrapper_options)
+    require 'pry'; binding.pry
+
     label_method, value_method = detect_collection_methods
 
     merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
