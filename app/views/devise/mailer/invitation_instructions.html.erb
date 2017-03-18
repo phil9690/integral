@@ -2,7 +2,7 @@
 
 <p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.name) %>,</p>
 
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url, name: name) %></p>
+<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: backend_dashboard_url, name: name) %></p>
 
 <p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
 
