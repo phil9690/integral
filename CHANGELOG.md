@@ -1,4 +1,7 @@
 ## NEXT
+
+
+## 0.1.4 (March 19, 2017)
 - Users can now clone lists
 - CKeditor no longer filters out icons
 - Addition of unsaved changes check when navigating away from webpage when editing or creating a page
