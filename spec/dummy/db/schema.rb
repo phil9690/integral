@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102094859) do
+ActiveRecord::Schema.define(version: 20170215012231) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -88,10 +88,11 @@ ActiveRecord::Schema.define(version: 20161102094859) do
     t.string   "path"
     t.text     "description"
     t.text     "body"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "status",      default: 0
     t.datetime "deleted_at"
+    t.string   "template",    default: "default"
   end
 
   add_index "integral_pages", ["deleted_at"], name: "index_integral_pages_on_deleted_at"
