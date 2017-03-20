@@ -36,7 +36,10 @@ ja:
     placeholders:
       description: '[JA] Description'
       title: '[JA] Title'
-
+    prompts:
+      select_image: JA Select Image..
+      select_type: JA Select Type..
+      unsaved_changes: JA Changes that you made may not be saved.
 
     breadcrumbs:
       home: 'ダッシュボード'

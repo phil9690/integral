@@ -1,4 +1,5 @@
 ## NEXT
+- Unsaved changes check now occurs for turbolinks visits and has been added on post and list edit pages
 
 
 ## 0.1.4 (March 19, 2017)
