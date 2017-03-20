@@ -1,5 +1,6 @@
 ## NEXT
 - Unsaved changes check now occurs for turbolinks visits and has been added on post and list edit pages
+- Toast notifications now fixed positioned (do not scroll out of view)
 
 
 ## 0.1.4 (March 19, 2017)
