@@ -1,15 +1,13 @@
 # CKEditor picture uploader
 class CkeditorPictureUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
-
-  # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
+  include ::CarrierWave::Backgrounder::Delay
   include CarrierWave::MiniMagick
-  # include CarrierWave::ImageScience
-
-  # Compress images without any loss of quality (removes meta data)
   include CarrierWave::ImageOptimizer
-  process :optimize
+
+  # Process images in the background
+  process optimize: [{ quality: Integral.configuration.image_compression_quality }]
+  process :resize_to_limit => Integral.configuration.editor_image_size_limit
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -34,10 +32,6 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fill => [118, 100]
-  end
-
-  version :content do
-    process :resize_to_limit => Integral.configuration.editor_image_size_limit
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

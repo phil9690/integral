@@ -5,6 +5,7 @@ module Integral
     acts_as_paranoid
 
     mount_uploader :avatar, AvatarUploader
+    process_in_background :avatar
 
     # Included devise modules. Others available are:
     # :confirmable, :timeoutable, :omniauthable, registerable and lockable

@@ -9,6 +9,7 @@ module Integral
     validates :description, length: { maximum: 160 }
 
     mount_uploader :file, ImageUploader
+    process_in_background :file
 
     # Scopes
     scope :search, -> (query) { where("lower(title) LIKE ?", "%#{query.downcase}%") }

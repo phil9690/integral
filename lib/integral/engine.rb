@@ -19,6 +19,7 @@ module Integral
     require 'materialize_builder'
     require 'pundit'
     require 'carrierwave'
+    require 'carrierwave_backgrounder'
     require 'carrierwave-imageoptimizer'
     require 'ckeditor'
     require 'i18n-js'

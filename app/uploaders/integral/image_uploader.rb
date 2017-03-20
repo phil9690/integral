@@ -1,14 +1,13 @@
 module Integral
   # Handles uploading images
   class ImageUploader < CarrierWave::Uploader::Base
-    # Include RMagick or MiniMagick support:
-    # include CarrierWave::RMagick
+    include ::CarrierWave::Backgrounder::Delay
     include CarrierWave::MiniMagick
+    include CarrierWave::ImageOptimizer
 
-    # Compress images without any loss of quality (removes meta data)
-    # TODO: Reenable with delayed optimizer. Doing optimization inline is causing timeouts.
-    # include CarrierWave::ImageOptimizer
-    # process :optimize
+    # Process images in the background
+    process optimize: [{ quality: Integral.configuration.image_compression_quality }]
+    process :resize_to_limit => Integral.configuration.editor_image_size_limit
 
     # Override the directory where uploaded files will be stored.
     def store_dir
