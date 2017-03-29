@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    integral (0.1.4)
+    integral (0.1.5)
       acts-as-taggable-on (~> 3.4)
       breadcrumbs_on_rails (~> 3.0)
       carrierwave (~> 0.11)

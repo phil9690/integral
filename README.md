@@ -7,7 +7,7 @@ Backend features include;
 * Styled with [Material Design][material-design] in mind using [Materialize-sass][materialize]
 * User authentication & authorization
 * Page & Post management with full [WYSWIYG editing][ckeditor]
-* Image management
+* Image management (w/ background image processing)
 * List management
 * Settings management
 * Turbolinks 5
@@ -99,7 +99,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 * Config generator
 * Super admin (able to view & undelete soft-deleted items)
 * Improved image management
-* Delayed image compression
 * Fully dynamic page routing (no restart required for Heroku)
 * Backend Auditing (Who did what now?)
 * Handle multi-user (Object Locking)
