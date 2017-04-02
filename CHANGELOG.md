@@ -1,5 +1,6 @@
 ## NEXT
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode. 
+- Process Post image uploads in the background
 
 ### Breaking Changes
 - ```frontend_parent_controller``` config variable now expects a string rather than a Class

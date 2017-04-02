@@ -13,6 +13,7 @@ module Integral
     acts_as_taggable
 
     mount_uploader :image, PostImageUploader
+    process_in_background :image
 
     enum status: [ :draft, :published ]
 
