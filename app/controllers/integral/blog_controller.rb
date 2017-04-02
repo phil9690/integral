@@ -1,6 +1,6 @@
 module Integral
   # Blog controller
-  class BlogController < Integral.configuration.frontend_parent_controller
+  class BlogController < Integral.configuration.frontend_parent_controller.constantize
     before_filter :set_side_bar_data
     before_filter :add_breadcrumbs
 

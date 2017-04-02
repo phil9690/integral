@@ -1,5 +1,8 @@
 ## NEXT
+- Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode. 
 
+### Breaking Changes
+- ```frontend_parent_controller``` config variable now expects a string rather than a Class
 
 ## 0.1.5 (March 29, 2017)
 - Unsaved changes check now occurs for turbolinks visits and has been added on post and list edit pages

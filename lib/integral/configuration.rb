@@ -35,7 +35,7 @@ module Integral
         'Integral::Page',
       ]
 
-      @frontend_parent_controller = Integral::ApplicationController
+      @frontend_parent_controller = "Integral::ApplicationController"
       @editor_image_size_limit = [800, 800]
       @image_compression_quality = 90
       @additional_page_templates = []

@@ -1,6 +1,6 @@
 module Integral
   # Renders dynamic pages
-  class PagesController < Integral.configuration.frontend_parent_controller
+  class PagesController < Integral.configuration.frontend_parent_controller.constantize
     before_filter :find_page, only: [:show]
     before_filter :set_breadcrumbs
 
