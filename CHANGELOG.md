@@ -1,5 +1,6 @@
 ## NEXT
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode. 
+- Fix accidentally resizing non editor images to editor size limit
 - Process Post image uploads in the background
 
 ### Breaking Changes

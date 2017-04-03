@@ -7,7 +7,6 @@ module Integral
 
     # Process images in the background
     process optimize: [{ quality: Integral.configuration.image_compression_quality }]
-    process :resize_to_limit => Integral.configuration.editor_image_size_limit
 
     # Override the directory where uploaded files will be stored.
     def store_dir
