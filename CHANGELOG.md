@@ -1,6 +1,7 @@
 ## NEXT
-- Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode. 
+- Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
 - Fix accidentally resizing non editor images to editor size limit
+- Fix Asset Precompile no longer crashes out when no database is available
 - Process Post image uploads in the background
 
 ### Breaking Changes
