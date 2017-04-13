@@ -3,6 +3,7 @@
 - Fix accidentally resizing non editor images to editor size limit
 - Fix Asset Precompile no longer crashes out when no database is available
 - Process Post image uploads in the background
+- Lock Parsley to ~> 2.4.4 due to breaking change in 2.7.0
 
 ### Breaking Changes
 - ```frontend_parent_controller``` config variable now expects a string rather than a Class

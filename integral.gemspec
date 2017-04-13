@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "paranoia", "~> 2.0" # Soft-delete records
   s.add_dependency "client_side_validations", "~> 4.2" # Client-side validations
   s.add_dependency "client_side_validations-simple_form", "~> 3.3" # Simpleform integration for Client-side validations
-  s.add_dependency "parsley-rails", "~> 2.4" # Jquery form validation plugin
+  s.add_dependency "parsley-rails", "~> 2.4.4" # Jquery form validation plugin
   s.add_dependency "wice_grid", "~> 3.6" # Grids
   s.add_dependency "will_paginate", "~> 3.1" # Pagination
   s.add_dependency "will_paginate-foundation", "~> 6.2" # Pagination for Foundation
