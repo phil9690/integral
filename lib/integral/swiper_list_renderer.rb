@@ -10,7 +10,7 @@ module Integral
         rendered_items += render_item(list_item)
       end
 
-      rendered_items = "<div class='swiper-container section-swiper'><div class='swiper-wrapper'>'#{rendered_items}</div><div class='swiper-pagination'></div></div>"
+      rendered_items = "<div class='swiper-container section-swiper'><div class='swiper-wrapper'>#{rendered_items}</div><div class='swiper-pagination'></div></div>"
 
       content_tag opts[:wrapper_element], rendered_items, html_options, false
     end
