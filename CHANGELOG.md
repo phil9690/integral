@@ -5,6 +5,7 @@
 - Process Post image uploads in the background
 - Lock Parsley to ~> 2.4.4 due to breaking change in 2.7.0
 - Add Swiper next and previous buttons to SwiperListRenderer
+- Enable compression and static cache control by default (added `compress_enabled` config variable to disable)
 
 ### Breaking Changes
 - ```frontend_parent_controller``` config variable now expects a string rather than a Class

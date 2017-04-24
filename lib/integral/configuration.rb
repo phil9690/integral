@@ -13,8 +13,8 @@ module Integral
                   :twitter_handler,
                   :editor_image_size_limit,
                   :image_compression_quality,
-                  :additional_page_templates
-
+                  :additional_page_templates,
+                  :compression_enabled
 
     def initialize
       set_defaults
@@ -39,6 +39,7 @@ module Integral
       @editor_image_size_limit = [800, 800]
       @image_compression_quality = 90
       @additional_page_templates = []
+      @compression_enabled = true
     end
   end
 end

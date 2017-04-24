@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails4_before_render", "~> 0.2" # Callbacks after an action before rendering
   s.add_dependency "acts-as-taggable-on", '~> 3.4' # Tagging
   s.add_dependency "i18n-js", "~> 3.0.0.rc15" # Clientside translations
+  s.add_dependency "htmlcompressor", "~> 0.2.0" # Compression
 
   s.add_dependency 'factory_girl_rails', "~> 4.7" # Create reusable object templates
   s.add_dependency 'faker', "~> 1.6" # Random data generator

@@ -171,10 +171,16 @@ module Integral
     def provide_attr(attr)
       list_item_attr_value = list_item.public_send(attr)
 
+      # Provide user supplied attr
       return list_item_attr_value if list_item_attr_value.present?
 
+      # Provide object supplied attr
       return object_data[attr] if object_available?
+
+      # Provide error - Object is linked but has been deleted
       return 'Object Unavailable' if list_item.object? && !object_available?
+
+      # Provide empty string - no attr supplied and no object linked
       ''
     end
 

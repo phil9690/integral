@@ -2,6 +2,7 @@ module Integral
   # Integral Engine
   class Engine < ::Rails::Engine
     require 'haml'
+    require 'htmlcompressor'
     require 'jquery-rails'
     require 'turbolinks'
     require 'nprogress-rails'
