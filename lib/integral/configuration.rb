@@ -12,6 +12,10 @@ module Integral
                   :facebook_app_id,
                   :twitter_handler,
                   :editor_image_size_limit,
+                  :image_thumbnail_size,
+                  :image_small_size,
+                  :image_medium_size,
+                  :image_large_size,
                   :image_compression_quality,
                   :additional_page_templates,
                   :compression_enabled
@@ -36,8 +40,13 @@ module Integral
       ]
 
       @frontend_parent_controller = "Integral::ApplicationController"
+
       @editor_image_size_limit = [800, 800]
       @image_compression_quality = 90
+      @image_thumbnail_size = [50, 50]
+      @image_small_size = [320, 320]
+      @image_medium_size = [640, 640]
+      @image_large_size = [1280, 1280]
       @additional_page_templates = []
       @compression_enabled = true
     end
