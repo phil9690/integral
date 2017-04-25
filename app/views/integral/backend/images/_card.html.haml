@@ -4,7 +4,7 @@
   .integral-card
     = link_to edit_backend_img_path(image) do
       .card-image
-        = image_tag image.file
+        = image_tag image.file.url(:small)
         %span.card-title= image.title
     .card-action
       = link_to 'Edit', edit_backend_img_path(image)

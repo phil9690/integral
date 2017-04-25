@@ -26,20 +26,22 @@ module Integral
 
     private
 
+    # Checks if dynamic page routing should be enabled
+    # If there is any issue connecting to the database or if integral_pages table does not exist we return false
     def self.database_is_ready?
       table_exists = ActiveRecord::Base.connection.table_exists?('integral_pages') ? true : false
-      # Enable 'DISABLE_ROUTER' when carrying out modifications on the Users table
+      # TODO: Change this to configuration variable
       disable_router = ENV['DISABLE_ROUTER']
 
       if table_exists && disable_router != 'true'
-        Rails.logger.info "Dynamic Page Router Enabled"
+        Rails.logger.info "Integral: Dynamic Page Router Enabled"
         true
       else
-      Rails.logger.info "Integral Dynamic Page Routing Disabled"
+        Rails.logger.info "Integral: Dynamic Page Routing Disabled"
         false
       end
-    rescue
-      Rails.logger.info "Integral Dynamic Page Routing Disabled"
+    rescue => error
+      Rails.logger.info "Integral: Dynamic Page Routing Disabled [Error connecting to DB]"
       false
     end
   end

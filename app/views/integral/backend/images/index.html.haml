@@ -1,6 +1,6 @@
 = content_for :title, t('.title')
 
-= link_to t('.new_image'), '#new_image_modal', class: 'waves-effect waves-light btn modal-trigger-new-image' 
+= link_to t('.new_image'), '#new_image_modal', class: 'waves-effect waves-light btn modal-trigger-new-image'
 
 -if @images.present?
   #image-container.row
@@ -8,6 +8,6 @@
       = render partial: 'card', locals: { image: image }
 - else
   .card-panel.center
-    %p= t('.no_images_available') 
+    %p= t('.no_images_available')
 
 = render 'create_modal'

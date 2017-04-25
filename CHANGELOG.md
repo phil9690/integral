@@ -1,14 +1,22 @@
 ## NEXT
+- Add Image versions - Thumbnail, Small, Medium, Large. The sizes are configurable.
+- Add Swiper next and previous buttons to SwiperListRenderer
+- Enable compression and static cache control by default (added `compress_enabled` config variable to disable)
+- Process Post image uploads in the background
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
 - Fix accidentally resizing non editor images to editor size limit
 - Fix Asset Precompile no longer crashes out when no database is available
-- Process Post image uploads in the background
 - Lock Parsley to ~> 2.4.4 due to breaking change in 2.7.0
-- Add Swiper next and previous buttons to SwiperListRenderer
-- Enable compression and static cache control by default (added `compress_enabled` config variable to disable)
 
 ### Breaking Changes
 - ```frontend_parent_controller``` config variable now expects a string rather than a Class
+- Should `display: none` on swiper next and previous buttons if they are not required
+- All existing images need there versions created.
+```
+Integral::Image.find_each do |image|
+  image.file.recreate_versions!
+end
+```
 
 ## 0.1.5 (March 29, 2017)
 - Unsaved changes check now occurs for turbolinks visits and has been added on post and list edit pages

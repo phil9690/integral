@@ -5,15 +5,5 @@ module Integral
     def default_url
       ActionController::Base.helpers.asset_path("integral/defaults/user_avatar.jpg")
     end
-
-    # Create different versions of your uploaded files
-    version :thumb do
-      process :resize_to_fit => [50, 50]
-    end
-
-    # Override the filename of the uploaded files
-    def filename
-      model.name.parameterize if original_filename
-    end
   end
 end
