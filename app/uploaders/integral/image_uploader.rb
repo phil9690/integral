@@ -20,7 +20,28 @@ module Integral
 
     # Override the filename of the uploaded files
     def filename
-      "#{model.title.parameterize}.#{file.extension}" if original_filename
+      return unless original_filename
+
+      if model.respond_to?("#{mounted_as}_filename")
+        filename = model.send("#{mounted_as}_filename")
+      else
+        filename = model.title.parameterize
+      end
+
+      "#{filename}.#{file.extension}"
+    end
+
+    # Return original URL if procesing hasn't been complete (no versions available)
+    def url *args
+      version_name, _ = args
+
+      if model.send("#{mounted_as}_processing?".to_sym)
+        # Without Args
+        super()
+      else
+        # With Args
+        super
+      end
     end
 
     # Override full_filename to set version name at the end
@@ -63,7 +84,7 @@ module Integral
 
     # Thumbnail Version
     version :thumbnail, from_version: :small do
-      process :resize_to_fit => Integral.configuration.image_thumbnail_size
+      process :resize_to_fill => Integral.configuration.image_thumbnail_size
     end
   end
 end

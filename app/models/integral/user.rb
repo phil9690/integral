@@ -36,6 +36,11 @@ module Integral
       ]
     end
 
+    # @return [String] return the avatar filename
+    def avatar_filename
+      name
+    end
+
     private
 
     def send_devise_notification(notification, *args)

@@ -8,10 +8,9 @@
       %ul.side-nav#admin-menu
         %li#user-menu
           #user-menu-contents
-            = image_tag(current_user.avatar)
+            = image_tag(current_user.avatar.url(:thumbnail))
             %span= t('integral.navigation.signed_in_as')
-            %span#user-menu-name
-              = current_user.name
+            %span#user-menu-name= current_user.name
         %div
           = render 'layouts/integral/backend/side_nav_list_items'
         #admin-menu-footer
