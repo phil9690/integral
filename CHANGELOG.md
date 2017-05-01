@@ -3,6 +3,7 @@
 - Add Swiper next and previous buttons to SwiperListRenderer
 - Enable compression and static cache control by default (added `compress_enabled` config variable to disable)
 - Process Post image uploads in the background
+- Fix ListItemRenderer to render links which work with TurboLinks
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
 - Fix accidentally resizing non editor images to editor size limit
 - Fix Asset Precompile no longer crashes out when no database is available

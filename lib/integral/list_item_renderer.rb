@@ -54,7 +54,7 @@ module Integral
       opts = {}
       opts[:class] = 'dropdown-button' if list_item.has_children?
       opts[:href] = url if url.present?
-      opts[:target] = target if target.present?
+      opts[:target] = target if target.present? && target != "_self"
 
       opts
     end
