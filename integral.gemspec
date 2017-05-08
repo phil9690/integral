@@ -36,9 +36,9 @@ Gem::Specification.new do |s|
   s.add_dependency "will_paginate-foundation", "~> 6.2" # Pagination for Foundation
   s.add_dependency "font-awesome-sass", '~> 4.3' # Grid Icons
   s.add_dependency "breadcrumbs_on_rails", "~> 3.0" # Breadcrumbs
-  s.add_dependency "carrierwave", "~> 0.11" # File uploader - Careful when upgrading. Make sure overrides still work in Integral::ImageUploader
+  s.add_dependency "carrierwave", "~> 1.0" # File uploader - Careful when upgrading. Make sure overrides still work in Integral::ImageUploader
   s.add_dependency "carrierwave-imageoptimizer", "~> 1.4" # Image compression
-  s.add_dependency "carrierwave_backgrounder" #, "~> 1.4" # Delayed image processing
+  s.add_dependency "carrierwave_backgrounder" #, "~> 0.4" # Delayed image processing
   s.add_dependency "ckeditor", "= 4.2.0" # WYSIWYG Editor
   s.add_dependency "slack-notifier", "~> 1.5" # Slack bot
   s.add_dependency "mini_magick", "~> 4.6" # File manipulation

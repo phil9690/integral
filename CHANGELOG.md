@@ -3,6 +3,7 @@
 - Add Swiper next and previous buttons to SwiperListRenderer
 - Enable compression and static cache control by default (added `compress_enabled` config variable to disable)
 - Process Post image uploads in the background
+- Upgrade carrierwave to 1.1.0 - Includes performance enhancemente. Note: carrierwave_backgrounder should be >=0.4.3
 - Fix ListItemRenderer to render links which work with TurboLinks
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
 - Fix accidentally resizing non editor images to editor size limit
