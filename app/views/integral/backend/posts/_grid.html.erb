@@ -5,7 +5,7 @@
 
   g.column name: t('.columns.author'), attribute: 'user_id', custom_filter: Integral::User.all.map { |p| [p.name, p.id] } do |post|
     if post.user.present?
-      "<div class='chip'><img src='#{post.user.avatar.url}' alt='#{post.user.name}'>#{post.user.name}</div>".html_safe
+      "<div class='chip'><img src='#{post.user.avatar.url(:thumbnail)}' alt='#{post.user.name}'>#{post.user.name}</div>".html_safe
     else
       "#{post.user_id} [Deleted]"
     end

@@ -1,6 +1,6 @@
 <%= grid(@users_grid) do |g|
   g.column name: t('.columns.name'), attribute: 'name' do |user|
-    "<div class='chip'><img src='#{user.avatar.url}' alt='#{user.name}'>#{user.name}</div>".html_safe
+    "<div class='chip'><img src='#{user.avatar.url(:thumbnail)}' alt='#{user.name}'>#{user.name}</div>".html_safe
   end
 
   g.column name: t('.columns.email'), attribute: 'email'
