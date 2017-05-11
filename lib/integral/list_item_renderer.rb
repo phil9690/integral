@@ -159,8 +159,9 @@ module Integral
     private
 
     def render_no_object_warning
-      Rails.logger.error('IntegralError: Tried to render a list item with no object.')
-      '<!-- Warning: Tried to render a list item with no object. -->'
+      message = "Tried to render a list item (##{list_item.id}) with no object."
+      Rails.logger.error("IntegralError: #{message}")
+      "<!-- Warning: #{message} -->"
     end
 
     # Works out what the provided attr evaluates to.

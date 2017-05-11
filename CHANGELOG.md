@@ -5,6 +5,7 @@
 - Process Post image uploads in the background
 - Upgrade carrierwave to 1.1.0 - Includes performance enhancemente. Note: carrierwave_backgrounder should be >=0.4.3
 - Fix ListItemRenderer to render links which work with TurboLinks
+- Fix 404 issue caused by lists which have references to destroyed objects
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
 - Fix accidentally resizing non editor images to editor size limit
 - Fix Asset Precompile no longer crashes out when no database is available

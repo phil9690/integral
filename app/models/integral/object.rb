@@ -10,7 +10,7 @@ module Integral
 
     # @return [Object] the object associated with the list item
     def object
-      @object ||= object_klass.find(object_id)
+      @object ||= object_klass.find_by_id(object_id)
     end
 
     private
