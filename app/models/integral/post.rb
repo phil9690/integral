@@ -2,15 +2,13 @@ module Integral
   # Represents a user post
   class Post < ActiveRecord::Base
     include ActionView::Helpers::DateHelper
-
-    # Soft-deletion
-    acts_as_paranoid
+    acts_as_paranoid # Soft-deletion
+    acts_as_listable if Configuration.blog_enabled? # Listable Item
+    acts_as_taggable # Tagging
 
     # Slugging
     extend FriendlyId
     friendly_id :title, use: :history
-
-    acts_as_taggable
 
     mount_uploader :image, PostImageUploader
     process_in_background :image

@@ -24,28 +24,11 @@ module Integral
         [I18n.t('integral.backend.lists.items.type.link'), 'Integral::Link', data: {true_value: 'Integral::Link' }]
       ]
 
-      self.listable_objects.each do |listable|
+      ActsAsListable.objects.each do |listable|
         collection << [listable.listable_options[:record_title], listable.to_s, data: { object_type: listable.to_s, record_selector: listable.to_s.parameterize, true_value: 'Integral::Object' }]
       end
 
       collection
-    end
-
-    # This should only be done on initialize really as it's never going to change
-    def self.listable_objects
-      listables =  []
-
-      Integral.configuration.listable_objects.each do |listable|
-        object = listable.constantize
-
-        if object.method_defined?(:to_list_item) && object.respond_to?(:listable_options)
-          listables << object
-        else
-          Rails.logger.error("Removing listable '#{listable}' as it is missing required methods")
-        end
-      end
-
-      listables
     end
 
     def object?
