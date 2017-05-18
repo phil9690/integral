@@ -9,6 +9,7 @@
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
 - Fix accidentally resizing non editor images to editor size limit
 - Fix Asset Precompile no longer crashes out when no database is available
+- Fix integral image filenaming now defaults to original filename when presented with non parameterizable(?) string
 - Lock Parsley to ~> 2.4.4 due to breaking change in 2.7.0
 
 ### Breaking Changes
