@@ -28,6 +28,9 @@ module Integral
         filename = model.title.parameterize
       end
 
+      # Safe-guard against customized filename methods or parameterize returning an empty string
+      return original_filename if filename.blank?
+
       "#{filename}.#{file.extension}"
     end
 
