@@ -48,3 +48,73 @@
 .integral-version {
   display: none;
 }
+
+// Colours
+.indigo-bg {
+  background-color: $indigo
+}
+
+.orange-bg {
+  background-color: $orange
+}
+
+
+.box {
+  display: inline-block;
+  padding: 1rem;
+  color: white;
+  border-radius: 3px;
+}
+
+// Margins
+
+.margin-top-1 {
+  margin-top: 1rem;
+}
+
+// Tables
+
+.filters {
+  float: left;
+
+  a {
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+
+  .button {
+    background: none;
+    border: 1px solid $grey-lighten-2;
+    color: $grey-darken-3;
+    margin: 0;
+  }
+
+  .button.active {
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+table {
+  .actions {
+    .delete, .view, .edit {
+      display: inline-block;
+      padding: 0.3rem;
+      border-radius: $global-radius;
+      color: white;
+    }
+    .delete {
+      background: $red;
+    }
+    .view {
+      background: $green;
+    }
+    .edit {
+      background: $orange;
+    }
+  }
+}

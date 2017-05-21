@@ -8,6 +8,8 @@ module Integral
       # GET /
       # Lists all posts
       def index
+        @posts = Post.all
+
         respond_to do |format|
           format.html do
             grid_options = {
@@ -17,6 +19,7 @@ module Integral
 
             @posts_grid = initialize_grid(Post, grid_options)
 
+            @posts_count = Integral::Post.count
             @published_posts_count = Integral::Post.published.count
             @draft_posts_count = Integral::Post.draft.count
           end

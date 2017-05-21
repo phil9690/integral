@@ -68,8 +68,10 @@ en:
       log_out: 'Logout'
       my_account: 'Account & Profile'
       settings: 'Settings'
-      index: 'Index'
-      new: 'New'
+      all_items: 'All Items'
+      add_new: 'Add New'
+      categories: 'Categories'
+      tags: 'Tags'
 
     backend:
       confirmation_modal:

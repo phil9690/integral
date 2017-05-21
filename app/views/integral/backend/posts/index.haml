@@ -1,10 +1,20 @@
 = content_for :title, t('.title')
 
-= icon_link_to 'add', new_backend_post_path, class: 'waves-effect waves-light btn mr-1em', text: t('.new_post')
+.row.collapse.margin-top-1
+  .small-12.columns
+    .filters
+      .button-group
+        %a.button.active
+          All Items
+          = "(#{@posts_count})"
+        %a.button
+          Published
+          = "(#{@published_posts_count})"
+        %a.button
+          Draft
+          = "(#{@draft_posts_count})"
 
-%span.status.white-text.green.lighten-1= t('.published_count', count: @published_posts_count)
-%span.status.white-text.orange.lighten-1= t('.drafts_count', count: @draft_posts_count)
+    = link_to t('.new_post'), new_backend_post_path, class: 'button pull-right'
 
-.card-panel
-  = render 'grid'
+    = render 'post_list'
 

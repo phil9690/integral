@@ -14,14 +14,15 @@ $red:             #f44336
 $teal:            #009688
 $orange:          #ff9800
 $deep-orange:     #ff5722
+$green:           #4caf50
 
-$header-width: 250px
+$header-width:    250px
 
 .main-container
   margin-left: $header-width
 
 main
-  padding-left: 1rem
+  padding: 1rem
 
 .header-container, header
   width: $header-width
@@ -33,9 +34,19 @@ main
 
 .backend-nav
   nav
-    background: $grey-darken-4
+    background: $grey-darken-3
     height: 100vh
     overflow-y: auto
+
+    .menu.nested
+      margin-left: 0
+
+      li
+        a
+          padding-left: 2rem
+
+          i
+            margin-right: 0
 
     .menu
       li
@@ -43,34 +54,36 @@ main
         a
           padding: 15px
           color: $grey-lighten-5
+          font-size: 0.8rem
+
+          &:hover
+            background-color: $grey-darken-4
 
           i
-            margin-right: 1rem
+            margin-right: 0.7rem
             &:before
               border-radius: 50%
               padding: 7px
               display: inline-block
-              width: 30px
+              width: 27px
               text-align: center
 
-      li.home a i::before
+      li.home > a i::before
         background-color: $deep-purple
-      li.posts a i::before
+      li.posts > a i::before
         background-color: $indigo
-      li.pages a i::before
+      li.pages > a i::before
         background-color: $red
-      li.lists a i::before
+      li.lists > a i::before
         background-color: $teal
-      li.images a i::before
+      li.images > a i::before
         background-color: $orange
-      li.users a i::before
+      li.users > a i::before
         background-color: $deep-orange
-      li.settings a i::before
+      li.settings > a i::before
         background-color: $deep-purple
-      li.user a i::before
+      li.user > a i::before
         background-color: $indigo
-
-
 
     .is-accordion-submenu-parent
       a
@@ -81,3 +94,8 @@ main
       a
         &:after
           border-color: $primary-color transparent transparent
+
+.breadcrumbs
+  background-color: $grey-lighten-3
+  padding: 0.2rem 0.5rem
+  border-radius: 3px

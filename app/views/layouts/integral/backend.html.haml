@@ -9,6 +9,7 @@
       %main
         /= render "layouts/integral/backend/floating_button"
         .container
-          = render_breadcrumbs builder: MaterializeBuilder if @breadcrumbs.present?
+          .breadcrumbs
+            = render_breadcrumbs if @breadcrumbs.present?
           = yield
 

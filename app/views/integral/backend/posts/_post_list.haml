@@ -1,0 +1,24 @@
+%table.hover.width-100
+  %thead
+    %tr
+      %th= t('.columns.title')
+      %th= t('.columns.author')
+      %th= t('.columns.views')
+      %th= t('.columns.status')
+      %th= t('.columns.last_updated')
+      %th Actions
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.author.name
+        %td= post.view_count
+        %td= post.status
+        %td= post.updated_at.strftime("%d/%m/%y")
+        %td.actions
+          = link_to post_path(post) do
+            .view= icon('eye')
+          = link_to edit_backend_post_path(post) do
+            .edit= icon('pencil')
+          = link_to backend_post_path(post), method: :delete do
+            .delete= icon('trash')

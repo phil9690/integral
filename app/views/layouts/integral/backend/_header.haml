@@ -15,9 +15,13 @@
                   %span= t('integral.navigation.posts')
                 %ul.menu.vertical.nested
                   %li
-                    = link_to t('integral.navigation.index'), backend_posts_path
+                    = link_to backend_posts_path do
+                      = icon('list-ul')
+                      %span= t('integral.navigation.all_items')
                   %li
-                    = link_to t('integral.navigation.new'), new_backend_post_path
+                    = link_to new_backend_post_path do
+                      = icon('plus')
+                      %span= t('integral.navigation.add_new')
             - if policy(Integral::Page).manager?
               %li.pages
                 %a{:href => "#"}
@@ -25,9 +29,13 @@
                   %span= t('integral.navigation.pages')
                 %ul.menu.vertical.nested
                   %li
-                    = link_to t('integral.navigation.index'), backend_pages_path
+                    = link_to backend_pages_path do
+                      = icon('list-ul')
+                      %span= t('integral.navigation.all_items')
                   %li
-                    = link_to t('integral.navigation.new'), new_backend_page_path
+                    = link_to new_backend_page_path do
+                      = icon('plus')
+                      %span= t('integral.navigation.add_new')
             - if policy(Integral::List).manager?
               %li.lists
                 %a{:href => "#"}
