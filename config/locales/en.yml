@@ -68,6 +68,8 @@ en:
       log_out: 'Logout'
       my_account: 'Account & Profile'
       settings: 'Settings'
+      index: 'Index'
+      new: 'New'
 
     backend:
       confirmation_modal:

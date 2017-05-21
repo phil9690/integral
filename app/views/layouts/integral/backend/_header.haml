@@ -1,26 +1,83 @@
-%header
-  %nav
-    .nav-wrapper
-      %a#admin-menu-toggle.button-collapse{data: { activates: 'admin-menu' }}
-        %span.material-icons menu
-      %span.admin-menu-logo
-        = content_for?(:title) ? yield(:title) : Settings.website_title
-      %ul.side-nav#admin-menu
-        %li#user-menu
-          #user-menu-contents
-            = image_tag(current_user.avatar.url(:thumbnail))
-            %span= t('integral.navigation.signed_in_as')
-            %span#user-menu-name= current_user.name
-        %div
-          = render 'layouts/integral/backend/side_nav_list_items'
-        #admin-menu-footer
-          %li
-            = link_to backend_account_path do
-              %span.material-icons.green-text.text-lighten-1 perm_identity
-              = t('integral.navigation.my_account')
+.header-container
+  %header
+    .backend-nav
+      %nav
+        .nav-wrapper
+          %ul.vertical.menu{"data-accordion-menu" => ""}
+            %li.home
+              = link_to backend_dashboard_path do
+                = icon('desktop')
+                %span= t('integral.navigation.home')
+            - if policy(Integral::Post).manager? && Integral.configuration.blog_enabled
+              %li.posts
+                %a{:href => "#"}
+                  = icon('newspaper-o')
+                  %span= t('integral.navigation.posts')
+                %ul.menu.vertical.nested
+                  %li
+                    = link_to t('integral.navigation.index'), backend_posts_path
+                  %li
+                    = link_to t('integral.navigation.new'), new_backend_post_path
+            - if policy(Integral::Page).manager?
+              %li.pages
+                %a{:href => "#"}
+                  = icon('file-o')
+                  %span= t('integral.navigation.pages')
+                %ul.menu.vertical.nested
+                  %li
+                    = link_to t('integral.navigation.index'), backend_pages_path
+                  %li
+                    = link_to t('integral.navigation.new'), new_backend_page_path
+            - if policy(Integral::List).manager?
+              %li.lists
+                %a{:href => "#"}
+                  = icon('list-ul')
+                  %span= t('integral.navigation.lists')
+                %ul.menu.vertical.nested
+                  %li
+                    = link_to t('integral.navigation.index'), backend_lists_path
+                  %li
+                    = link_to t('integral.navigation.new'), new_backend_list_path
+            - if policy(Integral::Image).manager?
+              %li.images
+                = link_to backend_img_index_path do
+                  = icon('picture-o')
+                  %span=t('integral.navigation.images')
+            - if policy(current_user).manager?
+              %li.users
+                %a{:href => "#"}
+                  = icon('users')
+                  %span= t('integral.navigation.users')
+                %ul.menu.vertical.nested
+                  %li
+                    = link_to t('integral.navigation.index'), backend_users_path
+                  %li
+                    = link_to t('integral.navigation.new'), new_backend_user_path
+              %li.settings
+                = link_to backend_settings_path do
+                  = icon('cog')
+                  %span=t('integral.navigation.settings')
+              %li.user
+                = link_to backend_account_path do
+                  = icon('user')
+                  %span= t('integral.navigation.my_account')
+              %li
+                = link_to destroy_user_session_path, :method => :delete do
+                  = icon('sign-out')
+                  %span= t('integral.navigation.log_out')
 
-          %li
-            = link_to destroy_user_session_path, :method => :delete do
-              %span.material-icons.grey-text.text-lighten-1 exit_to_app
-              = t('integral.navigation.log_out')
+
+
+/      %span.admin-menu-logo
+/        = content_for?(:title) ? yield(:title) : Settings.website_title
+/      %ul.side-nav#admin-menu
+/        %li#user-menu
+/          #user-menu-contents
+/            = image_tag(current_user.avatar.url(:thumbnail))
+/            %span= t('integral.navigation.signed_in_as')
+/            %span#user-menu-name= current_user.name
+/        %div
+/          = render 'layouts/integral/backend/side_nav_list_items'
+/        #admin-menu-footer
+
 

@@ -1,6 +1,5 @@
-@import 'integral/materialize';
-@import "materialize_clockpicker";
-@import "materialize-tags";
+@import "foundation";
+@import "integral/foundation_and_overrides";
 @import "wice_grid";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -22,33 +21,7 @@
 @import "integral/record_selector";
 @import "integral/wice_grid_overrides";
 @import "integral/overrides";
-
-.turbolinks-progress-bar {
-  height: 5px;
-  background-color: $secondary-color;
-  }
-
-.remove-button {
-  i {
-    @extend .red-text, .text-lighten-1;
-
-    &:hover {
-      @extend .text-lighten-2;
-    }
-  }
-}
-
-/*
- * Standard Materialize Card with:
- * - Hoverable effect
- * - Readable white text against low colour backgrounds
- */
-.integral-card {
-  @extend .card, .hoverable;
-  .card-title {
-    text-shadow: 0 0 2px #444;
-  }
-}
+@import "integral/backend_navigation";
 
 /*
  * CKEditor styling

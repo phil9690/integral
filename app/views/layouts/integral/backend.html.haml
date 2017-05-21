@@ -3,12 +3,12 @@
   %body{ class: "#{controller_name} #{action_name}", data: {locale: I18n.locale }}
     .integral-version= "Integral Version: #{Integral::VERSION}"
     = render_flashes
-
     = render "layouts/integral/backend/header"
 
-    %main
-      = render "layouts/integral/backend/floating_button"
-      .container
-        = render_breadcrumbs builder: MaterializeBuilder if @breadcrumbs.present?
-        = yield
+    .main-container
+      %main
+        /= render "layouts/integral/backend/floating_button"
+        .container
+          = render_breadcrumbs builder: MaterializeBuilder if @breadcrumbs.present?
+          = yield
 

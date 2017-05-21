@@ -31,8 +31,11 @@
 //= require integral/pickers
 //= require integral/extensions
 //= require_directory ./support
+//= require foundation
 
 document.addEventListener("turbolinks:load", function() {
+  $(function(){ $(document).foundation(); });
+
   Waves.displayEffect();
   Materialize.updateTextFields();
   $('select').material_select();
