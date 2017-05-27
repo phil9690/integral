@@ -4,6 +4,7 @@
 - Enable compression and static cache control by default (added `compress_enabled` config variable to disable)
 - Process Post image uploads in the background
 - Upgrade carrierwave to 1.1.0 - Includes performance enhancemente. Note: carrierwave_backgrounder should be >=0.4.3
+- Lists and List Items are now cachable
 - Fix ListItemRenderer to render links which work with TurboLinks
 - Fix 404 issue caused by lists which have references to destroyed objects
 - Fix 'A copy of ApplicationController has been removed' error which was occurring in development mode.
@@ -21,6 +22,7 @@ Integral::Image.find_each do |image|
   image.file.recreate_versions!
 end
 ```
+- Integral.configuration.listable_objects no longer exists. To register an object as listable the model should call acts_as_listable and implement #to_list_item and .listable_options.
 
 ## 0.1.5 (March 29, 2017)
 - Unsaved changes check now occurs for turbolinks visits and has been added on post and list edit pages

@@ -1,6 +1,8 @@
 module Integral
   # Represents an image uploaded by a user
   class Image < ActiveRecord::Base
+    before_save :touch_list_items
+
     # Soft-deletion
     acts_as_paranoid
 
@@ -10,6 +12,9 @@ module Integral
 
     mount_uploader :file, ImageUploader
     process_in_background :file
+
+    # Associations
+    has_many :list_items
 
     # Scopes
     scope :search, -> (query) { where("lower(title) LIKE ?", "%#{query.downcase}%") }
@@ -37,6 +42,12 @@ module Integral
         selector_path: Engine.routes.url_helpers.backend_images_path,
         selector_title: I18n.t('integral.backend.record_selector.images.title')
       }
+    end
+
+    private
+
+    def touch_list_items
+      list_items.find_each(&:touch)
     end
   end
 end

@@ -27,7 +27,7 @@
       = f.button :button
       -# = link_to 'Cancel', '#', class: 'btn grey text-white lighten-1 cancel-form'
 
-- Integral::ListItem.listable_objects.each do |listable|
+- Integral::ActsAsListable.objects.each do |listable|
   = render partial: 'integral/backend/shared/record_selector/modal', locals: { search_path: listable.listable_options[:selector_path], title: listable.listable_options[:selector_title], name: listable.to_s.parameterize }
 
 
