@@ -6,7 +6,6 @@ module Integral
                   :backend_namespace,
                   :blog_enabled,
                   :blog_namespace,
-                  :listable_objects,
                   :frontend_parent_controller,
                   # TODO: Change these settings to be configurable through backend
                   :facebook_app_id,
@@ -24,6 +23,11 @@ module Integral
       set_defaults
     end
 
+    # @return [Boolean] Shortcut to find out if blog is enabled
+    def self.blog_enabled?
+      Integral.configuration.blog_enabled
+    end
+
     private
 
     def set_defaults
@@ -32,11 +36,6 @@ module Integral
       @blog_namespace = 'blog'
       @black_listed_paths = [
         '/admin/'
-      ]
-
-      @listable_objects = [
-        'Integral::Post',
-        'Integral::Page',
       ]
 
       @frontend_parent_controller = "Integral::ApplicationController"

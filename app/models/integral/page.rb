@@ -1,8 +1,8 @@
 module Integral
   # Represents a public viewable page
   class Page < ActiveRecord::Base
-    # Soft-deletion
-    acts_as_paranoid
+    acts_as_paranoid # Soft-deletion
+    acts_as_listable # Listable Item
 
     # Validates format of a path
     # Examples:
